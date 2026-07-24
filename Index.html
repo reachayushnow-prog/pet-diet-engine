@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Nutrition & Allergy Recipe Engine</title>
+    <style>
+        :root { --primary: #2d6a4f; --accent: #52b788; --bg: #f8f9fa; --card: #ffffff; --text: #1b4332; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: #333; margin: 0; padding: 0; line-height: 1.6; }
+        header { background: var(--primary); color: white; padding: 2rem 1rem; text-align: center; }
+        header h1 { margin: 0; font-size: 2.2rem; }
+        header p { margin-top: 0.5rem; opacity: 0.9; }
+        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        .card { background: var(--card); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h2 { color: var(--primary); margin-top: 0; border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; }
+        .form-group { margin-bottom: 1.2rem; }
+        label { display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--text); }
+        input, select { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
+        button { background: var(--primary); color: white; border: none; padding: 0.9rem 1.5rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%; transition: background 0.3s; }
+        button:hover { background: var(--text); }
+        .results { background: #e8f5e9; border-left: 5px solid var(--accent); padding: 1rem; margin-top: 1.5rem; border-radius: 4px; display: none; }
+        .affiliate-box { background: #fff3cd; border: 1px dashed #ffebaa; padding: 1rem; margin-top: 1rem; border-radius: 6px; }
+        .affiliate-btn { display: inline-block; background: #d97706; color: white; text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: bold; margin-top: 0.5rem; }
+        .status-badge { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 20px; color: white; font-weight: bold; margin-top: 0.5rem; }
+        .safe { background: #2e7d32; }
+        .caution { background: #f57c00; }
+        .toxic { background: #c62828; }
+        footer { text-align: center; padding: 2rem; font-size: 0.85rem; color: #666; background: #e9ecef; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pet Food & Allergy Recipe Engine</h1>
+    <p>Custom nutritional targets & safe ingredient lookups for cats and dogs.</p>
+</header>
+
+<div class="container">
+
+    <!-- TOOL 1: CALCULATOR -->
+    <div class="card">
+        <h2>1. Pet Daily Meal Calculator</h2>
+        <div class="form-group">
+            <label for="petType">Pet Type</label>
+            <select id="petType">
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="weight">Pet Weight (lbs)</label>
+            <input type="number" id="weight" placeholder="e.g. 25" min="1">
+        </div>
+        <div class="form-group">
+            <label for="goal">Nutritional / Health Goal</label>
+            <select id="goal">
+                <option value="maintenance">General Maintenance</option>
+                <option value="weight_loss">Weight Management</option>
+                <option value="hypoallergenic">Hypoallergenic / Skin Health</option>
+            </select>
+        </div>
+        <button onclick="calculateMeal()">Calculate Custom Portion</button>
+
+        <div id="calcResults" class="results">
+            <h3>Recommended Daily Ratio:</h3>
+            <p id="portionOutput"></p>
+            <div class="affiliate-box">
+                <strong>💡 Pre-Made Fresh Meal Option:</strong>
+                <p>Want a freshly prepared, lab-tested diet delivered directly to your door?</p>
+                <!-- REPLACE YOUR_AFFILIATE_LINK BELOW -->
+                <a href="YOUR_AFFILIATE_LINK" target="_blank" class="affiliate-btn">Get 50% Off Fresh Pet Meal Subscriptions →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOOL 2: INGREDIENT CHECKER -->
+    <div class="card">
+        <h2>2. Instant Ingredient Safety Checker</h2>
+        <div class="form-group">
+            <label for="ingredient">Type a human food or ingredient:</label>
+            <input type="text" id="ingredient" placeholder="e.g. Blueberries, Garlic, Chicken, Chocolate">
+        </div>
+        <button onclick="checkIngredient()">Check Safety</button>
+
+        <div id="ingredientResults" class="results">
+            <h3 id="ingredientName"></h3>
+            <div id="safetyBadge" class="status-badge"></div>
+            <p id="ingredientDesc"></p>
+        </div>
+    </div>
+
+    <!-- WRITTEN SEO CONTENT SECTION -->
+    <div class="card">
+        <h2>Guide: Transitioning Pets to Custom Diets</h2>
+        <p>When adjusting your pet's dietary ratios, always transition gradually over a 7 to 10 day period to prevent digestive upset. Start by mixing 25% of the new diet with 75% of their old food, slowly increasing the new proportion over time.</p>
+        <p>For pets with chronic skin or digestive issues, consult a certified veterinary nutritionist to perform targeted elimination diets before adding single-protein toppers or home-cooked ingredients.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p><strong>Disclaimer:</strong> Content and tools provided on this site are for informational purposes only and do not constitute veterinary medical advice. Always consult a licensed veterinarian before altering your pet's diet.</p>
+    <p><strong>Affiliate Disclosure:</strong> This site contains affiliate links. We may earn a small commission at no extra cost to you if you make a purchase through recommended links.</p>
+</footer>
+
+<script>
+    function calculateMeal() {
+        const weight = parseFloat(document.getElementById('weight').value);
+        const pet = document.getElementById('petType').value;
+        const goal = document.getElementById('goal').value;
+
+        if (!weight || weight <= 0) {
+            alert('Please enter a valid weight.');
+            return;
+        }
+
+        let baseGrams = pet === 'dog' ? weight * 12 : weight * 8;
+        if (goal === 'weight_loss') baseGrams *= 0.8;
+        if (goal === 'hypoallergenic') baseGrams *= 0.95;
+
+        const protein = Math.round(baseGrams * 0.5);
+        const veggies = pet === 'dog' ? Math.round(baseGrams * 0.3) : Math.round(baseGrams * 0.1);
+        const fats = Math.round(baseGrams - protein - veggies);
+
+        document.getElementById('portionOutput').innerHTML = 
+            `Target total food: <strong>${Math.round(baseGrams)}g/day</strong><br>` +
+            `• Protein Source: <strong>~${protein}g</strong><br>` +
+            `• Safe Veggies/Fibers: <strong>~${veggies}g</strong><br>` +
+            `• Essential Fats/Supplements: <strong>~${fats}g</strong>`;
+
+        document.getElementById('calcResults').style.display = 'block';
+    }
+
+    const database = {
+        'blueberries': { status: 'safe', text: 'Safe & Healthy. Rich in antioxidants and vitamins for dogs and cats.' },
+        'chicken': { status: 'safe', text: 'Safe source of protein. Ensure it is cooked thoroughly with no added seasonings or bones.' },
+        'garlic': { status: 'toxic', text: 'Toxic! Belongs to the Allium family and can cause red blood cell damage.' },
+        'onion': { status: 'toxic', text: 'Toxic! Avoid entirely in raw or cooked forms.' },
+        'chocolate': { status: 'toxic', text: 'Toxic! Contains theobromine, which pets cannot digest.' },
+        'carrots': { status: 'safe', text: 'Safe. Great low-calorie crunchy treat rich in Vitamin A.' }
+    };
+
+    function checkIngredient() {
+        const query = document.getElementById('ingredient').value.toLowerCase().trim();
+        const resultsDiv = document.getElementById('ingredientResults');
+        const badge = document.getElementById('safetyBadge');
+
+        if (!query) return;
+
+        document.getElementById('ingredientName').innerText = query.toUpperCase();
+
+        if (database[query]) {
+            const data = database[query];
+            badge.className = `status-badge ${data.status}`;
+            badge.innerText = data.status.toUpperCase();
+            document.getElementById('ingredientDesc').innerText = data.text;
+        } else {
+            badge.className = 'status-badge caution';
+            badge.innerText = 'CAUTION / UNKNOWN';
+            document.getElementById('ingredientDesc').innerText = 'Ingredient not in instant database. Always verify with a vet before feeding unfamiliar human foods.';
+        }
+
+        resultsDiv.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
