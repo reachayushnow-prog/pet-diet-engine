@@ -418,6 +418,45 @@
 
         resultsDiv.style.display = 'block';
     }
+    <!-- UPDATED CALCULATOR SECTION -->
+<div class="card" id="meal-calculator">
+    <h2>🐶🐱 Pet Daily Meal Calculator</h2>
+    <p>Calculate custom daily meal portions, calories, and macros based on your pet's type, breed size, weight, and health goal.</p>
+    
+    <form id="pet-calc-form" onsubmit="event.preventDefault(); calculateMeal();">
+        <label for="pet-type"><strong>Pet Type:</strong></label>
+        <select id="pet-type" onchange="toggleBreedOptions()" required>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+        </select>
+
+        <label for="pet-breed-size"><strong>Breed / Size Category:</strong></label>
+        <select id="pet-breed-size" required>
+            <!-- Dog Options (Default) -->
+            <option value="toy">Toy / Small Breed (Chihuahua, Yorkie, Frenchie)</option>
+            <option value="medium" selected>Medium Breed (Beagle, Cocker Spaniel, Bulldog)</option>
+            <option value="large">Large / Giant Breed (Labrador, German Shepherd, Great Dane)</option>
+            <option value="working">High-Energy / Working Breed (Border Collie, Husky)</option>
+        </select>
+
+        <label for="pet-weight"><strong>Weight (in lbs):</strong></label>
+        <input type="number" id="pet-weight" placeholder="e.g. 25" min="1" step="0.1" required>
+
+        <label for="health-goal"><strong>Health Goal:</strong></label>
+        <select id="health-goal" required>
+            <option value="maintenance">Weight Maintenance</option>
+            <option value="weight-loss">Weight Management (Loss)</option>
+            <option value="hypoallergenic">Hypoallergenic / Sensitive Gut Diet</option>
+        </select>
+
+        <button type="submit" class="calc-btn">Calculate Daily Meal Plan</button>
+    </form>
+
+    <div id="calc-results" style="display:none; margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+        <!-- Results populate dynamically via JS -->
+    </div>
+</div>
+
 </script>
 
 </body>
