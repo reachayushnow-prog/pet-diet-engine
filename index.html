@@ -95,57 +95,44 @@
 </head>
 <body>
 <header>
-    <!-- 1. PET DAILY MEAL CALCULATOR -->
-    <div class="card" id="meal-calculator">
-        <h2>🐶🐱 Pet Daily Meal Calculator</h2>
-        <p>Calculate custom daily meal portions, calories, and macros based on your pet's type, breed size, weight, and health goal.</p>
-        
-        <form id="pet-calc-form" onsubmit="event.preventDefault(); calculateMeal();">
-            <label for="pet-type"><strong>Pet Type:</strong></label>
-            <select id="pet-type" onchange="toggleBreedOptions()" required>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-            </select>
+    <!-- 1. PET DAILY MEAL CALCULATOR (Fail-Safe Version) -->
+<div class="card" id="meal-calculator">
+    <h2>🐶🐱 Pet Daily Meal Calculator</h2>
+    <p>Calculate custom daily meal portions, calories, and macros based on your pet's type, breed size, weight, and health goal.</p>
+    
+    <div>
+        <label for="pet-type"><strong>Pet Type:</strong></label>
+        <select id="pet-type" onchange="toggleBreedOptions()">
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+        </select>
 
-            <label for="pet-breed-size"><strong>Breed / Size Category:</strong></label>
-            <select id="pet-breed-size" required>
-                <option value="toy">Toy / Small Breed (Chihuahua, Yorkie, Frenchie)</option>
-                <option value="medium" selected>Medium Breed (Beagle, Cocker Spaniel, Bulldog)</option>
-                <option value="large">Large / Giant Breed (Labrador, German Shepherd, Great Dane)</option>
-                <option value="working">High-Energy / Working Breed (Border Collie, Husky)</option>
-            </select>
+        <label for="pet-breed-size"><strong>Breed / Size Category:</strong></label>
+        <select id="pet-breed-size">
+            <option value="toy">Toy / Small Breed (Chihuahua, Yorkie, Frenchie)</option>
+            <option value="medium" selected>Medium Breed (Beagle, Cocker Spaniel, Bulldog)</option>
+            <option value="large">Large / Giant Breed (Labrador, German Shepherd, Great Dane)</option>
+            <option value="working">High-Energy / Working Breed (Border Collie, Husky)</option>
+        </select>
 
-            <label for="pet-weight"><strong>Weight (in lbs):</strong></label>
-            <input type="number" id="pet-weight" placeholder="e.g. 25" min="1" step="0.1" required>
+        <label for="pet-weight"><strong>Weight (in lbs):</strong></label>
+        <input type="number" id="pet-weight" placeholder="e.g. 25" min="1" step="0.1">
 
-            <label for="health-goal"><strong>Health Goal:</strong></label>
-            <select id="health-goal" required>
-                <option value="maintenance">Weight Maintenance</option>
-                <option value="weight-loss">Weight Management (Loss)</option>
-                <option value="hypoallergenic">Hypoallergenic / Sensitive Gut Diet</option>
-            </select>
+        <label for="health-goal"><strong>Health Goal:</strong></label>
+        <select id="health-goal">
+            <option value="maintenance">Weight Maintenance</option>
+            <option value="weight-loss">Weight Management (Loss)</option>
+            <option value="hypoallergenic">Hypoallergenic / Sensitive Gut Diet</option>
+        </select>
 
-            <button type="submit">Calculate Daily Meal Plan</button>
-        </form>
-
-        <div id="calc-results" class="results" style="display:none;">
-            <!-- Results populate dynamically via JS -->
-        </div>
+        <button type="button" onclick="calculateMeal()">Calculate Daily Meal Plan</button>
     </div>
 
-    <!-- 2. INGREDIENT SAFETY CHECKER -->
-    <div class="card" id="ingredient-checker">
-        <h2>🧪 Pet Ingredient Safety Checker</h2>
-        <p>Type any food or ingredient (e.g., <em>grapes, garlic, salmon, pumpkin</em>) to check if it's safe for your pet.</p>
+    <div id="calc-results" class="results" style="display:none; margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+        <!-- Results populate dynamically via JS -->
+    </div>
+</div>
 
-        <input type="text" id="ingredientInput" placeholder="Enter an ingredient (e.g., Chocolate, Grapes, Chicken)...">
-        <button onclick="checkIngredient()">Check Safety</button>
-
-        <div id="ingredientResults" class="results" style="display: none;">
-            <h3 id="ingredientName" style="margin-top: 0;"></h3>
-            <div id="safetyBadge" class="status-badge" style="display: inline-block; padding: 4px 12px; border-radius: 12px; font-weight: bold; margin: 0.5rem 0;"></div>
-            <p id="ingredientDesc" style="margin-bottom: 0;"></p>
-        </div>
     </div>
 
 
