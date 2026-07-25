@@ -968,26 +968,196 @@
                     </ul>
                 </div>
 
-         <!-- PLACE FOOTER HERE BEFORE BODY CLOSES -->
-    <footer style="background-color: #0f172a; color: #94a3b8; font-size: 0.8rem; line-height: 1.5; padding: 2.5rem 1.25rem; margin-top: 4rem;">
-        <div style="max-width: 820px; margin: 0 auto;">
-            <div style="margin-bottom: 2rem;">
-                <h4 style="color: #f8fafc; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem;">
-                    Transparency
-                </h4>
-                <p style="margin: 0;">
-                    <strong>Affiliate Disclosure:</strong> Some links on this site contain affiliate links. We may earn a small commission at no extra cost to you.
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Diet Engine - Footer</title>
+
+    <style>
+        /* Base Setup */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Demo Container - pushes footer to bottom */
+        .main-content {
+            flex: 1;
+            padding: 2.5rem 1.25rem;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        /* FOOTER STYLES */
+        .site-footer {
+            background-color: #0f172a; /* Dark Navy Background */
+            color: #94a3b8;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            padding: 3rem 1.25rem 2rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        /* Top Grid Section */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .footer-brand {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #f8fafc;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .footer-heading {
+            color: #f8fafc;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-text {
+            color: #94a3b8;
+            margin: 0;
+        }
+
+        .footer-text strong {
+            color: #cbd5e1;
+        }
+
+        /* YMYL Veterinary Disclaimer Banner */
+        .disclaimer-banner {
+            background-color: #1e293b;
+            border-left: 4px solid #f59e0b; /* Amber Accent */
+            border-radius: 0 8px 8px 0;
+            padding: 1.25rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            color: #cbd5e1;
+        }
+
+        .disclaimer-icon {
+            font-size: 1.2rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .disclaimer-text {
+            margin: 0;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .disclaimer-text strong {
+            color: #f8fafc;
+        }
+
+        /* Bottom Copyright Bar */
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            color: #64748b;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        @media (min-width: 640px) {
+            .footer-bottom {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+
+        .footer-bottom strong {
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Content Area Placeholder -->
+    <main class="main-content">
+        <h1>Pet Diet Engine</h1>
+        <p>Your main guide and calculator content goes above here...</p>
+    </main>
+
+    <!-- PET DIET ENGINE FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            
+            <!-- Top Footer Content -->
+            <div class="footer-grid">
+                
+                <!-- Brand Info -->
+                <div>
+                    <span class="footer-brand">🐾 Pet Diet Engine</span>
+                    <p class="footer-text">
+                        Empowering pet owners with scientific portion calculations, balanced macronutrients, and trusted ingredient safety analysis for healthier, happier pets.
+                    </p>
+                </div>
+
+                <!-- Transparency & Affiliate Disclosure -->
+                <div>
+                    <h3 class="footer-heading">Transparency</h3>
+                    <p class="footer-text">
+                        <strong>Affiliate Disclosure:</strong> Some links on Pet Diet Engine contain affiliate links. We may earn a small commission at no extra cost to you if you purchase through them.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Veterinary Medical Disclaimer Banner -->
+            <aside class="disclaimer-banner" aria-label="Veterinary Medical Disclaimer">
+                <span class="disclaimer-icon" aria-hidden="true">⚠️</span>
+                <p class="disclaimer-text">
+                    <strong>Veterinary Disclaimer:</strong> The information, tools, and portion calculations provided on Pet Diet Engine are for educational and informational purposes only and do not constitute veterinary medical advice. Always consult a licensed veterinarian or qualified veterinary nutritionist before making significant changes to your pet's diet.
                 </p>
+            </aside>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="footer-bottom">
+                <div>
+                    © 2026 <strong class="font-semibold text-slate-400">Pet Diet Engine</strong>. All Rights Reserved.
+                </div>
+                <div>
+                    Built with ❤️ for pet lovers worldwide.
+                </div>
             </div>
 
-            <div style="background-color: #1e293b; border-left: 4px solid #f59e0b; padding: 1rem; border-radius: 0 6px 6px 0; color: #cbd5e1; margin-bottom: 2rem;">
-                ⚠️ <strong>Veterinary Disclaimer:</strong> The information provided on Pet Diet Engine is for educational purposes only. Always consult a veterinarian.
-            </div>
-
-            <div style="border-top: 1px solid #1e293b; padding-top: 1.5rem; display: flex; justify-content: space-between; gap: 1rem; color: #64748b;">
-                <div>© 2026 <strong>Pet Diet Engine</strong>. All Rights Reserved.</div>
-                <div>Built for pet lovers worldwide.</div>
-            </div>
         </div>
     </footer>
 
