@@ -456,6 +456,81 @@
         <!-- Results populate dynamically via JS -->
     </div>
 </div>
+// Toggle breed options dynamically based on Dog vs Cat selection
+function toggleBreedOptions() {
+    const petType = document.getElementById('pet-type').value;
+    const breedSelect = document.getElementById('pet-breed-size');
+
+    if (petType === 'cat') {
+        breedSelect.innerHTML = `
+            <option value="cat-small">Small / Lean Breed (Siamese, Cornish Rex)</option>
+            <option value="cat-medium" selected>Medium Domestic (Domestic Short/Longhair)</option>
+            <option value="cat-large">Large / Heavy Breed (Maine Coon, Ragdoll, Norwegian Forest)</option>
+        `;
+    } else {
+        breedSelect.innerHTML = `
+            <option value="toy">Toy / Small Breed (Chihuahua, Yorkie, Frenchie)</option>
+            <option value="medium" selected>Medium Breed (Beagle, Cocker Spaniel, Bulldog)</option>
+            <option value="large">Large / Giant Breed (Labrador, German Shepherd, Great Dane)</option>
+            <option value="working">High-Energy / Working Breed (Border Collie, Husky)</option>
+        `;
+    }
+}
+
+// Main Calculation Function
+function calculateMeal() {
+    const petType = document.getElementById('pet-type').value;
+    const breedCategory = document.getElementById('pet-breed-size').value;
+    const weightLbs = parseFloat(document.getElementById('pet-weight').value);
+    const goal = document.getElementById('health-goal').value;
+
+    if (!weightLbs || weightLbs <= 0) return;
+
+    // Convert lbs to kg
+    const weightKg = weightLbs / 2.20462;
+
+    // Base Resting Energy Requirement (RER = 70 * weight_in_kg ^ 0.75)
+    const rer = 70 * Math.pow(weightKg, 0.75);
+
+    // Multiplier based on breed metabolic rate & health goal
+    let multiplier = 1.4; // default
+
+    if (petType === 'dog') {
+        if (breedCategory === 'toy') multiplier = 1.5;
+        else if (breedCategory === 'medium') multiplier = 1.4;
+        else if (breedCategory === 'large') multiplier = 1.2;
+        else if (breedCategory === 'working') multiplier = 1.8;
+    } else {
+        if (breedCategory === 'cat-small') multiplier = 1.3;
+        else if (breedCategory === 'cat-medium') multiplier = 1.2;
+        else if (breedCategory === 'cat-large') multiplier = 1.1;
+    }
+
+    // Adjust for health goal
+    if (goal === 'weight-loss') multiplier *= 0.8;
+    if (goal === 'hypoallergenic') multiplier *= 0.95;
+
+    const dailyCalories = Math.round(rer * multiplier);
+
+    // Estimate daily food weight in grams (approx. 1.35 kcal/g for balanced fresh/wet meal)
+    const dailyFoodGrams = Math.round(dailyCalories / 1.35);
+
+    // Output Results HTML
+    const resultsDiv = document.getElementById('calc-results');
+    resultsDiv.style.display = 'block';
+    resultsDiv.innerHTML = `
+        <h3>📊 Daily Meal Recommendations</h3>
+        <p><strong>Target Calories:</strong> ~${dailyCalories} kcal / day</p>
+        <p><strong>Total Fresh Portion:</strong> ~${dailyFoodGrams} grams / day (split across 2 meals)</p>
+        
+        <h4>Suggested Macro Split (${goal.replace('-', ' ').toUpperCase()}):</h4>
+        <ul>
+            <li><strong>Lean Muscle Protein:</strong> ~${Math.round(dailyFoodGrams * 0.50)}g</li>
+            <li><strong>Safe Veggies & Soluble Fiber:</strong> ~${Math.round(dailyFoodGrams * 0.30)}g</li>
+            <li><strong>Essential Healthy Fats / Oils:</strong> ~${Math.round(dailyFoodGrams * 0.20)}g</li>
+        </ul>
+    `;
+}
 
 </script>
 
