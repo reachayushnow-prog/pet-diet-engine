@@ -447,13 +447,18 @@
         } else {
             categorySelect.innerHTML = `
                 <option value="toy">Toy / Small Breed (e.g., Chihuahua, Yorkie)</option>
-                <option value="medium" selected>Medium Breed (e.g., Beagle, Bulldog)</option>
-                <option value="large">Large / Giant Breed (e.g., Labrador, German Shepherd)</option>
-                <option value="working">High-Energy / Working Breed (e.g., Husky)</option>
-            `;
+               /* Interactive Engine Card */
+        .engine-card {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
-    }
-
+    </style> <!-- 1. Close style tag -->
+</head>     <!-- 2. Close head tag -->
+<body>      <!-- 3. Open body tag -->
     function calculatePetMeal() {
         const petType = document.getElementById('pet-type').value;
         const breedCat = document.getElementById('breed-category').value;
@@ -963,47 +968,35 @@
                     </ul>
                 </div>
 
-              <!-- Footer Section -->
-<footer class="bg-slate-900 text-slate-400 text-xs text-left pt-6 pb-8">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- Top Row: Grid Content -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-      
-      <!-- Column 3: Trust & Disclaimers -->
-      <div class="space-y-3">
-        <h3 class="text-slate-50 text-sm font-bold uppercase tracking-wider">
-          Transparency
-        </h3>
-        <p class="leading-relaxed text-slate-400">
-          <strong class="font-semibold text-slate-300">Affiliate Disclosure:</strong> 
-          Some links on this site are affiliate links. We may earn a small commission at no extra cost to you if you make a purchase through them.
-        </p>
-      </div>
+          <!-- YOUR ARTICLE / PAGE CONTENT GOES HERE -->
 
-    </div>
+    <!-- FOOTER SECTION -->
+    <footer style="background-color: #0f172a; color: #94a3b8; font-size: 0.8rem; line-height: 1.5; padding: 2.5rem 1.25rem; margin-top: 4rem;">
+        <div style="max-width: 820px; margin: 0 auto;">
+            
+            <!-- Transparency Column -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="color: #f8fafc; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem;">
+                    Transparency
+                </h4>
+                <p style="margin: 0;">
+                    <strong>Affiliate Disclosure:</strong> Some links on this site contain affiliate links. We may earn a small commission at no extra cost to you.
+                </p>
+            </div>
 
-    <!-- Veterinary Medical Disclaimer Banner (YMYL SEO Compliance) -->
-    <aside 
-      class="bg-slate-800 border-l-4 border-amber-500 rounded-r-md p-4 mb-8 leading-relaxed text-slate-300 shadow-sm"
-      aria-label="Veterinary Medical Disclaimer"
-    >
-      <div class="flex items-start gap-2.5">
-        <span class="text-amber-500 text-base shrink-0 aria-hidden:true">⚠️</span>
-        <p>
-          <strong class="font-semibold text-slate-100">Veterinary Disclaimer:</strong> 
-          The information and tools provided on Pet Diet Engine are for educational and informational purposes only and do not constitute veterinary medical advice. Always consult a licensed veterinarian or qualified veterinary nutritionist before making changes to your pet's diet.
-        </p>
-      </div>
-    </aside>
+            <!-- Veterinary Disclaimer Banner -->
+            <div style="background-color: #1e293b; border-left: 4px solid #f59e0b; padding: 1rem; border-radius: 0 6px 6px 0; color: #cbd5e1; margin-bottom: 2rem;">
+                ⚠️ <strong>Veterinary Disclaimer:</strong> The information and tools provided on Pet Diet Engine are for educational purposes only. Always consult with a licensed veterinarian before making drastic changes to your pet's diet.
+            </div>
 
-    <!-- Bottom Bar / Divider -->
-    <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
-      <p>© 2026 <strong class="font-semibold text-slate-400">Pet Diet Engine</strong>. All Rights Reserved.</p>
-      <p>Built with ❤️ for pet lovers worldwide.</p>
-    </div>
+            <!-- Bottom Bar -->
+            <div style="border-top: 1px solid #1e293b; padding-top: 1.5rem; display: flex; justify-content: space-between; gap: 1rem; color: #64748b;">
+                <div>© 2026 <strong>Pet Diet Engine</strong>. All Rights Reserved.</div>
+                <div>Built for pet lovers worldwide.</div>
+            </div>
 
-  </div>
-</footer>
-</body>
-</html>
+        </div>
+    </footer>
+
+</body> <!-- Close body -->
+</html> <!-- Close html -->
