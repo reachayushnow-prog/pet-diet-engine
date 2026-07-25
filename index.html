@@ -5,29 +5,93 @@
    <meta name="google-site-verification" content="aM0tyukv7n0P5r00p4UtvuOg1qZi1E9rBV2pfCSnzUI" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Nutrition & Allergy Recipe Engine</title>
-    <style>
-        :root { --primary: #2d6a4f; --accent: #52b788; --bg: #f8f9fa; --card: #ffffff; --text: #1b4332; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: #333; margin: 0; padding: 0; line-height: 1.6; }
-        header { background: var(--primary); color: white; padding: 2rem 1rem; text-align: center; }
-        header h1 { margin: 0; font-size: 2.2rem; }
-        header p { margin-top: 0.5rem; opacity: 0.9; }
-        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-        .card { background: var(--card); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h2 { color: var(--primary); margin-top: 0; border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; }
-        .form-group { margin-bottom: 1.2rem; }
-        label { display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--text); }
-        input, select { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
-        button { background: var(--primary); color: white; border: none; padding: 0.9rem 1.5rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%; transition: background 0.3s; }
-        button:hover { background: var(--text); }
-        .results { background: #e8f5e9; border-left: 5px solid var(--accent); padding: 1rem; margin-top: 1.5rem; border-radius: 4px; display: none; }
-        .affiliate-box { background: #fff3cd; border: 1px dashed #ffebaa; padding: 1rem; margin-top: 1rem; border-radius: 6px; }
-        .affiliate-btn { display: inline-block; background: #d97706; color: white; text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: bold; margin-top: 0.5rem; }
-        .status-badge { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 20px; color: white; font-weight: bold; margin-top: 0.5rem; }
-        .safe { background: #2e7d32; }
-        .caution { background: #f57c00; }
-        .toxic { background: #c62828; }
-        footer { text-align: center; padding: 2rem; font-size: 0.85rem; color: #666; background: #e9ecef; margin-top: 3rem; }
+        <style>
+        /* Base page styling with forced dark text colors */
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 20px; 
+            background: #f4f7f6; 
+            color: #222222; /* Dark grey for default text */
+        }
+        
+        .container { 
+            max-width: 800px; 
+            margin: auto; 
+            background: #ffffff; 
+            padding: 25px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+            color: #222222;
+        }
+
+        .card { 
+            background: #ffffff; 
+            padding: 20px; 
+            margin-bottom: 25px; 
+            border-radius: 8px; 
+            border: 1px solid #e0e0e0; 
+            color: #222222; /* Ensures text inside cards is dark */
+        }
+
+        /* Form Controls Visibility */
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+            color: #111111;
+        }
+
+        input, select { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 8px 0 16px 0; 
+            border: 1px solid #cccccc; 
+            border-radius: 6px; 
+            box-sizing: border-box; 
+            background-color: #ffffff; 
+            color: #111111; /* Dark text inside dropdowns and input fields */
+            font-size: 1rem;
+        }
+
+        /* Buttons */
+        button { 
+            background: #28a745; 
+            color: #ffffff; /* Crisp white text on green button */
+            border: none; 
+            padding: 12px 18px; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            width: 100%; 
+            font-size: 1.05rem; 
+            font-weight: bold;
+        }
+
+        button:hover { 
+            background: #218838; 
+        }
+
+        /* Results Box Text Fix */
+        .results { 
+            margin-top: 1.5rem; 
+            padding: 1.2rem; 
+            border-radius: 8px; 
+            background: #f8f9fa; 
+            border: 1px solid #dee2e6;
+            color: #111111; /* Forces all generated result text to dark */
+        }
+
+        .results h3, .results h4, .results p, .results li {
+            color: #111111 !important;
+        }
+
+        /* Headings */
+        h1, h2, h3, h4 {
+            color: #111111;
+        }
     </style>
+
 </head>
 <body>
 <header>
