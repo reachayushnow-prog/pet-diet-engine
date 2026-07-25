@@ -131,10 +131,6 @@
     <div id="calc-results" class="results" style="display:none; margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
         <!-- Results populate dynamically via JS -->
     </div>
-</div>
-
-    </div>
-
 
 </div>
     <!-- SECTION: SEO BLOG POST - HYPOALLERGENIC DOG DIETS -->
@@ -490,86 +486,141 @@
 
         <button type="submit" class="calc-btn">Calculate Daily Meal Plan</button>
     </form>
+<script>
+    // 1. Toggle breed options dynamically based on Dog vs Cat selection
+    function toggleBreedOptions() {
+        const petType = document.getElementById('pet-type').value;
+        const breedSelect = document.getElementById('pet-breed-size');
 
-    <div id="calc-results" style="display:none; margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
-        <!-- Results populate dynamically via JS -->
-    </div>
-</div>
-// Toggle breed options dynamically based on Dog vs Cat selection
-function toggleBreedOptions() {
-    const petType = document.getElementById('pet-type').value;
-    const breedSelect = document.getElementById('pet-breed-size');
-
-    if (petType === 'cat') {
-        breedSelect.innerHTML = `
-            <option value="cat-small">Small / Lean Breed (Siamese, Cornish Rex)</option>
-            <option value="cat-medium" selected>Medium Domestic (Domestic Short/Longhair)</option>
-            <option value="cat-large">Large / Heavy Breed (Maine Coon, Ragdoll, Norwegian Forest)</option>
-        `;
-    } else {
-        breedSelect.innerHTML = `
-            <option value="toy">Toy / Small Breed (Chihuahua, Yorkie, Frenchie)</option>
-            <option value="medium" selected>Medium Breed (Beagle, Cocker Spaniel, Bulldog)</option>
-            <option value="large">Large / Giant Breed (Labrador, German Shepherd, Great Dane)</option>
-            <option value="working">High-Energy / Working Breed (Border Collie, Husky)</option>
-        `;
-    }
-}
-
-// Main Calculation Function
-function calculateMeal() {
-    const petType = document.getElementById('pet-type').value;
-    const breedCategory = document.getElementById('pet-breed-size').value;
-    const weightLbs = parseFloat(document.getElementById('pet-weight').value);
-    const goal = document.getElementById('health-goal').value;
-
-    if (!weightLbs || weightLbs <= 0) return;
-
-    // Convert lbs to kg
-    const weightKg = weightLbs / 2.20462;
-
-    // Base Resting Energy Requirement (RER = 70 * weight_in_kg ^ 0.75)
-    const rer = 70 * Math.pow(weightKg, 0.75);
-
-    // Multiplier based on breed metabolic rate & health goal
-    let multiplier = 1.4; // default
-
-    if (petType === 'dog') {
-        if (breedCategory === 'toy') multiplier = 1.5;
-        else if (breedCategory === 'medium') multiplier = 1.4;
-        else if (breedCategory === 'large') multiplier = 1.2;
-        else if (breedCategory === 'working') multiplier = 1.8;
-    } else {
-        if (breedCategory === 'cat-small') multiplier = 1.3;
-        else if (breedCategory === 'cat-medium') multiplier = 1.2;
-        else if (breedCategory === 'cat-large') multiplier = 1.1;
+        if (petType === 'cat') {
+            breedSelect.innerHTML = `
+                <option value="cat-small">Small / Lean Breed (Siamese, Cornish Rex)</option>
+                <option value="cat-medium" selected>Medium Domestic (Domestic Short/Longhair)</option>
+                <option value="cat-large">Large / Heavy Breed (Maine Coon, Ragdoll, Norwegian Forest)</option>
+            `;
+        } else {
+            breedSelect.innerHTML = `
+                <option value="toy">Toy / Small Breed (Chihuahua, Yorkie, Frenchie)</option>
+                <option value="medium" selected>Medium Breed (Beagle, Cocker Spaniel, Bulldog)</option>
+                <option value="large">Large / Giant Breed (Labrador, German Shepherd, Great Dane)</option>
+                <option value="working">High-Energy / Working Breed (Border Collie, Husky)</option>
+            `;
+        }
     }
 
-    // Adjust for health goal
-    if (goal === 'weight-loss') multiplier *= 0.8;
-    if (goal === 'hypoallergenic') multiplier *= 0.95;
+    // 2. Main Meal Calculation Function
+    function calculateMeal() {
+        const petTypeElem = document.getElementById('pet-type');
+        const breedCategoryElem = document.getElementById('pet-breed-size');
+        const weightElem = document.getElementById('pet-weight');
+        const goalElem = document.getElementById('health-goal');
+        const resultsDiv = document.getElementById('calc-results');
 
-    const dailyCalories = Math.round(rer * multiplier);
+        if (!petTypeElem || !breedCategoryElem || !weightElem || !goalElem || !resultsDiv) return;
 
-    // Estimate daily food weight in grams (approx. 1.35 kcal/g for balanced fresh/wet meal)
-    const dailyFoodGrams = Math.round(dailyCalories / 1.35);
+        const petType = petTypeElem.value;
+        const breedCategory = breedCategoryElem.value;
+        const weightLbs = parseFloat(weightElem.value);
+        const goal = goalElem.value;
 
-    // Output Results HTML
-    const resultsDiv = document.getElementById('calc-results');
-    resultsDiv.style.display = 'block';
-    resultsDiv.innerHTML = `
-        <h3>📊 Daily Meal Recommendations</h3>
-        <p><strong>Target Calories:</strong> ~${dailyCalories} kcal / day</p>
-        <p><strong>Total Fresh Portion:</strong> ~${dailyFoodGrams} grams / day (split across 2 meals)</p>
-        
-        <h4>Suggested Macro Split (${goal.replace('-', ' ').toUpperCase()}):</h4>
-        <ul>
-            <li><strong>Lean Muscle Protein:</strong> ~${Math.round(dailyFoodGrams * 0.50)}g</li>
-            <li><strong>Safe Veggies & Soluble Fiber:</strong> ~${Math.round(dailyFoodGrams * 0.30)}g</li>
-            <li><strong>Essential Healthy Fats / Oils:</strong> ~${Math.round(dailyFoodGrams * 0.20)}g</li>
-        </ul>
-    `;
-}
+        if (isNaN(weightLbs) || weightLbs <= 0) {
+            alert("Please enter a valid weight in lbs.");
+            return;
+        }
+
+        // Convert lbs to kg
+        const weightKg = weightLbs / 2.20462;
+
+        // Base Resting Energy Requirement (RER = 70 * weight_in_kg ^ 0.75)
+        const rer = 70 * Math.pow(weightKg, 0.75);
+
+        // Multiplier based on breed metabolic rate
+        let multiplier = 1.4;
+
+        if (petType === 'dog') {
+            if (breedCategory === 'toy') multiplier = 1.5;
+            else if (breedCategory === 'medium') multiplier = 1.4;
+            else if (breedCategory === 'large') multiplier = 1.2;
+            else if (breedCategory === 'working') multiplier = 1.8;
+        } else {
+            if (breedCategory === 'cat-small') multiplier = 1.3;
+            else if (breedCategory === 'cat-medium') multiplier = 1.2;
+            else if (breedCategory === 'cat-large') multiplier = 1.1;
+        }
+
+        // Adjust for health goal
+        if (goal === 'weight-loss') multiplier *= 0.8;
+        if (goal === 'hypoallergenic') multiplier *= 0.95;
+
+        const dailyCalories = Math.round(rer * multiplier);
+        const dailyFoodGrams = Math.round(dailyCalories / 1.35);
+
+        // Render Results with Explicit Dark Text Color Styling
+        resultsDiv.style.display = 'block';
+        resultsDiv.style.color = '#111111';
+        resultsDiv.innerHTML = `
+            <h3 style="color:#111111; margin-top:0;">📊 Daily Meal Recommendations</h3>
+            <p style="color:#111111;"><strong>Target Calories:</strong> ~${dailyCalories} kcal / day</p>
+            <p style="color:#111111;"><strong>Total Fresh Portion:</strong> ~${dailyFoodGrams} grams / day (split across 2 meals)</p>
+            
+            <h4 style="color:#111111;">Suggested Macro Split (${goal.replace('-', ' ').toUpperCase()}):</h4>
+            <ul style="color:#111111;">
+                <li style="color:#111111;"><strong style="color:#111111;">Lean Muscle Protein:</strong> ~${Math.round(dailyFoodGrams * 0.50)}g</li>
+                <li style="color:#111111;"><strong style="color:#111111;">Safe Veggies & Soluble Fiber:</strong> ~${Math.round(dailyFoodGrams * 0.30)}g</li>
+                <li style="color:#111111;"><strong style="color:#111111;">Essential Healthy Fats / Oils:</strong> ~${Math.round(dailyFoodGrams * 0.20)}g</li>
+            </ul>
+        `;
+    }
+
+    // 3. Ingredient Safety Database & Search
+    const database = {
+        'blueberries': { status: 'safe', text: 'Safe & Healthy. Rich in antioxidants and vitamins for dogs and cats.' },
+        'chicken': { status: 'safe', text: 'Safe source of protein. Ensure it is cooked thoroughly with no added seasonings or bones.' },
+        'garlic': { status: 'toxic', text: 'Toxic! Belongs to the Allium family and can cause red blood cell damage.' },
+        'onion': { status: 'toxic', text: 'Toxic! Avoid entirely in raw or cooked forms.' },
+        'chocolate': { status: 'toxic', text: 'Toxic! Contains theobromine, which pets cannot digest.' },
+        'carrots': { status: 'safe', text: 'Safe. Great low-calorie crunchy treat rich in Vitamin A.' },
+        'grapes': { status: 'toxic', text: 'Toxic! Can cause acute kidney failure even in small amounts.' },
+        'pumpkin': { status: 'safe', text: 'Safe & Beneficial. Packed with soluble fiber to support digestion.' }
+    };
+
+    function checkIngredient() {
+        const inputElem = document.getElementById('ingredientInput') || document.getElementById('ingredient');
+        if (!inputElem) return;
+
+        const query = inputElem.value.toLowerCase().trim();
+        const resultsDiv = document.getElementById('ingredientResults');
+        const badge = document.getElementById('safetyBadge');
+        const descElem = document.getElementById('ingredientDesc');
+        const nameElem = document.getElementById('ingredientName');
+
+        if (!query || !resultsDiv) return;
+
+        if (nameElem) nameElem.innerText = query.toUpperCase();
+
+        if (database[query]) {
+            const data = database[query];
+            if (badge) {
+                badge.className = `status-badge ${data.status}`;
+                badge.innerText = data.status.toUpperCase();
+                badge.style.backgroundColor = data.status === 'safe' ? '#28a745' : '#dc3545';
+                badge.style.color = '#ffffff';
+            }
+            if (descElem) descElem.innerText = data.text;
+        } else {
+            if (badge) {
+                badge.className = 'status-badge caution';
+                badge.innerText = 'CAUTION / UNKNOWN';
+                badge.style.backgroundColor = '#6c757d';
+                badge.style.color = '#ffffff';
+            }
+            if (descElem) descElem.innerText = 'Ingredient not in instant database. Always verify with a vet before feeding unfamiliar human foods.';
+        }
+
+        resultsDiv.style.display = 'block';
+    }
+</script>
+
 
 </script>
 
