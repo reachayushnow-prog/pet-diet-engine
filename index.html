@@ -112,14 +112,22 @@
     <div id="calc-results" style="display:none; margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
         <!-- Results populate dynamically via JS -->
     </div>
-        </div>
-        <button onclick="checkIngredient()">Check Safety</button>
+        <div class="card" id="ingredient-checker">
+    <h2>🧪 Pet Ingredient Safety Checker</h2>
+    <p>Type any food or ingredient (e.g., <em>grapes, garlic, salmon, pumpkin</em>) to check if it's safe for your pet.</p>
 
-        <div id="ingredientResults" class="results">
-            <h3 id="ingredientName"></h3>
-            <div id="safetyBadge" class="status-badge"></div>
-            <p id="ingredientDesc"></p>
-        </div>
+    <!-- INPUT FIELD (Required for user entry) -->
+    <input type="text" id="ingredientInput" placeholder="Enter an ingredient (e.g., Chocolate, Grapes, Chicken)...">
+    <button onclick="checkIngredient()">Check Safety</button>
+
+    <!-- RESULTS DISPLAY -->
+    <div id="ingredientResults" class="results" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 8px; background: #f8f9fa;">
+        <h3 id="ingredientName" style="margin-top: 0;"></h3>
+        <div id="safetyBadge" class="status-badge" style="display: inline-block; padding: 4px 12px; border-radius: 12px; font-weight: bold; margin: 0.5rem 0;"></div>
+        <p id="ingredientDesc" style="margin-bottom: 0;"></p>
+    </div>
+</div>
+
     </div>
 
     <!-- WRITTEN SEO CONTENT SECTION -->
