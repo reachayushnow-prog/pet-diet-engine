@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Pet Diet Engine: Fresh Diets, Macro Targets & Hypoallergenic Plans</title>
+    <meta name="google-site-verification" content="tpq5vnIpBTAJl-9RXp4kCIL7voEBwWmtceOUH-HqK1s" />
+    <meta name="google-site-verification" content="gzbwu6dtGPjttHV-NMdbQvxXJuzGnl6QcCuhsc1-ysc" />
+    <meta name="description" content="A complete guide to fresh, homemade, and hypoallergenic pet diets. Calculate daily caloric targets, portions in grams, macro splits, and test ingredient safety.">
+
+    <!-- SEO Structured Data Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "HowTo",
+          "name": "How to Calculate Fresh Food Portions for Dogs and Cats",
+          "description": "Calculate daily caloric needs, portion weight in grams, and macronutrient targets for homemade or raw pet food.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Determine Resting Energy Requirement (RER)",
+              "text": "Calculate your pet's baseline metabolic rate using the formula: RER = 70 * (Weight in kg ^ 0.75)."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Apply the Activity Multiplier",
+              "text": "Multiply the baseline RER by an activity coefficient based on pet species, size, and health goals."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Convert Calories to Food Weight",
+              "text": "Divide daily caloric targets by food energy density (~1.35 kcal/g) to determine total daily food weight in grams."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Structure Macronutrients",
+              "text": "Divide the daily intake into 40-50% lean protein, 20-30% healthy fiber, and 15-20% healthy fats."
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Should I worry about calcium balance in a homemade pet diet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Muscle meat is naturally high in phosphorus and low in calcium. Always balance home-cooked recipes with a veterinary-approved calcium source such as crushed eggshells or calcium carbonate powder."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I mix fresh food with dry kibble?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! Replacing even 20% to 25% of your pet's daily kibble with fresh, whole foods provides noticeable health benefits for digestion, coat shine, and overall energy."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* Base Setup & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #0f172a;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #60a5fa;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 2.5rem 1.25rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: #0f172a;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #0f172a;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: #1e293b;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 1.025rem;
+        }
+
+        /* Callout Highlight Boxes */
+        .callout-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 1.25rem;
+            margin: 1.75rem 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.975rem;
+        }
+
+        /* Affiliate Card Styling */
+        .affiliate-card {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-left: 5px solid #2563eb;
+            padding: 1.25rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            font-size: 0.975rem;
+        }
+
+        .affiliate-card strong { color: #1e40af; }
+        .affiliate-card a { color: #2563eb; font-weight: 700; text-decoration: underline; }
+        .affiliate-card a:hover { color: #1d4ed8; }
+
+        /* Tables */
+        .data-table-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #cbd5e1;
+        }
+
+        th, td {
+            padding: 0.85rem 1rem;
+            text-align: left;
+            font-size: 0.925rem;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            font-weight: 700;
+            border-bottom: 2px solid #cbd5e1;
+        }
+
+        td { border-bottom: 1px solid #e2e8f0; }
+
+        /* Engine Cards & Controls */
+        .engine-card {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .engine-card h2 { margin-top: 0; border-bottom: none; padding-bottom: 0; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.375rem; color: #334155; }
+        .form-control { width: 100%; padding: 0.65rem; font-size: 0.95rem; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: #10b981;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .btn-submit:hover { background-color: #059669; }
+
+        .results-panel {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1rem 0; }
+        .metric-box { background: #fff; padding: 0.85rem; border-radius: 6px; border: 1px solid #cbd5e1; }
+        .metric-label { font-size: 0.75rem; color: #64748b; font-weight: 700; text-transform: uppercase; }
+        .metric-value { font-size: 1.25rem; font-weight: 700; color: #0f172a; }
+
+        /* Badges */
+        .status-badge { display: inline-block; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700; border-radius: 9999px; text-transform: uppercase; margin: 0.5rem 0; }
+        .badge-safe { background-color: #d1fae5; color: #065f46; }
+        .badge-toxic { background-color: #fee2e2; color: #991b1b; }
+        .badge-caution { background-color: #fef3c7; color: #92400e; }
+        .badge-unknown { background-color: #e2e8f0; color: #475569; }
+
+        /* Footer Styling */
+        .site-footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            padding: 3rem 1.25rem 2rem;
+            border-top: 4px solid #2563eb;
+            margin-top: 4rem;
+        }
+
+        .footer-container { max-width: 820px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem; }
+
+        @media (min-width: 640px) {
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .footer-brand { font-size: 1.15rem; font-weight: 800; color: #f8fafc; margin-bottom: 0.5rem; display: inline-block; }
+        .footer-heading { color: #f8fafc; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0; margin-bottom: 0.75rem; }
+        .footer-text { color: #94a3b8; margin: 0; }
+        .footer-text strong { color: #cbd5e1; }
+
+        .disclaimer-banner {
+            background-color: #1e293b;
+            border-left: 4px solid #f59e0b;
+            border-radius: 0 8px 8px 0;
+            padding: 1.25rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            color: #cbd5e1;
+        }
+
+        .disclaimer-icon { font-size: 1.2rem; flex-shrink: 0; }
+        .disclaimer-text { margin: 0; font-size: 0.8rem; line-height: 1.5; }
+        .disclaimer-text strong { color: #f8fafc; }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            color: #64748b;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        @media (min-width: 640px) {
+            .footer-bottom { flex-direction: row; text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">🐾 Pet Diet Engine</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="articles.html" class="active">Guides</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- ARTICLE 1 HEADER -->
+    <article>
+        <h1>The Ultimate Guide to Homemade & Fresh Pet Diets: Daily Portions, Macro Ratios, and Ingredient Safety</h1>
+        <p>Transitioning your dog or cat from commercial dry kibble to fresh, home-cooked, or raw meals is one of the most impactful choices you can make for their long-term health.</p>
+        <p>However, moving away from pre-packaged kibble means taking full responsibility for your pet's nutritional balance. Feeding fresh food isn't just about giving your pet leftover chicken and rice.</p>
+
+        <!-- TOOL 1: PORTION CALCULATOR -->
+        <div id="meal-calculator" class="engine-card">
+            <h2>🐶🐱 Pet Daily Meal & Macro Calculator</h2>
+            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.25rem;">Enter your pet's weight and activity profile to calculate daily calorie targets, fresh portion weight, and macronutrients.</p>
+
+            <div class="form-group">
+                <label for="pet-type">Pet Type</label>
+                <select id="pet-type" class="form-control" onchange="updateBreedCategories()">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="breed-category">Breed / Metabolic Size Category</label>
+                <select id="breed-category" class="form-control">
+                    <option value="toy">Toy / Small Breed (e.g., Chihuahua, Yorkie)</option>
+                    <option value="medium" selected>Medium Breed (e.g., Beagle, Bulldog)</option>
+                    <option value="large">Large / Giant Breed (e.g., Labrador, German Shepherd)</option>
+                    <option value="working">High-Energy / Working Breed (e.g., Husky)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pet-weight">Pet Weight (in lbs)</label>
+                <input type="number" id="pet-weight" class="form-control" placeholder="e.g., 25" min="1" step="0.1">
+            </div>
+
+            <div class="form-group">
+                <label for="health-goal">Dietary Objective</label>
+                <select id="health-goal" class="form-control">
+                    <option value="maintenance">Weight Maintenance</option>
+                    <option value="weight-loss">Weight Management (Loss)</option>
+                    <option value="hypoallergenic">Hypoallergenic / Sensitive Gut</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn-submit" onclick="calculatePetMeal()">Calculate Daily Portion</button>
+
+            <div id="calculator-results" class="results-panel">
+                <h3 style="margin-top:0;">📊 Custom Daily Meal Target</h3>
+                <div class="metric-grid">
+                    <div class="metric-box">
+                        <div class="metric-label">Target Energy</div>
+                        <div class="metric-value" id="val-calories">0 kcal</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Fresh Food Weight</div>
+                        <div class="metric-value" id="val-grams">0 grams</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">Recommended Daily Macronutrient Split:</p>
+                <ul>
+                    <li><strong>Lean Muscle Protein:</strong> ~<span id="val-protein">0</span>g</li>
+                    <li><strong>Safe Fiber & Carbs:</strong> ~<span id="val-fiber">0</span>g</li>
+                    <li><strong>Healthy Fats / Oils:</strong> ~<span id="val-fats">0</span>g</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 1 -->
+        <h2>1. Why Fresh Food Matters: Kibble vs. Whole-Food Diets</h2>
+        <p>For decades, ultra-processed kibble has been the standard for pet nutrition due to its convenience and long shelf life.</p>
+
+        <h3>The Proven Benefits of Whole-Food Diets</h3>
+        <ul>
+            <li><strong>Enhanced Digestive Health:</strong> Fresh diets produce smaller, firmer, and less odorous stools.</li>
+            <li><strong>Vibrant Skin and Coat:</strong> Whole proteins and natural essential fatty acids reduce itching and shedding.</li>
+            <li><strong>Weight Management:</strong> Sustained energy without sudden blood sugar spikes.</li>
+            <li><strong>Better Hydration:</strong> Fresh foods contain natural moisture, supporting kidney function.</li>
+        </ul>
+
+        <!-- TOOL 2: INGREDIENT CHECKER -->
+        <div id="safety-checker" class="engine-card">
+            <h2>🧪 Instant Ingredient Safety Checker</h2>
+            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.25rem;">Quickly check if kitchen ingredients are safe before adding them to your pet's meal.</p>
+
+            <div class="form-group">
+                <label for="ingredient-input">Ingredient Name</label>
+                <input type="text" id="ingredient-input" class="form-control" placeholder="Search ingredient (e.g., Grapes, Chicken, Garlic)...">
+            </div>
+
+            <button type="button" class="btn-submit" style="background-color: #2563eb;" onclick="searchIngredientSafety()">Check Safety Status</button>
+
+            <div id="safety-results" class="results-panel">
+                <h3 id="res-ingredient-name" style="text-transform: uppercase; margin-top: 0;">INGREDIENT</h3>
+                <span id="res-status-badge" class="status-badge">STATUS</span>
+                <p id="res-description" style="margin-top: 0.5rem; margin-bottom: 0; font-size: 0.9rem; color: #334155;"></p>
+            </div>
+        </div>
+    </article>
+
+    <hr style="margin: 4rem 0; border: none; border-top: 2px dashed #cbd5e1;">
+
+    <!-- ARTICLE 2: HYPOALLERGENIC DIET BLUEPRINT -->
+    <article>
+        <h1>The Hypoallergenic Pet Diet Blueprint: Elimination Trials, Novel Proteins & Sensitive Gut Solutions</h1>
+        <p>Is your dog constantly licking their paws, scratching their ears, or suffering from unexplained digestive flare-ups? Unlike environmental allergies, true food sensitivities can be isolated through targeted nutrition.</p>
+
+        <!-- TOOL 3: ALLERGEN MATCHER -->
+        <div id="allergen-matcher" class="engine-card">
+            <h2>🔬 Interactive Symptom & Novel Protein Finder</h2>
+            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.25rem;">Select your pet's primary symptoms and current protein to receive a recommended elimination plan.</p>
+
+            <div class="form-group">
+                <label for="primary-symptom">Primary Concern / Symptom</label>
+                <select id="primary-symptom" class="form-control">
+                    <option value="itching">Chronic Itching, Red Paw Licking & Ear Infections</option>
+                    <option value="digestive">Loose Stools, Gas, or Vomiting</option>
+                    <option value="both">Both Skin & Digestive Strain</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="current-protein">Main Current Protein Feed</label>
+                <select id="current-protein" class="form-control">
+                    <option value="chicken">Chicken / Poultry</option>
+                    <option value="beef">Beef</option>
+                    <option value="lamb">Lamb</option>
+                    <option value="grain">Grain-Heavy / Mixed Meats</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn-submit" style="background-color: #2563eb;" onclick="findHypoallergenicPlan()">Match Recommended Plan</button>
+
+            <div id="allergen-results" class="results-panel">
+                <h3 style="margin-top:0;" id="rec-title">Recommended Strategy</h3>
+                <p id="rec-description" style="font-size: 0.95rem; color: #334155;"></p>
+                <div style="background: #ffffff; padding: 1rem; border-radius: 6px; border: 1px solid #cbd5e1; margin-top: 1rem;">
+                    <strong>Suggested Novel Protein Alternatives:</strong>
+                    <p id="rec-proteins" style="margin-top: 0.25rem; margin-bottom: 0; font-weight: 700; color: #2563eb;"></p>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+<!-- PROFESSIONAL FOOTER SECTION -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div>
+                <span class="footer-brand">🐾 Pet Diet Engine</span>
+                <p class="footer-text">
+                    Empowering pet owners with scientific portion calculations, balanced macronutrients, and trusted ingredient safety analysis for healthier, happier pets.
+                </p>
+            </div>
+            <div>
+                <h3 class="footer-heading">Transparency</h3>
+                <p class="footer-text">
+                    <strong>Affiliate Disclosure:</strong> Some links on Pet Diet Engine contain affiliate links. We may earn a small commission at no extra cost to you if you purchase through them.
+                </p>
+            </div>
+        </div>
+
+        <aside class="disclaimer-banner" aria-label="Veterinary Medical Disclaimer">
+            <span class="disclaimer-icon" aria-hidden="true">⚠️</span>
+            <p class="disclaimer-text">
+                <strong>Veterinary Disclaimer:</strong> The information, tools, and portion calculations provided on Pet Diet Engine are for educational purposes only and do not constitute veterinary medical advice. Always consult with your veterinarian before making significant dietary changes.
+            </p>
+        </aside>
+
+        <div class="footer-bottom">
+            <div>© 2026 <strong>Pet Diet Engine</strong>. All Rights Reserved.</div>
+            <div>Built with ❤️ for pet lovers worldwide.</div>
+        </div>
+    </div>
+</footer>
+
+<!-- JAVASCRIPT ENGINE LOGIC -->
+<script>
+    function updateBreedCategories() {
+        const petType = document.getElementById('pet-type').value;
+        const categorySelect = document.getElementById('breed-category');
+
+        if (petType === 'cat') {
+            categorySelect.innerHTML = `
+                <option value="cat-small">Small / Lean Breed (e.g., Siamese)</option>
+                <option value="cat-medium" selected>Medium Domestic (Domestic Short/Longhair)</option>
+                <option value="cat-large">Large / Heavy Breed (e.g., Maine Coon)</option>
+            `;
+        } else {
+            categorySelect.innerHTML = `
+                <option value="toy">Toy / Small Breed (e.g., Chihuahua, Yorkie)</option>
+                <option value="medium" selected>Medium Breed (e.g., Beagle, Bulldog)</option>
+                <option value="large">Large / Giant Breed (e.g., Labrador, German Shepherd)</option>
+                <option value="working">High-Energy / Working Breed (e.g., Husky)</option>
+            `;
+        }
+    }
+
+    function calculatePetMeal() {
+        const petType = document.getElementById('pet-type').value;
+        const breedCat = document.getElementById('breed-category').value;
+        const weightLbs = parseFloat(document.getElementById('pet-weight').value);
+        const goal = document.getElementById('health-goal').value;
+
+        if (isNaN(weightLbs) || weightLbs <= 0) {
+            alert('Please enter a valid weight in pounds.');
+            return;
+        }
+
+        const weightKg = weightLbs / 2.20462;
+        const rer = 70 * Math.pow(weightKg, 0.75);
+
+        let multiplier = 1.4;
+        if (petType === 'dog') {
+            if (breedCat === 'toy') multiplier = 1.5;
+            else if (breedCat === 'medium') multiplier = 1.4;
+            else if (breedCat === 'large') multiplier = 1.2;
+            else if (breedCat === 'working') multiplier = 1.8;
+        } else {
+            if (breedCat === 'cat-small') multiplier = 1.3;
+            else if (breedCat === 'cat-medium') multiplier = 1.2;
+            else if (breedCat === 'cat-large') multiplier = 1.1;
+        }
+
+        if (goal === 'weight-loss') multiplier *= 0.8;
+        if (goal === 'hypoallergenic') multiplier *= 0.95;
+
+        const dailyCalories = Math.round(rer * multiplier);
+        const dailyFoodGrams = Math.round(dailyCalories / 1.35);
+
+        document.getElementById('val-calories').textContent = `${dailyCalories} kcal`;
+        document.getElementById('val-grams').textContent = `${dailyFoodGrams} g`;
+        document.getElementById('val-protein').textContent = Math.round(dailyFoodGrams * 0.50);
+        document.getElementById('val-fiber').textContent = Math.round(dailyFoodGrams * 0.30);
+        document.getElementById('val-fats').textContent = Math.round(dailyFoodGrams * 0.20);
+
+        document.getElementById('calculator-results').style.display = 'block';
+    }
+
+    const ingredientDatabase = {
+        'blueberries': { status: 'SAFE', class: 'badge-safe', text: 'Safe and healthy. High in antioxidants, fiber, and vitamins.' },
+        'chicken': { status: 'SAFE', class: 'badge-safe', text: 'Excellent lean protein source. Serve cooked thoroughly without bones.' },
+        'pumpkin': { status: 'SAFE', class: 'badge-safe', text: 'Safe and highly beneficial. Rich in soluble fiber to aid digestion.' },
+        'carrots': { status: 'SAFE', class: 'badge-safe', text: 'Safe crunchy treat. Low calorie and rich in Vitamin A.' },
+        'salmon': { status: 'SAFE', class: 'badge-safe', text: 'Safe when cooked. Rich in Omega-3 fatty acids for skin & coat health.' },
+        'garlic': { status: 'TOXIC', class: 'badge-toxic', text: 'Toxic! Destroys red blood cells, leading to severe anemia.' },
+        'onion': { status: 'TOXIC', class: 'badge-toxic', text: 'Highly toxic! Causes oxidative damage to red blood cells.' },
+        'grapes': { status: 'TOXIC', class: 'badge-toxic', text: 'Severe toxicity! Can trigger sudden acute kidney failure.' },
+        'chocolate': { status: 'TOXIC', class: 'badge-toxic', text: 'Toxic! Contains theobromine which pets cannot metabolize.' },
+        'xylitol': { status: 'TOXIC', class: 'badge-toxic', text: 'DANGEROUS! Triggers massive insulin release and rapid liver failure.' },
+        'avocado': { status: 'CAUTION', class: 'badge-caution', text: 'Use Caution. Contains persin; pits present choking hazards.' },
+        'dairy': { status: 'CAUTION', class: 'badge-caution', text: 'Use Caution. Most adult pets are lactose intolerant.' }
+    };
+
+    function searchIngredientSafety() {
+        const queryInput = document.getElementById('ingredient-input').value.toLowerCase().trim();
+        if (!queryInput) return;
+
+        const nameHeader = document.getElementById('res-ingredient-name');
+        const badgeSpan = document.getElementById('res-status-badge');
+        const descParagraph = document.getElementById('res-description');
+
+        nameHeader.textContent = queryInput;
+        const matchKey = Object.keys(ingredientDatabase).find(key => queryInput.includes(key) || key.includes(queryInput));
+
+        if (matchKey) {
+            const data = ingredientDatabase[matchKey];
+            badgeSpan.textContent = data.status;
+            badgeSpan.className = `status-badge ${data.class}`;
+            descParagraph.textContent = data.text;
+        } else {
+            badgeSpan.textContent = 'CAUTION / UNKNOWN';
+            badgeSpan.className = 'status-badge badge-unknown';
+            descParagraph.textContent = 'Ingredient not found in database. Consult a vet before feeding.';
+        }
+
+        document.getElementById('safety-results').style.display = 'block';
+    }
+
+    function findHypoallergenicPlan() {
+        const symptom = document.getElementById('primary-symptom').value;
+        const protein = document.getElementById('current-protein').value;
+
+        const titleElem = document.getElementById('rec-title');
+        const descElem = document.getElementById('rec-description');
+        const proteinsElem = document.getElementById('rec-proteins');
+
+        let planTitle = "Novel Protein Elimination Trial";
+        let planDesc = "Because your pet is experiencing adverse reactions, transitioning to a strict single-source novel protein diet free from high-risk ingredients is recommended.";
+        let recommendedProteins = "Venison, Rabbit, or Wild Kangaroo";
+
+        if (protein === 'chicken') {
+            recommendedProteins = "Venison, Duck, or Freeze-Dried Rabbit";
+        } else if (protein === 'beef') {
+            recommendedProteins = "Pure Lamb, Wild Kangaroo, or Bison";
+        } else if (protein === 'grain') {
+            planDesc += " Consider switching to a limited-ingredient, grain-free recipe that focuses on clean animal fats.";
+            recommendedProteins = "Rabbit, Duck, or Hydrolyzed Soy/Feather Meal";
+        }
+
+        if (symptom === 'digestive' || symptom === 'both') {
+            planDesc += " Pair this food transition with digestive enzymes and soluble pumpkin fiber to soothe inflamed gut mucosal linings.";
+        }
+
+        titleElem.textContent = planTitle;
+        descElem.textContent = planDesc;
+        proteinsElem.textContent = recommendedProteins;
+
+        document.getElementById('allergen-results').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
