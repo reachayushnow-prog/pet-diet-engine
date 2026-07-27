@@ -3,1165 +3,407 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Ultimate Guide to Homemade & Fresh Pet Diets: Portions, Macros & Safety</title>
+    <title>Pet Diet Engine - Fresh, Homemade & Hypoallergenic Pet Nutrition</title>
     <meta name="google-site-verification" content="tpq5vnIpBTAJl-9RXp4kCIL7voEBwWmtceOUH-HqK1s" />
-    <meta name="description" content="A complete guide to fresh, homemade, and raw pet diets. Calculate daily calorie targets, portion weights in grams, macro splits, and check human ingredient safety.">
- <!-- Structured Data: SEO Schema Markup (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "HowTo",
-          "name": "How to Calculate Fresh Food Portions for Dogs and Cats",
-          "description": "Calculate daily caloric needs, portion weight in grams, and macronutrient targets for homemade or raw pet food.",
-          "step": [
-            {
-              "@type": "HowToStep",
-              "name": "Determine Resting Energy Requirement (RER)",
-              "text": "Calculate your pet's baseline metabolic rate using the formula: RER = 70 * (Weight in kg ^ 0.75)."
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Apply the Activity Multiplier",
-              "text": "Multiply the baseline RER by an activity coefficient based on pet species, size, and health goals."
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Convert Calories to Food Weight",
-              "text": "Divide daily caloric targets by food energy density (~1.35 kcal/g) to determine total daily food weight in grams."
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Structure Macronutrients",
-              "text": "Divide the daily intake into 40-50% lean protein, 20-30% healthy fiber, and 15-20% healthy fats."
-            }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Should I worry about calcium balance in a homemade pet diet?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. Muscle meat is naturally high in phosphorus and low in calcium. Always balance home-cooked recipes with a veterinary-approved calcium source such as crushed eggshells or bone meal powder."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can I mix fresh food with dry kibble?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes! Replacing even 20% to 25% of your pet's daily kibble with fresh, whole foods provides noticeable health benefits for digestion, coat shine, and overall energy."
-              }
-            }
-          ]
-        }
-      ]
-    }
-    </script>
+    <meta name="google-site-verification" content="gzbwu6dtGPjttHV-NMdbQvxXJuzGnl6QcCuhsc1-ysc" />
+    <meta name="description" content="Empower your pet with fresh, science-backed nutrition. Calculate daily portions, macros, and ingredient safety. Hypoallergenic diet plans for dogs and cats.">
 
     <style>
         /* Base Setup & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: #f8fafc;
             color: #1e293b;
             line-height: 1.7;
-            margin: 0;
-            padding: 0;
         }
 
-        .container {
-            max-width: 820px;
+        /* Navigation */
+        nav {
+            background-color: #0f172a;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2.5rem 1.25rem;
-        }
-
-        h1 {
-            font-size: 2.25rem;
-            color: #0f172a;
-            line-height: 1.25;
-            margin-bottom: 1rem;
-            font-weight: 800;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            color: #0f172a;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            color: #1e293b;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        p {
-            margin-bottom: 1.25rem;
-            font-size: 1.05rem;
-        }
-
-        ul, ol {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-            font-size: 1.025rem;
-        }
-
-        /* Highlight Boxes */
-        .callout-box {
-            background-color: #f1f5f9;
-            border-left: 4px solid #0284c7;
-            padding: 1.25rem;
-            margin: 1.75rem 0;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.975rem;
-        }
-
-        /* Affiliate Link Card Styling */
-        .affiliate-card {
-            background-color: #eff6ff;
-            border: 1px solid #bfdbfe;
-            border-left: 5px solid #2563eb;
-            padding: 1.25rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            font-size: 0.975rem;
-        }
-
-        .affiliate-card strong {
-            color: #1e40af;
-        }
-
-        .affiliate-card a {
-            color: #2563eb;
-            font-weight: 700;
-            text-decoration: underline;
-        }
-
-        .affiliate-card a:hover {
-            color: #1d4ed8;
-        }
-
-        /* Table Styling */
-        .data-table-wrapper {
-            overflow-x: auto;
-            margin: 1.5rem 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #cbd5e1;
-        }
-
-        th, td {
-            padding: 0.85rem 1rem;
-            text-align: left;
-            font-size: 0.925rem;
-        }
-
-        th {
-            background-color: #f1f5f9;
-            color: #0f172a;
-            font-weight: 700;
-            border-bottom: 2px solid #cbd5e1;
-        }
-
-        td {
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        /* Interactive Engine Card */
-        .engine-card {
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-radius: 12px;
-            padding: 1.75rem;
-            margin: 2.5rem 0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .engine-card h2 {
-            margin-top: 0;
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .form-group { margin-bottom: 1.25rem; }
-        .form-group label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.375rem; color: #334155; }
-        .form-control { width: 100%; padding: 0.65rem; font-size: 0.95rem; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; }
-        .btn-submit { width: 100%; padding: 0.75rem; font-size: 1rem; font-weight: 600; color: #fff; background-color: #10b981; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.2s ease; }
-        .btn-submit:hover { background-color: #059669; }
-
-        /* Output Panel */
-        .results-panel { display: none; margin-top: 1.5rem; padding: 1.25rem; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; }
-        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1rem 0; }
-        .metric-box { background: #fff; padding: 0.85rem; border-radius: 6px; border: 1px solid #cbd5e1; }
-        .metric-label { font-size: 0.75rem; color: #64748b; font-weight: 700; text-transform: uppercase; }
-        .metric-value { font-size: 1.25rem; font-weight: 700; color: #0f172a; }
-
-        /* Status Badges */
-        .status-badge { display: inline-block; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700; border-radius: 9999px; text-transform: uppercase; margin: 0.5rem 0; }
-        .badge-safe { background-color: #d1fae5; color: #065f46; }
-        .badge-toxic { background-color: #fee2e2; color: #991b1b; }
-        .badge-caution { background-color: #fef3c7; color: #92400e; }
-        .badge-unknown { background-color: #e2e8f0; color: #475569; }
-    </style>
-
-    <meta name="google-site-verification" content="gzbwu6dtGPjttHV-NMdbQvxXJuzGnl6QcCuhsc1-ysc" />
-</head>
-<body>
-
-<div class="container">
-
-    <!-- ARTICLE HEADER -->
-    <h1>The Ultimate Guide to Homemade & Fresh Pet Diets: Daily Portions, Macro Ratios, and Ingredient Safety</h1>
-    <p>Transitioning your dog or cat from commercial dry kibble to fresh, home-cooked, or raw meals is one of the most impactful choices you can make for their long-term health. Pet parents across the world are discovering that real, whole-food diets lead to shinier coats, cleaner teeth, higher energy levels, and dramatically improved digestive health.</p>
-    <p>However, moving away from pre-packaged kibble means taking full responsibility for your pet's nutritional balance. Feeding fresh food isn't just about giving your pet leftover chicken and rice—it requires getting the portion sizes right, understanding macronutrient ratios, and ensuring every single ingredient added to their bowl is 100% safe.</p>
-
-    <!-- INTERACTIVE CALCULATOR (TOOL 1) -->
-    <div id="meal-calculator" class="engine-card">
-        <h2>🐶🐱 Pet Daily Meal & Macro Calculator</h2>
-        <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.25rem;">Enter your pet's weight and activity profile to calculate daily calorie targets, fresh portion weight, and macronutrients.</p>
-
-        <div class="form-group">
-            <label for="pet-type">Pet Type</label>
-            <select id="pet-type" class="form-control" onchange="updateBreedCategories()">
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="breed-category">Breed / Metabolic Size Category</label>
-            <select id="breed-category" class="form-control">
-                <option value="toy">Toy / Small Breed (e.g., Chihuahua, Yorkie)</option>
-                <option value="medium" selected>Medium Breed (e.g., Beagle, Bulldog)</option>
-                <option value="large">Large / Giant Breed (e.g., Labrador, German Shepherd)</option>
-                <option value="working">High-Energy / Working Breed (e.g., Husky)</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="pet-weight">Pet Weight (in lbs)</label>
-            <input type="number" id="pet-weight" class="form-control" placeholder="e.g., 25" min="1" step="0.1">
-        </div>
-
-        <div class="form-group">
-            <label for="health-goal">Dietary Objective</label>
-            <select id="health-goal" class="form-control">
-                <option value="maintenance">Weight Maintenance</option>
-                <option value="weight-loss">Weight Management (Loss)</option>
-                <option value="hypoallergenic">Hypoallergenic / Sensitive Gut</option>
-            </select>
-        </div>
-
-        <button type="button" class="btn-submit" onclick="calculatePetMeal()">Calculate Daily Portion</button>
-
-        <div id="calculator-results" class="results-panel">
-            <h3 style="margin-top:0;">📊 Custom Daily Meal Target</h3>
-            <div class="metric-grid">
-                <div class="metric-box">
-                    <div class="metric-label">Target Energy</div>
-                    <div class="metric-value" id="val-calories">0 kcal</div>
-                </div>
-                <div class="metric-box">
-                    <div class="metric-label">Fresh Food Weight</div>
-                    <div class="metric-value" id="val-grams">0 grams</div>
-                </div>
-            </div>
-            <p style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">Recommended Daily Macronutrient Split:</p>
-            <ul>
-                <li><strong>Lean Muscle Protein:</strong> ~<span id="val-protein">0</span>g</li>
-                <li><strong>Safe Fiber & Carbs:</strong> ~<span id="val-fiber">0</span>g</li>
-                <li><strong>Healthy Fats / Oils:</strong> ~<span id="val-fats">0</span>g</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- SECTION 1 -->
-    <h2>1. Why Fresh Food Matters: Kibble vs. Whole-Food Diets</h2>
-    <p>For decades, ultra-processed kibble has been the standard for pet nutrition due to its convenience and long shelf life. However, the high-heat manufacturing process (extrusion) used to produce dry kibble often degrades essential natural vitamins, forcing manufacturers to add synthetic nutrient packs back into the mix.</p>
-    <p>Furthermore, kibble frequently relies on high-glycemic starch fillers—like corn, wheat, and soy—to hold its shape. These dense carbohydrates can contribute to chronic inflammation, canine obesity, and digestive strain over time.</p>
-
-    <h3>The Proven Benefits of Whole-Food Diets</h3>
-    <ul>
-        <li><strong>Enhanced Digestive Health:</strong> Fresh diets produce smaller, firmer, and less odorous stools because the body absorbs actual nutrients rather than passing bulky grain fillers.</li>
-        <li><strong>Vibrant Skin and Coat:</strong> Whole proteins and natural essential fatty acids reduce itching, dander, and seasonal shedding.</li>
-        <li><strong>Weight Management:</strong> High protein and moderate fat provide sustained energy without causing glucose spikes.</li>
-        <li><strong>Better Hydration:</strong> Fresh foods contain up to 70–80% natural moisture, supporting kidney and urinary tract health.</li>
-    </ul>
-
-    <!-- SECTION 2 -->
-    <h2>2. Calculating Daily Portions: The Science of Pet Metabolism</h2>
-    <p>The most common mistake pet owners make when switching to fresh food is underfeeding or overfeeding. To calculate your pet's exact daily food intake, veterinary nutritionists rely on two primary metrics: <strong>Resting Energy Requirement (RER)</strong> and <strong>Maintenance Energy Requirement (MER)</strong>.</p>
-
-    <div class="callout-box">
-        <strong>Universal Metabolic Formula:</strong><br>
-        <code>RER (kcal/day) = 70 × (Body Weight in kg)^0.75</code>
-    </div>
-
-    <div class="data-table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Pet Category & Lifestyle</th>
-                    <th>Activity Multiplier Factor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Toy / Small Dogs (&lt; 15 lbs)</td>
-                    <td>1.5× RER (Higher metabolic rate)</td>
-                </tr>
-                <tr>
-                    <td>Medium Adult Dogs (Maintenance)</td>
-                    <td>1.4× RER</td>
-                </tr>
-                <tr>
-                    <td>Large / Giant Breed Dogs</td>
-                    <td>1.2× RER</td>
-                </tr>
-                <tr>
-                    <td>High-Energy / Working Dogs</td>
-                    <td>1.8× – 2.0× RER</td>
-                </tr>
-                <tr>
-                    <td>Weight Loss Plan (Dogs & Cats)</td>
-                    <td>0.8× RER (Safe caloric deficit)</td>
-                </tr>
-                <tr>
-                    <td>Adult Domestic Cats</td>
-                    <td>1.2× – 1.3× RER</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- SECTION 3 -->
-    <h2>3. Optimal Macronutrient Ratios for Fresh Diets</h2>
-    <p>Creating a balanced bowl involves balancing protein, fat, fiber, and essential fatty acids:</p>
-
-    <ul>
-        <li><strong>Lean Muscle Protein (40% – 50%):</strong> Skinless chicken breast, turkey, beef, lamb, and cooked salmon.</li>
-        <li><strong>Dietary Fiber & Veggies (20% – 30%):</strong> Pureed plain pumpkin, steamed carrots, zucchini, and blueberries.</li>
-        <li><strong>Essential Fatty Acids (15% – 20%):</strong> Wild Alaskan salmon oil, hemp seed oil, and flaxseed oil.</li>
-    </ul>
-
-    <!-- AFFILIATE BLOCK 1 -->
-    <div class="affiliate-card">
-        🛒 <strong>Recommended Nutrition Essential:</strong><br>
-        Adding a high-quality Omega-3 supplement is critical for fresh diets to prevent dry skin and support joint mobility. We recommend using <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow">Wild Alaskan Salmon Oil for Dogs & Cats</a> to give your pet pristine EPA and DHA fatty acids every single day.
-    </div>
-
-    <!-- SECTION 4: INGREDIENT SAFETY CHECKER (TOOL 2) -->
-    <div id="safety-checker" class="engine-card">
-        <h2>🧪 Instant Ingredient Safety Checker</h2>
-        <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.25rem;">Quickly check if kitchen ingredients are safe before adding them to your pet's meal.</p>
-
-        <div class="form-group">
-            <label for="ingredient-input">Ingredient Name</label>
-            <input type="text" id="ingredient-input" class="form-control" placeholder="Search ingredient (e.g., Grapes, Chicken, Garlic)...">
-        </div>
-
-        <button type="button" class="btn-submit" style="background-color: #2563eb;" onclick="searchIngredientSafety()">Check Safety Status</button>
-
-        <div id="safety-results" class="results-panel">
-            <h3 id="res-ingredient-name" style="text-transform: uppercase; margin-top: 0;">INGREDIENT</h3>
-            <span id="res-status-badge" class="status-badge">STATUS</span>
-            <p id="res-description" style="margin-top: 0.5rem; margin-bottom: 0; font-size: 0.9rem; color: #334155;"></p>
-        </div>
-    </div>
-
-    <h2>4. Severe Household Toxins to Avoid</h2>
-    <ul>
-        <li><strong>Garlic & Onions:</strong> Cause severe oxidative damage to red blood cells, leading to hemolytic anemia.</li>
-        <li><strong>Grapes & Raisins:</strong> Trigger sudden, irreversible acute kidney failure in dogs.</li>
-        <li><strong>Xylitol (Birch Sugar):</strong> Found in sugar-free products; causes rapid, life-threatening liver failure.</li>
-        <li><strong>Chocolate & Caffeine:</strong> Contain toxic theobromine which damages cardiac and nervous systems.</li>
-    </ul>
-
-    <!-- AFFILIATE BLOCK 2 -->
-    <div class="affiliate-card">
-        🛒 <strong>Recommended Meal Prep Gear:</strong><br>
-        Accurate portioning prevents unintended weight gain. We use and recommend this <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow">Digital Stainless Steel Kitchen Scale</a> for effortless gram-level precision during weekly batch prep.
-    </div>
-
-    <!-- SECTION 5 -->
-    <h2>5. Practical Meal Prep & Storage Workflow</h2>
-    <ol>
-        <li><strong>Batch Cook Proteins & Veggies:</strong> Bake or boil meats without salt or spices. Steam veggies to break down plant walls for better digestion.</li>
-        <li><strong>Weigh Portions in Grams:</strong> Use a digital scale rather than measuring cups for exact calories.</li>
-        <li><strong>Store in Glass Containers:</strong> Store 3 days of food in the fridge, and freeze the rest in single-serve portions for up to 3 months.</li>
-    </ol>
-
-    <!-- AFFILIATE BLOCK 3 -->
-    <div class="affiliate-card">
-        🛒 <strong>Recommended Storage Containers:</strong><br>
-        Keep your fresh pet food leak-free and safe with <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow">Stackable BPA-Free Glass Meal Prep Containers</a>.
-    </div>
-
-    <!-- FAQ SECTION -->
-    <h2>Frequently Asked Questions (FAQ)</h2>
-    <h3>Should I worry about calcium balance in a homemade diet?</h3>
-    <p>Yes! Muscle meat is high in phosphorus and low in calcium. Always balance fresh recipes with a veterinary-approved calcium source such as crushed eggshells or bone meal powder.</p>
-
-    <h3>Can I mix fresh food with dry kibble?</h3>
-    <p>A short answer is yes. Replacing even 20% to 25% of your pet's daily kibble with fresh, whole foods provides noticeable health benefits.</p>
-
-    <!-- AFFILIATE BLOCK 4 -->
-    <div class="affiliate-card">
-        🛡️ <strong>Protect Your Pet's Future:</strong><br>
-        Even with a great diet, sudden health events happen. Compare plans and get a free instant quote today with <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow">Top-Rated Pet Insurance Provider</a>.
-    </div>
-
-</div>
-
-<!-- JAVASCRIPT LOGIC -->
-<script>
-    function updateBreedCategories() {
-        const petType = document.getElementById('pet-type').value;
-        const categorySelect = document.getElementById('breed-category');
-
-        if (petType === 'cat') {
-            categorySelect.innerHTML = `
-                <option value="cat-small">Small / Lean Breed (e.g., Siamese)</option>
-                <option value="cat-medium" selected>Medium Domestic (Domestic Short/Longhair)</option>
-                <option value="cat-large">Large / Heavy Breed (e.g., Maine Coon)</option>
-            `;
-        } else {
-            categorySelect.innerHTML = `
-                <option value="toy">Toy / Small Breed (e.g., Chihuahua, Yorkie)</option>
-               /* Interactive Engine Card */
-        .engine-card {
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-radius: 12px;
-            padding: 1.75rem;
-            margin: 2.5rem 0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-    </style> <!-- 1. Close style tag -->
-</head>     <!-- 2. Close head tag -->
-<body>      <!-- 3. Open body tag -->
-    function calculatePetMeal() {
-        const petType = document.getElementById('pet-type').value;
-        const breedCat = document.getElementById('breed-category').value;
-        const weightLbs = parseFloat(document.getElementById('pet-weight').value);
-        const goal = document.getElementById('health-goal').value;
-
-        if (isNaN(weightLbs) || weightLbs <= 0) {
-            alert('Please enter a valid weight in pounds.');
-            return;
-        }
-
-        const weightKg = weightLbs / 2.20462;
-        const rer = 70 * Math.pow(weightKg, 0.75);
-
-        let multiplier = 1.4;
-        if (petType === 'dog') {
-            if (breedCat === 'toy') multiplier = 1.5;
-            else if (breedCat === 'medium') multiplier = 1.4;
-            else if (breedCat === 'large') multiplier = 1.2;
-            else if (breedCat === 'working') multiplier = 1.8;
-        } else {
-            if (breedCat === 'cat-small') multiplier = 1.3;
-            else if (breedCat === 'cat-medium') multiplier = 1.2;
-            else if (breedCat === 'cat-large') multiplier = 1.1;
-        }
-
-        if (goal === 'weight-loss') multiplier *= 0.8;
-        if (goal === 'hypoallergenic') multiplier *= 0.95;
-
-        const dailyCalories = Math.round(rer * multiplier);
-        const dailyFoodGrams = Math.round(dailyCalories / 1.35);
-
-        document.getElementById('val-calories').textContent = `${dailyCalories} kcal`;
-        document.getElementById('val-grams').textContent = `${dailyFoodGrams} g`;
-        document.getElementById('val-protein').textContent = Math.round(dailyFoodGrams * 0.50);
-        document.getElementById('val-fiber').textContent = Math.round(dailyFoodGrams * 0.30);
-        document.getElementById('val-fats').textContent = Math.round(dailyFoodGrams * 0.20);
-
-        document.getElementById('calculator-results').style.display = 'block';
-    }
-
-    const ingredientDatabase = {
-        'blueberries': { status: 'SAFE', class: 'badge-safe', text: 'Safe and healthy. High in antioxidants, fiber, and vitamins.' },
-        'chicken': { status: 'SAFE', class: 'badge-safe', text: 'Excellent lean protein source. Serve cooked thoroughly without bones.' },
-        'pumpkin': { status: 'SAFE', class: 'badge-safe', text: 'Safe and highly beneficial. Rich in soluble fiber to aid digestion.' },
-        'carrots': { status: 'SAFE', class: 'badge-safe', text: 'Safe crunchy treat. Low calorie and rich in Vitamin A.' },
-        'salmon': { status: 'SAFE', class: 'badge-safe', text: 'Safe when cooked. Rich in Omega-3 fatty acids for skin & coat health.' },
-        'garlic': { status: 'TOXIC', class: 'badge-toxic', text: 'Toxic! Destroys red blood cells, leading to severe anemia.' },
-        'onion': { status: 'TOXIC', class: 'badge-toxic', text: 'Highly toxic! Causes oxidative damage to red blood cells.' },
-        'grapes': { status: 'TOXIC', class: 'badge-toxic', text: 'Severe toxicity! Can trigger sudden acute kidney failure.' },
-        'chocolate': { status: 'TOXIC', class: 'badge-toxic', text: 'Toxic! Contains theobromine which pets cannot metabolize.' },
-        'xylitol': { status: 'TOXIC', class: 'badge-toxic', text: 'DANGEROUS! Triggers massive insulin release and rapid liver failure.' },
-        'avocado': { status: 'CAUTION', class: 'badge-caution', text: 'Use Caution. Contains persin; pits present choking hazards.' },
-        'dairy': { status: 'CAUTION', class: 'badge-caution', text: 'Use Caution. Most adult pets are lactose intolerant.' }
-    };
-
-    function searchIngredientSafety() {
-        const queryInput = document.getElementById('ingredient-input').value.toLowerCase().trim();
-        if (!queryInput) return;
-
-        const nameHeader = document.getElementById('res-ingredient-name');
-        const badgeSpan = document.getElementById('res-status-badge');
-        const descParagraph = document.getElementById('res-description');
-
-        nameHeader.textContent = queryInput;
-        const matchKey = Object.keys(ingredientDatabase).find(key => queryInput.includes(key) || key.includes(queryInput));
-
-        if (matchKey) {
-            const data = ingredientDatabase[matchKey];
-            badgeSpan.textContent = data.status;
-            badgeSpan.className = `status-badge ${data.class}`;
-            descParagraph.textContent = data.text;
-        } else {
-            badgeSpan.textContent = 'CAUTION / UNKNOWN';
-            badgeSpan.className = 'status-badge badge-unknown';
-            descParagraph.textContent = 'Ingredient not found in database. Consult a vet before feeding.';
-        }
-
-        document.getElementById('safety-results').style.display = 'block';
-    }
-</script>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Hypoallergenic Pet Diet Blueprint: Elimination Trials, Novel Proteins & Sensitive Gut Solutions</title>
-    <meta name="description" content="A complete guide to diagnosing and treating pet food allergies. Learn how to conduct a 12-week elimination trial, choose novel proteins, and soothe sensitive stomachs naturally.">
-
-    <!-- Structured Data: SEO Schema Markup (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "HowTo",
-          "name": "How to Conduct a 12-Week Pet Food Elimination Trial",
-          "description": "Step-by-step guide to isolating and identifying food allergens in dogs and cats using novel or hydrolyzed protein diets.",
-          "step": [
-            {
-              "@type": "HowToStep",
-              "name": "Eliminate All Current Food & Treats",
-              "text": "Stop feeding all current kibble, treats, flavored medications, table scraps, and chew toys containing animal protein."
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Select a Single Novel Protein Source",
-              "text": "Choose a protein your pet has never consumed before, such as Venison, Rabbit, Kangaroo, or Duck, or use a prescription hydrolyzed diet."
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Maintain Strict Compliance for 8 to 12 Weeks",
-              "text": "Feed exclusively the chosen novel protein diet without any outside flavorings, treats, or scraps for a minimum of 8 to 12 weeks."
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Perform the Reintroduction Challenge",
-              "text": "Reintroduce a single suspected ingredient (e.g., chicken) for 14 days and observe for itching, digestive distress, or flare-ups."
-            }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What are the most common food allergens in dogs and cats?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "The most common pet food allergens are beef, dairy, chicken, wheat, lamb, soy, and chicken eggs. Grains are far less common allergens than animal proteins."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How long does it take for food allergy skin symptoms to clear up?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Digestive issues often clear up in 1 to 2 weeks, but skin inflammation, itching, and ear infections can take 8 to 12 weeks to completely resolve on an elimination diet."
-              }
-            }
-          ]
-        }
-      ]
-    }
-    </script>
-
-    <style>
-        /* Base Styling */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 820px;
-            margin: 0 auto;
-            padding: 2.5rem 1.25rem;
-        }
-
-        h1 {
-            font-size: 2.25rem;
-            color: #0f172a;
-            line-height: 1.25;
-            margin-bottom: 1rem;
-            font-weight: 800;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            color: #0f172a;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            color: #1e293b;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        p {
-            margin-bottom: 1.25rem;
-            font-size: 1.05rem;
-        }
-
-        ul, ol {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-            font-size: 1.025rem;
-        }
-
-        /* Callout Highlight Boxes */
-        .callout-box {
-            background-color: #f0fdf4;
-            border-left: 4px solid #16a34a;
-            padding: 1.25rem;
-            margin: 1.75rem 0;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.975rem;
-        }
-
-        /* Affiliate Card Styling */
-        .affiliate-card {
-            background-color: #eff6ff;
-            border: 1px solid #bfdbfe;
-            border-left: 5px solid #2563eb;
-            padding: 1.25rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            font-size: 0.975rem;
-        }
-
-        .affiliate-card strong {
-            color: #1e40af;
-        }
-
-        .affiliate-card a {
-            color: #2563eb;
-            font-weight: 700;
-            text-decoration: underline;
-        }
-
-        .affiliate-card a:hover {
-            color: #1d4ed8;
-        }
-
-        /* Data Tables */
-        .data-table-wrapper {
-            overflow-x: auto;
-            margin: 1.5rem 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #cbd5e1;
-        }
-
-        th, td {
-            padding: 0.85rem 1rem;
-            text-align: left;
-            font-size: 0.925rem;
-        }
-
-        th {
-            background-color: #f1f5f9;
-            color: #0f172a;
-            font-weight: 700;
-            border-bottom: 2px solid #cbd5e1;
-        }
-
-        td {
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        /* Interactive Engine Card */
-        .engine-card {
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-radius: 12px;
-            padding: 1.75rem;
-            margin: 2.5rem 0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .engine-card h2 {
-            margin-top: 0;
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .form-group { margin-bottom: 1.25rem; }
-        .form-group label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.375rem; color: #334155; }
-        .form-control { width: 100%; padding: 0.65rem; font-size: 0.95rem; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; }
-        .btn-submit { width: 100%; padding: 0.75rem; font-size: 1rem; font-weight: 600; color: #fff; background-color: #2563eb; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.2s ease; }
-        .btn-submit:hover { background-color: #1d4ed8; }
-
-        /* Output Panel */
-        .results-panel { display: none; margin-top: 1.5rem; padding: 1.25rem; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; }
-    </style>
-</head>
-<body>
-
-<div class="container">
-
-    <!-- HEADER -->
-    <h1>The Hypoallergenic Pet Diet Blueprint: Elimination Trials, Novel Proteins & Sensitive Gut Solutions</h1>
-    <p>Is your dog constantly licking their paws, scratching their ears, or suffering from unexplained digestive flare-ups? You aren't alone. Millions of pet owners mistake food adverse reactions for environmental seasonal allergies.</p>
-    <p>Unlike environmental allergies, true food sensitivities can be controlled—and often completely cured—through targeted nutrition. In this comprehensive guide, we unpack the science behind food allergies, demystify novel proteins vs. hydrolyzed diets, and outline a step-by-step protocol to restore your pet's skin and gut health.</p>
-
-    <!-- INTERACTIVE TOOL: ALLERGEN MATCHER -->
-    <div id="allergen-matcher" class="engine-card">
-        <h2>🔬 Interactive Symptom & Novel Protein Finder</h2>
-        <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.25rem;">Select your pet's primary symptoms and current protein to receive a recommended allergy elimination plan.</p>
-
-        <div class="form-group">
-            <label for="primary-symptom">Primary Concern / Symptom</label>
-            <select id="primary-symptom" class="form-control">
-                <option value="itching">Chronic Itching, Red Paw Licking & Ear Infections</option>
-                <option value="digestive">Loose Stools, Gas, or Vomiting</option>
-                <option value="both">Both Skin & Digestive Strain</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="current-protein">Main Current Protein Feed</label>
-            <select id="current-protein" class="form-control">
-                <option value="chicken">Chicken / Poultry</option>
-                <option value="beef">Beef</option>
-                <option value="lamb">Lamb</option>
-                <option value="grain">Grain-Heavy / Mixed Meats</option>
-            </select>
-        </div>
-
-        <button type="button" class="btn-submit" onclick="findHypoallergenicPlan()">Match Recommended Plan</button>
-
-        <div id="allergen-results" class="results-panel">
-            <h3 style="margin-top:0;" id="rec-title">Recommended Strategy</h3>
-            <p id="rec-description" style="font-size: 0.95rem; color: #334155;"></p>
-            <div style="background: #ffffff; padding: 1rem; border-radius: 6px; border: 1px solid #cbd5e1; margin-top: 1rem;">
-                <strong>Suggested Novel Protein Alternatives:</strong>
-                <p id="rec-proteins" style="margin-top: 0.25rem; margin-bottom: 0; font-weight: 700; color: #2563eb;"></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- SECTION 1 -->
-    <h2>1. Food Allergy vs. Food Intolerance: Understanding the Difference</h2>
-    <p>Before changing your pet’s daily bowl, it is vital to differentiate between an <em>immune-mediated allergy</em> and a <em>metabolic intolerance</em>:</p>
-    <ul>
-        <li><strong>Food Allergy (Immune Response):</strong> Occurs when the pet's immune system mistakenly identifies a protein molecule as a foreign invader. It mounts an IgE response, releasing histamines that cause severe itching, skin rashes, and recurring ear infections.</li>
-        <li><strong>Food Intolerance (Digestive Issue):</strong> Does not involve the immune system. It happens when a pet lacks specific enzymes to digest certain ingredients (e.g., lactose intolerance) or reacts poorly to heavy starch additives, resulting in acute gas, bloating, or diarrhea.</li>
-    </ul>
-
-    <div class="data-table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Top Culinary Allergens</th>
-                    <th>Allergy Frequency Rate in Dogs/Cats</th>
-                    <th>Common Signs</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Beef & Dairy Products</td>
-                    <td>~34% of documented dietary allergies</td>
-                    <td>Hot spots, flaky coat, watery eyes</td>
-                </tr>
-                <tr>
-                    <td>Chicken & Turkey</td>
-                    <td>~15% of documented dietary allergies</td>
-                    <td>Obsessive paw chewing, ear redness</td>
-                </tr>
-                <tr>
-                    <td>Wheat, Corn, & Soy</td>
-                    <td>~10% of documented dietary allergies</td>
-                    <td>Soft stools, bloating, poor coat density</td>
-                </tr>
-                <tr>
-                    <td>Chicken Eggs</td>
-                    <td>~6% of documented dietary allergies</td>
-                    <td>Mild skin irritations, stomach rumble</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- AFFILIATE BLOCK 1 -->
-    <div class="affiliate-card">
-        🛒 <strong>Recommended Allergy Support:</strong><br>
-        While executing an elimination diet, soothing irritated skin internally is key. We recommend <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow">Hypoallergenic Probiotic & Digestive Enzymes Supplement</a> to restore normal gut flora and calm histamine reactions.
-    </div>
-
-    <!-- SECTION 2 -->
-    <h2>2. The Gold Standard: The 12-Week Food Elimination Trial</h2>
-    <p>Blood tests and hair analysis for pet food allergies are notoriously inaccurate. The only scientifically validated diagnostic protocol recognized by veterinary dermatologists worldwide is the <strong>Strict 12-Week Elimination Diet Trial</strong>.</p>
-
-    <div class="callout-box">
-        <strong>The Golden Rule of Elimination Trials:</strong> Zero outside proteins! Even a single piece of flavored bacon medicine, a cheese slice, or a beef-flavored chew toy will reset the 12-week clock back to Day 1.
-    </div>
-
-    <h3>Step-by-Step Protocol</h3>
-    <ol>
-        <li><strong>Choose an Uncontaminated Protein:</strong> Select either a <em>Novel Protein</em> (a protein source your pet has never eaten in their entire life) or a <em>Prescription Hydrolyzed Diet</em>.</li>
-        <li><strong>Strip Away Supplements & Flavors:</strong> Switch unflavored medications or consult your vet before continuing heartworm or flea chewables with meat bases.</li>
-        <li><strong>Track Weekly Symptoms:</strong> Use a journal to rank itching and stool firmness on a scale of 1 to 10 every 7 days.</li>
-        <li><strong>The Reintroduction Challenge:</strong> After 8–12 weeks of clear skin and calm digestion, reintroduce one single suspect ingredient (e.g., cooked chicken breast) alongside the elimination diet for 14 days. If symptoms flare up, you have officially confirmed the allergen!</li>
-    </ol>
-
-    <!-- SECTION 3 -->
-    <h2>3. Novel Proteins vs. Hydrolyzed Diets: Which Is Better?</h2>
-    <p>When selecting a hypoallergenic diet, you have two main options:</p>
-
-    <h3>Option A: Novel Protein Diets</h3>
-    <p>Novel proteins are whole, exotic meat sources that your pet's immune system has never encountered, meaning it has not had the chance to produce antibodies against them. Excellent novel protein choices include:</p>
-    <ul>
-        <li><strong>Venison (Deer) & Bison:</strong> Naturally lean and rich in essential iron.</li>
-        <li><strong>Rabbit:</strong> Highly digestible and extremely low in saturated fats.</li>
-        <li><strong>Wild Kangaroo or Duck:</strong> Ideal for severe multi-protein sensitivity cases.</li>
-    </ul>
-
-    <h3>Option B: Hydrolyzed Protein Diets</h3>
-    <p>Hydrolyzed diets take common proteins (like chicken or soy) and break them down through enzymatic hydrolysis into microscopic amino acid chains so tiny that the pet's immune system cannot recognize or attack them.</p>
-
-    <!-- AFFILIATE BLOCK 2 -->
-    <div class="affiliate-card">
-        🛒 <strong>Recommended Hypoallergenic Single-Ingredient Treats:</strong><br>
-        Training during an elimination diet can be hard. Use pure, single-ingredient options like <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow">100% Freeze-Dried Venison / Rabbit Dog Treats</a> to keep training on track safely.
-    </div>
-
-    <!-- FAQ SECTION -->
-    <h2>Frequently Asked Questions (FAQ)</h2>
-    <h3>What are the most common food allergens in dogs and cats?</h3>
-    <p>The most common pet food allergens are animal proteins: beef, dairy, chicken, wheat, lamb, soy, and chicken eggs. Contrary to popular belief, grains are far less likely to cause true immune allergies than chicken or beef.</p>
-
-    <h3>How long does it take for food allergy skin symptoms to clear up?</h3>
-    <p>Digestive symptoms (gas, diarrhea) usually improve within 1 to 2 weeks. However, skin inflammation, ear discharge, and paw itching often take 8 to 12 full weeks to heal completely as skin cells regenerate.</p>
-
-    <!-- AFFILIATE BLOCK 3 -->
-    <div class="affiliate-card">
-        🛡️ <strong>Cover Medical Diagnostic Expenses:</strong><br>
-        Allergy testing and veterinary dermatologist visits can be costly. Secure peace of mind and offset diagnostic bills with a free instant quote from <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow">Top-Rated Pet Insurance Provider</a>.
-    </div>
-
-</div>
-
-<!-- JAVASCRIPT LOGIC -->
-<script>
-    function findHypoallergenicPlan() {
-        const symptom = document.getElementById('primary-symptom').value;
-        const protein = document.getElementById('current-protein').value;
-
-        const titleElem = document.getElementById('rec-title');
-        const descElem = document.getElementById('rec-description');
-        const proteinsElem = document.getElementById('rec-proteins');
-
-        let planTitle = "Novel Protein Elimination Trial";
-        let planDesc = "Because your pet is experiencing adverse reactions on their current diet, transitioning to a strict single-source novel protein diet free from high-risk ingredients is recommended.";
-        let recommendedProteins = "Venison, Rabbit, or Wild Kangaroo";
-
-        if (protein === 'chicken') {
-            recommendedProteins = "Venison, Duck, or Freeze-Dried Rabbit";
-        } else if (protein === 'beef') {
-            recommendedProteins = "Pure Lamb, Wild Kangaroo, or Bison";
-        } else if (protein === 'grain') {
-            planDesc += " Consider switching to a limited-ingredient, grain-free recipe that focuses on clean animal fats rather than complex grain complexes.";
-            recommendedProteins = "Rabbit, Duck, or Hydrolyzed Soy/Feather Meal";
-        }
-
-        if (symptom === 'digestive' || symptom === 'both') {
-            planDesc += " Pair this food transition with digestive enzymes and soluble pumpkin fiber to soothe inflamed gut mucosal linings during the first 14 days.";
-        }
-
-        titleElem.textContent = planTitle;
-        descElem.textContent = planDesc;
-        proteinsElem.textContent = recommendedProteins;
-
-        document.getElementById('allergen-results').style.display = 'block';
-    }
-    <!-- PROFESSIONAL FOOTER SECTION -->
-    <footer style="background-color: #0f172a; color: #94a3b8; padding: 4rem 1.25rem 2rem 1.25rem; border-top: 4px solid #2563eb; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin-top: 4rem;">
-        <div style="max-width: 820px; margin: 0 auto;">
-            
-            <!-- Grid Layout -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
-                
-                <!-- Column 1: Brand & Bio -->
-                <div>
-                    <h3 style="color: #ffffff; font-size: 1.15rem; font-weight: 700; margin-top: 0; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                        🐾 Pet Diet Engine
-                    </h3>
-                    <p style="font-size: 0.875rem; line-height: 1.6; color: #94a3b8; margin-bottom: 1rem;">
-                        Empowering pet parents with science-backed macro calculations, allergen tracking, and whole-food meal prep solutions.
-                    </p>
-                </div>
-
-                <!-- Column 2: Quick Links & Tools -->
-                <div>
-                    <h4 style="color: #f8fafc; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0; margin-bottom: 1rem;">
-                        Interactive Engines
-                    </h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.875rem; line-height: 2;">
-                        <li><a href="#meal-calculator" style="color: #cbd5e1; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#cbd5e1'">🐶 Pet Macro & Portion Calculator</a></li>
-                        <li><a href="#safety-checker" style="color: #cbd5e1; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#cbd5e1'">🧪 Ingredient Safety Checker</a></li>
-                        <li><a href="#allergen-matcher" style="color: #cbd5e1; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#cbd5e1'">🔬 Novel Protein & Allergy Finder</a></li>
-                    </ul>
-                </div>
-
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Diet Engine - Footer</title>
-
-    <style>
-        /* Base Setup */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            margin: 0;
-            padding: 0;
             display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Demo Container - pushes footer to bottom */
-        .main-content {
-            flex: 1;
-            padding: 2.5rem 1.25rem;
-            max-width: 820px;
+        .nav-brand {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #60a5fa;
+        }
+
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 2.5rem 1.25rem;
         }
 
-        /* FOOTER STYLES */
-        .site-footer {
-            background-color: #0f172a; /* Dark Navy Background */
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 1.25rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: #10b981;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #059669;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.35rem;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: #64748b;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Tools Preview */
+        .tools-section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background-color: #f1f5f9;
+            border-radius: 12px;
+            border-left: 5px solid #2563eb;
+        }
+
+        .tools-section h2 {
+            color: #0f172a;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+
+        .tool-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .tool-list li {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            text-align: center;
+        }
+
+        .tool-list li a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .tool-list li a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #0f172a;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.75rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
             color: #94a3b8;
-            font-size: 0.85rem;
-            line-height: 1.6;
             padding: 3rem 1.25rem 2rem;
-            border-top: 1px solid #1e293b;
+            border-top: 4px solid #2563eb;
+            margin-top: 4rem;
         }
 
         .footer-container {
-            max-width: 820px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Top Grid Section */
         .footer-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
         }
 
-        @media (min-width: 640px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .footer-brand {
-            font-size: 1.15rem;
-            font-weight: 800;
+        .footer-section h3 {
             color: #f8fafc;
-            margin-bottom: 0.5rem;
-            display: inline-block;
-        }
-
-        .footer-heading {
-            color: #f8fafc;
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-top: 0;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
 
-        .footer-text {
+        .footer-section p {
+            font-size: 0.875rem;
             color: #94a3b8;
             margin: 0;
+            line-height: 1.6;
         }
 
-        .footer-text strong {
-            color: #cbd5e1;
+        .footer-section a {
+            color: #60a5fa;
+            text-decoration: none;
         }
 
-        /* YMYL Veterinary Disclaimer Banner */
-        .disclaimer-banner {
-            background-color: #1e293b;
-            border-left: 4px solid #f59e0b; /* Amber Accent */
-            border-radius: 0 8px 8px 0;
-            padding: 1.25rem;
-            margin-bottom: 2.5rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.85rem;
-            color: #cbd5e1;
+        .footer-section a:hover {
+            text-decoration: underline;
         }
 
-        .disclaimer-icon {
-            font-size: 1.2rem;
-            line-height: 1;
-            flex-shrink: 0;
-        }
-
-        .disclaimer-text {
-            margin: 0;
-            font-size: 0.8rem;
-            line-height: 1.5;
-        }
-
-        .disclaimer-text strong {
-            color: #f8fafc;
-        }
-
-        /* Bottom Copyright Bar */
         .footer-bottom {
             border-top: 1px solid #1e293b;
             padding-top: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            color: #64748b;
-            font-size: 0.8rem;
             text-align: center;
+            font-size: 0.8rem;
+            color: #64748b;
         }
 
-        @media (min-width: 640px) {
-            .footer-bottom {
-                flex-direction: row;
-                text-align: left;
+        .disclaimer-banner {
+            background-color: #1e293b;
+            border-left: 4px solid #f59e0b;
+            border-radius: 0 8px 8px 0;
+            padding: 1.25rem;
+            margin: 2rem 0;
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .disclaimer-banner strong {
+            color: #f8fafc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
             }
-        }
 
-        .footer-bottom strong {
-            color: #94a3b8;
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Main Content Area Placeholder -->
-    <main class="main-content">
-        <h1>Pet Diet Engine</h1>
-        <p>Your main guide and calculator content goes above here...</p>
-    </main>
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">🐾 Pet Diet Engine</a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="articles.html">Guides</a></li>
+        </ul>
+    </div>
+</nav>
 
-    <!-- PET DIET ENGINE FOOTER -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            
-            <!-- Top Footer Content -->
-            <div class="footer-grid">
-                
-                <!-- Brand Info -->
-                <div>
-                    <span class="footer-brand">🐾 Pet Diet Engine</span>
-                    <p class="footer-text">
-                        Empowering pet owners with scientific portion calculations, balanced macronutrients, and trusted ingredient safety analysis for healthier, happier pets.
-                    </p>
-                </div>
+<!-- Hero Section -->
+<div class="hero">
+    <div class="container">
+        <h1>Science-Backed Pet Nutrition Made Simple</h1>
+        <p>Transition your dog or cat to fresh, whole-food diets with daily portion calculators, macro optimization, and ingredient safety analysis.</p>
+        <a href="articles.html" class="cta-button">Explore Full Guides →</a>
+    </div>
+</div>
 
-                <!-- Transparency & Affiliate Disclosure -->
-                <div>
-                    <h3 class="footer-heading">Transparency</h3>
-                    <p class="footer-text">
-                        <strong>Affiliate Disclosure:</strong> Some links on Pet Diet Engine contain affiliate links. We may earn a small commission at no extra cost to you if you purchase through them.
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- Veterinary Medical Disclaimer Banner -->
-            <aside class="disclaimer-banner" aria-label="Veterinary Medical Disclaimer">
-                <span class="disclaimer-icon" aria-hidden="true">⚠️</span>
-                <p class="disclaimer-text">
-                    <strong>Veterinary Disclaimer:</strong> The information, tools, and portion calculations provided on Pet Diet Engine are for educational and informational purposes only and do not constitute veterinary medical advice. Always consult a licensed veterinarian or qualified veterinary nutritionist before making significant changes to your pet's diet.
-                </p>
-            </aside>
-
-            <!-- Bottom Copyright Bar -->
-            <div class="footer-bottom">
-                <div>
-                    © 2026 <strong class="font-semibold text-slate-400">Pet Diet Engine</strong>. All Rights Reserved.
-                </div>
-                <div>
-                    Built with ❤️ for pet lovers worldwide.
-                </div>
-            </div>
-
+<!-- Main Content -->
+<div class="container">
+    <!-- Core Features -->
+    <h2>Why Choose Pet Diet Engine?</h2>
+    <div class="features">
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Precise Calculations</h3>
+            <p>Scientifically-backed formulas for daily calorie targets, portion weights, and macronutrient splits customized to your pet's size, activity level, and health goals.</p>
         </div>
-    </footer>
+        <div class="feature-card">
+            <div class="feature-icon">🧪</div>
+            <h3>Ingredient Safety</h3>
+            <p>Instant ingredient checker to verify what's safe before adding to your pet's meal. Know what to avoid—toxic ingredients, allergens, and hidden risks.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔬</div>
+            <h3>Allergy Solutions</h3>
+            <p>Comprehensive hypoallergenic diet plans, elimination trial protocols, and novel protein recommendations for pets with sensitivities.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🐕‍🦺</div>
+            <h3>Dog & Cat Tailored</h3>
+            <p>Separate nutritional protocols for dogs and cats with breed-specific activity multipliers and metabolic adjustments.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💪</div>
+            <h3>Macro Optimization</h3>
+            <p>Balanced 40-50% protein, 20-30% fiber, and 15-20% healthy fats for vibrant skin, coat, digestion, and sustained energy.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>Expert Guides</h3>
+            <p>Deep-dive educational content on fresh vs. kibble, calcium balance, meal prep workflows, and evidence-based nutrition science.</p>
+        </div>
+    </div>
+
+    <!-- Interactive Tools Section -->
+    <div class="tools-section">
+        <h2 style="margin-top: 0; border: none; padding: 0;">Interactive Tools Inside</h2>
+        <p>Visit our comprehensive guides to access:</p>
+        <ul class="tool-list">
+            <li>
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🐶🐱</span>
+                <a href="articles.html#meal-calculator">Pet Meal Calculator</a>
+            </li>
+            <li>
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🧪</span>
+                <a href="articles.html#safety-checker">Ingredient Safety Checker</a>
+            </li>
+            <li>
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🔬</span>
+                <a href="articles.html#allergen-matcher">Allergy Finder</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer-banner">
+        <strong>⚠️ Important Disclaimer:</strong> The information, tools, and calculations provided on Pet Diet Engine are for educational purposes only and do not constitute veterinary medical advice. Always consult with your veterinarian before making significant dietary changes. Pet Diet Engine is not a substitute for professional veterinary consultation.
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>About Pet Diet Engine</h3>
+                <p>Empowering pet owners with science-backed portion calculations, balanced macronutrients, and trusted ingredient safety analysis for healthier, happier pets.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="articles.html">Full Guides</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Transparency</h3>
+                <p><strong>Affiliate Disclosure:</strong> Some links on Pet Diet Engine contain affiliate partnerships. We may earn a small commission at no extra cost to you if you purchase through them.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 <strong>Pet Diet Engine</strong>. All Rights Reserved. | Built with ❤️ for pet lovers worldwide.
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
