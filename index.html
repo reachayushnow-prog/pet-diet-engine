@@ -16,6 +16,11 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* Offset for sticky nav bar */
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: #f8fafc;
@@ -53,8 +58,9 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
@@ -62,6 +68,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover,
@@ -75,47 +82,71 @@
             padding: 2.5rem 1.25rem;
         }
 
-        /* Hero Section */
+        /* Split Hero Section */
         .hero {
-            text-align: center;
-            padding: 4rem 1.25rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: #fff;
-            border-radius: 12px;
+            border-radius: 16px;
             margin-bottom: 3rem;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
-        .hero h1 {
-            font-size: 2.75rem;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             line-height: 1.2;
+            color: #f8fafc;
         }
 
-        .hero p {
-            font-size: 1.2rem;
+        .hero-text p {
+            font-size: 1.1rem;
             margin-bottom: 2rem;
-            opacity: 0.95;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            color: #94a3b8;
+            max-width: 580px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 1rem 2.5rem;
+            padding: 0.9rem 2rem;
             background-color: #10b981;
             color: #fff;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 700;
-            font-size: 1.05rem;
-            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
         }
 
         .cta-button:hover {
             background-color: #059669;
+            transform: translateY(-2px);
         }
 
         /* Features Grid */
@@ -130,14 +161,14 @@
             background: #fff;
             padding: 2rem;
             border-radius: 12px;
-            border: 1px solid #cbd5e1;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .feature-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.08);
         }
 
         .feature-icon {
@@ -157,46 +188,68 @@
             font-size: 0.95rem;
         }
 
-        /* Tools Preview */
+        /* Pop Tool Cards Styling */
         .tools-section {
             margin: 4rem 0;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             background-color: #f1f5f9;
-            border-radius: 12px;
-            border-left: 5px solid #2563eb;
+            border-radius: 16px;
+            border-left: 6px solid #2563eb;
         }
 
         .tools-section h2 {
             color: #0f172a;
             margin-top: 0;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             font-size: 1.75rem;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .tools-section p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
         }
 
         .tool-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
             list-style: none;
         }
 
-        .tool-list li {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #cbd5e1;
+        .tool-card {
+            background: #ffffff;
+            padding: 1.75rem 1.25rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            border-top: 4px solid #2563eb;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
 
-        .tool-list li a {
-            color: #2563eb;
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(37, 99, 235, 0.15);
+            border-color: #2563eb;
+        }
+
+        .tool-card a {
+            color: #1e293b;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             display: block;
             font-size: 1.1rem;
         }
 
-        .tool-list li a:hover {
+        .tool-card a span.tool-title {
+            color: #2563eb;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .tool-card a:hover span.tool-title {
             text-decoration: underline;
         }
 
@@ -279,17 +332,37 @@
         }
 
         /* Responsive */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-image {
+                height: 220px;
+            }
+        }
+
         @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
             .nav-links {
                 gap: 1rem;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
-            .hero h1 {
-                font-size: 1.75rem;
+            .hero {
+                padding: 2rem 1.5rem;
             }
 
-            .hero p {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text p {
                 font-size: 1rem;
             }
         }
@@ -303,22 +376,30 @@
         <a href="index.html" class="nav-brand">🐾 Pet Diet Engine</a>
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="articles.html#meal-calculator">Meal Calculator</a></li>
+            <li><a href="articles.html#safety-checker">Safety Checker</a></li>
             <li><a href="articles.html">Guides</a></li>
         </ul>
     </div>
 </nav>
 
-<!-- Hero Section -->
-<div class="hero">
-    <div class="container">
-        <h1>Science-Backed Pet Nutrition Made Simple</h1>
-        <p>Transition your dog or cat to fresh, whole-food diets with daily portion calculators, macro optimization, and ingredient safety analysis.</p>
-        <a href="articles.html" class="cta-button">Explore Full Guides →</a>
-    </div>
-</div>
-
-<!-- Main Content -->
+<!-- Main Content Wrapper -->
 <div class="container">
+    <!-- Split Hero Section -->
+    <div class="hero">
+        <div class="hero-grid">
+            <div class="hero-text">
+                <h1>Science-Backed Pet Nutrition Made Simple</h1>
+                <p>Transition your dog or cat to fresh, whole-food diets with daily portion calculators, macro optimization, and instant ingredient safety checks.</p>
+                <a href="articles.html" class="cta-button">Explore Full Guides & Tools →</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80" alt="Happy dog enjoying healthy fresh food" />
+            </div>
+        </div>
+    </div>
+
     <!-- Core Features -->
     <h2>Why Choose Pet Diet Engine?</h2>
     <div class="features">
@@ -355,21 +436,27 @@
     </div>
 
     <!-- Interactive Tools Section -->
-    <div class="tools-section">
-        <h2 style="margin-top: 0; border: none; padding: 0;">Interactive Tools Inside</h2>
-        <p>Visit our comprehensive guides to access:</p>
+    <div class="tools-section" id="tools">
+        <h2>Interactive Tools Inside</h2>
+        <p>Direct jump links to our pet diet calculation utilities:</p>
         <ul class="tool-list">
-            <li>
-                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🐶🐱</span>
-                <a href="articles.html#meal-calculator">Pet Meal Calculator</a>
+            <li class="tool-card">
+                <a href="articles.html#meal-calculator">
+                    <span style="font-size: 2.5rem; display: block;">🐶🐱</span>
+                    <span class="tool-title">Pet Meal Calculator →</span>
+                </a>
             </li>
-            <li>
-                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🧪</span>
-                <a href="articles.html#safety-checker">Ingredient Safety Checker</a>
+            <li class="tool-card">
+                <a href="articles.html#safety-checker">
+                    <span style="font-size: 2.5rem; display: block;">🧪</span>
+                    <span class="tool-title">Ingredient Safety Checker →</span>
+                </a>
             </li>
-            <li>
-                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🔬</span>
-                <a href="articles.html#allergen-matcher">Allergy Finder</a>
+            <li class="tool-card">
+                <a href="articles.html#allergen-matcher">
+                    <span style="font-size: 2.5rem; display: block;">🔬</span>
+                    <span class="tool-title">Allergy Finder →</span>
+                </a>
             </li>
         </ul>
     </div>
