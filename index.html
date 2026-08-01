@@ -582,6 +582,128 @@ Read the Complete Macro Counting Guide →
             © 2026 <strong>Pet Diet Engine</strong>. All Rights Reserved. | Science-backed nutrition guides, calculators, and recipes for responsible pet owners.
         </div>
     </div>
+    <!-- ======================================================= -->
+<!-- PET DIET ENGINE: SHARE, FOLLOW, & COMMENTS SNIPPET     -->
+<!-- ======================================================= -->
+
+<!-- 1. SOCIAL SHARE SECTION -->
+<div class="pde-box share-box">
+  <h3>Share this Pet Nutrition Guide</h3>
+  <div class="pde-buttons">
+    <button onclick="shareFB()" class="pde-btn btn-facebook">Facebook</button>
+    <button onclick="shareWhatsApp()" class="pde-btn btn-whatsapp">WhatsApp</button>
+    <button onclick="sharePinterest()" class="pde-btn btn-pinterest">Pinterest</button>
+    <button onclick="shareX()" class="pde-btn btn-x">X (Twitter)</button>
+    <button onclick="copyPageLink()" class="pde-btn btn-copy">Copy Link</button>
+  </div>
+</div>
+
+<!-- 2. FOLLOW COMMUNITY SECTION -->
+<div class="pde-box follow-box">
+  <h3>Join the Pet Diet Engine Community</h3>
+  <p>Get daily advice on safe pet diets, raw feeding tips, and nutrition updates.</p>
+  <div class="pde-buttons">
+    <!-- Update these URLs with your actual social media profile links -->
+    <a href="https://facebook.com/YOUR_PAGE" target="_blank" rel="noopener" class="pde-btn btn-facebook">Facebook Page</a>
+    <a href="https://instagram.com/YOUR_ACCOUNT" target="_blank" rel="noopener" class="pde-btn btn-instagram">Instagram</a>
+    <a href="https://youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener" class="pde-btn btn-youtube">YouTube</a>
+    <a href="https://pinterest.com/YOUR_ACCOUNT" target="_blank" rel="noopener" class="pde-btn btn-pinterest">Pinterest</a>
+  </div>
+</div>
+
+<!-- 3. PET COMMUNITY DISCUSSIONS / COMMENTS -->
+<section class="comments-section" style="margin-top: 40px;">
+  <h2>Pet Community Discussion & Feeds</h2>
+  <div id="disqus_thread"></div>
+</section>
+
+<!-- STYLES (CSS) -->
+<style>
+  .pde-box {
+    background: #fdfbf7;
+    border: 1px solid #e0d6c8;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0;
+  }
+  .pde-box h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+    color: #2c3e50;
+  }
+  .pde-box p {
+    margin: 0 0 12px 0;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  .pde-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .pde-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    color: #ffffff !important;
+    transition: opacity 0.2s ease;
+  }
+  .pde-btn:hover {
+    opacity: 0.88;
+  }
+  .btn-facebook { background-color: #1877f2; }
+  .btn-whatsapp { background-color: #25d366; }
+  .btn-pinterest { background-color: #e60023; }
+  .btn-instagram { background-color: #e1306c; }
+  .btn-youtube { background-color: #ff0000; }
+  .btn-x { background-color: #000000; }
+  .btn-copy { background-color: #5a5a5a; }
+</style>
+
+<!-- SCRIPTS (JavaScript) -->
+<script>
+  // Dynamic Share Functions
+  const pageUrl = encodeURIComponent(window.location.href);
+  const pageTitle = encodeURIComponent(document.title);
+
+  function shareFB() {
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`, '_blank');
+  }
+  function shareWhatsApp() {
+    window.open(`https://api.whatsapp.com/send?text=${pageTitle}%20${pageUrl}`, '_blank');
+  }
+  function sharePinterest() {
+    window.open(`https://pinterest.com/pin/create/button/?url=${pageUrl}&description=${pageTitle}`, '_blank');
+  }
+  function shareX() {
+    window.open(`https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`, '_blank');
+  }
+  function copyPageLink() {
+    navigator.clipboard.writeText(window.location.href);
+    alert('Link copied! Share it with fellow pet parents.');
+  }
+
+  // Disqus Comment Embed Setup
+  var disqus_config = function () {
+      this.page.url = window.location.href;  
+      this.page.identifier = window.location.pathname; 
+  };
+  (function() { 
+      var d = document, s = d.createElement('script');
+      // Replace 'petdietengine' with your exact Disqus shortname if different
+      s.src = 'https://petdietengine.disqus.com/embed.js'; 
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+  })();
+</script>
+
 </footer>
 
 </body>
