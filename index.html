@@ -6,8 +6,7 @@
     <title>Pet Diet Engine - Fresh, Homemade & Hypoallergenic Pet Nutrition</title>
     <meta name="description" content="Empower your pet with fresh, science-backed nutrition. Calculate daily portions, macros, and ingredient safety. Hypoallergenic diet plans for dogs and cats.">
     <meta name="keywords" content="pet diet calculator, homemade dog food recipe, cat nutrition macros, safe pet ingredients, pet diet engine">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746296968934939"
-     crossorigin="anonymous"></script>
+
     <!-- Canonical Tag -->
     <link rel="canonical" href="https://www.petdietengine.com/" />
     <link rel="icon" type="image/png" href="favicon.png">
@@ -21,13 +20,33 @@
 
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="gBZp0aIdU49_QrFyK20X-Kg8gs31BCU_NiJRU6H43rE" />
-    <meta name="google-site-verification" content="tpq5vnIpBTAJl-9RXp4kCIL7voEBwWmtceOUH-HqK1s" />
-    <meta name="google-site-verification" content="gzbwu6dtGPjttHV-NMdbQvxXJuzGnl6QcCuhsc1-ysc" />
 
     <!-- Google AdSense Code -->
     <meta name="google-adsense-account" content="ca-pub-5746296968934939">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746296968934939"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746296968934939" crossorigin="anonymous"></script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.petdietengine.com/#website",
+          "url": "https://www.petdietengine.com/",
+          "name": "Pet Diet Engine",
+          "description": "Science-backed pet nutrition guides, portion calculators, and homemade recipes."
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.petdietengine.com/#organization",
+          "name": "Pet Diet Engine",
+          "url": "https://www.petdietengine.com/",
+          "logo": "https://www.petdietengine.com/1785328454295.png"
+        }
+      ]
+    }
+    </script>
 
     <style>
         /* Base Setup & Typography */
@@ -90,6 +109,7 @@
             font-weight: 500;
             transition: color 0.3s ease;
             font-size: 0.95rem;
+            padding: 0.25rem 0.5rem;
         }
 
         .nav-links a:hover,
@@ -282,6 +302,92 @@
             padding-bottom: 0.75rem;
         }
 
+        /* Disclaimer Banner */
+        .disclaimer-banner {
+            background-color: #1e293b;
+            border-left: 4px solid #f59e0b;
+            border-radius: 0 8px 8px 0;
+            padding: 1.25rem;
+            margin: 2rem 0;
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .disclaimer-banner strong {
+            color: #f8fafc;
+        }
+
+        /* CTA Button */
+        .pde-toxic-food-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #e60023;
+            color: #ffffff !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(230, 0, 35, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .pde-toxic-food-btn:hover {
+            background-color: #c4001d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(230, 0, 35, 0.4);
+        }
+
+        /* Community Boxes */
+        .pde-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .pde-box h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.25rem;
+            color: #0f172a;
+        }
+        .pde-box p {
+            margin: 0 0 12px 0;
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+        .pde-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .pde-btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            color: #ffffff !important;
+            transition: opacity 0.2s ease;
+        }
+        .pde-btn:hover {
+            opacity: 0.88;
+        }
+        .btn-facebook { background-color: #1877f2; }
+        .btn-whatsapp { background-color: #25d366; }
+        .btn-pinterest { background-color: #e60023; }
+        .btn-instagram { background-color: #e1306c; }
+        .btn-youtube { background-color: #ff0000; }
+        .btn-x { background-color: #000000; }
+        .btn-copy { background-color: #5a5a5a; }
+
         /* Footer */
         footer {
             background-color: #0f172a;
@@ -337,21 +443,6 @@
             color: #64748b;
         }
 
-        .disclaimer-banner {
-            background-color: #1e293b;
-            border-left: 4px solid #f59e0b;
-            border-radius: 0 8px 8px 0;
-            padding: 1.25rem;
-            margin: 2rem 0;
-            color: #cbd5e1;
-            font-size: 0.85rem;
-            line-height: 1.6;
-        }
-
-        .disclaimer-banner strong {
-            color: #f8fafc;
-        }
-
         /* Responsive */
         @media (max-width: 900px) {
             .hero-grid {
@@ -369,7 +460,7 @@
             }
 
             .nav-links {
-                gap: 1rem;
+                gap: 0.75rem;
                 font-size: 0.85rem;
                 flex-wrap: wrap;
                 justify-content: center;
@@ -395,61 +486,22 @@
 <nav>
     <div class="nav-container">
         <a href="index.html" class="nav-brand">🐾 Pet Diet Engine</a>
-       <ul class="nav-links">
-
-<li>
-<a href="index.html" class="active">
-Home
-</a>
-</li>
-
-
-<li>
-<a href="#tools">
-Tools
-</a>
-</li>
-
-
-<a href="high-protein-homemade-dog-food-recipe.html">
-<span style="font-size: 2.5rem; display: block;">🥩</span>
-<span class="tool-title">High-Protein Dog Recipe →</span>
-</a>
-
-
-<li>
-<a href="articles.html#meal-calculator">
-Meal Calculator
-</a>
-</li>
-
-
-<li>
-<a href="articles.html">
-Guides
-</a>
-</li>
-
-
-<li>
-<a href="macro-counting-recipes-pet-owners.html">
-Macro Recipes
-</a>
-</li>
-<li>
-    <a href="pet-food-allergy-elimination-diet-guide.html">
-        Food Allergy Guide
-    </a>
-</li>
-
-</ul>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="high-protein-homemade-dog-food-recipe.html">High-Protein Recipe</a></li>
+            <li><a href="articles.html#meal-calculator">Meal Calculator</a></li>
+            <li><a href="articles.html">Guides</a></li>
+            <li><a href="macro-counting-recipes-pet-owners.html">Macro Recipes</a></li>
+            <li><a href="pet-food-allergy-elimination-diet-guide.html">Food Allergy Guide</a></li>
+        </ul>
     </div>
 </nav>
 
 <!-- Main Content Wrapper -->
 <div class="container">
     <!-- Split Hero Section -->
-    <div class="hero">
+    <header class="hero">
         <div class="hero-grid">
             <div class="hero-text">
                 <h1>Science-Backed Pet Nutrition Made Simple</h1>
@@ -457,54 +509,57 @@ Macro Recipes
                 <a href="articles.html" class="cta-button">Explore Full Guides & Tools →</a>
             </div>
             <div class="hero-image">
-              <img 
-src="1785328454295.png"
-alt="Happy Golden Retriever and cat eating fresh homemade pet food from balanced meal bowls"
-width="600"
-height="400"
-loading="eager"
-/>
+                <img 
+                    src="1785328454295.png"
+                    alt="Happy Golden Retriever and cat eating fresh homemade pet food from balanced meal bowls"
+                    width="600"
+                    height="400"
+                    loading="eager"
+                    fetchpriority="high"
+                />
             </div>
         </div>
-    </div>
+    </header>
 
     <!-- Core Features -->
-    <h2>Why Choose Pet Diet Engine?</h2>
-    <div class="features">
-        <div class="feature-card">
-            <div class="feature-icon">📊</div>
-            <h3>Precise Calculations</h3>
-            <p>Scientifically-backed formulas for daily calorie targets, portion weights, and macronutrient splits customized to your pet's size, activity level, and health goals.</p>
+    <section>
+        <h2>Why Choose Pet Diet Engine?</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Precise Calculations</h3>
+                <p>Scientifically-backed formulas for daily calorie targets, portion weights, and macronutrient splits customized to your pet's size, activity level, and health goals.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧪</div>
+                <h3>Ingredient Safety</h3>
+                <p>Instant ingredient checker to verify what's safe before adding to your pet's meal. Know what to avoid—toxic ingredients, allergens, and hidden risks.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔬</div>
+                <h3>Allergy Solutions</h3>
+                <p>Comprehensive hypoallergenic diet plans, elimination trial protocols, and novel protein recommendations for pets with sensitivities.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🐕‍🦺</div>
+                <h3>Dog & Cat Tailored</h3>
+                <p>Separate nutritional protocols for dogs and cats with breed-specific activity multipliers and metabolic adjustments.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💪</div>
+                <h3>Macro Optimization</h3>
+                <p>Balanced 40-50% protein, 20-30% fiber, and 15-20% healthy fats for vibrant skin, coat, digestion, and sustained energy.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Expert Guides</h3>
+                <p>Deep-dive educational content on fresh vs. kibble, calcium balance, meal prep workflows, and evidence-based nutrition science.</p>
+            </div>
         </div>
-        <div class="feature-card">
-            <div class="feature-icon">🧪</div>
-            <h3>Ingredient Safety</h3>
-            <p>Instant ingredient checker to verify what's safe before adding to your pet's meal. Know what to avoid—toxic ingredients, allergens, and hidden risks.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">🔬</div>
-            <h3>Allergy Solutions</h3>
-            <p>Comprehensive hypoallergenic diet plans, elimination trial protocols, and novel protein recommendations for pets with sensitivities.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">🐕‍🦺</div>
-            <h3>Dog & Cat Tailored</h3>
-            <p>Separate nutritional protocols for dogs and cats with breed-specific activity multipliers and metabolic adjustments.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">💪</div>
-            <h3>Macro Optimization</h3>
-            <p>Balanced 40-50% protein, 20-30% fiber, and 15-20% healthy fats for vibrant skin, coat, digestion, and sustained energy.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">📚</div>
-            <h3>Expert Guides</h3>
-            <p>Deep-dive educational content on fresh vs. kibble, calcium balance, meal prep workflows, and evidence-based nutrition science.</p>
-        </div>
-    </div>
+    </section>
 
     <!-- Interactive Tools Section -->
-    <div class="tools-section" id="tools">
+    <section class="tools-section" id="tools">
         <h2>Interactive Tools & High-Macro Recipes</h2>
         <p>Direct jump links to our pet diet calculation utilities and tested meal prep guides:</p>
         <ul class="tool-list">
@@ -527,65 +582,59 @@ loading="eager"
                 </a>
             </li>
         </ul>
+    </section>
+
+    <!-- Featured Nutrition Guide -->
+    <section style="margin:4rem 0;">
+        <h2>Featured Guide: Macro Counting Recipes for Pet Owners</h2>
+        <p>Learn how to calculate protein, fat, calories, and ingredient portions for homemade dog and cat meals. Our complete macro counting guide explains how pet owners can build more balanced recipes using nutrition principles instead of guessing portions.</p>
+        <a href="macro-counting-recipes-pet-owners.html" class="cta-button">Read the Complete Macro Counting Guide →</a>
+    </section>
+
+    <!-- Pet Diet Engine - Featured Article CTA Button -->
+    <div class="pde-cta-container" style="margin: 30px 0; text-align: center;">
+      <a href="pet-food-allergy-elimination-diet-guide.html"  
+         class="pde-toxic-food-btn" 
+         title="Read Pet Food Allergy & Elimination Diet Guide">
+         🩺 Pet Food Allergy Guide
+      </a>
     </div>
-<!-- Featured Nutrition Guide -->
 
-<section style="margin:4rem 0;">
+    <!-- 1. SOCIAL SHARE SECTION -->
+    <div class="pde-box share-box">
+      <h3>Share this Pet Nutrition Guide</h3>
+      <div class="pde-buttons">
+        <button onclick="shareFB()" class="pde-btn btn-facebook">Facebook</button>
+        <button onclick="shareWhatsApp()" class="pde-btn btn-whatsapp">WhatsApp</button>
+        <button onclick="sharePinterest()" class="pde-btn btn-pinterest">Pinterest</button>
+        <button onclick="shareX()" class="pde-btn btn-x">X (Twitter)</button>
+        <button onclick="copyPageLink()" class="pde-btn btn-copy">Copy Link</button>
+      </div>
+    </div>
 
-<h2>
-Featured Guide: Macro Counting Recipes for Pet Owners
-</h2>
+    <!-- 2. FOLLOW COMMUNITY SECTION -->
+    <div class="pde-box follow-box">
+      <h3>Join the Pet Diet Engine Community</h3>
+      <p>Get daily advice on safe pet diets, raw feeding tips, and nutrition updates.</p>
+      <div class="pde-buttons">
+        <a href="https://facebook.com/" target="_blank" rel="noopener" class="pde-btn btn-facebook">Facebook Page</a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener" class="pde-btn btn-instagram">Instagram</a>
+        <a href="https://youtube.com/" target="_blank" rel="noopener" class="pde-btn btn-youtube">YouTube</a>
+        <a href="https://pinterest.com/" target="_blank" rel="noopener" class="pde-btn btn-pinterest">Pinterest</a>
+      </div>
+    </div>
 
+    <!-- 3. PET COMMUNITY DISCUSSIONS / COMMENTS -->
+    <section class="comments-section" style="margin-top: 40px;">
+      <h2>Pet Community Discussion & Feeds</h2>
+      <div id="disqus_thread"></div>
+    </section>
 
-<p>
-Learn how to calculate protein, fat, calories, and ingredient portions for homemade dog and cat meals. Our complete macro counting guide explains how pet owners can build more balanced recipes using nutrition principles instead of guessing portions.
-</p>
-
-
-<a href="macro-counting-recipes-pet-owners.html"
-class="cta-button">
-
-Read the Complete Macro Counting Guide →
-
-</a>
-
-
-</section>
     <!-- Disclaimer -->
     <div class="disclaimer-banner">
         <strong>⚠️ Important Disclaimer:</strong> The information, tools, and calculations provided on Pet Diet Engine are for educational purposes only and do not constitute veterinary medical advice. Always consult with your veterinarian before making significant dietary changes. Pet Diet Engine is not a substitute for professional veterinary consultation.
     </div>
 </div>
-<!-- Pet Diet Engine - Featured Article CTA Button -->
-<div class="pde-cta-container" style="margin: 20px 0; text-align: center;">
-  <a href="pet-food-allergy-elimination-diet-guide.html"  
-     class="pde-toxic-food-btn" 
-     title="Read 15 Toxic Human Foods Dangerous to Dogs & Cats">
-     🚨 Toxic Human Food Guide
-  </a>
-</div>
-
-<style>
-  .pde-toxic-food-btn {
-    display: inline-block;
-    padding: 14px 28px;
-    background-color: #e60023; /* Eye-catching alert red */
-    color: #ffffff !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 50px;
-    box-shadow: 0 4px 12px rgba(230, 0, 35, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  .pde-toxic-food-btn:hover {
-    background-color: #c4001d;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(230, 0, 35, 0.4);
-  }
-</style>
 
 <!-- Footer -->
 <footer>
@@ -602,100 +651,18 @@ Read the Complete Macro Counting Guide →
                 <p><a href="high-protein-homemade-dog-food-recipe.html">High-Protein Dog Recipe</a></p>
             </div>
             <div class="footer-section">
-  <h3>Legal & Compliance</h3>
-<p><a href="privacy.html">Privacy Policy</a></p>
-  <p><a href="terms.html">Terms of Service</a></p>
-  <p><a href="contact.html">Contact Us</a></p>
-</div>
+                <h3>Legal & Compliance</h3>
+                <p><a href="privacy.html">Privacy Policy</a></p>
+                <p><a href="terms.html">Terms of Service</a></p>
+                <p><a href="contact.html">Contact Us</a></p>
+            </div>
+        </div>
 
         <div class="footer-bottom">
             © 2026 <strong>Pet Diet Engine</strong>. All Rights Reserved. | Science-backed nutrition guides, calculators, and recipes for responsible pet owners.
         </div>
     </div>
-    <!-- ======================================================= -->
-<!-- PET DIET ENGINE: SHARE, FOLLOW, & COMMENTS SNIPPET     -->
-<!-- ======================================================= -->
-
-<!-- 1. SOCIAL SHARE SECTION -->
-<div class="pde-box share-box">
-  <h3>Share this Pet Nutrition Guide</h3>
-  <div class="pde-buttons">
-    <button onclick="shareFB()" class="pde-btn btn-facebook">Facebook</button>
-    <button onclick="shareWhatsApp()" class="pde-btn btn-whatsapp">WhatsApp</button>
-    <button onclick="sharePinterest()" class="pde-btn btn-pinterest">Pinterest</button>
-    <button onclick="shareX()" class="pde-btn btn-x">X (Twitter)</button>
-    <button onclick="copyPageLink()" class="pde-btn btn-copy">Copy Link</button>
-  </div>
-</div>
-
-<!-- 2. FOLLOW COMMUNITY SECTION -->
-<div class="pde-box follow-box">
-  <h3>Join the Pet Diet Engine Community</h3>
-  <p>Get daily advice on safe pet diets, raw feeding tips, and nutrition updates.</p>
-  <div class="pde-buttons">
-    <!-- Update these URLs with your actual social media profile links -->
-    <a href="https://facebook.com/YOUR_PAGE" target="_blank" rel="noopener" class="pde-btn btn-facebook">Facebook Page</a>
-    <a href="https://instagram.com/YOUR_ACCOUNT" target="_blank" rel="noopener" class="pde-btn btn-instagram">Instagram</a>
-    <a href="https://youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener" class="pde-btn btn-youtube">YouTube</a>
-    <a href="https://pinterest.com/YOUR_ACCOUNT" target="_blank" rel="noopener" class="pde-btn btn-pinterest">Pinterest</a>
-  </div>
-</div>
-
-<!-- 3. PET COMMUNITY DISCUSSIONS / COMMENTS -->
-<section class="comments-section" style="margin-top: 40px;">
-  <h2>Pet Community Discussion & Feeds</h2>
-  <div id="disqus_thread"></div>
-</section>
-
-<!-- STYLES (CSS) -->
-<style>
-  .pde-box {
-    background: #fdfbf7;
-    border: 1px solid #e0d6c8;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 30px 0;
-  }
-  .pde-box h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-size: 1.25rem;
-    color: #2c3e50;
-  }
-  .pde-box p {
-    margin: 0 0 12px 0;
-    color: #555;
-    font-size: 0.95rem;
-  }
-  .pde-buttons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-  }
-  .pde-btn {
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    display: inline-block;
-    color: #ffffff !important;
-    transition: opacity 0.2s ease;
-  }
-  .pde-btn:hover {
-    opacity: 0.88;
-  }
-  .btn-facebook { background-color: #1877f2; }
-  .btn-whatsapp { background-color: #25d366; }
-  .btn-pinterest { background-color: #e60023; }
-  .btn-instagram { background-color: #e1306c; }
-  .btn-youtube { background-color: #ff0000; }
-  .btn-x { background-color: #000000; }
-  .btn-copy { background-color: #5a5a5a; }
-</style>
+</footer>
 
 <!-- SCRIPTS (JavaScript) -->
 <script>
@@ -727,14 +694,11 @@ Read the Complete Macro Counting Guide →
   };
   (function() { 
       var d = document, s = d.createElement('script');
-      // Replace 'petdietengine' with your exact Disqus shortname if different
       s.src = 'https://petdietengine.disqus.com/embed.js'; 
       s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
   })();
 </script>
-
-</footer>
 
 </body>
 </html>
