@@ -68,7 +68,7 @@
             line-height: 1.7;
         }
 
-        /* Modern Professional Navigation */
+        /* Modern Professional Navigation (3 Top Items) */
         nav {
             background-color: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(12px);
@@ -90,7 +90,7 @@
         }
 
         .nav-brand {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 800;
             color: #ffffff;
             text-decoration: none;
@@ -117,7 +117,7 @@
 
         .nav-links {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.75rem;
             list-style: none;
             align-items: center;
         }
@@ -130,9 +130,9 @@
         .nav-links a {
             color: #94a3b8;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.9rem;
-            padding: 0.55rem 0.9rem;
+            padding: 0.55rem 1rem;
             border-radius: 8px;
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             white-space: nowrap;
@@ -145,9 +145,17 @@
 
         .nav-links a.active {
             color: #ffffff;
-            background-color: rgba(37, 99, 235, 0.25);
-            border: 1px solid rgba(96, 165, 250, 0.3);
-            font-weight: 600;
+            background-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .nav-cta-btn {
+            background-color: #2563eb !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .nav-cta-btn:hover {
+            background-color: #1d4ed8 !important;
         }
 
         .container {
@@ -161,7 +169,7 @@
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: #fff;
             border-radius: 16px;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             padding: 3rem 2.5rem;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
@@ -221,6 +229,63 @@
         .cta-button:hover {
             background-color: #059669;
             transform: translateY(-2px);
+        }
+
+        /* Body Quick-Access Navigation Hub */
+        .quick-hub {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .quick-hub-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #64748b;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quick-hub-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .hub-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.25rem;
+            background-color: #f1f5f9;
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.925rem;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hub-btn:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
+        }
+
+        .hub-btn-featured {
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            border-color: #bfdbfe;
         }
 
         /* Features Grid */
@@ -476,32 +541,6 @@
             color: #64748b;
         }
 
-        /* Responsive Navigation Adjustments */
-        @media (max-width: 1024px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 0.85rem;
-                align-items: center;
-            }
-
-            .nav-links {
-                width: 100%;
-                overflow-x: auto;
-                justify-content: flex-start;
-                padding-bottom: 0.3rem;
-                scrollbar-width: none; /* Firefox */
-            }
-
-            .nav-links::-webkit-scrollbar {
-                display: none; /* Chrome/Safari */
-            }
-
-            .nav-links a {
-                font-size: 0.85rem;
-                padding: 0.45rem 0.75rem;
-            }
-        }
-
         @media (max-width: 900px) {
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -532,18 +571,14 @@
 </head>
 <body>
 
-<!-- Navigation -->
+<!-- Minimalist 3-Item Navigation Bar -->
 <nav>
     <div class="nav-container">
         <a href="index.html" class="nav-brand">🐾 Pet Diet Engine</a>
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="#tools">Tools</a></li>
-            <li><a href="high-protein-homemade-dog-food-recipe.html">High-Protein Recipe</a></li>
-            <li><a href="articles.html#meal-calculator">Meal Calculator</a></li>
             <li><a href="articles.html">Guides</a></li>
-            <li><a href="macro-counting-recipes-pet-owners.html">Macro Recipes</a></li>
-            <li><a href="pet-food-allergy-elimination-diet-guide.html">Food Allergy Guide</a></li>
+            <li><a href="articles.html#meal-calculator" class="nav-cta-btn">Meal Calculator ⚡</a></li>
         </ul>
     </div>
 </nav>
@@ -570,6 +605,18 @@
             </div>
         </div>
     </header>
+
+    <!-- Quick Navigation Hub (Body Buttons) -->
+    <div class="quick-hub">
+        <div class="quick-hub-title">🚀 Quick Navigation Hub</div>
+        <div class="quick-hub-buttons">
+            <a href="high-protein-homemade-dog-food-recipe.html" class="hub-btn hub-btn-featured">🥩 High-Protein Recipe</a>
+            <a href="macro-counting-recipes-pet-owners.html" class="hub-btn">📊 Macro Recipes</a>
+            <a href="pet-food-allergy-elimination-diet-guide.html" class="hub-btn">🩺 Food Allergy Guide</a>
+            <a href="articles.html#safety-checker" class="hub-btn">🧪 Safety Checker</a>
+            <a href="#tools" class="hub-btn">⚡ Interactive Tools</a>
+        </div>
+    </div>
 
     <!-- Core Features -->
     <section>
