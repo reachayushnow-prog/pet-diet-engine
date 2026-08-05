@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO PRIMARY META TAGS -->
+  <title>Pet Nutrition Quiz Challenge | Pet Diet Engine</title>
+  <meta name="description" content="Take our interactive 10-question Pet Nutrition Quiz to test your knowledge on dog food allergies, fresh diets, and pet care. Score 80%+ to unlock a 40% discount coupon!">
+  <meta name="keywords" content="pet nutrition quiz, dog food allergy test, cat diet quiz, pet feeding challenge, pet diet engine, hydrolyzed protein quiz">
+  <link rel="canonical" href="https://petdietengine.com/quiz">
+
+  <!-- OPEN GRAPH / SOCIAL MEDIA SEO -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pet Nutrition Quiz Challenge - Test Your Knowledge">
+  <meta property="og:description" content="Answer 10 quick pet diet questions and unlock an exclusive 40% discount on your first pet food order.">
+  <meta property="og:image" content="https://petdietengine.com/images/quiz-banner.jpg">
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- MONETAG AD SCRIPT -->
+  <script src="https://alwingulla.com/88/1a/2b/881a2b3c4d5e6f7g.js" async></script>
+
+  <!-- SCHEMA.ORG STRUCTURED DATA FOR GOOGLE RICH SNIPPETS -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    "name": "Pet Nutrition & Allergy Challenge",
+    "description": "An interactive quiz to test pet owners on canine and feline diet requirements, food allergies, and optimal nutrition.",
+    "educationalUse": "Assessment",
+    "hasPart": {
+      "@type": "Question",
+      "name": "What is the gold standard method for diagnosing pet food allergies?",
+      "suggestedAnswer": [
+        { "@type": "Answer", "text": "Blood Test" },
+        { "@type": "Answer", "text": "Saliva Test" }
+      ],
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "12-Week Elimination Diet Trial"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #0066cc;
+      --primary-dark: #004085;
+      --success: #28a745;
+      --danger: #dc3545;
+      --bg-color: #f4f8fc;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --border-color: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .quiz-card {
+      background: var(--card-bg);
+      max-width: 650px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+      border: 1px solid var(--border-color);
+      padding: 32px;
+      position: relative;
+    }
+
+    .quiz-header {
+      text-align: center;
+      border-bottom: 2px solid var(--bg-color);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+
+    .quiz-header h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .quiz-meta {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      background-color: #e5e7eb;
+      height: 8px;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background-color: var(--primary);
+      transition: width 0.4s ease-in-out;
+    }
+
+    .question-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.4;
+      color: var(--text-main);
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-btn {
+      background-color: #ffffff;
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 0.975rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .option-btn:hover {
+      border-color: var(--primary);
+      background-color: #f0f7ff;
+      transform: translateY(-2px);
+    }
+
+    .option-btn.correct {
+      background-color: #d1fae5 !important;
+      border-color: var(--success) !important;
+      color: #065f46 !important;
+      font-weight: 700;
+    }
+
+    .option-btn.incorrect {
+      background-color: #fee2e2 !important;
+      border-color: var(--danger) !important;
+      color: #991b1b !important;
+    }
+
+    .result-screen {
+      text-align: center;
+      display: none;
+    }
+
+    .score-badge {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 16px 0;
+      line-height: 1;
+    }
+
+    .prize-box {
+      background: #ecfdf5;
+      border: 2px dashed var(--success);
+      padding: 24px;
+      border-radius: 12px;
+      margin-top: 24px;
+    }
+
+    .claim-btn {
+      display: inline-block;
+      background-color: var(--success);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 16px 32px;
+      border-radius: 50px;
+      margin-top: 16px;
+      box-shadow: 0 10px 15px -3px rgba(40, 167, 69, 0.3);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    .restart-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.2s;
+    }
+
+    .restart-btn:hover {
+      background-color: var(--primary-dark);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="quiz-card">
+    <!-- Active Quiz View -->
+    <article id="quiz-active">
+      <header class="quiz-header">
+        <h1>🐾 Pet Diet Engine Challenge</h1>
+        <div class="quiz-meta">Question <span id="current-num">1</span> of 10</div>
+      </header>
+
+      <div class="progress-bar-container" aria-label="Quiz progress">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <h2 class="question-text" id="question-text">Loading question...</h2>
+
+      <div class="options-grid" id="options-container"></div>
+    </article>
+
+    <!-- Final Result Screen -->
+    <article id="quiz-result" class="result-screen">
+      <h2>Quiz Completed! 🎉</h2>
+      <p id="result-message">Let's see how well you know pet nutrition...</p>
+      
+      <div class="score-badge"><span id="user-score">0</span> / 10</div>
+
+      <div id="prize-container" style="display: none;" class="prize-box">
+        <h3>🏆 Congratulations! You Unlocked a Prize!</h3>
+        <p style="margin-top: 8px;">You scored 80% or higher! Claim your discount voucher below:</p>
+        <a id="prize-link" href="https://petdietengine.com/discount-claim" class="claim-btn" target="_blank">
+          🎁 Claim Prize & Get 40% Off First Order
+        </a>
+      </div>
+
+      <div id="fail-container" style="display: none; margin-top: 20px;">
+        <p style="color: var(--text-muted);">You need at least 8/10 to unlock the prize link. Try again with a new randomized set of questions!</p>
+      </div>
+
+      <button onclick="startQuiz()" class="restart-btn">Try New 10-Question Set 🔄</button>
+    </article>
+  </main>
+
+  <script>
+    const masterQuestions = [
+      { question: "What is the gold standard method for diagnosing pet food allergies?", options: ["12-Week Elimination Diet Trial", "Blood (IgE) Test", "Saliva Test", "Hair Scratch Test"], answer: 0 },
+      { question: "Which ingredient is statistically the #1 food allergen for dogs?", options: ["Beef", "Chicken", "Corn", "Wheat"], answer: 0 },
+      { question: "How long does a strict elimination diet trial take to clear skin symptoms?", options: ["8 to 12 Weeks", "1 to 2 Weeks", "3 Days", "6 Months"], answer: 0 },
+      { question: "What is the target molecular size for hydrolyzed protein feeds?", options: ["Below 10,000 Daltons", "Above 100,000 Daltons", "500,000 Daltons", "1 Million Daltons"], answer: 0 },
+      { question: "In an 80/20 Hybrid Feeding Model, what does the 80% usually consist of?", options: ["High-Quality Kibble/Base", "Fresh Cooked Beef", "Raw Bones", "Dairy"], answer: 0 },
+      { question: "Which protein is the most documented allergen for cats?", options: ["Beef & Fish", "Wheat & Rice", "Peas & Lentils", "Turkey"], answer: 0 },
+      { question: "True or False: Grain allergies are more common than animal protein allergies in pets.", options: ["False (Animal proteins cause far more allergies)", "True (Grains are the top trigger)", "Both trigger equal allergies", "Neither cause allergies"], answer: 0 },
+      { question: "What symptom indicates food intolerances rather than an immune food allergy?", options: ["Frequent Gas & Stool Issues", "Systemic Itching", "Recurrent Ear Infections", "Red Hives"], answer: 0 },
+      { question: "Why should peanut butter be avoided during an elimination diet trial?", options: ["It contains protein that distorts trial results", "It spoils quickly", "It has too much fiber", "Pets dislike the taste"], answer: 0 },
+      { question: "What is a 'Novel Protein' for a pet?", options: ["A protein source the pet has never eaten before", "An artificially processed protein", "Any poultry meat", "Plant-based soy protein"], answer: 0 },
+      { question: "What is the primary biological trigger of true food allergies in pets?", options: ["Glycoproteins", "Purified Water", "Digestive Enzymes", "Cellulose"], answer: 0 },
+      { question: "How often do healthy adult dogs typically defecate per day?", options: ["1 to 2 times daily", "5 to 7 times daily", "Once every 3 days", "10 times daily"], answer: 0 },
+      { question: "What molecule is released by mast cells during an allergic reaction causing itching?", options: ["Histamine", "Lactase", "Amylase", "Insulin"], answer: 0 },
+      { question: "Which symptom is a classic sign of chronic food allergies in dogs?", options: ["Obsessive Paw Licking", "Sneezing", "Hair loss on tail tip only", "Coughing"], answer: 0 },
+      { question: "What type of diet utilizes enzymes to chop proteins into micro-peptides?", options: ["Hydrolyzed Protein Diet", "Raw BARF Diet", "Vegan Diet", "Keto Diet"], answer: 0 },
+      { question: "Can a pet develop an allergy to a food they have eaten for years?", options: ["Yes, chronic exposure causes sensitization", "No, allergies only happen with new foods", "Only if fed twice a day", "Only cats can, not dogs"], answer: 0 },
+      { question: "What percentage of animal proteins typically account for pet food allergies?", options: ["Over 80%", "Less than 5%", "Exactly 50%", "10%"], answer: 0 },
+      { question: "Which organ is primary involved in a non-immunological food intolerance?", options: ["Gastrointestinal Tract", "Kidneys", "Lungs", "Brain"], answer: 0 },
+      { question: "Why are blood tests unreliable for diagnosing food allergies in pets?", options: ["High rate of false positives", "They are too fast", "They test red blood cells only", "Pets do not have antibodies"], answer: 0 },
+      { question: "What is the re-challenge phase in an elimination diet trial?", options: ["Re-introducing one old protein to test for symptoms", "Feeding double the food", "Stopping all water", "Switching to raw meat"], answer: 0 },
+      { question: "Which carbohydrate is commonly paired with novel proteins?", options: ["Sweet Potato or Tapioca", "White Flour", "Refined Sugar", "Corn Starch"], answer: 0 },
+      { question: "What is the danger of giving flavored heartworm chews during a diet trial?", options: ["They contain beef/poultry protein that ruins the trial", "They cancel the medication", "They cause sleepiness", "They add too many calories"], answer: 0 },
+      { question: "Are seasonal environmental allergies different from food allergies?", options: ["Yes, seasonal allergies flare up in specific weather", "No, they are identical", "Food allergies only occur in winter", "Environmental allergies cause no itching"], answer: 0 },
+      { question: "What is pododermatitis?", options: ["Inflammation of the paws", "Ear infection", "Stomach ulcer", "Eye inflammation"], answer: 0 },
+      { question: "What is a main benefit of adding hydration toppers to kibble?", options: ["Improves kidney function and digestion", "Makes kibble crunchy", "Reduces protein content", "Stops shedding completely"], answer: 0 },
+      { question: "Which of these is considered a novel protein for most domestic dogs?", options: ["Kangaroo", "Chicken", "Beef", "Pork"], answer: 0 },
+      { question: "How long should you transition a pet when changing their daily food?", options: ["7 to 10 Days", "Overnight", "30 Days", "2 Hours"], answer: 0 },
+      { question: "What ingredient is a common allergen trigger in cats after beef?", options: ["Fish", "Rice", "Carrots", "Blueberries"], answer: 0 },
+      { question: "Why do plastic dog bowls pose a hygiene risk?", options: ["Micro-scratches harbor bacteria and old oils", "They melt in sunlight", "Dogs dislike plastic", "They destroy vitamins"], answer: 0 },
+      { question: "What is the primary enzyme responsible for breaking down fats in pet digestion?", options: ["Lipase", "Amylase", "Pepsin", "Lactase"], answer: 0 },
+      { question: "What is pruritus?", options: ["Medical term for severe itching", "Stomach cramping", "Hair growth", "Ear wax buildup"], answer: 0 },
+      { question: "Can grain-free diets cure a chicken allergy?", options: ["No, chicken is an animal protein, not a grain", "Yes, instantly", "Only if mixed with water", "Only in puppies"], answer: 0 },
+      { question: "What is Otitis Externa?", options: ["Inflammation of the outer ear canal", "Eye infection", "Nail fungus", "Tail biting"], answer: 0 },
+      { question: "How many times per day should puppies generally be fed?", options: ["3 to 4 times daily", "Once every two days", "Only at night", "6 times daily"], answer: 0 },
+      { question: "What is the recommended storage container for dry kibble?", options: ["Original bag inside an airtight container", "Open plastic bucket", "Metal tray in sunlight", "Paper bag"], answer: 0 },
+      { question: "What nutrient is essential for cat survival that they cannot synthesize well?", options: ["Taurine", "Vitamin C", "Starch", "Fiber"], answer: 0 },
+      { question: "What does 'LID' stand for in pet food labeling?", options: ["Limited Ingredient Diet", "Low Intake Diet", "Liquid Ingredient Dosage", "Longterm Intensive Diet"], answer: 0 },
+      { question: "What is an indicator of healthy digestive transit time in pets?", options: ["Firm, well-formed stool", "Liquid stool", "Defecating once a week", "Hard dry pellets"], answer: 0 },
+      { question: "Which toxic substance for dogs is often found in sugar-free peanut butter?", options: ["Xylitol", "Fructose", "Sucrose", "Lactose"], answer: 0 },
+      { question: "Why is taurine critical in feline nutrition?", options: ["Prevents heart failure and blindness", "Improves fur color", "Helps teeth grow", "Increases sleep"], answer: 0 },
+      { question: "What is the main purpose of fiber in a pet's diet?", options: ["Supports bowel regularity and gut microbiota", "Builds muscle tissue", "Provides quick energy", "Colors the stool"], answer: 0 },
+      { question: "What condition can occur if a cat stops eating completely for several days?", options: ["Hepatic Lipidosis (Fatty Liver)", "Diabetes", "Kidney Stones", "Rickets"], answer: 0 },
+      { question: "Which protein source has one of the lowest allergy rates in pets?", options: ["Insect Protein", "Beef", "Dairy", "Chicken"], answer: 0 },
+      { question: "What role do Omega-3 fatty acids play in pet health?", options: ["Reduce inflammation and support coat health", "Cause weight gain", "Harden stool", "Increase blood pressure"], answer: 0 },
+      { question: "Where do dogs produce amylase for starch digestion?", options: ["Pancreas", "Saliva only", "Gallbladder", "Tongue"], answer: 0 },
+      { question: "What is an example of a hydration topper for dry kibble?", options: ["Bone broth or warm water", "Vegetable oil", "Milk", "Fruit juice"], answer: 0 },
+      { question: "What is the ideal calcium-to-phosphorus ratio for growing puppies?", options: ["Between 1:1 and 1.3:1", "10:1", "1:5", "5:1"], answer: 0 },
+      { question: "Are raw bones safe for dogs to consume when unsupervised?", options: ["No, cooked or improper raw bones can splinter or choke", "Yes, all bones are safe", "Only cooked bones", "Only poultry bones"], answer: 0 },
+      { question: "Which vitamin toxicity can occur from overfeeding raw liver to cats?", options: ["Vitamin A Toxicity", "Vitamin C Toxicity", "Vitamin B12 Toxicity", "Vitamin E Toxicity"], answer: 0 },
+      { question: "What is the primary advantage of feeding fresh cooked food?", options: ["Higher digestibility and moisture content", "Zero calories", "Infinite shelf life", "No refrigeration required"], answer: 0 },
+      { question: "What causes hot spots on a pet's skin?", options: ["Localized bacterial infection from continuous scratching", "Sunburn", "Dry air", "Lack of sleep"], answer: 0 },
+      { question: "What type of hypersensitivity reaction is a true food allergy?", options: ["Type I (IgE-mediated)", "Type V", "Non-cellular", "Autoimmune type B"], answer: 0 },
+      { question: "What is a common sign of food allergy in cats specifically?", options: ["Miliary Dermatitis (crusty bumps around neck)", "Coughing", "Excessive purring", "Eye color change"], answer: 0 },
+      { question: "Can table scraps ruin an elimination diet trial?", options: ["Yes, even a tiny piece introduces foreign proteins", "No, human food is safe", "Only if it contains spices", "Only on weekends"], answer: 0 },
+      { question: "What is the safe moisture percentage range in canned/fresh pet food?", options: ["70% to 80%", "10% to 20%", "95% to 99%", "5%"], answer: 0 },
+      { question: "What food item is extremely toxic to both dogs and cats?", options: ["Onions & Garlic", "Carrots", "Cooked Rice", "Blueberries"], answer: 0 },
+      { question: "What is the danger of feeding grapes or raisins to dogs?", options: ["Acute Kidney Failure", "Liver Failure", "Blindness", "Heart Attack"], answer: 0 },
+      { question: "Why is cow milk generally bad for adult cats and dogs?", options: ["Most pets lose lactase and become lactose intolerant", "It turns fur white", "It stops digestion", "It destroys red blood cells"], answer: 0 },
+      { question: "What is the term for a diet formulated for all pet life stages?", options: ["All Life Stages (AAFCO standard)", "Universal Kibble", "Puppy Only", "Senior Care"], answer: 0 },
+      { question: "Which mineral in high amounts can contribute to urinary struvite crystals in cats?", options: ["Magnesium", "Zinc", "Iron", "Calcium"], answer: 0 },
+      { question: "How does enzymatic hydrolysis make food hypoallergenic?", options: ["Breaks proteins small enough to evade IgE detection", "Removes all fat", "Adds sugar", "Freezes the antibodies"], answer: 0 },
+      { question: "What percentage of a dog's immune system resides in their gut?", options: ["Around 70%", "10%", "100%", "25%"], answer: 0 },
+      { question: "What is the main risk of an unbalanced homemade raw diet?", options: ["Nutritional deficiencies in calcium and trace minerals", "Too much moisture", "Fast hair growth", "Excessive sleep"], answer: 0 },
+      { question: "Why are preservatives like BHA and BHT restricted in premium foods?", options: ["Potential health risks and synthetic chemical concerns", "They make food taste bitter", "They lower protein", "They spoil food"], answer: 0 },
+      { question: "What ingredient is often used as a binder in grain-free kibble?", options: ["Peas, Lentils, or Chickpeas", "Beef Tallow", "Wheat Gluten", "Corn Starch"], answer: 0 },
+      { question: "How long can fresh wet food sit in a pet's bowl before spoiling?", options: ["2 to 4 Hours max", "24 Hours", "3 Days", "12 Hours"], answer: 0 },
+      { question: "What is the main function of probiotics in pet food?", options: ["Support healthy gut microbiome and digestion", "Kill internal parasites", "Color the kibble", "Preserve fat"], answer: 0 },
+      { question: "Which fatty acid is crucial for brain development in puppies?", options: ["DHA (Docosahexaenoic Acid)", "Oleic Acid", "Stearic Acid", "Palmitic Acid"], answer: 0 },
+      { question: "What is the clinical sign of anal gland inflammation caused by allergies?", options: ["Scooting across the floor", "Limping", "Head tilting", "Excessive drinking"], answer: 0 },
+      { question: "Why is chocolate dangerous for dogs?", options: ["Contains Theobromine and Caffeine", "High salt", "Sticking to teeth", "Causes gas"], answer: 0 },
+      { question: "Can a dog be allergic to lamb?", options: ["Yes, lamb is a documented animal protein allergen", "No, lamb is 100% immune safe", "Only in summer", "Only if raw"], answer: 0 },
+      { question: "What does AAFCO stand for?", options: ["Association of American Feed Control Officials", "American Animal Food Care Organization", "Allied Association for Cat Owners", "Agency for Animal Food Optimization"], answer: 0 },
+      { question: "What is the primary energy source in a carnivore diet?", options: ["Fats & Proteins", "Simple Sugars", "Starch", "Fiber"], answer: 0 },
+      { question: "What vitamin is synthesized in skin when pets are exposed to sunlight?", options: ["Dogs/cats cannot efficiently synthesize Vitamin D from sun", "Vitamin C", "Vitamin A", "Vitamin E"], answer: 0 },
+      { question: "Which fruit is safe and healthy for dogs in moderation?", options: ["Blueberries", "Grapes", "Cherries with pits", "Avocado skin"], answer: 0 },
+      { question: "What causes dental tartar buildup in pets?", options: ["Bacterial plaque combining with minerals in saliva", "Eating meat", "Drinking water", "Lack of exercise"], answer: 0 },
+      { question: "What is the recommended approach if a pet gets diarrhea during food transition?", options: ["Slow down the transition and feed a bland diet", "Fast the pet for 5 days", "Double the new food", "Give cow milk"], answer: 0 },
+      { question: "Why should macadamia nuts never be given to dogs?", options: ["Causes temporary paralysis and weakness", "Destroys teeth", "Causes blindness", "Stops digestion"], answer: 0 },
+      { question: "What is the primary indicator of obesity in pets?", options: ["Loss of visible waistline and unpalpable ribs", "Heavy shedding", "Dark fur", "Sleeping 8 hours"], answer: 0 },
+      { question: "Which amino acid deficiency in dogs can lead to Dilated Cardiomyopathy (DCM)?", options: ["Taurine / L-Carnitine", "Lysine", "Leucine", "Valine"], answer: 0 },
+      { question: "What is the best way to clean pet bowls to eliminate bacteria?", options: ["Hot water and soap after every meal", "Rinse with cold water once a week", "Wipe with dry paper towel", "No cleaning needed"], answer: 0 },
+      { question: "Which plant protein is commonly used to boost crude protein levels in cheap kibble?", options: ["Corn Gluten Meal", "Apple Fiber", "Pumpkin Puree", "Oat Groats"], answer: 0 },
+      { question: "What is an effective natural remedy for mild constipation in dogs?", options: ["Plain Canned Pumpkin Puree", "Olive Oil", "Raw Egg Shells", "Garlic Powder"], answer: 0 },
+      { question: "Why are raw eggs in large quantities bad for dogs?", options: ["Avidin in raw egg whites blocks Biotin absorption", "They cause hair growth", "They destroy tooth enamel", "They cause dehydration"], answer: 0 },
+      { question: "What temperature should fresh pet food reach to kill harmful pathogens when cooking?", options: ["165°F (74°C)", "100°F", "300°F", "80°F"], answer: 0 },
+      { question: "What is the typical shelf life of an unopened bag of dry kibble?", options: ["12 to 18 Months", "10 Years", "1 Month", "5 Years"], answer: 0 },
+      { question: "Can cats survive on a vegetarian diet?", options: ["No, cats are obligate carnivores requiring meat nutrients", "Yes, easily", "Only if given carrots", "Only adult cats"], answer: 0 },
+      { question: "What is the purpose of glucosamine in senior dog diets?", options: ["Supports joint health and cartilage repair", "Helps eye vision", "Prevents ear infections", "Cleans teeth"], answer: 0 },
+      { question: "What is the most digestible organ meat for pets?", options: ["Liver", "Lungs", "Spleen", "Kidney"], answer: 0 },
+      { question: "What effect does canned wet food have on urinary tract health?", options: ["Increases water intake and lowers crystal risk", "Causes urinary stones", "Decreases urination", "Increases stomach acid"], answer: 0 },
+      { question: "Why should dogs avoid cooked chicken bones?", options: ["They splinter easily and puncture the stomach or intestines", "They are too soft", "They taste bitter", "They destroy vitamins"], answer: 0 },
+      { question: "Which oil is rich in EPA and DHA omega-3s for pets?", options: ["Fish Oil (Wild Salmon/Anchovy)", "Sunflower Oil", "Corn Oil", "Coconut Oil"], answer: 0 },
+      { question: "What is the impact of high-salt diets in pets?", options: ["Dehydration and potential kidney strain", "Improved coat shine", "Whiter teeth", "Stronger bones"], answer: 0 },
+      { question: "What is a symptom of zinc deficiency in dogs?", options: ["Crusty skin lesions around muzzle and eyes", "Yellow teeth", "Tail chasing", "Excessive snoring"], answer: 0 },
+      { question: "Which organ stores excess Vitamin A in a pet's body?", options: ["Liver", "Pancreas", "Heart", "Stomach"], answer: 0 },
+      { question: "What is the primary benefit of bone broth for dogs?", options: ["Provides hydration, collagen, and joint support", "Replaces solid food", "Cures fleas", "Stops shedding"], answer: 0 },
+      { question: "Why should avocado pit and skin be kept away from pets?", options: ["Contains Persin, which causes vomiting and diarrhea", "Too much sugar", "Causes dental cavities", "Blocks nostrils"], answer: 0 },
+      { question: "How does elevated phosphorus affect dogs with kidney disease?", options: ["Accelerates kidney damage", "Helps kidney function", "Builds muscle", "Calms the pet"], answer: 0 },
+      { question: "What is the ideal target body condition score (BCS) for dogs on a 9-point scale?", options: ["4 to 5 (Ideal)", "1 (Emaciated)", "9 (Severely Obese)", "7"], answer: 0 },
+      { question: "What is the golden rule of pet nutrition during an elimination diet trial?", options: ["Zero extra treats, human food, or flavored medications", "Feed double portions", "Give milk daily", "Change food every week"], answer: 0 }
+    ];
+
+    let currentQuestions = [];
+    let currentIdx = 0;
+    let score = 0;
+    let canAnswer = true;
+
+    function shuffle(array) {
+      let arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function startQuiz() {
+      score = 0;
+      currentIdx = 0;
+      
+      let shuffledMaster = shuffle(masterQuestions);
+      currentQuestions = shuffledMaster.slice(0, 10).map(q => {
+        let originalOptions = q.options.map((opt, idx) => ({ text: opt, isCorrect: idx === q.answer }));
+        let shuffledOpts = shuffle(originalOptions);
+        return {
+          question: q.question,
+          options: shuffledOpts.map(o => o.text),
+          answer: shuffledOpts.findIndex(o => o.isCorrect)
+        };
+      });
+
+      document.getElementById('quiz-active').style.display = 'block';
+      document.getElementById('quiz-result').style.display = 'none';
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      canAnswer = true;
+      let q = currentQuestions[currentIdx];
+
+      document.getElementById('current-num').innerText = currentIdx + 1;
+      document.getElementById('question-text').innerText = q.question;
+      
+      let progress = (currentIdx / 10) * 100;
+      document.getElementById('progress-bar').style.width = progress + '%';
+
+      const optionsContainer = document.getElementById('options-container');
+      optionsContainer.innerHTML = '';
+
+      q.options.forEach((optText, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerText = optText;
+        btn.onclick = () => selectOption(index, btn);
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function selectOption(selectedIndex, btnElement) {
+      if (!canAnswer) return;
+      canAnswer = false;
+
+      let correctIndex = currentQuestions[currentIdx].answer;
+      const allButtons = document.querySelectorAll('.option-btn');
+
+      if (selectedIndex === correctIndex) {
+        btnElement.classList.add('correct');
+        score++;
+      } else {
+        btnElement.classList.add('incorrect');
+        allButtons[correctIndex].classList.add('correct');
+      }
+
+      setTimeout(() => {
+        currentIdx++;
+        if (currentIdx < 10) {
+          renderQuestion();
+        } else {
+          showResults();
+        }
+      }, 1400);
+    }
+
+    function showResults() {
+      document.getElementById('quiz-active').style.display = 'none';
+      document.getElementById('quiz-result').style.display = 'block';
+      document.getElementById('user-score').innerText = score;
+
+      if (score >= 8) {
+        document.getElementById('prize-container').style.display = 'block';
+        document.getElementById('fail-container').style.display = 'none';
+        document.getElementById('result-message').innerText = "Outstanding! You are a Pet Nutrition Expert!";
+      } else {
+        document.getElementById('prize-container').style.display = 'none';
+        document.getElementById('fail-container').style.display = 'block';
+        document.getElementById('result-message').innerText = "Good effort! Review our articles and try again to unlock the reward.";
+      }
+    }
+
+    window.onload = startQuiz;
+  </script>
+</body>
+</html>
