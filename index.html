@@ -931,25 +931,5 @@
       statusText.innerText = `Captured: "${spokenText}"`;
       recordBtn.style.background = "#3b82f6";
       
-      // Play selected pet audio
-      if (petSounds[selectedPet]) {
-        petSounds[selectedPet].play();
-      }
-    };
-
-    recognition.onerror = () => {
-      statusText.innerText = "Didn't catch that. Try again!";
-      recordBtn.style.background = "#3b82f6";
-    };
-
-    recognition.onend = () => {
-      recordBtn.style.background = "#3b82f6";
-    };
-  } else {
-    statusText.innerText = "Web Speech API is not supported in this browser.";
-  }
-})();
-</script>
-<!-- Pet Voice Translator Widget End -->
 </body>
 </html>
