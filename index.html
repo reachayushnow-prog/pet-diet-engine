@@ -742,6 +742,78 @@
         <strong>⚠️ Important Disclaimer:</strong> The information, tools, and calculations provided on Pet Diet Engine are for educational purposes only and do not constitute veterinary medical advice. Always consult with your veterinarian before making significant dietary changes. Pet Diet Engine is not a substitute for professional veterinary consultation.
     </div>
 </div>
+<!-- Pet Voice Translator Widget Start -->
+<div id="pet-translator-container" style="max-width: 400px; margin: 2rem auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; text-align: center; font-family: sans-serif; background: #f9f9f9;">
+  <h3 style="margin-bottom: 15px;">🐾 Speak to Your Pet</h3>
+  
+  <div style="margin-bottom: 15px;">
+    <label style="margin-right: 15px;">
+      <input type="radio" name="petType" value="dog" checked> Dog 🐶
+    </label>
+    <label>
+      <input type="radio" name="petType" value="cat"> Cat 🐱
+    </label>
+  </div>
+
+  <button id="translatorRecordBtn" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 20px; font-size: 16px; font-weight: bold; cursor: pointer;">
+    🎤 Hold to Speak
+  </button>
+  
+  <p id="translatorStatus" style="margin-top: 15px; font-size: 14px; color: #4b5563;">
+    Press button to translate...
+  </p>
+</div>
+
+<script>
+(function() {
+  const recordBtn = document.getElementById('translatorRecordBtn');
+  const statusText = document.getElementById('translatorStatus');
+  const petTypeInputs = document.querySelectorAll('input[name="petType"]');
+
+  const petSounds = {
+    dog: new Audio('https://actions.google.com/sounds/v1/animals/dog_barking.ogg'),
+    cat: new Audio('https://actions.google.com/sounds/v1/animals/cat_meow.ogg')
+  };
+
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (SpeechRecognition) {
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'en-US';
+
+    recordBtn.addEventListener('click', () => {
+      recognition.start();
+      statusText.innerText = "Listening to your voice...";
+      recordBtn.style.background = "#ef4444";
+    });
+
+    recognition.onresult = (event) => {
+      const spokenText = event.results[0][0].transcript;
+      const selectedPet = document.querySelector('input[name="petType"]:checked').value;
+      
+      statusText.innerText = `Captured: "${spokenText}"`;
+      recordBtn.style.background = "#3b82f6";
+      
+      // Play selected pet audio
+      if (petSounds[selectedPet]) {
+        petSounds[selectedPet].play();
+      }
+    };
+
+    recognition.onerror = () => {
+      statusText.innerText = "Didn't catch that. Try again!";
+      recordBtn.style.background = "#3b82f6";
+    };
+
+    recognition.onend = () => {
+      recordBtn.style.background = "#3b82f6";
+    };
+  } else {
+    statusText.innerText = "Web Speech API is not supported in this browser.";
+  }
+})();
+</script>
+<!-- Pet Voice Translator Widget End -->
 
 <!-- Footer -->
 <footer>
