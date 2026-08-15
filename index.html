@@ -1,642 +1,873 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+So this is my website index code, design it accordingly make sure every link and calculator is working <!DOCTYPE html>
 
-<title>Pet Diet Engine | Pet Nutrition Calculators & Food Safety Tools</title>
-<meta name="description" content="Free pet nutrition calculators and practical tools for dogs and cats. Estimate daily calories, food portions, check ingredient safety, and explore evidence-informed pet nutrition guides.">
-<meta name="keywords" content="pet calorie calculator, dog calorie calculator, cat calorie calculator, dog food calculator, cat food calculator, pet food safety checker, homemade dog food calculator, pet nutrition calculator">
+<html lang="en">  
+<head>  
+    <!-- GitHub Banner Start -->  
+<div style="background-color: #0d1117; color: #c9d1d9; border: 1px solid #30363d; padding: 12px 16px; border-radius: 6px; font-family: monospace; font-size: 14px; margin: 15px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">  
+  <div>  
+    <span style="color: #3fb950;">🚀 Running MyProject v1.0.0</span>  
+  </div>  
+  <div>  
+    ⭐ Enjoying this tool?   
+    <a href="https://github.com/username/repo" target="_blank" rel="noopener noreferrer" style="color: #58a6ff; text-decoration: none; font-weight: bold; margin-left: 5px;">  
+      Star us on GitHub &rarr;  
+    </a>  
+  </div>  
+</div>  
+<!-- GitHub Banner End -->  <meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Pet Diet Engine - Fresh, Homemade & Hypoallergenic Pet Nutrition</title>  
+<meta name="description" content="Empower your pet with fresh, science-backed nutrition. Calculate daily portions, macros, and ingredient safety. Hypoallergenic diet plans for dogs and cats.">  
+<meta name="keywords" content="pet diet calculator, homemade dog food recipe, cat nutrition macros, safe pet ingredients, pet diet engine, farmina nd dog food review">  
+<meta name='impact-site-verification' value='f4404e13-303a-4c92-be50-d0f9b2e35101'>  
+<meta name="monetag" content="9949e0ea6e496604fab829331ec5daed">  
+  
+<!-- Canonical Tag -->  
+<link rel="canonical" href="https://www.petdietengine.com/" />  
+<link rel="icon" type="image/png" href="favicon.png">  
+<script src="https://quge5.com/88/tag.min.js" data-zone="267053" async data-cfasync="false"></script>  
+  
+<!-- Open Graph Meta Tags -->  
+<meta property="og:title" content="Pet Diet Engine - Science-Backed Pet Nutrition & Calculators">  
+<meta property="og:description" content="Calculate daily portions, macros, and ingredient safety for dogs and cats. Fresh, home-cooked pet food made simple.">  
+<meta property="og:url" content="https://www.petdietengine.com/">  
+<meta property="og:type" content="website">  
+<meta property="og:image" content="https://www.petdietengine.com/1785328454295.png">  
 
-<link rel="canonical" href="https://www.petdietengine.com/">
-<link rel="icon" type="image/png" href="favicon.png">
+<!-- Google Site Verification -->  
+<meta name="google-site-verification" content="gBZp0aIdU49_QrFyK20X-Kg8gs31BCU_NiJRU6H43rE" />  
 
-<meta property="og:title" content="Pet Diet Engine | Pet Nutrition Calculators & Food Safety Tools">
-<meta property="og:description" content="Calculate estimated daily calories and food portions for your dog or cat and check common ingredient safety.">
-<meta property="og:url" content="https://www.petdietengine.com/">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://www.petdietengine.com/1785328454295.png">
+<!-- Google AdSense Code -->  
+<meta name="google-adsense-account" content="ca-pub-5746296968934939">  
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746296968934939" crossorigin="anonymous"></script>  
 
-<meta name="google-site-verification" content="gBZp0aIdU49_QrFyK20X-Kg8gs31BCU_NiJRU6H43rE">
-<meta name="impact-site-verification" content="f4404e13-303a-4c92-be50-d0f9b2e35101">
-<meta name="google-adsense-account" content="ca-pub-5746296968934939">
+<!-- Schema.org Structured Data -->  
+<script type="application/ld+json">  
+{  
+  "@context": "https://schema.org",  
+  "@graph": [  
+    {  
+      "@type": "WebSite",  
+      "@id": "https://www.petdietengine.com/#website",  
+      "url": "https://www.petdietengine.com/",  
+      "name": "Pet Diet Engine",  
+      "description": "Science-backed pet nutrition guides, portion calculators, and homemade recipes."  
+    },  
+    {  
+      "@type": "Organization",  
+      "@id": "https://www.petdietengine.com/#organization",  
+      "name": "Pet Diet Engine",  
+      "url": "https://www.petdietengine.com/",  
+      "logo": "https://www.petdietengine.com/1785328454295.png"  
+    }  
+  ]  
+}  
+</script>  
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746296968934939" crossorigin="anonymous"></script>
-<script src="https://quge5.com/88/tag.min.js" data-zone="267053" async data-cfasync="false"></script>
+<style>  
+    /* Base Setup & Typography */  
+    * {  
+        margin: 0;  
+        padding: 0;  
+        box-sizing: border-box;  
+    }  
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"WebSite",
-      "@id":"https://www.petdietengine.com/#website",
-      "url":"https://www.petdietengine.com/",
-      "name":"Pet Diet Engine",
-      "description":"Pet nutrition calculators, ingredient safety tools and educational guides for responsible pet owners."
-    },
-    {
-      "@type":"Organization",
-      "@id":"https://www.petdietengine.com/#organization",
-      "name":"Pet Diet Engine",
-      "url":"https://www.petdietengine.com/",
-      "logo":{
-        "@type":"ImageObject",
-        "url":"https://www.petdietengine.com/1785328454295.png"
-      }
-    }
-  ]
-}
-</script>
+    html {  
+        scroll-behavior: smooth;  
+        scroll-padding-top: 80px; /* Offset for sticky nav bar */  
+    }  
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f8fafc;color:#172033;line-height:1.65}
-img{max-width:100%;height:auto}
-button,input,select{font:inherit}
-a{color:inherit}
+    body {  
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;  
+        background-color: #f8fafc;  
+        color: #1e293b;  
+        line-height: 1.7;  
+    }  
 
-.site-nav{position:sticky;top:0;z-index:9999;background:rgba(15,23,42,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav-inner{max-width:1180px;margin:auto;min-height:70px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;font-weight:800;font-size:1.1rem;white-space:nowrap}
-.brand-mark{width:32px;height:32px;display:grid;place-items:center;background:#10b981;border-radius:10px;font-size:18px}
-.nav-menu{display:flex;align-items:center;gap:6px;list-style:none}
-.nav-menu a{text-decoration:none;color:#cbd5e1;font-size:.9rem;font-weight:650;padding:9px 13px;border-radius:9px;transition:.2s ease}
-.nav-menu a:hover{background:rgba(255,255,255,.08);color:#fff}
-.nav-menu .nav-primary{background:#2563eb;color:#fff}
-.nav-menu .nav-primary:hover{background:#1d4ed8}
+    /* Modern Professional Navigation (3 Top Items) */  
+    nav {  
+        background-color: rgba(15, 23, 42, 0.95);  
+        backdrop-filter: blur(12px);  
+        -webkit-backdrop-filter: blur(12px);  
+        padding: 0.85rem 1.5rem;  
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.25);  
+        position: sticky;  
+        top: 0;  
+        z-index: 1000;  
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);  
+    }  
 
-.container{width:min(1180px,calc(100% - 32px));margin:auto}
+    .nav-container {  
+        max-width: 1200px;  
+        margin: 0 auto;  
+        display: flex;  
+        justify-content: space-between;  
+        align-items: center;  
+    }  
 
-.hero{margin-top:28px;padding:60px 50px;border-radius:24px;background:radial-gradient(circle at 90% 10%,rgba(37,99,235,.35),transparent 35%),linear-gradient(135deg,#0f172a,#172554);color:#fff;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);border-radius:50px;color:#6ee7b7;font-size:.82rem;font-weight:750;margin-bottom:18px}
-.hero h1{font-size:clamp(2.2rem,5vw,3.7rem);line-height:1.08;letter-spacing:-.045em;margin-bottom:20px}
-.hero h1 span{color:#60a5fa}
-.hero-text{color:#cbd5e1;font-size:1.08rem;max-width:620px;margin-bottom:27px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:12px 19px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;font-weight:750;transition:.2s ease}
-.btn-primary{background:#10b981;color:#fff;box-shadow:0 8px 20px rgba(16,185,129,.2)}
-.btn-primary:hover{background:#059669;transform:translateY(-2px)}
-.btn-secondary{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.12)}
-.btn-secondary:hover{background:rgba(255,255,255,.14)}
-.hero-image{border-radius:20px;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,.35)}
-.hero-image img{width:100%;height:340px;object-fit:cover;display:block}
+    .nav-brand {  
+        font-size: 1.25rem;  
+        font-weight: 800;  
+        color: #ffffff;  
+        text-decoration: none;  
+        display: flex;  
+        align-items: center;  
+        gap: 0.6rem;  
+        letter-spacing: -0.02em;  
+        transition: opacity 0.2s ease;  
+    }  
 
-.trust-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 35px}
-.trust-item{background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:15px;text-align:center;font-size:.9rem;color:#475569}
-.trust-item strong{display:block;color:#0f172a;margin-bottom:3px}
+    .nav-brand:hover {  
+        opacity: 0.9;  
+    }  
 
-.section{margin:55px 0}
-.section-heading{max-width:720px;margin-bottom:25px}
-.section-heading h2{color:#0f172a;font-size:clamp(1.7rem,3vw,2.25rem);line-height:1.2;letter-spacing:-.025em;margin-bottom:8px}
-.section-heading p{color:#64748b}
+    .nav-brand::before {  
+        content: "";  
+        display: inline-block;  
+        width: 8px;  
+        height: 8px;  
+        background-color: #10b981;  
+        border-radius: 50%;  
+        box-shadow: 0 0 10px #10b981;  
+    }  
 
-.calculator-card{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid #dbe4ef;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(15,23,42,.07)}
-.calculator-form{padding:30px}
-.calculator-result{padding:30px;background:linear-gradient(145deg,#eff6ff,#f0fdf4);border-left:1px solid #e2e8f0}
-.calculator-title{display:flex;align-items:center;gap:10px;margin-bottom:7px}
-.calculator-title h3{font-size:1.35rem}
-.form-group{margin-top:17px}
-.form-group label{display:block;font-size:.87rem;font-weight:750;color:#334155;margin-bottom:6px}
-.form-group input,.form-group select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;color:#0f172a;outline:none}
-.form-group input:focus,.form-group select:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12)}
-.form-help{font-size:.78rem;color:#64748b;margin-top:4px}
-.calculate-btn{width:100%;margin-top:22px;padding:13px;border:none;border-radius:10px;background:#2563eb;color:#fff;font-weight:800;cursor:pointer;transition:.2s ease}
-.calculate-btn:hover{background:#1d4ed8}
-.result-placeholder{color:#64748b;text-align:center;padding:30px 10px}
-.result-box{display:none}
-.result-box.show{display:block}
-.result-main{background:#fff;border-radius:15px;padding:20px;margin-bottom:15px;border:1px solid #dbeafe}
-.result-label{color:#64748b;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-.result-number{font-size:2.4rem;font-weight:850;color:#1d4ed8;line-height:1.15;margin:4px 0}
-.result-unit{color:#475569;font-size:.9rem}
-.result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.result-stat{background:#fff;border:1px solid #e2e8f0;padding:14px;border-radius:11px}
-.result-stat strong{display:block;color:#0f172a}
-.result-note{font-size:.78rem;color:#64748b;margin-top:15px;line-height:1.55}
+    .nav-links {  
+        display: flex;  
+        gap: 0.75rem;  
+        list-style: none;  
+        align-items: center;  
+    }  
 
-.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:22px;text-decoration:none;transition:.25s ease;position:relative;overflow:hidden}
-.tool-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:#2563eb}
-.tool-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(15,23,42,.09);border-color:#bfdbfe}
-.tool-icon{font-size:2.1rem;margin-bottom:10px}
-.tool-card h3{color:#0f172a;font-size:1.05rem;margin-bottom:5px}
-.tool-card p{color:#64748b;font-size:.84rem}
+    .nav-links li {  
+        display: flex;  
+        align-items: center;  
+    }  
 
-.safety-card{background:#0f172a;color:#fff;border-radius:20px;padding:30px}
-.safety-header{max-width:700px;margin-bottom:20px}
-.safety-header h2{color:#fff;margin-bottom:7px}
-.safety-header p{color:#94a3b8}
-.safety-form{display:grid;grid-template-columns:1fr auto;gap:10px}
-.safety-form input{width:100%;padding:13px;border-radius:10px;border:1px solid #334155;background:#1e293b;color:#fff;outline:none}
-.safety-form button{padding:13px 20px;border:none;border-radius:10px;background:#10b981;color:#fff;font-weight:800;cursor:pointer}
-.safety-result{margin-top:18px;padding:15px;border-radius:10px;display:none}
-.safety-result.show{display:block}
-.safety-safe{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);color:#a7f3d0}
-.safety-caution{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);color:#fde68a}
-.safety-danger{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);color:#fecaca}
+    .nav-links a {  
+        color: #94a3b8;  
+        text-decoration: none;  
+        font-weight: 600;  
+        font-size: 0.9rem;  
+        padding: 0.55rem 1rem;  
+        border-radius: 8px;  
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);  
+        white-space: nowrap;  
+    }  
 
-.guides-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.guide-card{background:#fff;border:1px solid #e2e8f0;border-radius:15px;padding:23px}
-.guide-card .tag{display:inline-block;font-size:.72rem;font-weight:800;color:#2563eb;background:#eff6ff;padding:5px 9px;border-radius:50px;margin-bottom:10px}
-.guide-card h3{font-size:1.15rem;line-height:1.35;margin-bottom:8px;color:#0f172a}
-.guide-card p{color:#64748b;font-size:.88rem;margin-bottom:15px}
-.guide-link{color:#2563eb;font-size:.88rem;font-weight:800;text-decoration:none}
-.guide-link:hover{text-decoration:underline}
+    .nav-links a:hover {  
+        color: #ffffff;  
+        background-color: rgba(255, 255, 255, 0.08);  
+    }  
 
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.why-card{padding:22px;background:#fff;border:1px solid #e2e8f0;border-radius:15px}
-.why-card span{font-size:1.8rem}
-.why-card h3{margin:8px 0 5px;color:#0f172a;font-size:1.05rem}
-.why-card p{color:#64748b;font-size:.87rem}
+    .nav-links a.active {  
+        color: #ffffff;  
+        background-color: rgba(255, 255, 255, 0.12);  
+    }  
 
-.share-box{margin:45px 0;padding:24px;background:#fff;border:1px solid #e2e8f0;border-radius:15px}
-.share-box h3{margin-bottom:12px;color:#0f172a}
-.share-buttons{display:flex;flex-wrap:wrap;gap:8px}
-.share-btn{border:none;border-radius:8px;padding:9px 14px;color:#fff;font-weight:700;cursor:pointer;font-size:.82rem}
-.facebook{background:#1877f2}.whatsapp{background:#25d366}.pinterest{background:#e60023}.x{background:#000}.copy{background:#475569}
+    .nav-cta-btn {  
+        background-color: #2563eb !important;  
+        color: #ffffff !important;  
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);  
+    }  
 
-.disclaimer{margin:35px 0;padding:20px;border-left:4px solid #f59e0b;border-radius:0 12px 12px 0;background:#fff7ed;color:#7c2d12;font-size:.84rem}
-.disclaimer strong{color:#9a3412}
+    .nav-cta-btn:hover {  
+        background-color: #1d4ed8 !important;  
+    }  
 
-footer{margin-top:70px;background:#0f172a;color:#94a3b8;border-top:4px solid #2563eb}
-.footer-inner{width:min(1180px,calc(100% - 32px));margin:auto;padding:45px 0 25px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px;margin-bottom:30px}
-.footer-section h3{color:#fff;font-size:.9rem;margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
-.footer-section p,.footer-section a{font-size:.84rem;color:#94a3b8;text-decoration:none;line-height:1.8}
-.footer-section a:hover{color:#fff}
-.footer-bottom{border-top:1px solid #1e293b;padding-top:20px;text-align:center;font-size:.78rem}
+    .container {  
+        max-width: 1200px;  
+        margin: 0 auto;  
+        padding: 2.5rem 1.25rem;  
+    }  
 
-@media(max-width:950px){
-.hero-grid{grid-template-columns:1fr}
-.hero-image img{height:300px}
-.tools-grid{grid-template-columns:repeat(2,1fr)}
-.guides-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
-.calculator-card{grid-template-columns:1fr}
-.calculator-result{border-left:none;border-top:1px solid #e2e8f0}
-.footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:700px){
-.nav-inner{min-height:62px}
-.nav-menu{gap:2px}
-.nav-menu a{font-size:.78rem;padding:8px 7px}
-.nav-menu li:nth-child(2){display:none}
-.hero{padding:38px 23px;margin-top:18px;border-radius:18px}
-.hero h1{font-size:2.2rem}
-.hero-image img{height:230px}
-.trust-strip{grid-template-columns:1fr}
-.tools-grid,.guides-grid,.why-grid{grid-template-columns:1fr}
-.calculator-form,.calculator-result{padding:22px}
-.safety-card{padding:22px}
-.safety-form{grid-template-columns:1fr}
-.footer-grid{grid-template-columns:1fr}
-.hero-actions{flex-direction:column}
-.hero-actions .btn{width:100%}
-}
+    /* Split Hero Section */  
+    .hero {  
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);  
+        color: #fff;  
+        border-radius: 16px;  
+        margin-bottom: 2rem;  
+        padding: 3rem 2.5rem;  
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);  
+    }  
+
+    .hero-grid {  
+        display: grid;  
+        grid-template-columns: 1.2fr 0.8fr;  
+        gap: 2.5rem;  
+        align-items: center;  
+    }  
+
+    .hero-text h1 {  
+        font-size: 2.5rem;  
+        margin-bottom: 1rem;  
+        line-height: 1.2;  
+        color: #f8fafc;  
+    }  
+
+    .hero-text p {  
+        font-size: 1.1rem;  
+        margin-bottom: 2rem;  
+        color: #94a3b8;  
+        max-width: 580px;  
+    }  
+
+    .hero-image {  
+        width: 100%;  
+        height: 100%;  
+        min-height: 280px;  
+        border-radius: 12px;  
+        overflow: hidden;  
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);  
+    }  
+
+    .hero-image img {  
+        width: 100%;  
+        height: 100%;  
+        object-fit: cover;  
+        display: block;  
+    }  
+
+    .cta-button {  
+        display: inline-block;  
+        padding: 0.9rem 2rem;  
+        background-color: #10b981;  
+        color: #fff;  
+        text-decoration: none;  
+        border-radius: 8px;  
+        font-weight: 700;  
+        font-size: 1rem;  
+        transition: all 0.3s ease;  
+        border: none;  
+        cursor: pointer;  
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);  
+    }  
+
+    .cta-button:hover {  
+        background-color: #059669;  
+        transform: translateY(-2px);  
+    }  
+
+    /* Body Quick-Access Navigation Hub */  
+    .quick-hub {  
+        background: #ffffff;  
+        border: 1px solid #e2e8f0;  
+        border-radius: 16px;  
+        padding: 1.5rem 2rem;  
+        margin-bottom: 3rem;  
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);  
+    }  
+
+    .quick-hub-title {  
+        font-size: 0.85rem;  
+        font-weight: 800;  
+        text-transform: uppercase;  
+        letter-spacing: 0.08em;  
+        color: #64748b;  
+        margin-bottom: 1rem;  
+        display: flex;  
+        align-items: center;  
+        gap: 0.5rem;  
+    }  
+
+    .quick-hub-buttons {  
+        display: flex;  
+        flex-wrap: wrap;  
+        gap: 0.75rem;  
+    }  
+
+    .hub-btn {  
+        display: inline-flex;  
+        align-items: center;  
+        gap: 0.5rem;  
+        padding: 0.65rem 1.25rem;  
+        background-color: #f1f5f9;  
+        color: #0f172a;  
+        text-decoration: none;  
+        font-weight: 600;  
+        font-size: 0.925rem;  
+        border-radius: 10px;  
+        border: 1px solid #cbd5e1;  
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);  
+    }  
+
+    .hub-btn:hover {  
+        background-color: #2563eb;  
+        color: #ffffff;  
+        border-color: #2563eb;  
+        transform: translateY(-2px);  
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);  
+    }  
+
+    .hub-btn-featured {  
+        background-color: #eff6ff;  
+        color: #1d4ed8;  
+        border-color: #bfdbfe;  
+    }  
+
+    /* Features Grid */  
+    .features {  
+        display: grid;  
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  
+        gap: 2rem;  
+        margin: 3rem 0;  
+    }  
+
+    .feature-card {  
+        background: #fff;  
+        padding: 2rem;  
+        border-radius: 12px;  
+        border: 1px solid #e2e8f0;  
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);  
+        transition: transform 0.3s ease, box-shadow 0.3s ease;  
+    }  
+
+    .feature-card:hover {  
+        transform: translateY(-4px);  
+        box-shadow: 0 12px 16px rgba(0, 0, 0, 0.08);  
+    }  
+
+    .feature-icon {  
+        font-size: 3rem;  
+        margin-bottom: 1rem;  
+    }  
+
+    .feature-card h3 {  
+        font-size: 1.35rem;  
+        color: #0f172a;  
+        margin-bottom: 0.75rem;  
+    }  
+
+    .feature-card p {  
+        color: #64748b;  
+        margin: 0;  
+        font-size: 0.95rem;  
+    }  
+
+    /* Pop Tool Cards Styling */  
+    .tools-section {  
+        margin: 4rem 0;  
+        padding: 2.5rem 2rem;  
+        background-color: #f1f5f9;  
+        border-radius: 16px;  
+        border-left: 6px solid #2563eb;  
+    }  
+
+    .tools-section h2 {  
+        color: #0f172a;  
+        margin-top: 0;  
+        margin-bottom: 0.5rem;  
+        font-size: 1.75rem;  
+        border-bottom: none;  
+        padding-bottom: 0;  
+    }  
+
+    .tools-section p {  
+        color: #64748b;  
+        margin-bottom: 1.5rem;  
+    }  
+
+    .tool-list {  
+        display: grid;  
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  
+        gap: 1.5rem;  
+        list-style: none;  
+    }  
+
+    .tool-card {  
+        background: #ffffff;  
+        padding: 1.75rem 1.25rem;  
+        border-radius: 12px;  
+        border: 2px solid #e2e8f0;  
+        border-top: 4px solid #2563eb;  
+        text-align: center;  
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.06);  
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;  
+    }  
+
+    .tool-card:hover {  
+        transform: translateY(-5px);  
+        box-shadow: 0 12px 20px rgba(37, 99, 235, 0.15);  
+        border-color: #2563eb;  
+    }  
+
+    .tool-card a {  
+        color: #1e293b;  
+        text-decoration: none;  
+        font-weight: 700;  
+        display: block;  
+        font-size: 1.1rem;  
+    }  
+
+    .tool-card a span.tool-title {  
+        color: #2563eb;  
+        display: block;  
+        margin-top: 0.5rem;  
+    }  
+
+    .tool-card a:hover span.tool-title {  
+        text-decoration: underline;  
+    }  
+
+    h2 {  
+        color: #0f172a;  
+        font-size: 2rem;  
+        margin-bottom: 1.5rem;  
+        border-bottom: 2px solid #e2e8f0;  
+        padding-bottom: 0.75rem;  
+    }  
+
+    /* Disclaimer Banner */  
+    .disclaimer-banner {  
+        background-color: #1e293b;  
+        border-left: 4px solid #f59e0b;  
+        border-radius: 0 8px 8px 0;  
+        padding: 1.25rem;  
+        margin: 2rem 0;  
+        color: #cbd5e1;  
+        font-size: 0.85rem;  
+        line-height: 1.6;  
+    }  
+
+    .disclaimer-banner strong {  
+        color: #f8fafc;  
+    }  
+
+    /* CTA Button */  
+    .pde-toxic-food-btn {  
+        display: inline-block;  
+        padding: 14px 28px;  
+        background-color: #e60023;  
+        color: #ffffff !important;  
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;  
+        font-size: 1.1rem;  
+        font-weight: 700;  
+        text-decoration: none;  
+        border-radius: 50px;  
+        box-shadow: 0 4px 12px rgba(230, 0, 35, 0.3);  
+        transition: all 0.3s ease;  
+    }  
+
+    .pde-toxic-food-btn:hover {  
+        background-color: #c4001d;  
+        transform: translateY(-2px);  
+        box-shadow: 0 6px 16px rgba(230, 0, 35, 0.4);  
+    }  
+
+    /* Community Boxes */  
+    .pde-box {  
+        background: #ffffff;  
+        border: 1px solid #e2e8f0;  
+        border-radius: 12px;  
+        padding: 20px;  
+        margin: 30px 0;  
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02);  
+    }  
+    .pde-box h3 {  
+        margin-top: 0;  
+        margin-bottom: 8px;  
+        font-size: 1.25rem;  
+        color: #0f172a;  
+    }  
+    .pde-box p {  
+        margin: 0 0 12px 0;  
+        color: #64748b;  
+        font-size: 0.95rem;  
+    }  
+    .pde-buttons {  
+        display: flex;  
+        gap: 10px;  
+        flex-wrap: wrap;  
+        margin-top: 10px;  
+    }  
+    .pde-btn {  
+        padding: 8px 16px;  
+        border-radius: 20px;  
+        font-size: 14px;  
+        font-weight: 600;  
+        cursor: pointer;  
+        border: none;  
+        text-decoration: none;  
+        display: inline-block;  
+        color: #ffffff !important;  
+        transition: opacity 0.2s ease;  
+    }  
+    .pde-btn:hover {  
+        opacity: 0.88;  
+    }  
+    .btn-facebook { background-color: #1877f2; }  
+    .btn-whatsapp { background-color: #25d366; }  
+    .btn-pinterest { background-color: #e60023; }  
+    .btn-instagram { background-color: #e1306c; }  
+    .btn-youtube { background-color: #ff0000; }  
+    .btn-x { background-color: #000000; }  
+    .btn-copy { background-color: #5a5a5a; }  
+
+    /* Footer */  
+    footer {  
+        background-color: #0f172a;  
+        color: #94a3b8;  
+        padding: 3rem 1.25rem 2rem;  
+        border-top: 4px solid #2563eb;  
+        margin-top: 4rem;  
+    }  
+
+    .footer-container {  
+        max-width: 1200px;  
+        margin: 0 auto;  
+    }  
+
+    .footer-grid {  
+        display: grid;  
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  
+        gap: 2rem;  
+        margin-bottom: 2rem;  
+    }  
+
+    .footer-section h3 {  
+        color: #f8fafc;  
+        font-size: 0.95rem;  
+        font-weight: 700;  
+        text-transform: uppercase;  
+        letter-spacing: 0.05em;  
+        margin-top: 0;  
+        margin-bottom: 1rem;  
+    }  
+
+    .footer-section p {  
+        font-size: 0.875rem;  
+        color: #94a3b8;  
+        margin: 0 0 0.5rem 0;  
+        line-height: 1.6;  
+    }  
+
+    .footer-section a {  
+        color: #60a5fa;  
+        text-decoration: none;  
+    }  
+
+    .footer-section a:hover {  
+        text-decoration: underline;  
+    }  
+
+    .footer-bottom {  
+        border-top: 1px solid #1e293b;  
+        padding-top: 1.5rem;  
+        text-align: center;  
+        font-size: 0.8rem;  
+        color: #64748b;  
+    }  
+
+    @media (max-width: 900px) {  
+        .hero-grid {  
+            grid-template-columns: 1fr;  
+        }  
+        .hero-image {  
+            height: 220px;  
+        }  
+    }  
+
+    @media (max-width: 768px) {  
+        nav {  
+            padding: 0.75rem 1rem;  
+        }  
+
+        .hero {  
+            padding: 2rem 1.5rem;  
+        }  
+
+        .hero-text h1 {  
+            font-size: 1.8rem;  
+        }  
+
+        .hero-text p {  
+            font-size: 1rem;  
+        }  
+    }  
 </style>
-</head>
 
-<body>
+</head>  
+<body>  <!-- Minimalist 3-Item Navigation Bar -->  <nav>  
+    <div class="nav-container">  
+        <a href="index.html" class="nav-brand">🐾 Pet Diet Engine</a>  
+        <ul class="nav-links">  
+            <li><a href="index.html" class="active">Home</a></li>  
+            <li><a href="articles.html">Guides</a></li>  
+            <li><a href="articles.html#meal-calculator" class="nav-cta-btn">Meal Calculator ⚡</a></li>  
+        </ul>  
+    </div>  
+</nav>  <!-- Main Content Wrapper -->  <div class="container">  
+    <!-- Split Hero Section -->  
+    <header class="hero">  
+        <div class="hero-grid">  
+            <div class="hero-text">  
+                <h1>Science-Backed Pet Nutrition Made Simple</h1>  
+                <p>Transition your dog or cat to fresh, whole-food diets with daily portion calculators, macro optimization, and instant ingredient safety checks.</p>  
+                <a href="articles.html" class="cta-button">Explore Full Guides & Tools →</a>  
+            </div>  
+            <div class="hero-image">  
+                <img   
+                    src="1785328454295.png"  
+                    alt="Happy Golden Retriever and cat eating fresh homemade pet food from balanced meal bowls"  
+                    width="600"  
+                    height="400"  
+                    loading="eager"  
+                    fetchpriority="high"  
+                />  
+            </div>  
+        </div>  
+    </header>  <!-- Quick Navigation Hub (Body Buttons) -->  
+<div class="quick-hub">  
+    <div class="quick-hub-title">🚀 Quick Navigation Hub</div>  
+    <div class="quick-hub-buttons">  
+        <a href="farmina-nd-dog-food-review.html" class="hub-btn hub-btn-featured">🐶 Farmina N&D Review</a>  
+        <a href="high-protein-homemade-dog-food-recipe.html" class="hub-btn">🥩 High-Protein Recipe</a>  
+        <a href="macro-counting-recipes-pet-owners.html" class="hub-btn">📊 Macro Recipes</a>  
+        <a href="pet-food-allergy-elimination-diet-guide.html" class="hub-btn">🩺 Food Allergy Guide</a>  
+        <a href="articles.html#safety-checker" class="hub-btn">🧪 Safety Checker</a>  
+        <a href="#tools" class="hub-btn">⚡ Interactive Tools</a>  
+    </div>  
+</div>  
 
-<nav class="site-nav">
-<div class="nav-inner">
-<a href="index.html" class="brand"><span class="brand-mark">🐾</span>Pet Diet Engine</a>
-<ul class="nav-menu">
-<li><a href="index.html">Home</a></li>
-<li><a href="articles.html">Guides</a></li>
-<li><a href="#calculator" class="nav-primary">Calculator</a></li>
-</ul>
-</div>
-</nav>
+<!-- Core Features -->  
+<section>  
+    <h2>Why Choose Pet Diet Engine?</h2>  
+    <div class="features">  
+        <div class="feature-card">  
+            <div class="feature-icon">📊</div>  
+            <h3>Precise Calculations</h3>  
+            <p>Scientifically-backed formulas for daily calorie targets, portion weights, and macronutrient splits customized to your pet's size, activity level, and health goals.</p>  
+        </div>  
+        <div class="feature-card">  
+            <div class="feature-icon">🧪</div>  
+            <h3>Ingredient Safety</h3>  
+            <p>Instant ingredient checker to verify what's safe before adding to your pet's meal. Know what to avoid—toxic ingredients, allergens, and hidden risks.</p>  
+        </div>  
+        <div class="feature-card">  
+            <div class="feature-icon">🔬</div>  
+            <h3>Allergy Solutions</h3>  
+            <p>Comprehensive hypoallergenic diet plans, elimination trial protocols, and novel protein recommendations for pets with sensitivities.</p>  
+        </div>  
+        <div class="feature-card">  
+            <div class="feature-icon">🐕‍🦺</div>  
+            <h3>Dog & Cat Tailored</h3>  
+            <p>Separate nutritional protocols for dogs and cats with breed-specific activity multipliers and metabolic adjustments.</p>  
+        </div>  
+        <div class="feature-card">  
+            <div class="feature-icon">💪</div>  
+            <h3>Macro Optimization</h3>  
+            <p>Balanced 40-50% protein, 20-30% fiber, and 15-20% healthy fats for vibrant skin, coat, digestion, and sustained energy.</p>  
+        </div>  
+        <div class="feature-card">  
+            <div class="feature-icon">📚</div>  
+            <h3>Expert Guides</h3>  
+            <p>Deep-dive educational content on fresh vs. kibble, calcium balance, meal prep workflows, and evidence-based nutrition science.</p>  
+        </div>  
+    </div>  
+</section>  
 
-<main class="container">
+<!-- Interactive Tools & Food Reviews Section -->  
+<section class="tools-section" id="tools">  
+    <h2>Interactive Tools & Pet Food Reviews</h2>  
+    <p>Direct jump links to our pet diet calculation utilities and tested food breakdowns:</p>  
+    <ul class="tool-list">  
+        <li class="tool-card">  
+            <a href="farmina-nd-dog-food-review.html">  
+                <span style="font-size: 2.5rem; display: block;">🍲</span>  
+                <span class="tool-title">Farmina N&D Review →</span>  
+            </a>  
+        </li>  
+        <li class="tool-card">  
+            <a href="articles.html#meal-calculator">  
+                <span style="font-size: 2.5rem; display: block;">🐶🐱</span>  
+                <span class="tool-title">Pet Meal Calculator →</span>  
+            </a>  
+        </li>  
+        <li class="tool-card">  
+            <a href="high-protein-homemade-dog-food-recipe.html">  
+                <span style="font-size: 2.5rem; display: block;">🥩</span>  
+                <span class="tool-title">High-Protein Dog Recipe →</span>  
+            </a>  
+        </li>  
+        <li class="tool-card">  
+            <a href="articles.html#safety-checker">  
+                <span style="font-size: 2.5rem; display: block;">🧪</span>  
+                <span class="tool-title">Ingredient Safety Checker →</span>  
+            </a>  
+        </li>  
+    </ul>  
+</section>  
 
-<section class="hero">
-<div class="hero-grid">
-<div>
-<div class="hero-badge">🧪 Free Pet Nutrition Tools</div>
-<h1>Smarter Nutrition <span>for Happier Pets.</span></h1>
-<p class="hero-text">Estimate daily calorie needs, calculate food portions, check common ingredient safety, and explore practical nutrition guides for dogs and cats.</p>
-<div class="hero-actions">
-<a href="#calculator" class="btn btn-primary">⚡ Calculate Daily Needs</a>
-<a href="articles.html" class="btn btn-secondary">📚 Explore Guides</a>
-</div>
-</div>
-<div class="hero-image">
-<img src="1785328454295.png" alt="Dog and cat enjoying pet food" width="600" height="400" loading="eager" fetchpriority="high">
-</div>
-</div>
-</section>
+<!-- Featured Nutrition Guide -->  
+<section style="margin:4rem 0;">  
+    <h2>Featured Guide: Macro Counting Recipes for Pet Owners</h2>  
+    <p>Learn how to calculate protein, fat, calories, and ingredient portions for homemade dog and cat meals. Our complete macro counting guide explains how pet owners can build more balanced recipes using nutrition principles instead of guessing portions.</p>  
+    <a href="macro-counting-recipes-pet-owners.html" class="cta-button">Read the Complete Macro Counting Guide →</a>  
+</section>  
 
-<div class="trust-strip">
-<div class="trust-item"><strong>🐶 Dogs & Cats</strong>Separate pet-type calculations</div>
-<div class="trust-item"><strong>⚡ Instant Results</strong>No account required</div>
-<div class="trust-item"><strong>📚 Educational</strong>Designed for informed pet parents</div>
-</div>
+<!-- Pet Diet Engine - Featured Article CTA Button -->  
+<div class="pde-cta-container" style="margin: 30px 0; text-align: center;">  
+  <a href="pet-food-allergy-elimination-diet-guide.html"    
+     class="pde-toxic-food-btn"   
+     title="Read Pet Food Allergy & Elimination Diet Guide">  
+     🩺 Pet Food Allergy Guide  
+  </a>  
+</div>  
 
-<section class="section" id="calculator">
-<div class="section-heading">
-<h2>Pet Daily Calorie & Portion Calculator</h2>
-<p>Estimate daily energy requirements and calculate an approximate daily food amount using the calorie density of your pet's food.</p>
-</div>
+<!-- 1. SOCIAL SHARE SECTION -->  
+<div class="pde-box share-box">  
+  <h3>Share this Pet Nutrition Guide</h3>  
+  <div class="pde-buttons">  
+    <button onclick="shareFB()" class="pde-btn btn-facebook">Facebook</button>  
+    <button onclick="shareWhatsApp()" class="pde-btn btn-whatsapp">WhatsApp</button>  
+    <button onclick="sharePinterest()" class="pde-btn btn-pinterest">Pinterest</button>  
+    <button onclick="shareX()" class="pde-btn btn-x">X (Twitter)</button>  
+    <button onclick="copyPageLink()" class="pde-btn btn-copy">Copy Link</button>  
+  </div>  
+</div>  
 
-<div class="calculator-card">
+<!-- 2. FOLLOW COMMUNITY SECTION -->  
+<div class="pde-box follow-box">  
+  <h3>Join the Pet Diet Engine Community</h3>  
+  <p>Get daily advice on safe pet diets, raw feeding tips, and nutrition updates.</p>  
+  <div class="pde-buttons">  
+    <a href="https://facebook.com/" target="_blank" rel="noopener" class="pde-btn btn-facebook">Facebook Page</a>  
+    <a href="https://instagram.com/" target="_blank" rel="noopener" class="pde-btn btn-instagram">Instagram</a>  
+    <a href="https://youtube.com/" target="_blank" rel="noopener" class="pde-btn btn-youtube">YouTube</a>  
+    <a href="https://pinterest.com/" target="_blank" rel="noopener" class="pde-btn btn-pinterest">Pinterest</a>  
+  </div>  
+</div>  
 
-<div class="calculator-form">
-<div class="calculator-title"><span>🐾</span><h3>Enter Your Pet's Details</h3></div>
-<p class="form-help">These are educational estimates for healthy pets. Individual needs can vary significantly.</p>
+<!-- 3. PET COMMUNITY DISCUSSIONS / COMMENTS -->  
+<section class="comments-section" style="margin-top: 40px;">  
+  <h2>Pet Community Discussion & Feeds</h2>  
+  <div id="disqus_thread"></div>  
+</section>  
 
-<div class="form-group">
-<label for="petType">Pet type</label>
-<select id="petType">
-<option value="dog">Dog</option>
-<option value="cat">Cat</option>
-</select>
-</div>
-
-<div class="form-group">
-<label for="petWeight">Weight</label>
-<input id="petWeight" type="number" min="0.1" max="150" step="0.1" placeholder="Example: 20">
-</div>
-
-<div class="form-group">
-<label for="weightUnit">Weight unit</label>
-<select id="weightUnit">
-<option value="kg">Kilograms (kg)</option>
-<option value="lb">Pounds (lb)</option>
-</select>
-</div>
-
-<div class="form-group">
-<label for="lifeStage">Life stage / activity</label>
-<select id="lifeStage"></select>
-</div>
-
-<div class="form-group">
-<label for="foodCalories">Food energy density (optional)</label>
-<input id="foodCalories" type="number" min="1" max="10000" step="1" placeholder="Example: 350 kcal / 100g">
-<div class="form-help">Find kcal/100g on your food label. Leave blank if unknown.</div>
-</div>
-
-<button type="button" class="calculate-btn" id="calculateButton">Calculate My Pet's Needs</button>
-</div>
-
-<div class="calculator-result">
-<div id="calculatorPlaceholder" class="result-placeholder">
-<div style="font-size:3rem;margin-bottom:10px;">📊</div>
-<strong>Your results will appear here.</strong>
-<p style="margin-top:6px;">Enter your pet's weight and activity profile.</p>
-</div>
-
-<div id="calculatorResult" class="result-box" aria-live="polite">
-<div class="result-main">
-<div class="result-label">Estimated daily energy</div>
-<div class="result-number" id="calorieResult">—</div>
-<div class="result-unit">kcal per day</div>
-</div>
-
-<div class="result-grid">
-<div class="result-stat">
-<span class="result-label">RER</span>
-<strong id="rerResult">—</strong>
-<small>kcal/day</small>
-</div>
-<div class="result-stat">
-<span class="result-label">Food amount</span>
-<strong id="foodResult">—</strong>
-<small id="foodUnit">g/day</small>
-</div>
-</div>
-
-<p class="result-note">This calculator provides an educational estimate. It does not diagnose disease, prescribe a therapeutic diet, or replace advice from a veterinarian or qualified veterinary nutrition professional.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section">
-<div class="section-heading">
-<h2>Pet Nutrition Tools</h2>
-<p>Start with the tool that matches what you need.</p>
-</div>
-
-<div class="tools-grid">
-<a href="#calculator" class="tool-card"><div class="tool-icon">⚡</div><h3>Daily Calorie Calculator</h3><p>Estimate daily energy requirements and food portions.</p></a>
-<a href="#safety-checker" class="tool-card"><div class="tool-icon">🧪</div><h3>Ingredient Safety Checker</h3><p>Check common ingredients before offering them to your pet.</p></a>
-<a href="articles.html#meal-calculator" class="tool-card"><div class="tool-icon">🍽️</div><h3>Meal & Macro Calculator</h3><p>Explore the detailed meal calculator in our nutrition guide.</p></a>
-<a href="pet-food-allergy-elimination-diet-guide.html" class="tool-card"><div class="tool-icon">🛡️</div><h3>Food Allergy Guide</h3><p>Learn about elimination diets and food sensitivities.</p></a>
-</div>
-</section>
-
-<section class="section" id="safety-checker">
-<div class="safety-card">
-<div class="safety-header">
-<h2>🧪 Ingredient Safety Checker</h2>
-<p>Search common foods and ingredients for a quick educational safety reference.</p>
-</div>
-<div class="safety-form">
-<input id="ingredientInput" type="text" placeholder="Try: grapes, chicken, garlic, carrot...">
-<button type="button" id="safetyButton">Check Safety</button>
-</div>
-<div id="safetyResult" class="safety-result" aria-live="polite"></div>
-</div>
-</section>
-
-<section class="section">
-<div class="section-heading">
-<h2>Built for Better Pet-Food Decisions</h2>
-<p>Pet Diet Engine combines practical tools with educational nutrition content so pet parents can make more informed choices.</p>
-</div>
-<div class="why-grid">
-<div class="why-card"><span>📐</span><h3>Portion Awareness</h3><p>Use calorie estimates and food energy density to understand how much food may fit into your pet's daily energy budget.</p></div>
-<div class="why-card"><span>🔎</span><h3>Ingredient Awareness</h3><p>Quickly identify common ingredients that may require caution or should not be fed to dogs and cats.</p></div>
-<div class="why-card"><span>📚</span><h3>Practical Education</h3><p>Explore guides covering pet food, homemade diets, allergies, recipes and nutrition concepts.</p></div>
-</div>
-</section>
-
-<section class="section">
-<div class="section-heading">
-<h2>Featured Pet Nutrition Guides</h2>
-<p>Explore practical guides and food analysis.</p>
+<!-- Disclaimer -->  
+<div class="disclaimer-banner">  
+    <strong>⚠️ Important Disclaimer:</strong> The information, tools, and calculations provided on Pet Diet Engine are for educational purposes only and do not constitute veterinary medical advice. Always consult with your veterinarian before making significant dietary changes. Pet Diet Engine is not a substitute for professional veterinary consultation.  
 </div>
 
-<div class="guides-grid">
-<article class="guide-card"><span class="tag">DOG FOOD</span><h3>Farmina N&amp;D Dog Food Review</h3><p>Explore ingredients, product lines, nutrition considerations and safety topics.</p><a href="farmina-nd-dog-food-review.html" class="guide-link">Read Review →</a></article>
-<article class="guide-card"><span class="tag">HOMEMADE FOOD</span><h3>High-Protein Homemade Dog Food</h3><p>Learn how to think about calories, portions and nutritional balance when preparing homemade meals.</p><a href="high-protein-homemade-dog-food-recipe.html" class="guide-link">Read Recipe Guide →</a></article>
-<article class="guide-card"><span class="tag">ALLERGIES</span><h3>Pet Food Allergy &amp; Elimination Diet Guide</h3><p>Understand elimination-diet concepts and why veterinary guidance matters for suspected food allergies.</p><a href="pet-food-allergy-elimination-diet-guide.html" class="guide-link">Read Allergy Guide →</a></article>
-<article class="guide-card"><span class="tag">NUTRITION</span><h3>Macro Counting Recipes for Pet Owners</h3><p>Explore calories, protein, fat, ingredients and portion planning for homemade pet meals.</p><a href="macro-counting-recipes-pet-owners.html" class="guide-link">Read Macro Guide →</a></article>
-<article class="guide-card"><span class="tag">COMPLETE GUIDE</span><h3>Homemade &amp; Fresh Pet Diet Guide</h3><p>Learn about daily portions, food safety, diet transitions and practical nutrition considerations.</p><a href="articles.html" class="guide-link">Explore Full Guide →</a></article>
-<article class="guide-card"><span class="tag">ALL TOOLS</span><h3>Pet Diet Engine Toolkit</h3><p>Access calculators, guides and nutrition resources in one place.</p><a href="articles.html" class="guide-link">Explore Tools →</a></article>
+</div>  
+<!-- Pet Voice Translator Widget Start -->  
+<div id="pet-translator-container" style="max-width: 400px; margin: 2rem auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; text-align: center; font-family: sans-serif; background: #f9f9f9;">  
+  <h3 style="margin-bottom: 15px;">🐾 Speak to Your Pet</h3>    <div style="margin-bottom: 15px;">  
+    <label style="margin-right: 15px;">  
+      <input type="radio" name="petType" value="dog" checked> Dog 🐶  
+    </label>  
+    <label>  
+      <input type="radio" name="petType" value="cat"> Cat 🐱  
+    </label>  
+  </div>    <button id="translatorRecordBtn" style="background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 20px; font-size: 16px; font-weight: bold; cursor: pointer;">  
+    🎤 Hold to Speak  
+  </button>    <p id="translatorStatus" style="margin-top: 15px; font-size: 14px; color: #4b5563;">  
+    Press button to translate...  
+  </p>  
+</div>  <script>  
+(function() {  
+  const recordBtn = document.getElementById('translatorRecordBtn');  
+  const statusText = document.getElementById('translatorStatus');  
+  const petTypeInputs = document.querySelectorAll('input[name="petType"]');  
+  
+  const petSounds = {  
+    dog: new Audio('https://actions.google.com/sounds/v1/animals/dog_barking.ogg'),  
+    cat: new Audio('https://actions.google.com/sounds/v1/animals/cat_meow.ogg')  
+  };  
+  
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;  
+  
+  if (SpeechRecognition) {  
+    const recognition = new SpeechRecognition();  
+    recognition.lang = 'en-US';  
+  
+    recordBtn.addEventListener('click', () => {  
+      recognition.start();  
+      statusText.innerText = "Listening to your voice...";  
+      recordBtn.style.background = "#ef4444";  
+    });  
+  
+    recognition.onresult = (event) => {  
+      const spokenText = event.results[0][0].transcript;  
+      const selectedPet = document.querySelector('input[name="petType"]:checked').value;  
+        
+      statusText.innerText = `Captured: "${spokenText}"`;  
+      recordBtn.style.background = "#3b82f6";  
+        
+      // Play selected pet audio  
+      if (petSounds[selectedPet]) {  
+        petSounds[selectedPet].play();  
+      }  
+    };  
+  
+    recognition.onerror = () => {  
+      statusText.innerText = "Didn't catch that. Try again!";  
+      recordBtn.style.background = "#3b82f6";  
+    };  
+  
+    recognition.onend = () => {  
+      recordBtn.style.background = "#3b82f6";  
+    };  
+  } else {  
+    statusText.innerText = "Web Speech API is not supported in this browser.";  
+  }  
+})();  
+</script>  <!-- Pet Voice Translator Widget End -->  <!-- Footer -->  <footer>  
+    <div class="footer-container">  
+        <div class="footer-grid">  
+            <div class="footer-section">  
+                <h3>About Pet Diet Engine</h3>  
+                <p>Empowering pet owners with science-backed portion calculations, balanced macronutrients, and trusted ingredient safety analysis for healthier, happier pets.</p>  
+            </div>  
+            <div class="footer-section">  
+                <h3>Quick Links</h3>  
+                <p><a href="index.html">Home</a></p>  
+                <p><a href="articles.html">Full Guides</a></p>  
+                <p><a href="farmina-nd-dog-food-review.html">Farmina N&D Review</a></p>  
+                <p><a href="high-protein-homemade-dog-food-recipe.html">High-Protein Dog Recipe</a></p>  
+            </div>  
+            <div class="footer-section">  
+                <h3>Legal & Compliance</h3>  
+                <p><a href="privacy.html">Privacy Policy</a></p>  
+                <p><a href="terms.html">Terms of Service</a></p>  
+                <p><a href="contact.html">Contact Us</a></p>  
+            </div>  
+        </div>  <div class="footer-bottom">  
+        © 2026 <strong>Pet Diet Engine</strong>. All Rights Reserved. | Science-backed nutrition guides, calculators, and recipes for responsible pet owners.  
+    </div>  
 </div>
-</section>
 
-<section class="section">
-<div class="section-heading"><h2>Popular Pet Diet Resources</h2></div>
-<div class="tools-grid">
-<a href="farmina-nd-dog-food-review.html" class="tool-card"><div class="tool-icon">🍲</div><h3>Farmina N&amp;D Review</h3><p>Ingredient and product-line analysis.</p></a>
-<a href="high-protein-homemade-dog-food-recipe.html" class="tool-card"><div class="tool-icon">🥩</div><h3>Homemade Dog Food</h3><p>Protein-focused recipe education.</p></a>
-<a href="macro-counting-recipes-pet-owners.html" class="tool-card"><div class="tool-icon">📊</div><h3>Macro Counting Guide</h3><p>Learn about calories and macronutrients.</p></a>
-<a href="pet-food-allergy-elimination-diet-guide.html" class="tool-card"><div class="tool-icon">🩺</div><h3>Allergy &amp; Elimination Guide</h3><p>Practical educational resource.</p></a>
-</div>
-</section>
-
-<section class="share-box">
-<h3>Share Pet Diet Engine</h3>
-<div class="share-buttons">
-<button class="share-btn facebook" type="button" id="shareFacebook">Facebook</button>
-<button class="share-btn whatsapp" type="button" id="shareWhatsApp">WhatsApp</button>
-<button class="share-btn pinterest" type="button" id="sharePinterest">Pinterest</button>
-<button class="share-btn x" type="button" id="shareX">X</button>
-<button class="share-btn copy" type="button" id="copyLink">Copy Link</button>
-</div>
-</section>
-
-<div class="disclaimer">
-<strong>⚠️ Important:</strong>
-Pet Diet Engine provides educational information and estimation tools. Results are not veterinary medical advice and should not be used to diagnose, treat or prevent disease. Calorie requirements vary between individual animals. Consult your veterinarian or a qualified veterinary nutrition professional before making major dietary changes, especially for puppies, kittens, pregnant or nursing animals, senior pets, or pets with medical conditions.
-</div>
-
-</main>
-
-<footer>
-<div class="footer-inner">
-<div class="footer-grid">
-<div class="footer-section"><h3>Pet Diet Engine</h3><p>Practical pet nutrition calculators, ingredient safety tools and educational resources for responsible pet owners.</p></div>
-<div class="footer-section"><h3>Explore</h3><p><a href="index.html">Home</a></p><p><a href="articles.html">Nutrition Guides</a></p><p><a href="#calculator">Calorie Calculator</a></p><p><a href="#safety-checker">Safety Checker</a></p></div>
-<div class="footer-section"><h3>Resources</h3><p><a href="farmina-nd-dog-food-review.html">Farmina N&amp;D Review</a></p><p><a href="high-protein-homemade-dog-food-recipe.html">Homemade Dog Food</a></p><p><a href="macro-counting-recipes-pet-owners.html">Macro Guide</a></p><p><a href="pet-food-allergy-elimination-diet-guide.html">Allergy Guide</a></p></div>
-<div class="footer-section"><h3>Legal</h3><p><a href="privacy.html">Privacy Policy</a></p><p><a href="terms.html">Terms of Service</a></p><p><a href="contact.html">Contact</a></p></div>
-</div>
-<div class="footer-bottom">© 2026 <strong>Pet Diet Engine</strong>. All Rights Reserved.</div>
-</div>
-</footer>
-
-<script>
-"use strict";
-
-/* ---------- Calculator ---------- */
-
-const petType = document.getElementById("petType");
-const petWeight = document.getElementById("petWeight");
-const weightUnit = document.getElementById("weightUnit");
-const lifeStage = document.getElementById("lifeStage");
-const foodCalories = document.getElementById("foodCalories");
-
-const calculatorPlaceholder = document.getElementById("calculatorPlaceholder");
-const calculatorResult = document.getElementById("calculatorResult");
-const calorieResult = document.getElementById("calorieResult");
-const rerResult = document.getElementById("rerResult");
-const foodResult = document.getElementById("foodResult");
-const foodUnit = document.getElementById("foodUnit");
-
-function updateLifeStages() {
-    lifeStage.innerHTML = "";
-
-    if (petType.value === "dog") {
-        lifeStage.innerHTML =
-            '<option value="adult">Adult — typical activity</option>' +
-            '<option value="inactive">Adult — inactive / weight management</option>' +
-            '<option value="active">Adult — active</option>' +
-            '<option value="puppy">Puppy / growing</option>';
-    } else {
-        lifeStage.innerHTML =
-            '<option value="adult">Adult — typical activity</option>' +
-            '<option value="inactive">Adult — lower activity</option>' +
-            '<option value="active">Adult — active</option>' +
-            '<option value="kitten">Kitten / growing</option>';
-    }
-}
-
-function calculatePetNeeds() {
-    const type = petType.value;
-    const weightValue = parseFloat(petWeight.value);
-    const unit = weightUnit.value;
-    const stage = lifeStage.value;
-    const foodEnergy = parseFloat(foodCalories.value);
-
-    if (!Number.isFinite(weightValue) || weightValue <= 0) {
-        alert("Please enter a valid pet weight.");
-        petWeight.focus();
-        return;
-    }
-
-    let kg = unit === "lb" ? weightValue * 0.45359237 : weightValue;
-
-    if (!Number.isFinite(kg) || kg <= 0 || kg > 150) {
-        alert("Please enter a realistic pet weight between 0.1 kg and 150 kg.");
-        petWeight.focus();
-        return;
-    }
-
-    if (Number.isFinite(foodEnergy) && (foodEnergy <= 0 || foodEnergy > 10000)) {
-        alert("Please enter a food energy value between 1 and 10,000 kcal per 100g, or leave it blank.");
-        foodCalories.focus();
-        return;
-    }
-
-    const rer = 70 * Math.pow(kg, 0.75);
-
-    let factor;
-
-    if (type === "dog") {
-        if (stage === "inactive") factor = 1.0;
-        else if (stage === "active") factor = 1.6;
-        else if (stage === "puppy") factor = 2.0;
-        else factor = 1.4;
-    } else {
-        if (stage === "inactive") factor = 1.0;
-        else if (stage === "active") factor = 1.4;
-        else if (stage === "kitten") factor = 2.5;
-        else factor = 1.2;
-    }
-
-    const dailyCalories = rer * factor;
-
-    calorieResult.textContent = Math.round(dailyCalories).toLocaleString();
-    rerResult.textContent = Math.round(rer).toLocaleString();
-
-    if (Number.isFinite(foodEnergy) && foodEnergy > 0) {
-        const grams = (dailyCalories / foodEnergy) * 100;
-
-        foodResult.textContent = Math.round(grams).toLocaleString();
-        foodUnit.textContent = "g/day";
-    } else {
-        foodResult.textContent = "—";
-        foodUnit.textContent = "Add kcal/100g";
-    }
-
-    calculatorPlaceholder.style.display = "none";
-    calculatorResult.classList.add("show");
-    calculatorResult.scrollIntoView({ behavior: "smooth", block: "nearest" });
-}
-
-document.getElementById("calculateButton").addEventListener("click", calculatePetNeeds);
-petType.addEventListener("change", updateLifeStages);
-petWeight.addEventListener("keydown", e => { if (e.key === "Enter") calculatePetNeeds(); });
-foodCalories.addEventListener("keydown", e => { if (e.key === "Enter") calculatePetNeeds(); });
-updateLifeStages();
-
-
-/* ---------- Ingredient Safety Checker ---------- */
-
-const ingredientDatabase = {
-    grapes: ["danger", "Avoid — Grapes", "Grapes and raisins have been associated with acute kidney injury in dogs. Do not intentionally feed them."],
-    raisins: ["danger", "Avoid — Raisins", "Raisins can cause serious toxicity in dogs and have been associated with acute kidney injury."],
-    garlic: ["danger", "Avoid — Garlic", "Garlic belongs to the Allium family and can damage red blood cells. Concentrated forms can be particularly concerning."],
-    onion: ["danger", "Avoid — Onion", "Onions can damage red blood cells and may cause anemia in dogs and cats."],
-    chocolate: ["danger", "Avoid — Chocolate", "Chocolate contains theobromine and caffeine, which can be toxic to dogs and cats."],
-    xylitol: ["danger", "Avoid — Xylitol", "Xylitol can cause dangerous hypoglycemia and potentially serious liver injury in dogs."],
-    caffeine: ["danger", "Avoid — Caffeine", "Caffeine can be toxic to dogs and cats and should not be intentionally fed."],
-    alcohol: ["danger", "Avoid — Alcohol", "Alcohol can be toxic to pets and should never be intentionally given."],
-    macadamia: ["danger", "Avoid — Macadamia Nuts", "Macadamia nuts can cause toxic effects in dogs and should be avoided."],
-    chicken: ["safe", "Generally Safe — Plain Cooked Chicken", "Plain, fully cooked, unseasoned chicken can be appropriate for many dogs and cats. Remove bones and avoid onion, garlic and heavy seasoning."],
-    carrot: ["safe", "Generally Safe — Carrot", "Plain carrot can be an appropriate occasional treat for many pets. Use suitable pieces and account for treat calories."],
-    pumpkin: ["safe", "Generally Safe — Plain Pumpkin", "Plain cooked pumpkin without added sugar, spices or sweeteners can be appropriate for many pets."],
-    rice: ["safe", "Generally Safe — Plain Cooked Rice", "Plain cooked rice is generally tolerated by many dogs and cats in appropriate amounts, but it should not replace a complete and balanced diet."],
-    egg: ["safe", "Generally Safe — Fully Cooked Egg", "Fully cooked plain egg can be fed in appropriate portions to many dogs and cats."],
-    milk: ["caution", "Use Caution — Milk", "Many adult pets have limited ability to digest lactose. Milk can cause gastrointestinal upset."],
-    tuna: ["caution", "Use Caution — Tuna", "Tuna should not become a major part of a pet's diet. Product type, mercury exposure and nutritional balance matter."],
-    avocado: ["caution", "Use Caution — Avocado", "Avocado presents several considerations, including the pit and relatively high fat content. Never give the pit."],
-    salt: ["caution", "Use Caution — Salt", "Excess sodium can be harmful. Avoid deliberately adding salt to homemade pet meals unless directed by a veterinary professional."]
-};
-
-function escapeHTML(value) {
-    return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
-
-function checkIngredient() {
-    const input = document.getElementById("ingredientInput").value.trim().toLowerCase();
-    const result = document.getElementById("safetyResult");
-
-    if (!input) {
-        result.className = "safety-result show safety-caution";
-        result.innerHTML = "<strong>Enter an ingredient.</strong><br>Try grapes, chicken, garlic, carrot, chocolate or pumpkin.";
-        return;
-    }
-
-    let match = null;
-
-    if (Object.prototype.hasOwnProperty.call(ingredientDatabase, input)) {
-        match = ingredientDatabase[input];
-    } else {
-        for (const key of Object.keys(ingredientDatabase)) {
-            if (input.includes(key)) {
-                match = ingredientDatabase[key];
-                break;
-            }
-        }
-    }
-
-    if (!match) {
-        result.className = "safety-result show safety-caution";
-        result.innerHTML = "<strong>Not found in our quick-reference database.</strong><br>This does NOT mean the ingredient is safe. Verify unfamiliar ingredients with a reliable veterinary source or your veterinarian.";
-        return;
-    }
-
-    const status = match[0];
-    const className = status === "safe" ? "safety-safe" : status === "danger" ? "safety-danger" : "safety-caution";
-
-    result.className = "safety-result show " + className;
-    result.innerHTML = "<strong>" + escapeHTML(match[1]) + "</strong><br>" + escapeHTML(match[2]);
-}
-
-document.getElementById("safetyButton").addEventListener("click", checkIngredient);
-document.getElementById("ingredientInput").addEventListener("keydown", e => {
-    if (e.key === "Enter") checkIngredient();
-});
-
-
-/* ---------- Sharing ---------- */
-
-function openShare(url) {
-    window.open(url, "_blank", "noopener,noreferrer,width=700,height=600");
-}
-
-document.getElementById("shareFacebook").addEventListener("click", () => {
-    openShare("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href));
-});
-
-document.getElementById("shareWhatsApp").addEventListener("click", () => {
-    openShare("https://api.whatsapp.com/send?text=" + encodeURIComponent(document.title + " " + window.location.href));
-});
-
-document.getElementById("sharePinterest").addEventListener("click", () => {
-    openShare("https://pinterest.com/pin/create/button/?url=" + encodeURIComponent(window.location.href) + "&description=" + encodeURIComponent(document.title));
-});
-
-document.getElementById("shareX").addEventListener("click", () => {
-    openShare("https://twitter.com/intent/tweet?text=" + encodeURIComponent(document.title) + "&url=" + encodeURIComponent(window.location.href));
-});
-
-document.getElementById("copyLink").addEventListener("click", async () => {
-    try {
-        await navigator.clipboard.writeText(window.location.href);
-        alert("Page link copied!");
-    } catch (error) {
-        const textarea = document.createElement("textarea");
-        textarea.value = window.location.href;
-        textarea.style.position = "fixed";
-        textarea.style.left = "-9999px";
-        document.body.appendChild(textarea);
-        textarea.select();
-
-        try {
-            document.execCommand("copy");
-            alert("Page link copied!");
-        } catch (copyError) {
-            alert("Please copy the URL manually from your browser.");
-        }
-
-        textarea.remove();
-    }
-});
-</script>
-
-</body>
+</footer>  <!-- SCRIPTS (JavaScript) -->  <script>  
+  // Dynamic Share Functions  
+  const pageUrl = encodeURIComponent(window.location.href);  
+  const pageTitle = encodeURIComponent(document.title);  
+  
+  function shareFB() {  
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`, '_blank');  
+  }  
+  function shareWhatsApp() {  
+    window.open(`https://api.whatsapp.com/send?text=${pageTitle}%20${pageUrl}`, '_blank');  
+  }  
+  function sharePinterest() {  
+    window.open(`https://pinterest.com/pin/create/button/?url=${pageUrl}&description=${pageTitle}`, '_blank');  
+  }  
+  function shareX() {  
+    window.open(`https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`, '_blank');  
+  }  
+  function copyPageLink() {  
+    navigator.clipboard.writeText(window.location.href);  
+    alert('Link copied! Share it with fellow pet parents.');  
+  }  
+  
+  // Disqus Comment Embed Setup  
+  var disqus_config = function () {  
+      this.page.url = window.location.href;    
+      this.page.identifier = window.location.pathname;   
+  };  
+  (function() {   
+      var d = document, s = d.createElement('script');  
+      s.src = 'https://petdietengine.disqus.com/embed.js';   
+      s.setAttribute('data-timestamp', +new Date());  
+      (d.head || d.body).appendChild(s);  
+  })();  
+</script>  </body>  
 </html>
