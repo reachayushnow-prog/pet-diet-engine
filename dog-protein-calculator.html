@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dog Protein Calculator | Estimate Daily Protein Needs</title>
+
+<meta name="description" content="Free dog protein calculator. Estimate daily energy needs and an educational protein benchmark for adult dogs and growing puppies using your dog's weight and life stage.">
+
+<link rel="canonical" href="https://www.petdietengine.com/dog-protein-calculator.html">
+<link rel="icon" type="image/png" href="favicon.png">
+
+<meta property="og:title" content="Dog Protein Calculator | Pet Diet Engine">
+<meta property="og:description" content="Estimate your dog's daily energy needs and an educational protein benchmark based on weight and life stage.">
+<meta property="og:url" content="https://www.petdietengine.com/dog-protein-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.petdietengine.com/1785328454295.png">
+
+<meta name="google-adsense-account" content="ca-pub-5746296968934939">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746296968934939" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebPage",
+      "@id":"https://www.petdietengine.com/dog-protein-calculator.html",
+      "url":"https://www.petdietengine.com/dog-protein-calculator.html",
+      "name":"Dog Protein Calculator",
+      "description":"Educational dog protein calculator for estimating a protein benchmark from estimated energy needs."
+    },
+    {
+      "@type":"WebApplication",
+      "name":"Dog Protein Calculator",
+      "url":"https://www.petdietengine.com/dog-protein-calculator.html",
+      "applicationCategory":"HealthApplication",
+      "operatingSystem":"Web"
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"How much protein does an adult dog need?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Protein needs depend on the dog's life stage, energy intake, diet and health. As a food-label benchmark, AAFCO adult-maintenance dog food profiles use a minimum of 45 g crude protein per 1,000 kcal of metabolizable energy, or 18% on a dry-matter basis."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Do puppies need more protein?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Growing puppies have higher nutrient requirements than adult dogs. AAFCO growth and reproduction profiles use a minimum of 56.3 g crude protein per 1,000 kcal of metabolizable energy and 22.5% on a dry-matter basis."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Does this calculator prescribe my dog's diet?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"No. The calculator provides an educational benchmark and does not formulate a complete homemade diet or diagnose medical conditions. Dogs with medical conditions, pregnancy, nursing, growth concerns or unusual nutritional needs should be evaluated by a veterinarian or qualified veterinary nutrition professional."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f8fafc;color:#172033;line-height:1.7}
+a{color:inherit}
+.site-nav{position:sticky;top:0;z-index:1000;background:rgba(15,23,42,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{max-width:1180px;margin:auto;min-height:68px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{color:#fff;text-decoration:none;font-weight:800;display:flex;align-items:center;gap:9px}
+.brand-mark{width:32px;height:32px;display:grid;place-items:center;background:#10b981;border-radius:10px}
+.nav-links{display:flex;gap:6px;list-style:none}
+.nav-links a{color:#cbd5e1;text-decoration:none;font-weight:700;font-size:.9rem;padding:8px 12px;border-radius:9px}
+.nav-links a:hover,.nav-links .active{background:rgba(255,255,255,.1);color:#fff}
+.container{width:min(980px,calc(100% - 32px));margin:auto}
+.hero{margin:30px 0 20px;padding:48px 34px;border-radius:22px;background:linear-gradient(135deg,#0f172a,#172554);color:#fff}
+.badge{display:inline-block;background:rgba(16,185,129,.13);border:1px solid rgba(16,185,129,.3);color:#6ee7b7;border-radius:50px;padding:6px 11px;font-size:.8rem;font-weight:800;margin-bottom:14px}
+h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;letter-spacing:-.04em;margin-bottom:14px}
+.hero p{color:#cbd5e1;max-width:720px;font-size:1.05rem}
+.card{background:#fff;border:1px solid #dbe4ef;border-radius:20px;box-shadow:0 15px 40px rgba(15,23,42,.06);padding:28px;margin:24px 0}
+.card h2{color:#0f172a;margin-bottom:8px;font-size:1.6rem}
+.muted{color:#64748b}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.field label{display:block;font-size:.88rem;font-weight:800;color:#334155;margin-bottom:6px}
+.field input,.field select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;color:#0f172a;font:inherit}
+.field input:focus,.field select:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+.help{font-size:.78rem;color:#64748b;margin-top:4px}
+button{font:inherit}
+.calculate{width:100%;margin-top:20px;padding:13px;border:0;border-radius:10px;background:#2563eb;color:#fff;font-weight:800;cursor:pointer}
+.calculate:hover{background:#1d4ed8}
+.error{display:none;margin-top:14px;padding:12px;border-radius:10px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.results{display:none;margin-top:22px}
+.results.show{display:block}
+.result-main{padding:22px;border-radius:15px;background:linear-gradient(135deg,#eff6ff,#f0fdf4);border:1px solid #dbeafe}
+.result-label{text-transform:uppercase;letter-spacing:.06em;font-size:.75rem;font-weight:800;color:#64748b}
+.big{font-size:2.5rem;line-height:1.1;font-weight:900;color:#1d4ed8;margin:5px 0}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.stat{background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:14px}
+.stat strong{display:block;color:#0f172a;font-size:1.1rem}
+.result-note{font-size:.8rem;color:#64748b;margin-top:14px}
+.section{margin:45px 0}
+.section h2{font-size:1.8rem;color:#0f172a;margin-bottom:10px}
+.section p{color:#475569;margin-bottom:12px}
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.info{background:#fff;border:1px solid #e2e8f0;border-radius:15px;padding:20px}
+.info h3{color:#0f172a;margin-bottom:6px}
+ul{padding-left:20px;color:#475569}
+li{margin:6px 0}
+.source{font-size:.84rem;background:#f1f5f9;border-left:4px solid #2563eb;padding:16px;border-radius:0 10px 10px 0}
+.source a{color:#1d4ed8;font-weight:700}
+.faq{border-top:1px solid #e2e8f0;padding:18px 0}
+.faq:first-child{border-top:0}
+.faq h3{font-size:1.05rem;color:#0f172a;margin-bottom:5px}
+.notice{background:#fff7ed;border-left:4px solid #f59e0b;padding:18px;border-radius:0 12px 12px 0;color:#7c2d12;font-size:.87rem}
+.related{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.related a{background:#fff;border:1px solid #e2e8f0;padding:16px;border-radius:12px;text-decoration:none;font-weight:800;color:#1d4ed8}
+footer{margin-top:60px;background:#0f172a;color:#94a3b8;border-top:4px solid #2563eb}
+.footer-inner{width:min(980px,calc(100% - 32px));margin:auto;padding:35px 0 22px}
+.footer-links{display:flex;flex-wrap:wrap;gap:15px;margin:15px 0}
+.footer-links a{color:#93c5fd;text-decoration:none}
+.copyright{border-top:1px solid #1e293b;padding-top:18px;text-align:center;font-size:.78rem}
+@media(max-width:700px){
+ .nav-inner{min-height:60px;padding:0 12px}.nav-links a{font-size:.78rem;padding:7px 8px}
+ .nav-links li:nth-child(2){display:none}
+ .hero{padding:34px 22px}.card{padding:21px}.form-grid,.info-grid{grid-template-columns:1fr}
+ .result-grid,.related{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">🐾</span>Pet Diet Engine</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="articles.html">Guides</a></li>
+      <li><a class="active" href="dog-protein-calculator.html">Dog Protein Calculator</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container">
+
+<section class="hero">
+  <span class="badge">🐶 FREE DOG NUTRITION TOOL</span>
+  <h1>Dog Protein Calculator</h1>
+  <p>Estimate your dog's daily energy needs and see an educational protein benchmark based on weight and life stage. Use it as a starting point—not as a veterinary prescription.</p>
+</section>
+
+<section class="card" id="calculator">
+  <h2>Calculate a Protein Benchmark</h2>
+  <p class="muted">Enter your dog's details. The calculator estimates energy first, then applies a published protein-per-energy benchmark.</p>
+
+  <div class="form-grid">
+    <div class="field">
+      <label for="weight">Dog's weight</label>
+      <input id="weight" type="number" min="0.5" step="0.1" placeholder="Example: 20">
+      <div class="help">Enter the current body weight.</div>
+    </div>
+
+    <div class="field">
+      <label for="unit">Weight unit</label>
+      <select id="unit">
+        <option value="kg">Kilograms (kg)</option>
+        <option value="lb">Pounds (lb)</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="stage">Life stage / activity</label>
+      <select id="stage">
+        <option value="adult">Adult — typical activity</option>
+        <option value="inactive">Adult — inactive</option>
+        <option value="active">Adult — active</option>
+        <option value="puppy">Puppy / growing</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="calories">Daily calories (optional)</label>
+      <input id="calories" type="number" min="1" step="1" placeholder="Leave blank to estimate">
+      <div class="help">If you already know your dog's daily kcal target, enter it here.</div>
+    </div>
+  </div>
+
+  <button class="calculate" type="button" onclick="calculateProtein()">Calculate Protein Benchmark</button>
+  <div id="error" class="error"></div>
+
+  <div id="results" class="results">
+    <div class="result-main">
+      <div class="result-label">Estimated protein benchmark</div>
+      <div class="big" id="proteinResult">—</div>
+      <div class="muted">grams of crude protein per day</div>
+    </div>
+
+    <div class="result-grid">
+      <div class="stat">
+        <span class="result-label">Estimated energy</span>
+        <strong id="calorieResult">—</strong>
+        <small>kcal/day</small>
+      </div>
+      <div class="stat">
+        <span class="result-label">RER</span>
+        <strong id="rerResult">—</strong>
+        <small>kcal/day</small>
+      </div>
+      <div class="stat">
+        <span class="result-label">Protein benchmark</span>
+        <strong id="proteinRate">—</strong>
+        <small>g/1,000 kcal</small>
+      </div>
+    </div>
+
+    <p class="result-note" id="resultExplanation"></p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>What does this dog protein calculator actually calculate?</h2>
+  <p>This tool estimates a daily energy requirement using the standard RER equation <strong>70 × body weight(kg)<sup>0.75</sup></strong> and an educational life-stage/activity factor. It then applies a protein-per-energy benchmark from AAFCO's dog nutrient profiles.</p>
+  <p>For adult-maintenance dog food, AAFCO's profile uses a minimum of <strong>45 g crude protein per 1,000 kcal of metabolizable energy</strong>. For growth and reproduction, the minimum is <strong>56.3 g per 1,000 kcal</strong>. These are nutrient-profile benchmarks for complete and balanced dog foods, not personalized prescriptions for an individual dog.</p>
+</section>
+
+<section class="section">
+  <h2>How to use the result</h2>
+  <div class="info-grid">
+    <div class="info">
+      <h3>1. Start with the benchmark</h3>
+      <p>Use the result to understand the approximate protein amount represented by the selected energy intake.</p>
+    </div>
+    <div class="info">
+      <h3>2. Check the food label</h3>
+      <p>Pet-food labels normally list a minimum crude-protein percentage in the guaranteed analysis. Moisture matters when comparing protein percentages between foods.</p>
+    </div>
+    <div class="info">
+      <h3>3. Don't judge food by protein alone</h3>
+      <p>A complete diet must provide many nutrients in appropriate amounts and ratios. A higher protein percentage does not automatically make a food better for every dog.</p>
+    </div>
+    <div class="info">
+      <h3>4. Consider life stage</h3>
+      <p>Puppies and growing dogs have different nutrient requirements from adult-maintenance dogs. Pregnancy and nursing also require special consideration.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Important limitations</h2>
+  <div class="notice">
+    <strong>Educational estimate only.</strong> This calculator does not diagnose disease, determine an individualized therapeutic diet, or prove that a homemade recipe is complete and balanced. Calorie needs vary between individual dogs. Puppies, pregnant or nursing dogs, senior dogs, underweight/overweight dogs, and dogs with medical conditions may need individualized guidance from a veterinarian or qualified veterinary nutrition professional.
+  </div>
+</section>
+
+<section class="section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq">
+    <h3>How much protein does an adult dog need?</h3>
+    <p>Protein needs vary with life stage, energy intake, diet and health. As a food-profile benchmark, AAFCO adult-maintenance dog food profiles use a minimum of 45 g crude protein per 1,000 kcal ME, or 18% on a dry-matter basis.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Do puppies need more protein?</h3>
+    <p>Growing puppies have higher nutrient requirements than adult-maintenance dogs. AAFCO's growth and reproduction profile uses a minimum of 56.3 g crude protein per 1,000 kcal ME and 22.5% on a dry-matter basis.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Does a high-protein dog food mean it is healthier?</h3>
+    <p>Not necessarily. Protein quantity is only one part of nutritional adequacy. The food also needs appropriate amounts and ratios of other essential nutrients for the dog's life stage and condition.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Can I use this calculator to formulate homemade dog food?</h3>
+    <p>No. Protein is only one nutrient. A homemade diet requires appropriate amounts of many nutrients, and an unbalanced recipe can create nutritional problems. Use this tool for education and discuss homemade diets with a veterinary nutrition professional.</p>
+  </div>
+
+  <div class="faq">
+    <h3>What does “crude protein” mean on a dog-food label?</h3>
+    <p>Crude protein is a standardized analytical measure used in pet-food labeling. A guaranteed analysis normally lists a minimum crude-protein percentage along with other nutrient guarantees.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Related Pet Diet Engine Tools</h2>
+  <div class="related">
+    <a href="index.html#calculator">⚡ Pet Calorie Calculator</a>
+    <a href="articles.html#meal-calculator">🍽️ Meal & Macro Calculator</a>
+    <a href="articles.html">📚 Pet Nutrition Guides</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Sources</h2>
+  <div class="source">
+    <p><strong>AAFCO:</strong> Nutrient profiles, calorie content and pet-food labeling information.</p>
+    <p><a href="https://www.aafco.org/resources/startups/calorie-content/" target="_blank" rel="noopener noreferrer">AAFCO — Calorie Content & Nutrient Profiles</a></p>
+    <p><a href="https://www.aafco.org/consumers/understanding-pet-food/reading-labels/" target="_blank" rel="noopener noreferrer">AAFCO — Reading Pet Food Labels</a></p>
+    <p><strong>Merck Veterinary Manual:</strong> Summary of nutritional requirements for small animals.</p>
+    <p><a href="https://www.merckvetmanual.com/management-and-nutrition/nutrition-small-animals/nutritional-requirements-of-small-animals" target="_blank" rel="noopener noreferrer">Merck Veterinary Manual — Nutritional Requirements of Small Animals</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <strong>Pet Diet Engine</strong>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="articles.html">Guides</a>
+      <a href="index.html#calculator">Calorie Calculator</a>
+      <a href="pet-food-allergy-elimination-diet-guide.html">Allergy Guide</a>
+      <a href="farmina-nd-dog-food-review.html">Food Review</a>
+    </div>
+    <div class="copyright">© 2026 Pet Diet Engine. Educational information only; not veterinary medical advice.</div>
+  </div>
+</footer>
+
+<script>
+function calculateProtein() {
+  const weight = parseFloat(document.getElementById("weight").value);
+  const unit = document.getElementById("unit").value;
+  const stage = document.getElementById("stage").value;
+  const enteredCalories = parseFloat(document.getElementById("calories").value);
+  const error = document.getElementById("error");
+
+  error.style.display = "none";
+
+  if (!weight || weight <= 0) {
+    error.textContent = "Please enter your dog's weight.";
+    error.style.display = "block";
+    return;
+  }
+
+  let kg = unit === "lb" ? weight * 0.45359237 : weight;
+
+  if (kg < 0.5 || kg > 100) {
+    error.textContent = "Please enter a weight between 0.5 kg and 100 kg.";
+    error.style.display = "block";
+    return;
+  }
+
+  const rer = 70 * Math.pow(kg, 0.75);
+
+  let factor = 1.4;
+  let proteinRate = 45;
+  let label = "Adult maintenance benchmark";
+
+  if (stage === "inactive") {
+    factor = 1.0;
+    proteinRate = 45;
+    label = "Adult maintenance benchmark";
+  } else if (stage === "active") {
+    factor = 1.6;
+    proteinRate = 45;
+    label = "Adult maintenance benchmark";
+  } else if (stage === "puppy") {
+    factor = 2.0;
+    proteinRate = 56.3;
+    label = "Growth/reproduction benchmark";
+  }
+
+  const calories = enteredCalories > 0 ? enteredCalories : rer * factor;
+  const protein = calories * proteinRate / 1000;
+
+  document.getElementById("proteinResult").textContent = Math.round(protein) + " g";
+  document.getElementById("calorieResult").textContent = Math.round(calories);
+  document.getElementById("rerResult").textContent = Math.round(rer);
+  document.getElementById("proteinRate").textContent = proteinRate.toFixed(1);
+  document.getElementById("resultExplanation").textContent =
+    label + ". The result is a benchmark based on estimated or user-entered energy intake, not an individualized prescription.";
+
+  document.getElementById("results").classList.add("show");
+  document.getElementById("results").scrollIntoView({behavior:"smooth", block:"nearest"});
+}
+
+document.getElementById("weight").addEventListener("keydown", function(e) {
+  if (e.key === "Enter") calculateProtein();
+});
+</script>
+</body>
+</html>
