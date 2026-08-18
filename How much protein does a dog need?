@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>How Much Protein Does a Dog Need? Dog Protein Requirements Guide</title>
+
+<meta name="description" content="How much protein does a dog need? Learn dog protein requirements for puppies and adults, protein per 1,000 calories, homemade dog food protein, label reading, and more.">
+
+<meta name="keywords" content="how much protein does a dog need, how much protein do dogs need, dog protein requirements, dog protein per day, puppy protein requirements, adult dog protein requirements, protein requirements for dogs, high protein dog food, protein in homemade dog food, homemade dog food protein">
+
+<link rel="canonical" href="https://www.petdietengine.com/how-much-protein-does-a-dog-need.html">
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Much Protein Does a Dog Need? Dog Protein Requirements Guide">
+<meta property="og:description" content="A practical guide to dog protein requirements, puppy and adult protein needs, homemade dog food, dry-matter calculations, and protein-rich diets.">
+<meta property="og:url" content="https://www.petdietengine.com/how-much-protein-does-a-dog-need.html">
+<meta property="og:site_name" content="Pet Diet Engine">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Much Protein Does a Dog Need? Dog Protein Requirements Guide">
+<meta name="twitter:description" content="Learn how much protein dogs need, how life stage affects protein requirements, and how to evaluate protein in commercial and homemade dog food.">
+
+<!-- Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Much Protein Does a Dog Need? Dog Protein Requirements Guide",
+  "description": "A practical guide explaining dog protein requirements, puppy and adult protein needs, protein per calorie, homemade dog food protein, and how to read dog food labels.",
+  "url": "https://www.petdietengine.com/how-much-protein-does-a-dog-need.html",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.petdietengine.com/how-much-protein-does-a-dog-need.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Pet Diet Engine",
+    "url": "https://www.petdietengine.com/"
+  },
+  "about": [
+    "Dog protein requirements",
+    "Dog nutrition",
+    "Homemade dog food",
+    "Pet nutrition"
+  ]
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much protein does an adult dog need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AAFCO's adult-maintenance nutrient profile specifies a minimum of 18% crude protein on a dry-matter basis, or 45 grams per 1,000 kcal of metabolizable energy. This is a nutrient-profile minimum rather than a universal daily prescription for every individual dog."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do puppies need more protein than adult dogs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Growing puppies have higher nutritional requirements. AAFCO's growth and reproduction profile specifies a minimum of 22.5% crude protein on a dry-matter basis, or 56.3 grams per 1,000 kcal of metabolizable energy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is high-protein dog food good for every dog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. Protein needs depend on life stage, calorie intake, activity, diet composition, and individual health. A high-protein food is not automatically the best choice for every dog."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I feed my dog only meat to increase protein?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Meat alone does not normally provide a complete and balanced diet. A long-term homemade diet needs appropriate amounts and ratios of many nutrients, including vitamins and minerals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I compare protein percentages on dog food labels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Protein percentages on guaranteed analysis are generally listed on an as-fed basis. When foods have substantially different moisture levels, converting protein to a dry-matter basis provides a more meaningful comparison."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --primary: #1f6f4a;
+  --primary-dark: #155238;
+  --text: #222;
+  --muted: #666;
+  --light: #f5f8f6;
+  --border: #dfe7e2;
+  --warning: #fff8e6;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: #ffffff;
+  line-height: 1.75;
+}
+
+.article-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px 18px 60px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+
+.breadcrumb a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.15;
+  margin: 10px 0 18px;
+  color: #153d2c;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 1.25;
+  margin-top: 48px;
+  color: #153d2c;
+}
+
+h3 {
+  font-size: 22px;
+  margin-top: 30px;
+  color: #245c43;
+}
+
+.intro {
+  font-size: 19px;
+  color: #444;
+}
+
+.quick-answer {
+  background: var(--light);
+  border-left: 5px solid var(--primary);
+  padding: 22px;
+  margin: 28px 0;
+  border-radius: 8px;
+}
+
+.warning {
+  background: var(--warning);
+  border: 1px solid #ead7a3;
+  padding: 18px;
+  border-radius: 8px;
+  margin: 25px 0;
+}
+
+.toc {
+  background: #f8faf9;
+  border: 1px solid var(--border);
+  padding: 22px 25px;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+
+.toc strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+
+.toc a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.toc li {
+  margin: 6px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 16px;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 13px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--light);
+  color: #153d2c;
+}
+
+.callout {
+  background: #eef7f2;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 30px 0;
+}
+
+.cta {
+  background: var(--primary);
+  color: white;
+  padding: 28px;
+  border-radius: 12px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.cta h2 {
+  color: white;
+  margin-top: 0;
+}
+
+.cta a {
+  display: inline-block;
+  background: white;
+  color: var(--primary-dark);
+  padding: 12px 20px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.reference-box {
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.reference-box a {
+  color: var(--primary);
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 650px) {
+  .article-container {
+    padding: 18px 14px 45px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 9px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<main class="article-container">
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://www.petdietengine.com/">Pet Diet Engine</a>
+  &nbsp;›&nbsp;
+  <a href="https://www.petdietengine.com/articles.html">Pet Nutrition Guides</a>
+  &nbsp;›&nbsp;
+  How Much Protein Does a Dog Need?
+</nav>
+
+<article>
+
+<h1>How Much Protein Does a Dog Need?</h1>
+
+<p class="intro">
+Protein is one of the most important nutrients in a dog's diet. It supplies amino acids needed to maintain tissues, support normal body functions, and build new tissue during growth.
+</p>
+
+<p class="intro">
+But how much protein does a dog actually need? The answer is not one fixed number for every dog. Protein requirements depend on factors such as <strong>life stage, calorie intake, body size, activity level, diet composition, and individual health</strong>.
+</p>
+
+<div class="quick-answer">
+<strong>Quick answer:</strong>
+AAFCO's nutrient profiles specify minimum crude-protein concentrations of <strong>18% on a dry-matter basis for adult maintenance</strong> and <strong>22.5% for growth and reproduction</strong>. They also express these minimums relative to calories: 45 g and 56.3 g of protein per 1,000 kcal, respectively.
+These figures are nutrient-profile minimums for complete dog foods, not a universal prescription for how many grams every individual dog should eat each day.
+</div>
+
+<div class="warning">
+<strong>Important:</strong> This article provides general pet-nutrition information and is not a substitute for veterinary advice. Dogs with kidney disease, liver disease, pregnancy, metabolic disorders, or other medical conditions may require individualized nutrition plans.
+</div>
+
+<div class="toc">
+<strong>In This Guide</strong>
+<ul>
+<li><a href="#protein-needs">How Much Protein Does a Dog Need?</a></li>
+<li><a href="#life-stage">Protein Requirements by Life Stage</a></li>
+<li><a href="#puppies">Puppy Protein Requirements</a></li>
+<li><a href="#adult">Adult Dog Protein Requirements</a></li>
+<li><a href="#senior">Do Senior Dogs Need More Protein?</a></li>
+<li><a href="#active">Protein for Active and Working Dogs</a></li>
+<li><a href="#high-protein">Is High-Protein Dog Food Better?</a></li>
+<li><a href="#homemade">Protein in Homemade Dog Food</a></li>
+<li><a href="#labels">How to Read Protein on a Dog Food Label</a></li>
+<li><a href="#dry-matter">How to Calculate Protein on a Dry-Matter Basis</a></li>
+<li><a href="#sources">High-Protein Foods for Dogs</a></li>
+<li><a href="#faq">Frequently Asked Questions</a></li>
+</ul>
+</div>
+
+<h2 id="protein-needs">How Much Protein Does a Dog Need?</h2>
+
+<p>
+There is no single protein-per-day number that applies to every dog. A dog's nutritional needs change with life stage, energy intake, activity, and health status.
+</p>
+
+<p>
+For complete dog foods, AAFCO nutrient profiles provide minimum nutrient concentrations for different life stages. Merck Veterinary Manual summarizes the AAFCO minimum crude-protein concentrations as:
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Life stage</th>
+<th>Minimum crude protein</th>
+<th>Protein per 1,000 kcal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adult maintenance</td>
+<td>18% dry matter</td>
+<td>45 g/1,000 kcal</td>
+</tr>
+<tr>
+<td>Growth & reproduction</td>
+<td>22.5% dry matter</td>
+<td>56.3 g/1,000 kcal</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+These values are useful reference points, but they should not be interpreted as a recommendation to feed every dog exactly the same protein percentage or number of grams.
+</p>
+
+<p>
+AAFCO also emphasizes that complete and balanced nutrition involves many nutrients and appropriate nutrient ratios—not protein alone.
+</p>
+
+<h2 id="life-stage">Protein Requirements by Life Stage</h2>
+
+<p>
+A dog's protein requirements can change significantly throughout its life. Puppies are growing rapidly, adult dogs are maintaining mature tissues, and reproductive dogs have additional nutritional demands.
+</p>
+
+<h3 id="puppies">Puppy Protein Requirements</h3>
+
+<p>
+Growing puppies need diets formulated for growth because they are building new tissue, muscle, bone, and other structures.
+</p>
+
+<p>
+AAFCO's growth and reproduction nutrient profile specifies a minimum of <strong>22.5% crude protein on a dry-matter basis</strong>, compared with 18% for adult maintenance.
+</p>
+
+<p>
+Puppy nutrition is not only about protein. Appropriate levels and ratios of energy, fat, calcium, phosphorus, vitamins, minerals, and other nutrients are also important.
+</p>
+
+<p>
+For large- and giant-breed puppies, feeding a diet specifically formulated for appropriate growth is particularly important.
+</p>
+
+<h3 id="adult">Adult Dog Protein Requirements</h3>
+
+<p>
+For adult maintenance, AAFCO's minimum crude-protein concentration is <strong>18% on a dry-matter basis</strong>.
+</p>
+
+<p>
+That does not mean 18% is an ideal target for every adult dog. It is a minimum nutrient-profile value for complete dog food. The appropriate diet still depends on calories, body condition, activity, and the overall nutritional formulation.
+</p>
+
+<h3 id="senior">Do Senior Dogs Need More Protein?</h3>
+
+<p>
+Age alone does not mean that a dog automatically needs a low-protein diet.
+</p>
+
+<p>
+Older dogs can experience changes in body composition and activity, so their complete diet should be selected according to their individual nutritional and health needs.
+</p>
+
+<p>
+If a senior dog has a diagnosed medical condition, especially a condition that affects nutrition, discuss dietary changes with a veterinarian rather than changing protein intake based only on age.
+</p>
+
+<h3>Pregnant or Nursing Dogs</h3>
+
+<p>
+Pregnancy and nursing increase nutritional demands. Dogs in reproduction should receive a diet appropriately formulated for growth and reproduction rather than simply receiving extra meat added to an ordinary adult diet.
+</p>
+
+<h2 id="active">Protein for Active and Working Dogs</h2>
+
+<p>
+Highly active, sporting, hunting, and working dogs may have different energy and nutritional needs from sedentary companion dogs.
+</p>
+
+<p>
+However, simply adding more meat to the bowl is not necessarily the correct way to meet those needs. The complete diet should provide appropriate calories, protein, fat, vitamins, minerals, and other nutrients.
+</p>
+
+<p>
+When evaluating an active dog's diet, calorie density and total daily intake are just as important as the protein percentage printed on the package.
+</p>
+
+<h2 id="high-protein">Is High-Protein Dog Food Better?</h2>
+
+<p>
+<strong>Not necessarily.</strong>
+</p>
+
+<p>
+A food containing more protein is not automatically a better food for every dog. Nutritional adequacy depends on the complete formulation, not one nutrient in isolation.
+</p>
+
+<p>
+A well-formulated diet should provide appropriate amounts and ratios of:
+</p>
+
+<ul>
+<li>Protein and essential amino acids</li>
+<li>Dietary fat and essential fatty acids</li>
+<li>Appropriate energy</li>
+<li>Vitamins</li>
+<li>Minerals</li>
+<li>Other essential nutrients</li>
+<li>Water</li>
+</ul>
+
+<p>
+This is especially important when choosing a homemade diet. A meal can be high in protein while still being deficient in other essential nutrients.
+</p>
+
+<div class="callout">
+<strong>Remember:</strong> "High protein" and "complete and balanced" are not the same thing. Protein is only one component of a nutritionally complete diet.
+</div>
+
+<h2 id="homemade">Protein in Homemade Dog Food</h2>
+
+<p>
+Homemade dog food is one of the areas where pet owners most often focus on protein. Chicken, turkey, beef, fish, and eggs are common protein-rich ingredients.
+</p>
+
+<p>
+However, simply combining meat, rice, vegetables, and oil does not automatically create a complete and balanced dog diet.
+</p>
+
+<p>
+AAFCO explains that complete and balanced pet food requires all required nutrients in appropriate amounts and ratios for the relevant life stage.
+</p>
+
+<p>
+Therefore, a homemade diet intended for long-term feeding should be professionally formulated or reviewed rather than relying on protein percentage alone.
+</p>
+
+<p>
+For a recipe-focused guide, see:
+</p>
+
+<p>
+<a href="https://www.petdietengine.com/high-protein-homemade-dog-food-recipe.html">
+<strong>High-Protein Homemade Dog Food Recipe Guide</strong>
+</a>
+</p>
+
+<h2 id="labels">How to Read Protein on a Dog Food Label</h2>
+
+<p>
+One of the biggest mistakes pet owners make is comparing protein percentages from foods with very different moisture levels.
+</p>
+
+<p>
+Dog food labels commonly list guaranteed-analysis protein on an <strong>as-fed basis</strong>. AAFCO nutrient profiles, however, express nutrient concentrations on a <strong>dry-matter basis</strong>.
+</p>
+
+<p>
+That distinction matters when comparing dry kibble with canned or high-moisture food.
+</p>
+
+<p>
+Merck Veterinary Manual explains that guaranteed analysis lists minimum crude protein and fat values and maximum moisture and crude fiber values on an as-fed basis.
+</p>
+
+<h2 id="dry-matter">How to Calculate Protein on a Dry-Matter Basis</h2>
+
+<p>
+The basic calculation is:
+</p>
+
+<div class="callout">
+<strong>Dry matter % = 100 − moisture %</strong>
+<br><br>
+<strong>Protein on dry-matter basis = (crude protein % ÷ dry matter %) × 100</strong>
+</div>
+
+<h3>Example</h3>
+
+<p>
+Suppose a dog food label shows:
+</p>
+
+<ul>
+<li>Crude protein: 10%</li>
+<li>Moisture: 75%</li>
+</ul>
+
+<p>
+First calculate dry matter:
+</p>
+
+<p>
+<strong>100 − 75 = 25% dry matter</strong>
+</p>
+
+<p>
+Then calculate protein on a dry-matter basis:
+</p>
+
+<p>
+<strong>10 ÷ 25 × 100 = 40%</strong>
+</p>
+
+<p>
+So the food contains approximately <strong>40% protein on a dry-matter basis</strong>.
+</p>
+
+<p>
+This is why looking only at the printed protein percentage can give a misleading impression when comparing foods with different moisture levels.
+</p>
+
+<h2 id="sources">High-Protein Foods for Dogs</h2>
+
+<p>
+Common protein-containing ingredients used in dog diets include:
+</p>
+
+<ul>
+<li>Cooked chicken</li>
+<li>Turkey</li>
+<li>Lean beef</li>
+<li>Fish</li>
+<li>Eggs</li>
+<li>Other appropriately prepared animal proteins</li>
+</ul>
+
+<p>
+The safest ingredient depends on the individual dog and the overall recipe. Ingredients should be prepared appropriately and should not be heavily seasoned.
+</p>
+
+<p>
+Never assume that adding a large amount of one protein source automatically improves the nutritional balance of a homemade diet.
+</p>
+
+<h2>Protein vs. Calories: Why Both Matter</h2>
+
+<p>
+Two dogs can eat foods with the same protein percentage but receive different total amounts of protein because they consume different quantities of food.
+</p>
+
+<p>
+This is why expressing protein relative to calories can be useful when evaluating diets.
+</p>
+
+<p>
+AAFCO nutrient profiles use nutrient concentrations per 1,000 kcal in addition to dry-matter concentrations.
+</p>
+
+<p>
+For pet owners, this means protein percentage should be considered together with:
+</p>
+
+<ul>
+<li>Total daily calories</li>
+<li>Amount of food consumed</li>
+<li>Life stage</li>
+<li>Activity level</li>
+<li>Body condition</li>
+<li>Overall nutritional adequacy</li>
+</ul>
+
+<h2>Signs That Your Dog's Diet Needs a Closer Look</h2>
+
+<p>
+Protein intake should not be judged from one symptom alone. However, unexpected changes such as unexplained weight loss, muscle loss, persistent digestive problems, or changes in appetite deserve attention.
+</p>
+
+<p>
+If your dog has ongoing symptoms or a diagnosed medical condition, consult a veterinarian before making major dietary changes.
+</p>
+
+<h2>How to Choose a Complete Dog Food</h2>
+
+<p>
+When selecting a commercial dog food, look for the nutritional adequacy statement on the label.
+</p>
+
+<p>
+A product labeled as <strong>complete and balanced</strong> is intended to provide the required nutrients for the stated life stage when fed as directed.
+</p>
+
+<p>
+FDA explains that a complete-and-balanced claim is supported by meeting an appropriate nutrient profile or by passing an appropriate feeding trial.
+</p>
+
+<p>
+Do not judge a food solely by its ingredient list or protein percentage.
+</p>
+
+<div class="cta">
+<h2>Explore Pet Diet Engine Nutrition Tools</h2>
+
+<p>
+Want to understand your dog's calories, meal portions, and macronutrients?
+</p>
+
+<a href="https://www.petdietengine.com/articles.html">
+Explore Pet Diet Engine Tools & Guides
+</a>
+</div>
+
+<h2 id="faq">Frequently Asked Questions</h2>
+
+<h3>How much protein does an adult dog need?</h3>
+
+<p>
+AAFCO's adult-maintenance nutrient profile specifies a minimum of <strong>18% crude protein on a dry-matter basis</strong>, or <strong>45 g per 1,000 kcal</strong> of metabolizable energy. This is a nutrient-profile minimum and not a universal daily prescription for every individual dog.
+</p>
+
+<h3>Do puppies need more protein than adult dogs?</h3>
+
+<p>
+Growing puppies have higher nutritional requirements. AAFCO's growth and reproduction profile specifies a minimum of <strong>22.5% crude protein on a dry-matter basis</strong>, or <strong>56.3 g per 1,000 kcal</strong>.
+</p>
+
+<h3>Is high-protein dog food good for every dog?</h3>
+
+<p>
+No. More protein is not automatically better for every dog. Protein needs depend on life stage, calorie intake, activity, diet composition, and individual health.
+</p>
+
+<h3>Can I feed my dog only meat to increase protein?</h3>
+
+<p>
+No. Meat alone does not normally provide a complete and balanced diet. Long-term homemade diets need appropriate amounts and ratios of many essential nutrients.
+</p>
+
+<h3>How do I compare protein percentages on dog food labels?</h3>
+
+<p>
+When foods have substantially different moisture levels, convert their protein values to a dry-matter basis before comparing them. This gives a more meaningful comparison than looking only at the as-fed percentages.
+</p>
+
+<h3>Does a bigger dog automatically need a higher protein percentage?</h3>
+
+<p>
+Not necessarily. Larger dogs generally consume different amounts of food and calories, but protein requirements should not be determined using one universal percentage based only on body weight.
+</p>
+
+<h3>Should I increase protein if my dog is losing muscle?</h3>
+
+<p>
+Unexplained muscle loss should be evaluated by a veterinarian. Increasing protein without identifying the underlying cause may not solve the problem.
+</p>
+
+<h2>Final Takeaway</h2>
+
+<p>
+So, <strong>how much protein does a dog need?</strong> There is no single number that applies to every dog.
+</p>
+
+<p>
+For complete dog foods, AAFCO nutrient profiles provide useful minimum reference values: <strong>18% crude protein on a dry-matter basis for adult maintenance</strong> and <strong>22.5% for growth and reproduction</strong>.
+</p>
+
+<p>
+But protein is only one part of canine nutrition. A dog's life stage, calorie intake, activity, body condition, and overall diet formulation all matter.
+</p>
+
+<p>
+If you are feeding homemade dog food, do not focus on protein alone. A long-term homemade diet should be properly formulated to provide all essential nutrients in appropriate amounts and ratios.
+</p>
+
+<p>
+For a practical recipe-focused next step, visit:
+</p>
+
+<p>
+<a href="https://www.petdietengine.com/high-protein-homemade-dog-food-recipe.html">
+<strong>High-Protein Homemade Dog Food Recipe: Complete Guide</strong>
+</a>
+</p>
+
+<h2>Sources & Further Reading</h2>
+
+<div class="reference-box">
+
+<p>
+<strong>Merck Veterinary Manual — Nutritional Requirements of Small Animals</strong><br>
+<a href="https://www.merckvetmanual.com/management-and-nutrition/nutrition-small-animals/nutritional-requirements-of-small-animals" target="_blank" rel="noopener noreferrer">
+View veterinary nutrition reference
+</a>
+</p>
+
+<p>
+<strong>FDA — Complete and Balanced Pet Food</strong><br>
+<a href="https://www.fda.gov/animal-veterinary/animal-health-literacy/complete-and-balanced-pet-food" target="_blank" rel="noopener noreferrer">
+View FDA pet-food nutrition guidance
+</a>
+</p>
+
+<p>
+<strong>AAFCO — Frequently Asked Questions</strong><br>
+<a href="https://www.aafco.org/consumers/understanding-pet-food/frequently-asked-questions/" target="_blank" rel="noopener noreferrer">
+View AAFCO guidance
+</a>
+</p>
+
+<p>
+<strong>Pet Diet Engine — High-Protein Homemade Dog Food Recipe</strong><br>
+<a href="https://www.petdietengine.com/high-protein-homemade-dog-food-recipe.html">
+Read the related recipe guide
+</a>
+</p>
+
+</div>
+
+<footer>
+<p>
+<strong>Pet Diet Engine</strong> provides educational pet nutrition tools and information. This content is not a substitute for individualized veterinary advice.
+</p>
+
+<p>
+© 2026 Pet Diet Engine. All rights reserved.
+</p>
+</footer>
+
+</article>
+
+</main>
+
+</body>
+</html>
