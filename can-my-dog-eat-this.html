@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Can My Dog Eat This? Food Safety Checker | Pet Diet Engine</title>
+
+<meta name="description" content="Can my dog eat this? Use our free dog food safety checker to search foods, understand common risks, check ingredients for known hazards, and learn safer preparation tips.">
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<link rel="canonical" href="https://www.petdietengine.com/can-my-dog-eat-this.html">
+<link rel="icon" type="image/png" href="favicon.png">
+
+<meta property="og:title" content="Can My Dog Eat This? Food Safety Checker | Pet Diet Engine">
+<meta property="og:description" content="Search a food or paste an ingredient list to check common dog food safety concerns and preparation considerations.">
+<meta property="og:url" content="https://www.petdietengine.com/can-my-dog-eat-this.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pet Diet Engine">
+<meta property="og:image" content="https://www.petdietengine.com/1785328454295.png">
+
+<meta name="google-adsense-account" content="ca-pub-5746296968934939">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746296968934939" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebPage",
+      "@id":"https://www.petdietengine.com/can-my-dog-eat-this.html",
+      "url":"https://www.petdietengine.com/can-my-dog-eat-this.html",
+      "name":"Can My Dog Eat This? Food Safety Checker",
+      "description":"Interactive educational dog food safety checker for searching common foods and reviewing ingredient-list hazards.",
+      "isPartOf":{
+        "@type":"WebSite",
+        "name":"Pet Diet Engine",
+        "url":"https://www.petdietengine.com/"
+      }
+    },
+    {
+      "@type":"WebApplication",
+      "name":"Can My Dog Eat This? Food Safety Checker",
+      "url":"https://www.petdietengine.com/can-my-dog-eat-this.html",
+      "applicationCategory":"HealthApplication",
+      "operatingSystem":"Web",
+      "description":"An educational food safety lookup and ingredient-list scanner for dog owners."
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"Can my dog eat human food?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Some human foods can be appropriate for dogs in suitable forms and amounts, while others can cause illness or poisoning. Ingredients, preparation, quantity and the individual dog all matter."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"What foods are toxic to dogs?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Important food hazards for dogs include grapes and raisins, xylitol-containing products, chocolate, onions, garlic and related Allium ingredients. Other foods can also cause digestive or other problems depending on the food and amount."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Can I use this tool after my dog has eaten something dangerous?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"This checker is educational and cannot determine whether a particular ingestion is medically safe. If a dog may have eaten a potentially toxic substance, contact a veterinarian or appropriate animal poison service promptly rather than relying on the checker."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Can dogs eat peanut butter?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Plain peanut butter may be tolerated by many dogs in small amounts, but ingredient labels should be checked carefully because some products can contain ingredients that are inappropriate or dangerous for dogs, including xylitol."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:80px;
+}
+
+body{
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:#f8fafc;
+  color:#172033;
+  line-height:1.75;
+}
+
+a{
+  color:inherit;
+}
+
+.site-nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(15,23,42,.97);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-inner{
+  max-width:1180px;
+  margin:auto;
+  min-height:68px;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.brand{
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  white-space:nowrap;
+}
+
+.brand-mark{
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  background:#10b981;
+  border-radius:10px;
+}
+
+.nav-links{
+  display:flex;
+  gap:6px;
+  list-style:none;
+}
+
+.nav-links a{
+  color:#cbd5e1;
+  text-decoration:none;
+  font-weight:700;
+  font-size:.88rem;
+  padding:8px 11px;
+  border-radius:9px;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+  background:rgba(255,255,255,.1);
+  color:#fff;
+}
+
+.container{
+  width:min(980px,calc(100% - 32px));
+  margin:auto;
+}
+
+.hero{
+  margin:30px 0 22px;
+  padding:50px 34px;
+  border-radius:24px;
+  background:linear-gradient(135deg,#0f172a,#172554);
+  color:#fff;
+  box-shadow:0 20px 50px rgba(15,23,42,.15);
+}
+
+.badge{
+  display:inline-block;
+  background:rgba(16,185,129,.13);
+  border:1px solid rgba(16,185,129,.35);
+  color:#6ee7b7;
+  border-radius:50px;
+  padding:6px 12px;
+  font-size:.78rem;
+  font-weight:800;
+  margin-bottom:15px;
+}
+
+h1{
+  font-size:clamp(2.1rem,5vw,3.4rem);
+  line-height:1.08;
+  letter-spacing:-.045em;
+  margin-bottom:16px;
+}
+
+.hero p{
+  color:#cbd5e1;
+  max-width:760px;
+  font-size:1.06rem;
+}
+
+.card{
+  background:#fff;
+  border:1px solid #dbe4ef;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(15,23,42,.06);
+  padding:28px;
+  margin:24px 0;
+}
+
+.card h2{
+  color:#0f172a;
+  margin-bottom:8px;
+  font-size:1.65rem;
+}
+
+.muted{
+  color:#64748b;
+}
+
+.tool-tabs{
+  display:flex;
+  gap:8px;
+  margin:20px 0;
+  flex-wrap:wrap;
+}
+
+.tool-tab{
+  border:1px solid #cbd5e1;
+  background:#fff;
+  color:#334155;
+  padding:10px 15px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:800;
+}
+
+.tool-tab.active{
+  background:#2563eb;
+  border-color:#2563eb;
+  color:#fff;
+}
+
+.tool-panel{
+  display:none;
+}
+
+.tool-panel.active{
+  display:block;
+}
+
+.search-row{
+  display:flex;
+  gap:10px;
+  margin-top:18px;
+}
+
+.search-row input{
+  flex:1;
+  min-width:0;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid #cbd5e1;
+  border-radius:10px;
+  background:#fff;
+  color:#0f172a;
+  font:inherit;
+}
+
+textarea{
+  min-height:145px;
+  resize:vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  outline:none;
+  border-color:#2563eb;
+  box-shadow:0 0 0 3px rgba(37,99,235,.12);
+}
+
+button{
+  font:inherit;
+}
+
+.primary-btn{
+  padding:13px 18px;
+  border:0;
+  border-radius:10px;
+  background:#2563eb;
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+.primary-btn:hover{
+  background:#1d4ed8;
+}
+
+.secondary-btn{
+  padding:10px 14px;
+  border:1px solid #cbd5e1;
+  border-radius:9px;
+  background:#fff;
+  color:#334155;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.example-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+
+.example{
+  border:1px solid #dbe4ef;
+  background:#f8fafc;
+  color:#1d4ed8;
+  padding:7px 10px;
+  border-radius:999px;
+  font-size:.82rem;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.result{
+  display:none;
+  margin-top:22px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid #dbe4ef;
+}
+
+.result.show{
+  display:block;
+}
+
+.result-head{
+  padding:22px;
+  color:#fff;
+}
+
+.result-head h3{
+  font-size:1.7rem;
+  margin-bottom:3px;
+}
+
+.result-status{
+  font-weight:900;
+  font-size:.9rem;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+.safe .result-head{
+  background:linear-gradient(135deg,#047857,#065f46);
+}
+
+.caution .result-head{
+  background:linear-gradient(135deg,#b45309,#92400e);
+}
+
+.avoid .result-head{
+  background:linear-gradient(135deg,#dc2626,#991b1b);
+}
+
+.high .result-head{
+  background:linear-gradient(135deg,#991b1b,#450a0a);
+}
+
+.unknown .result-head{
+  background:linear-gradient(135deg,#475569,#334155);
+}
+
+.result-body{
+  padding:22px;
+  background:#fff;
+}
+
+.result-body h4{
+  color:#0f172a;
+  margin:17px 0 5px;
+}
+
+.result-body h4:first-child{
+  margin-top:0;
+}
+
+.result-body p{
+  color:#475569;
+  margin-bottom:9px;
+}
+
+.result-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+
+.tag{
+  background:#eff6ff;
+  color:#1d4ed8;
+  padding:5px 9px;
+  border-radius:999px;
+  font-size:.76rem;
+  font-weight:800;
+}
+
+.scanned{
+  margin-top:18px;
+  padding:15px;
+  border-radius:11px;
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+}
+
+.scanned strong{
+  color:#0f172a;
+}
+
+.ingredient-hit{
+  padding:12px 14px;
+  margin:9px 0;
+  border-radius:10px;
+  background:#fef2f2;
+  border:1px solid #fecaca;
+}
+
+.ingredient-hit strong{
+  color:#991b1b;
+}
+
+.ingredient-safe{
+  padding:12px 14px;
+  margin:9px 0;
+  border-radius:10px;
+  background:#ecfdf5;
+  border:1px solid #bbf7d0;
+}
+
+.ingredient-safe strong{
+  color:#166534;
+}
+
+.error{
+  display:none;
+  margin-top:14px;
+  padding:12px;
+  border-radius:10px;
+  background:#fef2f2;
+  border:1px solid #fecaca;
+  color:#991b1b;
+}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-top:18px;
+}
+
+.quick-card{
+  padding:16px;
+  border:1px solid #e2e8f0;
+  border-radius:13px;
+  background:#f8fafc;
+  cursor:pointer;
+}
+
+.quick-card:hover{
+  border-color:#93c5fd;
+  background:#eff6ff;
+}
+
+.quick-card strong{
+  display:block;
+  color:#0f172a;
+  margin-bottom:3px;
+}
+
+.quick-card span{
+  font-size:.78rem;
+  color:#64748b;
+}
+
+.section{
+  margin:48px 0;
+}
+
+.section h2{
+  font-size:1.85rem;
+  color:#0f172a;
+  margin-bottom:12px;
+  letter-spacing:-.02em;
+}
+
+.section h3{
+  font-size:1.18rem;
+  color:#0f172a;
+  margin:22px 0 7px;
+}
+
+.section p{
+  color:#475569;
+  margin-bottom:13px;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+.info{
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:15px;
+  padding:20px;
+}
+
+.info h3{
+  margin-top:0;
+}
+
+ul{
+  padding-left:21px;
+  color:#475569;
+}
+
+li{
+  margin:7px 0;
+}
+
+.notice{
+  background:#fff7ed;
+  border-left:4px solid #f59e0b;
+  padding:18px;
+  border-radius:0 12px 12px 0;
+  color:#7c2d12;
+}
+
+.emergency{
+  background:#fef2f2;
+  border:1px solid #fecaca;
+  padding:20px;
+  border-radius:15px;
+}
+
+.emergency h3{
+  color:#991b1b;
+  margin-top:0;
+}
+
+.faq{
+  border-top:1px solid #e2e8f0;
+  padding:19px 0;
+}
+
+.faq:first-child{
+  border-top:0;
+}
+
+.faq h3{
+  color:#0f172a;
+  margin:0 0 6px;
+  font-size:1.08rem;
+}
+
+.source{
+  font-size:.86rem;
+  background:#f1f5f9;
+  border-left:4px solid #2563eb;
+  padding:17px;
+  border-radius:0 10px 10px 0;
+}
+
+.source a{
+  color:#1d4ed8;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.related{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.related a{
+  background:#fff;
+  border:1px solid #e2e8f0;
+  padding:17px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:800;
+  color:#1d4ed8;
+}
+
+footer{
+  margin-top:60px;
+  background:#0f172a;
+  color:#94a3b8;
+  border-top:4px solid #2563eb;
+}
+
+.footer-inner{
+  width:min(980px,calc(100% - 32px));
+  margin:auto;
+  padding:35px 0 22px;
+}
+
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin:15px 0;
+}
+
+.footer-links a{
+  color:#93c5fd;
+  text-decoration:none;
+}
+
+.copyright{
+  border-top:1px solid #1e293b;
+  padding-top:18px;
+  text-align:center;
+  font-size:.78rem;
+}
+
+@media(max-width:760px){
+  .nav-inner{
+    min-height:60px;
+    padding:0 12px;
+  }
+
+  .nav-links a{
+    font-size:.76rem;
+    padding:7px 8px;
+  }
+
+  .nav-links li:nth-child(2){
+    display:none;
+  }
+
+  .hero{
+    padding:36px 22px;
+  }
+
+  .card{
+    padding:21px;
+  }
+
+  .search-row{
+    flex-direction:column;
+  }
+
+  .primary-btn{
+    width:100%;
+  }
+
+  .quick-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .info-grid,
+  .related{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">🐾</span>
+      Pet Diet Engine
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="articles.html">Guides</a></li>
+      <li><a class="active" href="can-my-dog-eat-this.html">Food Safety</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container">
+
+<section class="hero">
+  <span class="badge">🐶 FREE DOG FOOD SAFETY TOOL</span>
+
+  <h1>Can My Dog Eat This?</h1>
+
+  <p>
+    Search a food or ingredient to get a quick educational safety assessment.
+    You can also paste an ingredient list to scan for recognized food hazards
+    that may be inappropriate or dangerous for dogs.
+  </p>
+</section>
+
+<section class="card" id="checker">
+
+  <h2>Dog Food Safety Checker</h2>
+
+  <p class="muted">
+    Choose a food to look it up, or paste ingredients from a product label.
+    This tool provides general educational information and is not a substitute
+    for veterinary advice.
+  </p>
+
+  <div class="tool-tabs">
+    <button class="tool-tab active" type="button" onclick="switchTab('foodTab',this)">
+      🔎 Check a Food
+    </button>
+
+    <button class="tool-tab" type="button" onclick="switchTab('ingredientTab',this)">
+      🏷️ Scan Ingredients
+    </button>
+  </div>
+
+  <div id="foodTab" class="tool-panel active">
+
+    <label for="foodSearch">
+      <strong>What food are you wondering about?</strong>
+    </label>
+
+    <div class="search-row">
+      <input
+        id="foodSearch"
+        type="text"
+        autocomplete="off"
+        placeholder="Example: apple, peanut butter, grapes..."
+      >
+
+      <button class="primary-btn" type="button" onclick="checkFood()">
+        Check Food
+      </button>
+    </div>
+
+    <div class="example-list">
+      <button class="example" onclick="quickSearch('apple')">Apple</button>
+      <button class="example" onclick="quickSearch('banana')">Banana</button>
+      <button class="example" onclick="quickSearch('egg')">Egg</button>
+      <button class="example" onclick="quickSearch('peanut butter')">Peanut Butter</button>
+      <button class="example" onclick="quickSearch('grapes')">Grapes</button>
+      <button class="example" onclick="quickSearch('chocolate')">Chocolate</button>
+      <button class="example" onclick="quickSearch('garlic')">Garlic</button>
+      <button class="example" onclick="quickSearch('xylitol')">Xylitol</button>
+    </div>
+
+    <div id="foodError" class="error"></div>
+
+    <div id="foodResult" class="result">
+      <div class="result-head">
+        <div class="result-status" id="resultStatus"></div>
+        <h3 id="resultName"></h3>
+      </div>
+
+      <div class="result-body">
+
+        <h4>Quick answer</h4>
+        <p id="resultAnswer"></p>
+
+        <h4>Why does it matter?</h4>
+        <p id="resultWhy"></p>
+
+        <h4>Preparation and label considerations</h4>
+        <p id="resultPrep"></p>
+
+        <h4>Common forms to watch for</h4>
+        <p id="resultForms"></p>
+
+        <div class="result-tags" id="resultTags"></div>
+
+        <div class="notice" style="margin-top:18px;">
+          <strong>Important:</strong>
+          A safety category cannot determine whether a particular amount is safe
+          for an individual dog. Size, amount eaten, ingredients, medical history
+          and other factors can change the risk.
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div id="ingredientTab" class="tool-panel">
+
+    <label for="ingredientInput">
+      <strong>Paste the ingredient list</strong>
+    </label>
+
+    <textarea
+      id="ingredientInput"
+      placeholder="Example:
+Peanut, sugar, vegetable oil, salt, xylitol"
+    ></textarea>
+
+    <button
+      class="primary-btn"
+      style="margin-top:12px;width:100%;"
+      type="button"
+      onclick="scanIngredients()"
+    >
+      Scan Ingredient List
+    </button>
+
+    <div id="ingredientError" class="error"></div>
+
+    <div id="ingredientResult" class="result">
+      <div class="result-head unknown">
+        <div class="result-status">Ingredient scan</div>
+        <h3 id="ingredientTitle">Scan results</h3>
+      </div>
+
+      <div class="result-body">
+
+        <p id="ingredientSummary"></p>
+
+        <div id="ingredientHits"></div>
+
+        <div class="scanned">
+          <strong>What this scan means:</strong>
+          <p>
+            The scanner checks for food and ingredient names in this tool's
+            educational database. It is not a laboratory test and it does not
+            determine the quantity of a substance in the product.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="card">
+
+  <h2>Quick Food Checks</h2>
+
+  <p class="muted">
+    These are common searches. Tap one to see the educational safety information.
+  </p>
+
+  <div class="quick-grid">
+
+    <div class="quick-card" onclick="quickSearch('carrot')">
+      <strong>🥕 Carrot</strong>
+      <span>Generally safe when prepared appropriately</span>
+    </div>
+
+    <div class="quick-card" onclick="quickSearch('blueberries')">
+      <strong>🫐 Blueberries</strong>
+      <span>Common dog-friendly fruit</span>
+    </div>
+
+    <div class="quick-card" onclick="quickSearch('chicken')">
+      <strong>🍗 Chicken</strong>
+      <span>Preparation matters</span>
+    </div>
+
+    <div class="quick-card" onclick="quickSearch('egg')">
+      <strong>🥚 Egg</strong>
+      <span>Preparation and portion matter</span>
+    </div>
+
+    <div class="quick-card" onclick="quickSearch('milk')">
+      <strong>🥛 Milk</strong>
+      <span>May cause digestive upset</span>
+    </div>
+
+    <div class="quick-card" onclick="quickSearch('macadamia nuts')">
+      <strong>🥜 Macadamia Nuts</strong>
+      <span>Avoid for dogs</span>
+    </div>
+
+    <div class="quick-card" onclick="quickSearch('raisins')">
+      <strong>🍇 Raisins</strong>
+      <span>Important food hazard</span>
+    </div>
+
+    <div class="quick-card" onclick="quickSearch('onion')">
+      <strong>🧅 Onion</strong>
+      <span>Allium food hazard</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2>Can dogs eat human food?</h2>
+
+  <p>
+    Dogs often show interest in the foods their owners are eating, but a food
+    being common in a human diet does not automatically mean that it is
+    appropriate for dogs. Some foods can be offered in suitable forms and small
+    portions, while others can cause digestive problems or serious poisoning.
+  </p>
+
+  <p>
+    The preparation of a food can matter just as much as the food itself.
+    Seasonings, sauces, sweeteners, chocolate, excessive salt, high-fat
+    ingredients, bones and other additions can change the safety profile of an
+    otherwise familiar food.
+  </p>
+
+  <p>
+    For example, plain cooked chicken is very different from chicken covered
+    with onion or garlic seasoning. Plain peanut butter is different from a
+    sugar-free product containing xylitol. This is why our checker includes
+    both a food lookup and an ingredient-list scanner.
+  </p>
+
+  <p>
+    The goal is not to replace veterinary judgment. Instead, the tool helps
+    dog owners recognize common food-safety issues and understand why certain
+    ingredients deserve additional caution.
+  </p>
+
+</section>
+
+<section class="section">
+
+  <h2>Foods that deserve special attention</h2>
+
+  <div class="info-grid">
+
+    <div class="info">
+      <h3>🍇 Grapes and Raisins</h3>
+      <p>
+        Grapes and raisins are important dog food hazards. ASPCA notes that
+        exposure can lead to kidney damage in dogs. Because the risk cannot be
+        reliably judged from a simple food label alone, suspected ingestion
+        should be treated seriously.
+      </p>
+    </div>
+
+    <div class="info">
+      <h3>🍫 Chocolate</h3>
+      <p>
+        Chocolate contains methylxanthines including theobromine and caffeine.
+        Merck Veterinary Manual notes that chocolate toxicosis can cause
+        gastrointestinal, cardiovascular and nervous-system effects, with
+        darker and cocoa-rich products generally containing higher
+        concentrations.
+      </p>
+    </div>
+
+    <div class="info">
+      <h3>🧅 Onion and Garlic</h3>
+      <p>
+        Onion, garlic, chives and related Allium ingredients can damage red
+        blood cells and cause anemia. Merck notes that raw, cooked, dehydrated
+        and concentrated forms can all be relevant exposures.
+      </p>
+    </div>
+
+    <div class="info">
+      <h3>⚠️ Xylitol</h3>
+      <p>
+        Xylitol is particularly important because it can occur in sugar-free
+        foods and other products. In dogs, xylitol can cause profound
+        hypoglycemia and may also cause severe liver injury. Ingredient labels
+        should therefore be checked carefully.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2>Why ingredient lists matter</h2>
+
+  <p>
+    One of the biggest problems with simple “Can my dog eat this?” lists is
+    that real-world foods are rarely just one ingredient. A dog owner may
+    search for peanut butter, bread, cookies, sauces or a snack without
+    realizing that the product contains additional ingredients.
+  </p>
+
+  <p>
+    Ingredient lists can reveal a completely different safety situation.
+    A plain food may be relatively straightforward, while a flavored or
+    sugar-free version may contain ingredients that require much more caution.
+  </p>
+
+  <p>
+    This is particularly important for products containing sweeteners,
+    seasoning blends or concentrated ingredients. ASPCA specifically notes
+    that xylitol may occur in products such as gum, candy, baked goods,
+    toothpaste and other products, making label awareness an important part
+    of pet safety.
+  </p>
+
+  <p>
+    Our ingredient scanner is therefore designed around a simple principle:
+    <strong>don't only ask what the food is called—check what is actually in it.</strong>
+  </p>
+
+</section>
+
+<section class="section">
+
+  <h2>Safe does not always mean unlimited</h2>
+
+  <p>
+    A food being categorized as generally safe does not mean that a dog should
+    eat unlimited quantities of it. Portion size, calorie intake, preparation,
+    allergies, digestive sensitivity and the dog's overall diet all matter.
+  </p>
+
+  <p>
+    Treats and extras can also contribute meaningful calories. If you are
+    managing your dog's daily food intake, use our
+    <a href="index.html#calculator" style="color:#1d4ed8;font-weight:800;">
+      Pet Calorie Calculator
+    </a>
+    to estimate energy needs and then consider how treats and extras fit into
+    the overall diet.
+  </p>
+
+  <p>
+    If your concern is specifically protein, our
+    <a href="dog-protein-calculator.html" style="color:#1d4ed8;font-weight:800;">
+      Dog Protein Calculator
+    </a>
+    provides an educational protein benchmark based on estimated energy intake
+    and life stage.
+  </p>
+
+</section>
+
+<section class="section">
+
+  <h2>How to use this checker responsibly</h2>
+
+  <div class="info-grid">
+
+    <div class="info">
+      <h3>1. Search the exact food</h3>
+      <p>
+        Use the closest description of what your dog actually encountered.
+        If the product is flavored, sweetened or seasoned, check the ingredients
+        instead of relying only on the generic food name.
+      </p>
+    </div>
+
+    <div class="info">
+      <h3>2. Check the preparation</h3>
+      <p>
+        Raw, cooked, baked, seasoned, concentrated and processed versions of
+        foods can have different considerations.
+      </p>
+    </div>
+
+    <div class="info">
+      <h3>3. Check the label</h3>
+      <p>
+        For packaged products, look at the complete ingredient list. Do not
+        assume that a product labeled “natural,” “organic,” “sugar-free” or
+        “healthy” is automatically suitable for dogs.
+      </p>
+    </div>
+
+    <div class="info">
+      <h3>4. Consider the individual dog</h3>
+      <p>
+        Puppies, seniors, dogs with allergies, dogs with chronic disease and
+        dogs following therapeutic diets may have different nutritional needs.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="emergency">
+
+    <h3>🚨 If your dog already ate something potentially toxic</h3>
+
+    <p>
+      Do not use this checker to decide whether an actual poisoning exposure
+      is safe to watch at home. The seriousness of an ingestion can depend on
+      the substance, product formulation, amount, body size and other factors.
+    </p>
+
+    <p>
+      If you believe your dog has eaten a potentially toxic food or ingredient,
+      contact a veterinarian or an appropriate animal poison-control service
+      promptly. Do not wait for this website to determine whether symptoms
+      will develop.
+    </p>
+
+    <p>
+      Keep the product packaging or ingredient label available if possible.
+      The exact product and ingredient information can be useful when a
+      professional assesses the exposure.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq">
+    <h3>Can my dog eat everything that humans eat?</h3>
+    <p>
+      No. Some human foods can be suitable for dogs when appropriately prepared,
+      while other foods can cause digestive upset, nutritional problems or
+      poisoning. Ingredients and preparation matter.
+    </p>
+  </div>
+
+  <div class="faq">
+    <h3>What foods should dogs avoid?</h3>
+    <p>
+      Important examples include grapes and raisins, xylitol-containing
+      products, chocolate, onions, garlic and related Allium ingredients.
+      There are additional food and household hazards, so this checker should
+      be considered an educational starting point rather than a complete
+      toxicology database.
+    </p>
+  </div>
+
+  <div class="faq">
+    <h3>Can dogs eat peanut butter?</h3>
+    <p>
+      Some dogs can tolerate plain peanut butter in small amounts, but always
+      check the ingredient list. A product containing xylitol is a completely
+      different safety situation and should not be treated as ordinary
+      peanut butter.
+    </p>
+  </div>
+
+  <div class="faq">
+    <h3>Can dogs eat eggs?</h3>
+    <p>
+      Preparation matters. Plain cooked egg is different from an egg dish
+      containing large amounts of salt, onion, garlic, sauces or other
+      ingredients. Portion size and the individual dog's tolerance also matter.
+    </p>
+  </div>
+
+  <div class="faq">
+    <h3>Can dogs eat milk?</h3>
+    <p>
+      Milk and dairy products can cause digestive upset in some dogs because
+      many pets have limited ability to digest lactose. Individual tolerance
+      varies.
+    </p>
+  </div>
+
+  <div class="faq">
+    <h3>Can this checker tell me how much of a food my dog can eat?</h3>
+    <p>
+      No. A general food-safety classification is not a personalized serving
+      recommendation. A dog's size, health, calorie requirements, existing
+      diet and the exact food preparation all matter.
+    </p>
+  </div>
+
+  <div class="faq">
+    <h3>Can this checker diagnose poisoning?</h3>
+    <p>
+      No. It is an educational lookup tool. Suspected poisoning requires
+      case-specific assessment by a veterinarian or appropriate animal
+      poison-control professional.
+    </p>
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2>Related Pet Diet Engine Tools & Guides</h2>
+
+  <p>
+    Explore these related resources for practical pet nutrition information.
+  </p>
+
+  <div class="related">
+
+    <a href="index.html#calculator">
+      ⚡ Pet Calorie Calculator
+    </a>
+
+    <a href="dog-protein-calculator.html">
+      🥩 Dog Protein Calculator
+    </a>
+
+    <a href="articles.html">
+      📚 Pet Nutrition Guides
+    </a>
+
+    <a href="pet-food-allergy-elimination-diet-guide.html">
+      🐾 Dog Food Allergy Guide
+    </a>
+
+    <a href="farmina-nd-dog-food-review.html">
+      🍽️ Dog Food Review
+    </a>
+
+    <a href="pet-nutrition-quiz.html">
+      🧠 Pet Nutrition Quiz
+    </a>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2>Sources and Further Reading</h2>
+
+  <div class="source">
+
+    <p>
+      <strong>ASPCA Animal Poison Control Center:</strong>
+      People Foods to Avoid Feeding Your Pets.
+    </p>
+
+    <p>
+      <a
+        href="https://www.aspca.org/pet-care/aspca-poison-control/people-foods-avoid-feeding-your-pets"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ASPCA — People Foods to Avoid Feeding Your Pets
+      </a>
+    </p>
+
+    <p>
+      <strong>Merck Veterinary Manual:</strong>
+      Food hazards and veterinary toxicology information.
+    </p>
+
+    <p>
+      <a
+        href="https://www.merckvetmanual.com/special-pet-topics/poisoning/food-hazards"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Merck Veterinary Manual — Food Hazards
+      </a>
+    </p>
+
+    <p>
+      <a
+        href="https://www.merckvetmanual.com/toxicology/food-hazards/xylitol-toxicosis-in-dogs"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Merck Veterinary Manual — Xylitol Toxicosis in Dogs
+      </a>
+    </p>
+
+    <p>
+      <a
+        href="https://www.merckvetmanual.com/toxicology/food-hazards/chocolate-toxicosis-in-animals"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Merck Veterinary Manual — Chocolate Toxicosis
+      </a>
+    </p>
+
+    <p>
+      <a
+        href="https://www.merckvetmanual.com/toxicology/food-hazards/garlic-and-onion-allium-spp-toxicosis-in-animals"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Merck Veterinary Manual — Garlic and Onion Toxicosis
+      </a>
+    </p>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2>About This Tool</h2>
+
+  <p>
+    Pet Diet Engine's Can My Dog Eat This? checker is designed to make common
+    dog-food safety questions easier to research. Instead of presenting a
+    simple list of foods, the tool combines food lookup with ingredient
+    scanning so owners can think about the complete product rather than only
+    its headline name.
+  </p>
+
+  <p>
+    The database is intentionally conservative. A food may be marked “use
+    caution” when the issue depends heavily on preparation, quantity or the
+    individual dog. A food marked “avoid” or “high concern” should not be
+    interpreted as a diagnosis or a personalized poisoning assessment.
+  </p>
+
+  <p>
+    Information on this page is educational and should not replace veterinary
+    care. Veterinary advice is particularly important when a dog has already
+    consumed a potentially toxic substance, has a medical condition, or is
+    showing symptoms.
+  </p>
+
+</section>
+
+</main>
+
+<footer>
+
+  <div class="footer-inner">
+
+    <strong>Pet Diet Engine</strong>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="articles.html">Guides</a>
+      <a href="index.html#calculator">Calorie Calculator</a>
+      <a href="dog-protein-calculator.html">Protein Calculator</a>
+      <a href="pet-food-allergy-elimination-diet-guide.html">Allergy Guide</a>
+      <a href="farmina-nd-dog-food-review.html">Food Review</a>
+    </div>
+
+    <div class="copyright">
+      © 2026 Pet Diet Engine. Educational information only; not veterinary medical advice.
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+
+/*
+==========================================================
+PET DIET ENGINE
+CAN MY DOG EAT THIS?
+FOOD SAFETY DATABASE
+==========================================================
+*/
+
+const foodDatabase = [
+
+  {
+    name:"Apple",
+    aliases:["apple","apples"],
+    status:"safe",
+    statusText:"Generally Safe",
+    answer:"Plain apple flesh can be offered to many dogs in appropriate portions.",
+    why:"Apple provides water and fiber, but it is still a treat rather than a nutritionally complete part of a dog's diet.",
+    prep:"Wash the apple and remove the core and seeds. Cut it into appropriately sized pieces to reduce choking risk.",
+    forms:"Apple slices, plain fresh apple and unsweetened apple pieces.",
+    tags:["Fruit","Remove seeds","Portion matters"]
+  },
+
+  {
+    name:"Banana",
+    aliases:["banana","bananas"],
+    status:"safe",
+    statusText:"Generally Safe",
+    answer:"Plain banana can be an occasional treat for many dogs.",
+    why:"Bananas contain carbohydrates and naturally occurring sugars, so portion size matters.",
+    prep:"Serve plain and in small pieces. Avoid banana products containing chocolate, xylitol or excessive added sugar.",
+    forms:"Fresh banana, frozen banana pieces and plain mashed banana.",
+    tags:["Fruit","Small portions","Check ingredients"]
+  },
+
+  {
+    name:"Blueberries",
+    aliases:["blueberry","blueberries"],
+    status:"safe",
+    statusText:"Generally Safe",
+    answer:"Plain blueberries are commonly used as an occasional dog treat.",
+    why:"They provide fiber and naturally occurring nutrients, but treats should still fit into the dog's overall diet.",
+    prep:"Wash them and offer an appropriate amount for the dog's size.",
+    forms:"Fresh blueberries, frozen blueberries and plain unsweetened blueberries.",
+    tags:["Fruit","Treat","Portion matters"]
+  },
+
+  {
+    name:"Carrot",
+    aliases:["carrot","carrots"],
+    status:"safe",
+    statusText:"Generally Safe",
+    answer:"Plain carrots can be a useful low-calorie treat for many dogs.",
+    why:"Carrots provide fiber and are commonly used as dog treats.",
+    prep:"Wash and cut into suitable pieces. Large pieces may be inappropriate for some dogs.",
+    forms:"Raw carrot pieces, cooked plain carrots and grated carrot.",
+    tags:["Vegetable","Treat","Preparation matters"]
+  },
+
+  {
+    name:"Pumpkin",
+    aliases:["pumpkin","plain pumpkin"],
+    status:"safe",
+    statusText:"Generally Safe",
+    answer:"Plain cooked pumpkin is commonly used as a food ingredient and occasional addition to a dog's diet.",
+    why:"Pumpkin provides fiber and water, but it should not replace a complete and balanced diet.",
+    prep:"Use plain pumpkin without added sugar, spices, onion, garlic or artificial sweeteners.",
+    forms:"Plain cooked pumpkin and plain canned pumpkin without added ingredients.",
+    tags:["Vegetable","Fiber","Check label"]
+  },
+
+  {
+    name:"Chicken",
+    aliases:["chicken","chicken meat","cooked chicken"],
+    status:"safe",
+    statusText:"Generally Safe When Prepared Properly",
+    answer:"Plain, fully cooked chicken can be suitable for many dogs as an occasional food.",
+    why:"Chicken is a common animal-protein ingredient, but preparation can introduce risks.",
+    prep:"Serve plain and fully cooked. Avoid onion, garlic, excessive seasoning, sauces and cooked bones.",
+    forms:"Plain cooked chicken breast, plain cooked chicken meat and unseasoned chicken.",
+    tags:["Protein","Cook thoroughly","Avoid seasoning"]
+  },
+
+  {
+    name:"Egg",
+    aliases:["egg","eggs","cooked egg"],
+    status:"safe",
+    statusText:"Generally Safe When Prepared Properly",
+    answer:"Plain cooked egg can be tolerated by many dogs.",
+    why:"Egg provides protein and fat, but preparation and portion size matter.",
+    prep:"Cook thoroughly and avoid adding onion, garlic, excessive salt, butter-heavy sauces or other problematic ingredients.",
+    forms:"Plain cooked egg, scrambled egg without harmful additions and boiled egg.",
+    tags:["Protein","Cooked","Portion matters"]
+  },
+
+  {
+    name:"Rice",
+    aliases:["rice","white rice","brown rice"],
+    status:"safe",
+    statusText:"Generally Safe When Prepared Plain",
+    answer:"Plain cooked rice is generally tolerated by many dogs.",
+    why:"Rice is a carbohydrate source commonly used in commercial and homemade diets.",
+    prep:"Serve plain and cooked. Avoid sauces, onion, garlic and excessive seasoning.",
+    forms:"Plain cooked white rice and plain cooked brown rice.",
+    tags:["Grain","Cooked","Avoid seasoning"]
+  },
+
+  {
+    name:"Peanut Butter",
+    aliases:["peanut butter","peanutbutter"],
+    status:"caution",
+    statusText:"Use Caution",
+    answer:"Some dogs can tolerate plain peanut butter in small amounts, but the ingredient label should always be checked.",
+    why:"Some peanut butter products can contain added sweeteners or other ingredients that may be inappropriate for dogs.",
+    prep:"Choose a product without xylitol and avoid products containing chocolate or other problematic ingredients.",
+    forms:"Plain peanut butter, flavored peanut butter and sugar-free peanut butter.",
+    tags:["Check label","Xylitol concern","High calorie"]
+  },
+
+  {
+    name:"Milk",
+    aliases:["milk","cow milk","cow's milk"],
+    status:"caution",
+    statusText:"Use Caution",
+    answer:"Milk can cause digestive upset in some dogs.",
+    why:"Many dogs have limited ability to digest lactose, so dairy can lead to loose stools or other digestive symptoms.",
+    prep:"If offered at all, use a small amount and monitor individual tolerance.",
+    forms:"Cow's milk, flavored milk and dairy drinks.",
+    tags:["Dairy","Digestive upset","Portion matters"]
+  },
+
+  {
+    name:"Cheese",
+    aliases:["cheese","cheddar cheese","cheddar"],
+    status:"caution",
+    statusText:"Use Caution",
+    answer:"Some dogs tolerate small amounts of plain cheese, but it is relatively calorie-dense and may cause digestive upset.",
+    why:"Fat content, lactose and added ingredients can all matter.",
+    prep:"Use small portions and avoid cheese products containing onion, garlic, xylitol or other unsuitable ingredients.",
+    forms:"Plain cheese, processed cheese and flavored cheese products.",
+    tags:["Dairy","Calories","Check ingredients"]
+  },
+
+  {
+    name:"Tomato",
+    aliases:["tomato","tomatoes"],
+    status:"caution",
+    statusText:"Use Caution",
+    answer:"The food form and maturity matter when considering tomatoes for dogs.",
+    why:"Different parts and forms of tomato plants are not equivalent, and prepared tomato products may contain other ingredients.",
+    prep:"Do not use tomato sauces as a shortcut for feeding plain tomato because sauces may contain onion, garlic, excessive salt or other ingredients.",
+    forms:"Fresh ripe tomato, tomato sauce, tomato soup and tomato-based products.",
+    tags:["Vegetable","Preparation matters","Check sauce"]
+  },
+
+  {
+    name:"Coconut",
+    aliases:["coconut","coconut oil"],
+    status:"caution",
+    statusText:"Use Caution",
+    answer:"Small amounts of coconut products are not generally considered a major poisoning concern, but their fat content can cause digestive upset.",
+    why:"ASPCA notes that coconut flesh and milk contain oils that may cause loose stools or diarrhea.",
+    prep:"Use small portions and avoid sweetened or heavily processed coconut products.",
+    forms:"Coconut flesh, coconut milk and coconut oil.",
+    tags:["Fat","Digestive upset","Portion matters"]
+  },
+
+  {
+    name:"Macadamia Nuts",
+    aliases:["macadamia","macadamia nut","macadamia nuts"],
+    status:"avoid",
+    statusText:"Avoid",
+    answer:"Macadamia nuts should not be intentionally fed to dogs.",
+    why:"ASPCA reports that macadamia nuts can cause weakness, incoordination, depression, vomiting, tremors and increased body temperature in dogs.",
+    prep:"Avoid macadamia nuts and foods containing them.",
+    forms:"Whole macadamia nuts, cookies, nut mixes and desserts containing macadamias.",
+    tags:["Nut","Avoid","Dog food hazard"]
+  },
+
+  {
+    name:"Grapes",
+    aliases:["grape","grapes","green grapes","red grapes","seedless grapes"],
+    status:"high",
+    statusText:"High Concern — Avoid",
+    answer:"Grapes should not be intentionally fed to dogs.",
+    why:"ASPCA reports that exposure to grapes and raisins can lead to kidney damage in dogs.",
+    prep:"Avoid fresh grapes and products containing grapes or raisins. If ingestion has already occurred, contact a veterinarian or appropriate animal poison service.",
+    forms:"Fresh grapes, seedless grapes, grape products and foods containing raisins.",
+    tags:["Fruit","Avoid","Kidney risk"]
+  },
+
+  {
+    name:"Raisins",
+    aliases:["raisin","raisins","sultanas"],
+    status:"high",
+    statusText:"High Concern — Avoid",
+    answer:"Raisins and similar dried grape products should not be fed to dogs.",
+    why:"Grapes and raisins are associated with potentially serious kidney injury in dogs.",
+    prep:"Check baked goods, snack mixes and cereals for raisins or related dried grape ingredients.",
+    forms:"Raisins, baked goods, trail mixes and cereals containing raisins.",
+    tags:["Dried fruit","Avoid","Kidney risk"]
+  },
+
+  {
+    name:"Chocolate",
+    aliases:["chocolate","dark chocolate","milk chocolate","cocoa","cocoa powder","baking chocolate","baker's chocolate"],
+    status:"high",
+    statusText:"High Concern — Avoid",
+    answer:"Chocolate should not be intentionally fed to dogs.",
+    why:"Chocolate contains methylxanthines including theobromine and caffeine. Merck Veterinary Manual notes that exposure can cause gastrointestinal, cardiovascular and nervous-system effects.",
+    prep:"Avoid chocolate, cocoa powder and baked goods containing significant chocolate or cocoa. Dark and cocoa-rich products generally contain higher concentrations of methylxanthines.",
+    forms:"Dark chocolate, milk chocolate, cocoa powder, baking chocolate, brownies, chocolate cake and chocolate candy.",
+    tags:["Toxic food","Theobromine","Caffeine"]
+  },
+
+  {
+    name:"Onion",
+    aliases:["onion","onions","onion powder","onion salt","dehydrated onion"],
+    status:"avoid",
+    statusText:"Avoid",
+    answer:"Onion and concentrated onion ingredients should not be intentionally fed to dogs.",
+    why:"Onions are part of the Allium group. Exposure can cause gastrointestinal irritation and damage to red blood cells.",
+    prep:"Check sauces, seasoning blends, soups, gravies and prepared foods for onion powder or dehydrated onion.",
+    forms:"Raw onion, cooked onion, onion powder, onion salt and dehydrated onion.",
+    tags:["Allium","Avoid","Check seasoning"]
+  },
+
+  {
+    name:"Garlic",
+    aliases:["garlic","garlic powder","garlic salt","dehydrated garlic"],
+    status:"avoid",
+    statusText:"Avoid",
+    answer:"Garlic and concentrated garlic products should not be intentionally fed to dogs.",
+    why:"Garlic belongs to the Allium group. Merck Veterinary Manual reports that raw, cooked, dehydrated and granulated forms can be associated with toxicosis.",
+    prep:"Check seasoning mixes, sauces, marinades, supplements and prepared foods for garlic or garlic powder.",
+    forms:"Raw garlic, cooked garlic, garlic powder, garlic salt and dehydrated garlic.",
+    tags:["Allium","Avoid","Concentrated forms"]
+  },
+
+  {
+    name:"Xylitol",
+    aliases:["xylitol","birch sugar","wood sugar","sugar alcohol"],
+    status:"high",
+    statusText:"High Concern — Avoid",
+    answer:"Xylitol is a serious dog food hazard and should not be fed to dogs.",
+    why:"Merck Veterinary Manual reports that xylitol can cause profound hypoglycemia in dogs and may also cause severe liver injury.",
+    prep:"Check ingredient labels on sugar-free products, gum, candy, baked goods, some peanut butters, toothpaste and other products.",
+    forms:"Sugar-free gum, candy, baked goods, some peanut butters, oral-care products and other xylitol-containing products.",
+    tags:["Sweetener","High concern","Check label"]
+  },
+
+  {
+    name:"Alcohol",
+    aliases:["alcohol","ethanol","beer","wine","liquor"],
+    status:"high",
+    statusText:"Avoid",
+    answer:"Alcohol-containing drinks and products should not be given to dogs.",
+    why:"Alcohol can cause serious toxicity in animals and should be kept away from pets.",
+    prep:"Never intentionally give alcoholic drinks to dogs and keep alcoholic products inaccessible.",
+    forms:"Beer, wine, spirits, cocktails and alcohol-containing foods.",
+    tags:["Alcohol","Avoid","Toxic exposure"]
+  },
+
+  {
+    name:"Raw Meat",
+    aliases:["raw meat","uncooked meat"],
+    status:"caution",
+    statusText:"Use Caution",
+    answer:"Raw meat carries food-safety considerations and should not automatically be treated as safer than cooked meat.",
+    why:"ASPCA notes that raw meat can contain bacteria such as Salmonella and E. coli that may harm pets and people.",
+    prep:"Discuss raw diets with a veterinarian and use appropriate food-handling practices.",
+    forms:"Raw beef, raw chicken, raw turkey and other uncooked meats.",
+    tags:["Raw food","Bacteria","Food safety"]
+  },
+
+  {
+    name:"Raw Eggs",
+    aliases:["raw egg","raw eggs","uncooked egg"],
+    status:"caution",
+    statusText:"Use Caution",
+    answer:"Raw eggs have food-safety considerations and should not automatically be considered equivalent to cooked eggs.",
+    why:"Raw eggs can contain bacteria and have additional nutritional considerations.",
+    prep:"Cook eggs thoroughly and avoid adding unsuitable seasonings or ingredients.",
+    forms:"Raw egg, raw egg mixtures and uncooked egg products.",
+    tags:["Raw food","Bacteria","Cook thoroughly"]
+  },
+
+  {
+    name:"Bones",
+    aliases:["bone","bones","cooked bones","chicken bones"],
+    status:"avoid",
+    statusText:"Avoid",
+    answer:"Bones can create physical hazards and should not be treated as automatically safe simply because they are natural.",
+    why:"ASPCA notes that bones can cause gastrointestinal injury or obstruction and may require veterinary treatment.",
+    prep:"Do not assume cooked bones are safe. Discuss appropriate dental chews and alternatives with a veterinary professional.",
+    forms:"Cooked bones, poultry bones, table scraps containing bones and bone fragments.",
+    tags:["Physical hazard","Avoid","Obstruction risk"]
+  }
+
+];
+
+
+/*
+==========================================================
+INGREDIENT HAZARD DATABASE
+==========================================================
+*/
+
+const ingredientHazards = [
+
+  {
+    terms:["xylitol","birch sugar","wood sugar"],
+    name:"Xylitol",
+    level:"high",
+    message:"Xylitol is a serious dog hazard. It can cause profound hypoglycemia and may also cause liver injury.",
+    action:"If your dog may have consumed a xylitol-containing product, contact a veterinarian or appropriate animal poison service promptly."
+  },
+
+  {
+    terms:["grape","grapes","raisin","raisins","sultana","sultanas"],
+    name:"Grapes / Raisins",
+    level:"high",
+    message:"Grapes and raisins are associated with potentially serious kidney injury in dogs.",
+    action:"Treat suspected ingestion seriously and seek veterinary guidance promptly."
+  },
+
+  {
+    terms:["chocolate","cocoa","cocoa powder","cacao","theobromine"],
+    name:"Chocolate / Cocoa",
+    level:"high",
+    message:"Chocolate and cocoa contain methylxanthines such as theobromine and caffeine that can cause toxicity in dogs.",
+    action:"Do not assume that a small-looking amount is safe without considering the exact product and amount."
+  },
+
+  {
+    terms:["onion","onion powder","onion salt","dehydrated onion"],
+    name:"Onion",
+    level:"high",
+    message:"Onion is an Allium ingredient that can cause gastrointestinal irritation and red blood cell damage.",
+    action:"Concentrated forms such as powders can be especially important to recognize on labels."
+  },
+
+  {
+    terms:["garlic","garlic powder","garlic salt","dehydrated garlic"],
+    name:"Garlic",
+    level:"high",
+    message:"Garlic is an Allium ingredient associated with toxicosis in dogs.",
+    action:"Check seasoning blends, sauces, marinades and prepared foods carefully."
+  },
+
+  {
+    terms:["chives","leek","leeks"],
+    name:"Allium Ingredients",
+    level:"high",
+    message:"Chives and leeks are also members of the Allium group.",
+    action:"Avoid intentionally feeding products containing these ingredients."
+  },
+
+  {
+    terms:["alcohol","ethanol"],
+    name:"Alcohol",
+    level:"high",
+    message:"Alcohol-containing products can be toxic to dogs.",
+    action:"Keep alcoholic drinks and alcohol-containing products away from pets."
+  }
+
+];
+
+
+/*
+==========================================================
+TAB SYSTEM
+==========================================================
+*/
+
+function switchTab(tabId, button){
+
+  document.querySelectorAll(".tool-panel").forEach(function(panel){
+    panel.classList.remove("active");
+  });
+
+  document.querySelectorAll(".tool-tab").forEach(function(tab){
+    tab.classList.remove("active");
+  });
+
+  document.getElementById(tabId).classList.add("active");
+  button.classList.add("active");
+}
+
+
+/*
+==========================================================
+FOOD SEARCH
+==========================================================
+*/
+
+function normalizeText(text){
+
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[’']/g,"")
+    .replace(/\s+/g," ");
+}
+
+
+function findFood(query){
+
+  const clean = normalizeText(query);
+
+  if(!clean){
+    return null;
+  }
+
+  return foodDatabase.find(function(food){
+
+    if(normalizeText(food.name) === clean){
+      return true;
+    }
+
+    return food.aliases.some(function(alias){
+      return normalizeText(alias) === clean;
+    });
+
+  }) || foodDatabase.find(function(food){
+
+    if(clean.length < 3){
+      return false;
+    }
+
+    if(normalizeText(food.name).includes(clean)){
+      return true;
+    }
+
+    return food.aliases.some(function(alias){
+      return normalizeText(alias).includes(clean);
+    });
+
+  });
+
+}
+
+
+function checkFood(){
+
+  const input = document.getElementById("foodSearch");
+  const error = document.getElementById("foodError");
+  const result = document.getElementById("foodResult");
+
+  const query = input.value;
+
+  error.style.display = "none";
+  result.className = "result";
+
+  if(!query.trim()){
+
+    error.textContent = "Please enter a food or ingredient to check.";
+    error.style.display = "block";
+    return;
+
+  }
+
+  const food = findFood(query);
+
+  if(!food){
+
+    document.getElementById("resultStatus").textContent = "Not in the current database";
+    document.getElementById("resultName").textContent = query.trim();
+
+    document.getElementById("resultAnswer").textContent =
+      "We do not currently have a specific entry for this food.";
+
+    document.getElementById("resultWhy").textContent =
+      "A missing result does not mean that a food is safe. Food preparation, ingredients and the amount consumed can change the risk.";
+
+    document.getElementById("resultPrep").textContent =
+      "For packaged foods, use the ingredient scanner above. For suspected ingestion of a potentially toxic substance, contact a veterinary professional.";
+
+    document.getElementById("resultForms").textContent =
+      "Try searching for the exact ingredient or product component.";
+
+    document.getElementById("resultTags").innerHTML =
+      '<span class="tag">Not yet indexed</span><span class="tag">Check ingredients</span>';
+
+    result.classList.add("show","unknown");
+
+    result.scrollIntoView({
+      behavior:"smooth",
+      block:"nearest"
+    });
+
+    return;
+  }
+
+  document.getElementById("resultStatus").textContent = food.statusText;
+  document.getElementById("resultName").textContent = food.name;
+  document.getElementById("resultAnswer").textContent = food.answer;
+  document.getElementById("resultWhy").textContent = food.why;
+  document.getElementById("resultPrep").textContent = food.prep;
+  document.getElementById("resultForms").textContent = food.forms;
+
+  document.getElementById("resultTags").innerHTML =
+    food.tags.map(function(tag){
+      return '<span class="tag">' + escapeHtml(tag) + '</span>';
+    }).join("");
+
+  result.classList.add("show",food.status);
+
+  result.scrollIntoView({
+    behavior:"smooth",
+    block:"nearest"
+  });
+
+}
+
+
+function quickSearch(food){
+
+  document.getElementById("foodSearch").value = food;
+
+  document.querySelector(".tool-tab").click();
+
+  checkFood();
+
+}
+
+
+/*
+==========================================================
+INGREDIENT SCANNER
+==========================================================
+*/
+
+function scanIngredients(){
+
+  const input = document.getElementById("ingredientInput");
+  const error = document.getElementById("ingredientError");
+  const result = document.getElementById("ingredientResult");
+
+  const text = normalizeText(input.value);
+
+  error.style.display = "none";
+  result.classList.remove("show");
+
+  if(!text){
+
+    error.textContent = "Please paste an ingredient list first.";
+    error.style.display = "block";
+    return;
+
+  }
+
+  const hits = [];
+
+  ingredientHazards.forEach(function(hazard){
+
+    const matchedTerm = hazard.terms.find(function(term){
+
+      return text.includes(normalizeText(term));
+
+    });
+
+    if(matchedTerm){
+
+      hits.push({
+        hazard:hazard,
+        matchedTerm:matchedTerm
+      });
+
+    }
+
+  });
+
+  const uniqueHits = [];
+
+  hits.forEach(function(hit){
+
+    const already = uniqueHits.some(function(existing){
+      return existing.hazard.name === hit.hazard.name;
+    });
+
+    if(!already){
+      uniqueHits.push(hit);
+    }
+
+  });
+
+  const summary = document.getElementById("ingredientSummary");
+  const hitsContainer = document.getElementById("ingredientHits");
+
+  if(uniqueHits.length === 0){
+
+    summary.textContent =
+      "No recognized high-concern ingredients were found in the text you entered. This does not prove that the product is safe or appropriate for your dog; the scanner only checks its current educational database.";
+
+    hitsContainer.innerHTML =
+      '<div class="ingredient-safe"><strong>✓ No recognized hazards found</strong><p>Review the complete label and consider preparation, portion size and your dog's individual needs.</p></div>';
+
+  }else{
+
+    summary.textContent =
+      "The scanner found " + uniqueHits.length +
+      " recognized ingredient concern" +
+      (uniqueHits.length === 1 ? "" : "s") +
+      ". Review the information below and seek professional advice if your dog has already consumed the product.";
+
+    hitsContainer.innerHTML = uniqueHits.map(function(hit){
+
+      return `
+        <div class="ingredient-hit">
+          <strong>⚠ ${escapeHtml(hit.hazard.name)}</strong>
+          <p><strong>Matched:</strong> ${escapeHtml(hit.matchedTerm)}</p>
+          <p>${escapeHtml(hit.hazard.message)}</p>
+          <p><strong>Next step:</strong> ${escapeHtml(hit.hazard.action)}</p>
+        </div>
+      `;
+
+    }).join("");
+
+  }
+
+  result.classList.add("show");
+
+  result.scrollIntoView({
+    behavior:"smooth",
+    block:"nearest"
+  });
+
+}
+
+
+/*
+==========================================================
+HTML ESCAPE
+==========================================================
+*/
+
+function escapeHtml(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/*
+==========================================================
+ENTER KEY SUPPORT
+==========================================================
+*/
+
+document.getElementById("foodSearch").addEventListener("keydown",function(event){
+
+  if(event.key === "Enter"){
+    checkFood();
+  }
+
+});
+
+</script>
+
+</body>
+</html>
