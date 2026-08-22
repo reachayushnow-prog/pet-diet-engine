@@ -195,6 +195,201 @@ footer{margin-top:70px;background:#0f172a;color:#94a3b8;border-top:4px solid #25
 .hero-actions{flex-direction:column}
 .hero-actions .btn{width:100%}
 }
+  /* =========================================================
+   CAN MY DOG EAT THIS? - FEATURED TOOL CARD
+   ========================================================= */
+
+.featured-safety-tool{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:22px;
+  margin:28px 0;
+  padding:28px;
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(59,130,246,.12), transparent 28%),
+    linear-gradient(135deg,#ecfdf5 0%,#eff6ff 52%,#ffffff 100%);
+  border:1px solid #bfdbfe;
+  box-shadow:0 15px 40px rgba(15,23,42,.09);
+  overflow:hidden;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+
+.featured-safety-tool:hover{
+  transform:translateY(-3px);
+  box-shadow:0 20px 45px rgba(15,23,42,.13);
+}
+
+.featured-safety-tool::before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  right:-70px;
+  top:-80px;
+  border-radius:50%;
+  background:#dbeafe;
+  opacity:.55;
+}
+
+.featured-safety-tool::after{
+  content:"🐾";
+  position:absolute;
+  right:18px;
+  bottom:-32px;
+  font-size:115px;
+  opacity:.055;
+  pointer-events:none;
+}
+
+.safety-tool-icon{
+  position:relative;
+  z-index:2;
+  flex:0 0 76px;
+  width:76px;
+  height:76px;
+  display:grid;
+  place-items:center;
+  border-radius:20px;
+  background:#ffffff;
+  border:1px solid #dbeafe;
+  box-shadow:0 10px 25px rgba(15,23,42,.08);
+  font-size:40px;
+}
+
+.safety-tool-content{
+  position:relative;
+  z-index:3;
+  flex:1;
+}
+
+.safety-tool-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  margin-bottom:8px;
+  padding:5px 11px;
+  border-radius:999px;
+  background:#dcfce7;
+  border:1px solid #bbf7d0;
+  color:#166534;
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+
+.safety-tool-content h3{
+  margin:0 0 7px;
+  color:#0f172a;
+  font-size:1.55rem;
+  line-height:1.2;
+  letter-spacing:-.02em;
+}
+
+.safety-tool-content p{
+  margin:0 0 17px;
+  max-width:720px;
+  color:#475569;
+  font-size:.96rem;
+  line-height:1.65;
+}
+
+.safety-tool-features{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:18px;
+}
+
+.safety-feature{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:6px 10px;
+  border-radius:8px;
+  background:rgba(255,255,255,.82);
+  border:1px solid #dbe4ef;
+  color:#334155;
+  font-size:.76rem;
+  font-weight:800;
+}
+
+.safety-tool-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 19px;
+  border-radius:11px;
+  background:#2563eb;
+  color:#ffffff !important;
+  text-decoration:none !important;
+  font-size:.92rem;
+  font-weight:850;
+  box-shadow:0 7px 18px rgba(37,99,235,.24);
+  transition:background .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+
+.safety-tool-button:hover{
+  background:#1d4ed8;
+  color:#ffffff !important;
+  transform:translateY(-2px);
+  box-shadow:0 10px 23px rgba(37,99,235,.3);
+}
+
+.safety-tool-note{
+  margin-top:11px;
+  color:#64748b;
+  font-size:.72rem;
+}
+
+/* Mobile */
+@media(max-width:700px){
+
+  .featured-safety-tool{
+    align-items:flex-start;
+    gap:15px;
+    padding:21px;
+    border-radius:19px;
+  }
+
+  .safety-tool-icon{
+    flex:0 0 55px;
+    width:55px;
+    height:55px;
+    border-radius:15px;
+    font-size:29px;
+  }
+
+  .safety-tool-content h3{
+    font-size:1.27rem;
+  }
+
+  .safety-tool-content p{
+    font-size:.88rem;
+    line-height:1.55;
+  }
+
+  .safety-tool-features{
+    gap:6px;
+  }
+
+  .safety-feature{
+    font-size:.7rem;
+    padding:5px 8px;
+  }
+
+  .safety-tool-button{
+    width:100%;
+    padding:12px;
+  }
+
+  .safety-tool-note{
+    font-size:.68rem;
+  }
+  }
 </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -335,9 +530,6 @@ footer{margin-top:70px;background:#0f172a;color:#94a3b8;border-top:4px solid #25
 <a href="#safety-checker" class="tool-card"><div class="tool-icon">🧪</div><h3>Ingredient Safety Checker</h3><p>Check common ingredients before offering them to your pet.</p></a>
 <a href="articles.html#meal-calculator" class="tool-card"><div class="tool-icon">🍽️</div><h3>Meal & Macro Calculator</h3><p>Explore the detailed meal calculator in our nutrition guide.</p></a>
 <a href="pet-food-allergy-elimination-diet-guide.html" class="tool-card"><div class="tool-icon">🛡️</div><h3>Food Allergy Guide</h3><p>Learn about elimination diets and food sensitivities.</p></a>
-<a href="can-my-dog-eat-this.html">
-    🐶 Can My Dog Eat This? Food Safety Checker
-</a>
 </div>
 </section>
 
