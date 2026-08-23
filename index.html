@@ -24,6 +24,16 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746296968934939" crossorigin="anonymous"></script>
 <script src="https://quge5.com/88/tag.min.js" data-zone="267053" async data-cfasync="false"></script>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBB62JBG80"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JBB62JBG80');
+</script>
+
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -132,6 +142,24 @@ a{color:inherit}
 .safety-form{display:grid;grid-template-columns:1fr auto;gap:10px}
 .safety-form input{width:100%;padding:13px;border-radius:10px;border:1px solid #334155;background:#1e293b;color:#fff;outline:none}
 .safety-form button{padding:13px 20px;border:none;border-radius:10px;background:#10b981;color:#fff;font-weight:800;cursor:pointer}
+
+/* ADDED: Link to dedicated Can My Dog Eat This tool */
+.safety-tool-link{
+  display:inline-block;
+  margin-top:14px;
+  color:#93c5fd;
+  text-decoration:none;
+  font-weight:800;
+  font-size:.9rem;
+  transition:.2s ease;
+}
+
+.safety-tool-link:hover{
+  color:#fff;
+  text-decoration:underline;
+  transform:translateX(2px);
+}
+
 .safety-result{margin-top:18px;padding:15px;border-radius:10px;display:none}
 .safety-result.show{display:block}
 .safety-safe{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);color:#a7f3d0}
@@ -176,8 +204,8 @@ footer{margin-top:70px;background:#0f172a;color:#94a3b8;border-top:4px solid #25
 .guides-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
 .calculator-card{grid-template-columns:1fr}
 .calculator-result{border-left:none;border-top:1px solid #e2e8f0}
-.footer-grid{grid-template-columns:1fr 1fr}
 }
+
 @media(max-width:700px){
 .nav-inner{min-height:62px}
 .nav-menu{gap:2px}
@@ -195,7 +223,8 @@ footer{margin-top:70px;background:#0f172a;color:#94a3b8;border-top:4px solid #25
 .hero-actions{flex-direction:column}
 .hero-actions .btn{width:100%}
 }
-  /* =========================================================
+
+/* =========================================================
    CAN MY DOG EAT THIS? - FEATURED TOOL CARD
    ========================================================= */
 
@@ -389,18 +418,10 @@ footer{margin-top:70px;background:#0f172a;color:#94a3b8;border-top:4px solid #25
   .safety-tool-note{
     font-size:.68rem;
   }
-  }
+}
 </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBB62JBG80"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-JBB62JBG80');
-</script>
 <body>
 
 <nav class="site-nav">
@@ -427,6 +448,7 @@ footer{margin-top:70px;background:#0f172a;color:#94a3b8;border-top:4px solid #25
 <a href="articles.html" class="btn btn-secondary">📚 Explore Guides</a>
 </div>
 </div>
+
 <div class="hero-image">
 <img src="1785328454295.png" alt="Dog and cat enjoying pet food" width="600" height="400" loading="eager" fetchpriority="high">
 </div>
@@ -506,6 +528,7 @@ footer{margin-top:70px;background:#0f172a;color:#94a3b8;border-top:4px solid #25
 <strong id="rerResult">—</strong>
 <small>kcal/day</small>
 </div>
+
 <div class="result-stat">
 <span class="result-label">Food amount</span>
 <strong id="foodResult">—</strong>
@@ -527,23 +550,34 @@ footer{margin-top:70px;background:#0f172a;color:#94a3b8;border-top:4px solid #25
 
 <div class="tools-grid">
 <a href="#calculator" class="tool-card"><div class="tool-icon">⚡</div><h3>Daily Calorie Calculator</h3><p>Estimate daily energy requirements and food portions.</p></a>
+
 <a href="#safety-checker" class="tool-card"><div class="tool-icon">🧪</div><h3>Ingredient Safety Checker</h3><p>Check common ingredients before offering them to your pet.</p></a>
+
 <a href="articles.html#meal-calculator" class="tool-card"><div class="tool-icon">🍽️</div><h3>Meal & Macro Calculator</h3><p>Explore the detailed meal calculator in our nutrition guide.</p></a>
+
 <a href="pet-food-allergy-elimination-diet-guide.html" class="tool-card"><div class="tool-icon">🛡️</div><h3>Food Allergy Guide</h3><p>Learn about elimination diets and food sensitivities.</p></a>
 </div>
 </section>
 
 <section class="section" id="safety-checker">
 <div class="safety-card">
+
 <div class="safety-header">
 <h2>🧪 Ingredient Safety Checker</h2>
 <p>Search common foods and ingredients for a quick educational safety reference.</p>
 </div>
+
 <div class="safety-form">
 <input id="ingredientInput" type="text" placeholder="Try: grapes, chicken, garlic, carrot...">
 <button type="button" id="safetyButton">Check Safety</button>
 </div>
+
+<a href="can-my-dog-eat-this.html" class="safety-tool-link">
+  🐶 Open Full Food Safety Checker →
+</a>
+
 <div id="safetyResult" class="safety-result" aria-live="polite"></div>
+
 </div>
 </section>
 
@@ -552,9 +586,12 @@ footer{margin-top:70px;background:#0f172a;color:#94a3b8;border-top:4px solid #25
 <h2>Built for Better Pet-Food Decisions</h2>
 <p>Pet Diet Engine combines practical tools with educational nutrition content so pet parents can make more informed choices.</p>
 </div>
+
 <div class="why-grid">
 <div class="why-card"><span>📐</span><h3>Portion Awareness</h3><p>Use calorie estimates and food energy density to understand how much food may fit into your pet's daily energy budget.</p></div>
+
 <div class="why-card"><span>🔎</span><h3>Ingredient Awareness</h3><p>Quickly identify common ingredients that may require caution or should not be fed to dogs and cats.</p></div>
+
 <div class="why-card"><span>📚</span><h3>Practical Education</h3><p>Explore guides covering pet food, homemade diets, allergies, recipes and nutrition concepts.</p></div>
 </div>
 </section>
@@ -566,27 +603,89 @@ footer{margin-top:70px;background:#0f172a;color:#94a3b8;border-top:4px solid #25
 </div>
 
 <div class="guides-grid">
-<article class="guide-card"><span class="tag">DOG FOOD</span><h3>Farmina N&amp;D Dog Food Review</h3><p>Explore ingredients, product lines, nutrition considerations and safety topics.</p><a href="farmina-nd-dog-food-review.html" class="guide-link">Read Review →</a></article>
-<article class="guide-card"><span class="tag">HOMEMADE FOOD</span><h3>High-Protein Homemade Dog Food</h3><p>Learn how to think about calories, portions and nutritional balance when preparing homemade meals.</p><a href="high-protein-homemade-dog-food-recipe.html" class="guide-link">Read Recipe Guide →</a></article>
-<article class="guide-card"><span class="tag">ALLERGIES</span><h3>Pet Food Allergy &amp; Elimination Diet Guide</h3><p>Understand elimination-diet concepts and why veterinary guidance matters for suspected food allergies.</p><a href="pet-food-allergy-elimination-diet-guide.html" class="guide-link">Read Allergy Guide →</a></article>
-<article class="guide-card"><span class="tag">NUTRITION</span><h3>Macro Counting Recipes for Pet Owners</h3><p>Explore calories, protein, fat, ingredients and portion planning for homemade pet meals.</p><a href="macro-counting-recipes-pet-owners.html" class="guide-link">Read Macro Guide →</a></article>
-<article class="guide-card"><span class="tag">COMPLETE GUIDE</span><h3>Homemade &amp; Fresh Pet Diet Guide</h3><p>Learn about daily portions, food safety, diet transitions and practical nutrition considerations.</p><a href="articles.html" class="guide-link">Explore Full Guide →</a></article>
-<article class="guide-card"><span class="tag">ALL TOOLS</span><h3>Pet Diet Engine Toolkit</h3><p>Access calculators, guides and nutrition resources in one place.</p><a href="articles.html" class="guide-link">Explore Tools →</a></article>
+
+<article class="guide-card">
+<span class="tag">DOG FOOD</span>
+<h3>Farmina N&amp;D Dog Food Review</h3>
+<p>Explore ingredients, product lines, nutrition considerations and safety topics.</p>
+<a href="farmina-nd-dog-food-review.html" class="guide-link">Read Review →</a>
+</article>
+
+<article class="guide-card">
+<span class="tag">HOMEMADE FOOD</span>
+<h3>High-Protein Homemade Dog Food</h3>
+<p>Learn how to think about calories, portions and nutritional balance when preparing homemade meals.</p>
+<a href="high-protein-homemade-dog-food-recipe.html" class="guide-link">Read Recipe Guide →</a>
+</article>
+
+<article class="guide-card">
+<span class="tag">ALLERGIES</span>
+<h3>Pet Food Allergy &amp; Elimination Diet Guide</h3>
+<p>Understand elimination-diet concepts and why veterinary guidance matters for suspected food allergies.</p>
+<a href="pet-food-allergy-elimination-diet-guide.html" class="guide-link">Read Allergy Guide →</a>
+</article>
+
+<article class="guide-card">
+<span class="tag">NUTRITION</span>
+<h3>Macro Counting Recipes for Pet Owners</h3>
+<p>Explore calories, protein, fat, ingredients and portion planning for homemade pet meals.</p>
+<a href="macro-counting-recipes-pet-owners.html" class="guide-link">Read Macro Guide →</a>
+</article>
+
+<article class="guide-card">
+<span class="tag">COMPLETE GUIDE</span>
+<h3>Homemade &amp; Fresh Pet Diet Guide</h3>
+<p>Learn about daily portions, food safety, diet transitions and practical nutrition considerations.</p>
+<a href="articles.html" class="guide-link">Explore Full Guide →</a>
+</article>
+
+<article class="guide-card">
+<span class="tag">ALL TOOLS</span>
+<h3>Pet Diet Engine Toolkit</h3>
+<p>Access calculators, guides and nutrition resources in one place.</p>
+<a href="articles.html" class="guide-link">Explore Tools →</a>
+</article>
+
 </div>
 </section>
 
 <section class="section">
-<div class="section-heading"><h2>Popular Pet Diet Resources</h2></div>
+<div class="section-heading">
+<h2>Popular Pet Diet Resources</h2>
+</div>
+
 <div class="tools-grid">
-<a href="farmina-nd-dog-food-review.html" class="tool-card"><div class="tool-icon">🍲</div><h3>Farmina N&amp;D Review</h3><p>Ingredient and product-line analysis.</p></a>
-<a href="high-protein-homemade-dog-food-recipe.html" class="tool-card"><div class="tool-icon">🥩</div><h3>Homemade Dog Food</h3><p>Protein-focused recipe education.</p></a>
-<a href="macro-counting-recipes-pet-owners.html" class="tool-card"><div class="tool-icon">📊</div><h3>Macro Counting Guide</h3><p>Learn about calories and macronutrients.</p></a>
-<a href="pet-food-allergy-elimination-diet-guide.html" class="tool-card"><div class="tool-icon">🩺</div><h3>Allergy &amp; Elimination Guide</h3><p>Practical educational resource.</p></a>
+
+<a href="farmina-nd-dog-food-review.html" class="tool-card">
+<div class="tool-icon">🍲</div>
+<h3>Farmina N&amp;D Review</h3>
+<p>Ingredient and product-line analysis.</p>
+</a>
+
+<a href="high-protein-homemade-dog-food-recipe.html" class="tool-card">
+<div class="tool-icon">🥩</div>
+<h3>Homemade Dog Food</h3>
+<p>Protein-focused recipe education.</p>
+</a>
+
+<a href="macro-counting-recipes-pet-owners.html" class="tool-card">
+<div class="tool-icon">📊</div>
+<h3>Macro Counting Guide</h3>
+<p>Learn about calories and macronutrients.</p>
+</a>
+
+<a href="pet-food-allergy-elimination-diet-guide.html" class="tool-card">
+<div class="tool-icon">🩺</div>
+<h3>Allergy &amp; Elimination Guide</h3>
+<p>Practical educational resource.</p>
+</a>
+
 </div>
 </section>
 
 <section class="share-box">
 <h3>Share Pet Diet Engine</h3>
+
 <div class="share-buttons">
 <button class="share-btn facebook" type="button" id="shareFacebook">Facebook</button>
 <button class="share-btn whatsapp" type="button" id="shareWhatsApp">WhatsApp</button>
@@ -604,14 +703,45 @@ Pet Diet Engine provides educational information and estimation tools. Results a
 </main>
 
 <footer>
+
 <div class="footer-inner">
+
 <div class="footer-grid">
-<div class="footer-section"><h3>Pet Diet Engine</h3><p>Practical pet nutrition calculators, ingredient safety tools and educational resources for responsible pet owners.</p></div>
-<div class="footer-section"><h3>Explore</h3><p><a href="index.html">Home</a></p><p><a href="articles.html">Nutrition Guides</a></p><p><a href="#calculator">Calorie Calculator</a></p><p><a href="#safety-checker">Safety Checker</a></p></div>
-<div class="footer-section"><h3>Resources</h3><p><a href="farmina-nd-dog-food-review.html">Farmina N&amp;D Review</a></p><p><a href="high-protein-homemade-dog-food-recipe.html">Homemade Dog Food</a></p><p><a href="macro-counting-recipes-pet-owners.html">Macro Guide</a></p><p><a href="pet-food-allergy-elimination-diet-guide.html">Allergy Guide</a></p></div>
-<div class="footer-section"><h3>Legal</h3><p><a href="privacy.html">Privacy Policy</a></p><p><a href="terms.html">Terms of Service</a></p><p><a href="contact.html">Contact</a></p></div>
+
+<div class="footer-section">
+<h3>Pet Diet Engine</h3>
+<p>Practical pet nutrition calculators, ingredient safety tools and educational resources for responsible pet owners.</p>
 </div>
-<div class="footer-bottom">© 2026 <strong>Pet Diet Engine</strong>. All Rights Reserved.</div>
+
+<div class="footer-section">
+<h3>Explore</h3>
+<p><a href="index.html">Home</a></p>
+<p><a href="articles.html">Nutrition Guides</a></p>
+<p><a href="#calculator">Calorie Calculator</a></p>
+<p><a href="#safety-checker">Safety Checker</a></p>
+</div>
+
+<div class="footer-section">
+<h3>Resources</h3>
+<p><a href="farmina-nd-dog-food-review.html">Farmina N&amp;D Review</a></p>
+<p><a href="high-protein-homemade-dog-food-recipe.html">Homemade Dog Food</a></p>
+<p><a href="macro-counting-recipes-pet-owners.html">Macro Guide</a></p>
+<p><a href="pet-food-allergy-elimination-diet-guide.html">Allergy Guide</a></p>
+</div>
+
+<div class="footer-section">
+<h3>Legal</h3>
+<p><a href="privacy.html">Privacy Policy</a></p>
+<p><a href="terms.html">Terms of Service</a></p>
+<p><a href="contact.html">Contact</a></p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 <strong>Pet Diet Engine</strong>. All Rights Reserved.
+</div>
+
 </div>
 </footer>
 
@@ -715,9 +845,17 @@ function calculatePetNeeds() {
 }
 
 document.getElementById("calculateButton").addEventListener("click", calculatePetNeeds);
+
 petType.addEventListener("change", updateLifeStages);
-petWeight.addEventListener("keydown", e => { if (e.key === "Enter") calculatePetNeeds(); });
-foodCalories.addEventListener("keydown", e => { if (e.key === "Enter") calculatePetNeeds(); });
+
+petWeight.addEventListener("keydown", e => {
+    if (e.key === "Enter") calculatePetNeeds();
+});
+
+foodCalories.addEventListener("keydown", e => {
+    if (e.key === "Enter") calculatePetNeeds();
+});
+
 updateLifeStages();
 
 
@@ -783,13 +921,25 @@ function checkIngredient() {
     }
 
     const status = match[0];
-    const className = status === "safe" ? "safety-safe" : status === "danger" ? "safety-danger" : "safety-caution";
+
+    const className =
+        status === "safe"
+            ? "safety-safe"
+            : status === "danger"
+                ? "safety-danger"
+                : "safety-caution";
 
     result.className = "safety-result show " + className;
-    result.innerHTML = "<strong>" + escapeHTML(match[1]) + "</strong><br>" + escapeHTML(match[2]);
+
+    result.innerHTML =
+        "<strong>" +
+        escapeHTML(match[1]) +
+        "</strong><br>" +
+        escapeHTML(match[2]);
 }
 
 document.getElementById("safetyButton").addEventListener("click", checkIngredient);
+
 document.getElementById("ingredientInput").addEventListener("keydown", e => {
     if (e.key === "Enter") checkIngredient();
 });
@@ -798,23 +948,43 @@ document.getElementById("ingredientInput").addEventListener("keydown", e => {
 /* ---------- Sharing ---------- */
 
 function openShare(url) {
-    window.open(url, "_blank", "noopener,noreferrer,width=700,height=600");
+    window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer,width=700,height=600"
+    );
 }
 
 document.getElementById("shareFacebook").addEventListener("click", () => {
-    openShare("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href));
+    openShare(
+        "https://www.facebook.com/sharer/sharer.php?u=" +
+        encodeURIComponent(window.location.href)
+    );
 });
 
 document.getElementById("shareWhatsApp").addEventListener("click", () => {
-    openShare("https://api.whatsapp.com/send?text=" + encodeURIComponent(document.title + " " + window.location.href));
+    openShare(
+        "https://api.whatsapp.com/send?text=" +
+        encodeURIComponent(document.title + " " + window.location.href)
+    );
 });
 
 document.getElementById("sharePinterest").addEventListener("click", () => {
-    openShare("https://pinterest.com/pin/create/button/?url=" + encodeURIComponent(window.location.href) + "&description=" + encodeURIComponent(document.title));
+    openShare(
+        "https://pinterest.com/pin/create/button/?url=" +
+        encodeURIComponent(window.location.href) +
+        "&description=" +
+        encodeURIComponent(document.title)
+    );
 });
 
 document.getElementById("shareX").addEventListener("click", () => {
-    openShare("https://twitter.com/intent/tweet?text=" + encodeURIComponent(document.title) + "&url=" + encodeURIComponent(window.location.href));
+    openShare(
+        "https://twitter.com/intent/tweet?text=" +
+        encodeURIComponent(document.title) +
+        "&url=" +
+        encodeURIComponent(window.location.href)
+    );
 });
 
 document.getElementById("copyLink").addEventListener("click", async () => {
@@ -822,10 +992,13 @@ document.getElementById("copyLink").addEventListener("click", async () => {
         await navigator.clipboard.writeText(window.location.href);
         alert("Page link copied!");
     } catch (error) {
+
         const textarea = document.createElement("textarea");
+
         textarea.value = window.location.href;
         textarea.style.position = "fixed";
         textarea.style.left = "-9999px";
+
         document.body.appendChild(textarea);
         textarea.select();
 
