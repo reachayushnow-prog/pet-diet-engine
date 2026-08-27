@@ -4,27 +4,25 @@
 
 <meta charset="UTF-8">
 
-<script src="https://alwingulla.com/88/1a/2b/881a2b3c4d5e6f7g.js"></script>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Macro Counting Recipes for Pet Owners | Pet Food Macro Calculator</title>
+<title>Pet Food Macro Calculator & Label Analysis Guide | Pet Diet Engine</title>
 
-<meta name="description" content="Use our free pet food macro analyzer to calculate dry-matter protein, fat, fiber, estimated carbohydrates and protein per 1,000 kcal from a pet food label. Learn how to count macros in homemade dog and cat food.">
+<meta name="description" content="Use the free Pet Food Macro Calculator to convert pet food label values to dry-matter percentages, estimate NFE carbohydrates, and calculate protein per 1,000 kcal. Learn how to compare pet food labels responsibly.">
 
-<meta name="keywords" content="macro counting recipes for pet owners, pet food macro calculator, pet food macro analyzer, homemade pet food macros, kibble macros, dog food macros, cat food macros, dog food protein calculator, pet nutrition calculator">
+<meta name="keywords" content="pet food macro calculator, pet food label analyzer, dog food protein calculator, cat food macro calculator, dry matter calculator pet food, pet food carbohydrate calculator, pet nutrition calculator, pet food guaranteed analysis">
 
 <meta name="theme-color" content="#0f172a">
 
 <link rel="canonical" href="https://www.petdietengine.com/macro-counting-recipes-for-pet-owners.html">
 
-<link rel="icon" href="favicon.png">
+<link rel="icon" href="favicon.png" type="image/png">
 
 <!-- Open Graph -->
 
-<meta property="og:title" content="Pet Food Macro Calculator & Macro Counting Guide">
+<meta property="og:title" content="Pet Food Macro Calculator & Label Analysis Guide">
 
-<meta property="og:description" content="Analyze pet food labels and understand protein, fat, fiber, carbohydrates and calories on a dry-matter and calorie basis.">
+<meta property="og:description" content="Analyze pet food label values on an as-fed and dry-matter basis and calculate estimated NFE and protein per 1,000 kcal.">
 
 <meta property="og:type" content="article">
 
@@ -36,23 +34,25 @@
 
 <meta name="twitter:card" content="summary_large_image">
 
-<meta name="twitter:title" content="Pet Food Macro Calculator & Macro Counting Guide">
+<meta name="twitter:title" content="Pet Food Macro Calculator & Label Analysis Guide">
 
-<meta name="twitter:description" content="Analyze pet food macros and learn how to calculate protein, fat, fiber, carbohydrates and calories for pet nutrition planning.">
+<meta name="twitter:description" content="Learn how to interpret pet food labels and compare protein, fat, fiber, moisture, estimated NFE and calories.">
 
 <meta name="twitter:image" content="https://www.petdietengine.com/macro-pet-food.jpg">
 
-<!-- Article Schema -->
+
+<!-- Article Structured Data -->
 
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Article",
-  "headline":"Macro Counting Recipes for Pet Owners: Pet Food Macro Calculator & Complete Guide",
-  "description":"A practical guide to understanding and calculating protein, fat, fiber, carbohydrates and calories in pet food and homemade pet meals.",
+  "headline":"Pet Food Macro Calculator & Label Analysis Guide",
+  "description":"A practical guide to interpreting pet food guaranteed-analysis values, converting them to a dry-matter basis and calculating useful comparison metrics.",
   "author":{
     "@type":"Organization",
-    "name":"Pet Diet Engine"
+    "name":"Pet Diet Engine",
+    "url":"https://www.petdietengine.com/"
   },
   "publisher":{
     "@type":"Organization",
@@ -69,7 +69,8 @@
 }
 </script>
 
-<!-- Breadcrumb Schema -->
+
+<!-- Breadcrumb Structured Data -->
 
 <script type="application/ld+json">
 {
@@ -91,12 +92,13 @@
     {
       "@type":"ListItem",
       "position":3,
-      "name":"Macro Counting Recipes for Pet Owners",
+      "name":"Pet Food Macro Calculator",
       "item":"https://www.petdietengine.com/macro-counting-recipes-for-pet-owners.html"
     }
   ]
 }
 </script>
+
 
 <style>
 
@@ -108,6 +110,7 @@
 
 html{
   scroll-behavior:smooth;
+  scroll-padding-top:90px;
 }
 
 body{
@@ -117,12 +120,22 @@ body{
   line-height:1.8;
 }
 
+img{
+  max-width:100%;
+  height:auto;
+}
+
+a{
+  color:#2563eb;
+}
+
 nav{
   background:#0f172a;
   padding:1rem 1.25rem;
   position:sticky;
   top:0;
-  z-index:100;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,.12);
 }
 
 .nav-container{
@@ -131,24 +144,36 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:1rem;
 }
 
 .nav-brand{
   color:white;
-  font-size:1.25rem;
+  font-size:1.2rem;
   font-weight:800;
   text-decoration:none;
+  white-space:nowrap;
 }
 
 .nav-links{
   display:flex;
-  gap:1.5rem;
+  gap:1.4rem;
   list-style:none;
+  align-items:center;
+  flex-wrap:wrap;
+  justify-content:flex-end;
 }
 
 .nav-links a{
   color:#cbd5e1;
   text-decoration:none;
+  font-weight:600;
+  font-size:.9rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  color:#60a5fa;
 }
 
 .container{
@@ -158,22 +183,39 @@ nav{
 }
 
 .hero{
-  background:linear-gradient(135deg,#1e293b,#0f172a);
+  background:
+    radial-gradient(circle at 90% 10%,rgba(37,99,235,.35),transparent 35%),
+    linear-gradient(135deg,#1e293b,#0f172a);
   color:white;
-  padding:3rem;
-  border-radius:16px;
+  padding:3.2rem;
+  border-radius:18px;
   margin-bottom:2rem;
+  box-shadow:0 15px 40px rgba(15,23,42,.12);
 }
 
 .hero h1{
-  font-size:2.45rem;
+  font-size:clamp(2rem,5vw,2.8rem);
   line-height:1.2;
   margin-bottom:1rem;
+  letter-spacing:-.025em;
 }
 
 .hero p{
   color:#cbd5e1;
   font-size:1.08rem;
+  max-width:850px;
+}
+
+.hero-badge{
+  display:inline-block;
+  background:rgba(16,185,129,.12);
+  border:1px solid rgba(110,231,183,.25);
+  color:#6ee7b7;
+  padding:.35rem .7rem;
+  border-radius:999px;
+  font-size:.78rem;
+  font-weight:800;
+  margin-bottom:1rem;
 }
 
 .article-box{
@@ -181,18 +223,21 @@ nav{
   padding:2rem;
   border-radius:14px;
   box-shadow:0 5px 20px rgba(0,0,0,.05);
+  border:1px solid #e2e8f0;
 }
 
 .article-box h2{
   font-size:2rem;
-  margin:2.3rem 0 1rem;
+  margin:2.5rem 0 1rem;
   color:#0f172a;
   line-height:1.3;
+  border-bottom:2px solid #e2e8f0;
+  padding-bottom:.5rem;
 }
 
 .article-box h3{
   font-size:1.35rem;
-  margin:1.5rem 0 .75rem;
+  margin:1.6rem 0 .75rem;
   color:#172033;
 }
 
@@ -202,11 +247,11 @@ nav{
 
 .article-box ul,
 .article-box ol{
-  margin:0 0 1.2rem 1.4rem;
+  margin:0 0 1.3rem 1.5rem;
 }
 
 .article-box li{
-  margin-bottom:.45rem;
+  margin-bottom:.5rem;
 }
 
 .toc{
@@ -219,12 +264,22 @@ nav{
 
 .toc h3{
   margin-top:0;
+  margin-bottom:.7rem;
+}
+
+.toc ul{
+  margin-bottom:0;
 }
 
 .toc a{
   color:#2563eb;
   text-decoration:none;
 }
+
+.toc a:hover{
+  text-decoration:underline;
+}
+
 
 /* =========================
    MACRO ANALYZER
@@ -246,6 +301,8 @@ nav{
 .macro-tool-header h2{
   margin:0 0 .5rem;
   font-size:1.85rem;
+  border:none;
+  padding:0;
 }
 
 .macro-tool-header p{
@@ -288,6 +345,7 @@ nav{
   border-radius:9px;
   font-size:1rem;
   background:white;
+  color:#0f172a;
 }
 
 .input-group input:focus{
@@ -315,7 +373,7 @@ nav{
 }
 
 .analyzer-button:hover{
-  opacity:.92;
+  background:#1d4ed8;
 }
 
 .reset-button{
@@ -328,6 +386,10 @@ nav{
   color:#334155;
   font-weight:700;
   cursor:pointer;
+}
+
+.reset-button:hover{
+  background:#f1f5f9;
 }
 
 .results{
@@ -411,13 +473,34 @@ nav{
   margin:1.5rem 0;
 }
 
+.formula-box{
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  padding:1rem;
+  border-radius:9px;
+  margin:1rem 0;
+  overflow-x:auto;
+}
+
+.formula-box code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  color:#0f172a;
+}
+
+
 /* Tables */
+
+.table-wrapper{
+  overflow-x:auto;
+  margin:1.5rem 0;
+}
 
 .data-table{
   width:100%;
+  min-width:650px;
   border-collapse:collapse;
-  margin:1.5rem 0;
-  overflow:hidden;
+  background:white;
+  margin:0;
 }
 
 .data-table th,
@@ -430,7 +513,59 @@ nav{
 .data-table th{
   background:#f1f5f9;
   color:#0f172a;
+  font-weight:800;
 }
+
+
+/* Internal link cards */
+
+.internal-links{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
+  margin:2rem 0;
+}
+
+.internal-link-card{
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  padding:1.2rem;
+  border-radius:10px;
+}
+
+.internal-link-card h3{
+  font-size:1.05rem;
+  margin:0 0 .35rem;
+}
+
+.internal-link-card p{
+  font-size:.9rem;
+  color:#64748b;
+  margin-bottom:.6rem;
+}
+
+.internal-link-card a{
+  font-weight:800;
+  text-decoration:none;
+}
+
+
+/* FAQ */
+
+.faq-item{
+  border-bottom:1px solid #e2e8f0;
+  padding:1rem 0;
+}
+
+.faq-item h3{
+  margin:0 0 .5rem;
+  font-size:1.08rem;
+}
+
+.faq-item p{
+  margin:0;
+}
+
 
 /* Disclaimer */
 
@@ -440,14 +575,20 @@ nav{
   color:#7c2d12;
   padding:1.2rem;
   border-radius:10px;
+  margin-top:2rem;
 }
+
+.disclaimer-banner strong{
+  color:#9a3412;
+}
+
 
 /* Social */
 
 .pde-box{
   background:#fdfbf7;
   border:1px solid #e0d6c8;
-  border-radius:8px;
+  border-radius:10px;
   padding:20px;
   margin:30px 0;
 }
@@ -496,29 +637,105 @@ nav{
 .btn-x{background-color:#000000;}
 .btn-copy{background-color:#5a5a5a;}
 
-footer{
+
+/* Footer */
+
+.site-footer{
   background:#0f172a;
   color:#94a3b8;
-  padding:3rem 1.25rem;
+  padding:3rem 1.25rem 2rem;
   margin-top:4rem;
+}
+
+.footer-container{
+  max-width:1100px;
+  margin:auto;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:2rem;
+  margin-bottom:2rem;
+}
+
+.footer-brand{
+  font-size:1.15rem;
+  font-weight:800;
+  color:#f8fafc;
+  margin-bottom:.5rem;
+  display:inline-block;
+}
+
+.footer-heading{
+  color:#f8fafc;
+  font-size:.85rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  margin-bottom:.7rem;
+}
+
+.footer-text{
+  color:#94a3b8;
+  font-size:.86rem;
+  margin:0;
+}
+
+.footer-links{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.footer-links li{
+  margin-bottom:.35rem;
+}
+
+.footer-links a{
+  color:#94a3b8;
+  text-decoration:none;
+  font-size:.86rem;
+}
+
+.footer-links a:hover{
+  color:#fff;
+}
+
+.footer-bottom{
+  border-top:1px solid #1e293b;
+  padding-top:1.5rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  color:#64748b;
+  font-size:.8rem;
   text-align:center;
 }
 
-footer a{
-  color:#cbd5e1;
+
+/* Mobile */
+
+@media(max-width:900px){
+
+  .footer-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
 }
 
 @media(max-width:768px){
 
   .nav-container{
     flex-direction:column;
-    gap:1rem;
+    gap:.8rem;
   }
 
   .nav-links{
-    flex-wrap:wrap;
     justify-content:center;
-    gap:.9rem;
+    gap:.8rem;
   }
 
   .hero{
@@ -526,7 +743,7 @@ footer a{
   }
 
   .hero h1{
-    font-size:1.8rem;
+    font-size:1.9rem;
   }
 
   .article-box{
@@ -541,12 +758,28 @@ footer a{
     grid-template-columns:repeat(2,1fr);
   }
 
+  .internal-links{
+    grid-template-columns:1fr;
+  }
+
 }
 
-@media(max-width:480px){
+@media(max-width:600px){
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
 
   .result-grid{
     grid-template-columns:1fr;
+  }
+
+  .container{
+    padding:1.25rem .8rem;
+  }
+
+  .article-box h2{
+    font-size:1.6rem;
   }
 
 }
@@ -555,9 +788,13 @@ footer a{
 
 </head>
 
+
 <body>
 
-<!-- Navigation -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav aria-label="Main Navigation">
 
@@ -582,7 +819,11 @@ footer a{
 </li>
 
 <li>
-<a href="articles.html#meal-calculator">Calculator</a>
+<a href="#pet-food-macro-analyzer" class="active">Calculator</a>
+</li>
+
+<li>
+<a href="pet-nutrition-quiz.html">Quiz</a>
 </li>
 
 </ul>
@@ -592,18 +833,27 @@ footer a{
 </nav>
 
 
-<div class="container">
+<!-- =========================
+     MAIN
+========================= -->
 
-<!-- Hero -->
+<main class="container">
+
+
+<!-- HERO -->
 
 <section class="hero">
 
+<span class="hero-badge">
+FREE PET FOOD LABEL TOOL
+</span>
+
 <h1>
-Macro Counting Recipes for Pet Owners: Pet Food Macro Calculator & Guide
+Pet Food Macro Calculator &amp; Label Analysis Guide
 </h1>
 
 <p>
-Analyze pet food macros, understand protein, fat, fiber and carbohydrates, and learn how macro counting can support more informed homemade dog and cat meal planning.
+Analyze protein, fat, fiber and moisture from a pet food label, convert values to a dry-matter basis, estimate nitrogen-free extract (NFE), and calculate protein per 1,000 kcal when calorie information is available.
 </p>
 
 </section>
@@ -611,17 +861,18 @@ Analyze pet food macros, understand protein, fat, fiber and carbohydrates, and l
 
 <article class="article-box">
 
+
 <p>
-Understanding pet food macros can make nutrition planning much easier. Protein, fat, carbohydrates, fiber and calories all contribute different parts of a pet's overall diet. However, the numbers printed on a pet food label are not always directly comparable because labels are commonly reported on an "as-fed" basis while different foods contain different amounts of moisture.
+Understanding the numbers on a pet food label can be useful when comparing different products. However, label percentages can be difficult to compare directly because foods contain different amounts of moisture and because guaranteed-analysis values have specific limitations.
 </p>
 
 <p>
-The free analyzer below helps convert common pet food label information into more useful comparison values. It can be used for kibble, canned food, fresh commercial food and other products when the required label information is available.
+The calculator on this page is designed as an <strong>educational comparison tool</strong>. It converts commonly reported guaranteed-analysis values into additional comparison metrics. It does not determine whether a particular food is appropriate for an individual animal and it does not formulate a complete homemade diet.
 </p>
 
 
 <!-- =========================
-     PET FOOD MACRO ANALYZER
+     CALCULATOR
 ========================= -->
 
 <section class="macro-tool" id="pet-food-macro-analyzer">
@@ -629,15 +880,15 @@ The free analyzer below helps convert common pet food label information into mor
 <div class="macro-tool-header">
 
 <span class="tool-badge">
-FREE PET FOOD ANALYZER
+PET FOOD LABEL ANALYZER
 </span>
 
 <h2>
-Pet Food Macro Analyzer
+Pet Food Macro Calculator
 </h2>
 
 <p>
-Enter the guaranteed-analysis values from your pet food label to estimate dry-matter macros and calorie-based protein.
+Enter values from a pet food label to estimate dry-matter percentages and other comparison metrics.
 </p>
 
 </div>
@@ -645,25 +896,31 @@ Enter the guaranteed-analysis values from your pet food label to estimate dry-ma
 
 <div class="info-box">
 
-<strong>How it works:</strong>
-Most pet-food labels report protein, fat and fiber on an as-fed basis. Because moisture varies between foods, comparing dry-matter percentages can provide a more useful comparison between products.
+<strong>Before you start:</strong>
+Use the values exactly as they appear on the food label. If a value is unavailable, leave the optional field blank. The calculator will not treat a missing value as zero.
 
 </div>
 
 
 <div class="form-grid">
 
+
 <div class="input-group">
 
 <label for="foodName">
-Food name (optional)
+Food name
 </label>
 
 <input
 type="text"
 id="foodName"
-placeholder="Example: Chicken Kibble"
+placeholder="Example: Chicken Adult Dog Food"
+maxlength="100"
 >
+
+<span class="input-help">
+Optional.
+</span>
 
 </div>
 
@@ -678,13 +935,14 @@ Moisture %
 type="number"
 id="moisture"
 min="0"
-max="100"
+max="99.9"
 step="0.1"
 placeholder="10"
+inputmode="decimal"
 >
 
 <span class="input-help">
-Usually listed on the guaranteed analysis.
+Usually listed in the guaranteed analysis.
 </span>
 
 </div>
@@ -703,6 +961,7 @@ min="0"
 max="100"
 step="0.1"
 placeholder="26"
+inputmode="decimal"
 >
 
 </div>
@@ -721,6 +980,7 @@ min="0"
 max="100"
 step="0.1"
 placeholder="16"
+inputmode="decimal"
 >
 
 </div>
@@ -739,6 +999,7 @@ min="0"
 max="100"
 step="0.1"
 placeholder="4"
+inputmode="decimal"
 >
 
 </div>
@@ -746,7 +1007,7 @@ placeholder="4"
 
 <div class="input-group">
 
-<label for="ash %">
+<label for="ash">
 Ash % <span style="font-weight:400;">(optional)</span>
 </label>
 
@@ -757,10 +1018,11 @@ min="0"
 max="100"
 step="0.1"
 placeholder="7"
+inputmode="decimal"
 >
 
 <span class="input-help">
-Useful for a more complete NFE estimate.
+Useful when estimating NFE.
 </span>
 
 </div>
@@ -769,19 +1031,21 @@ Useful for a more complete NFE estimate.
 <div class="input-group">
 
 <label for="calories100g">
-Calories per 100 g
+Calories per 100 g <span style="font-weight:400;">(optional)</span>
 </label>
 
 <input
 type="number"
 id="calories100g"
 min="1"
+max="2000"
 step="0.1"
 placeholder="380"
+inputmode="decimal"
 >
 
 <span class="input-help">
-Use this if the label provides kcal/100 g.
+Use this if the label provides kcal per 100 g.
 </span>
 
 </div>
@@ -797,12 +1061,14 @@ Calories per cup <span style="font-weight:400;">(optional)</span>
 type="number"
 id="caloriesCup"
 min="1"
+max="2000"
 step="0.1"
 placeholder="380"
+inputmode="decimal"
 >
 
 <span class="input-help">
-Only use this if you also know grams per cup below.
+Optional alternative calorie value.
 </span>
 
 </div>
@@ -818,11 +1084,18 @@ Grams per cup <span style="font-weight:400;">(optional)</span>
 type="number"
 id="gramsCup"
 min="1"
+max="2000"
 step="0.1"
 placeholder="100"
+inputmode="decimal"
 >
 
+<span class="input-help">
+Needed if converting kcal/cup to kcal/100 g.
+</span>
+
 </div>
+
 
 </div>
 
@@ -830,33 +1103,49 @@ placeholder="100"
 <button
 type="button"
 class="analyzer-button"
-onclick="analyzePetFood()"
+id="analyzeButton"
 >
-Analyze Pet Food Macros
+Analyze Pet Food Label
 </button>
+
 
 <button
 type="button"
 class="reset-button"
-onclick="resetAnalyzer()"
+id="resetButton"
 >
 Reset
 </button>
 
 
-<div id="macroError" class="error-box"></div>
+<div
+id="macroError"
+class="error-box"
+role="alert"
+aria-live="polite">
+</div>
 
 
-<div id="macroResults" class="results">
+<div
+id="macroResults"
+class="results"
+aria-live="polite"
+>
+
 
 <h3>
 Macro Analysis
 </h3>
 
-<div id="foodResultName" class="result-note"></div>
+
+<div
+id="foodResultName"
+class="result-note">
+</div>
 
 
 <div class="result-grid">
+
 
 <div class="result-card">
 
@@ -864,7 +1153,9 @@ Macro Analysis
 Dry-Matter Protein
 </div>
 
-<div class="result-value" id="dmProtein">
+<div
+class="result-value"
+id="dmProtein">
 —
 </div>
 
@@ -877,7 +1168,9 @@ Dry-Matter Protein
 Dry-Matter Fat
 </div>
 
-<div class="result-value" id="dmFat">
+<div
+class="result-value"
+id="dmFat">
 —
 </div>
 
@@ -890,7 +1183,9 @@ Dry-Matter Fat
 Dry-Matter Fiber
 </div>
 
-<div class="result-value" id="dmFiber">
+<div
+class="result-value"
+id="dmFiber">
 —
 </div>
 
@@ -900,10 +1195,12 @@ Dry-Matter Fiber
 <div class="result-card">
 
 <div class="result-label">
-Estimated NFE / Carbs
+Estimated NFE
 </div>
 
-<div class="result-value" id="nfeResult">
+<div
+class="result-value"
+id="nfeResult">
 —
 </div>
 
@@ -913,10 +1210,12 @@ Estimated NFE / Carbs
 <div class="result-card">
 
 <div class="result-label">
-Calories per 100 g
+Calories / 100 g
 </div>
 
-<div class="result-value" id="calResult">
+<div
+class="result-value"
+id="calResult">
 —
 </div>
 
@@ -926,33 +1225,43 @@ Calories per 100 g
 <div class="result-card">
 
 <div class="result-label">
-Protein per 1,000 kcal
+Protein / 1,000 kcal
 </div>
 
-<div class="result-value" id="proteinKcal">
+<div
+class="result-value"
+id="proteinKcal">
 —
 </div>
 
 </div>
 
+
 </div>
 
 
-<div id="analysisNotes" class="result-note"></div>
+<div
+id="analysisNotes"
+class="result-note">
+</div>
+
 
 <div class="warning-box">
 
 <strong>Important:</strong>
-This analyzer is an educational comparison tool. It does not determine whether a food or homemade recipe is complete and balanced for an individual dog or cat. Veterinary nutrition requirements depend on species, life stage, body condition, health status and other factors.
+This calculation is for label comparison and education. It does not establish nutritional adequacy, diagnose a health condition, recommend a therapeutic diet, or replace professional veterinary advice. Guaranteed-analysis values are not a complete description of all nutrients in a pet food.
 
 </div>
+
 
 </div>
 
 </section>
 
 
-<!-- TABLE OF CONTENTS -->
+<!-- =========================
+     TABLE OF CONTENTS
+========================= -->
 
 <div class="toc">
 
@@ -964,49 +1273,61 @@ Table of Contents
 
 <li>
 <a href="#why-macros">
-Why Macronutrients Matter for Pets
+Why Pet Food Macros Matter
 </a>
 </li>
 
 <li>
 <a href="#label-analysis">
-How to Read a Pet Food Macro Label
+How to Read a Pet Food Label
+</a>
+</li>
+
+<li>
+<a href="#dry-matter">
+As-Fed vs Dry-Matter Analysis
 </a>
 </li>
 
 <li>
 <a href="#protein">
-Understanding Protein Requirements
+Understanding Protein
 </a>
 </li>
 
 <li>
 <a href="#fat">
-The Role of Dietary Fat
+Understanding Dietary Fat
 </a>
 </li>
 
 <li>
 <a href="#carbs">
-Carbohydrates in Homemade Pet Food
+Estimated Carbohydrates and NFE
 </a>
 </li>
 
 <li>
-<a href="#calculating">
-How Macro Counting Works
+<a href="#calorie-basis">
+Why Calories Matter
 </a>
 </li>
 
 <li>
 <a href="#homemade">
-Macro Counting Homemade Pet Meals
+Homemade Pet Food and Macro Counting
 </a>
 </li>
 
 <li>
 <a href="#mistakes">
-Common Macro Counting Mistakes
+Common Label-Analysis Mistakes
+</a>
+</li>
+
+<li>
+<a href="#methodology">
+How This Calculator Works
 </a>
 </li>
 
@@ -1021,103 +1342,123 @@ Frequently Asked Questions
 </div>
 
 
+<!-- =========================
+     SECTION
+========================= -->
+
 <h2 id="why-macros">
-Why Macronutrients Matter for Pet Owners
+Why Pet Food Macros Matter
 </h2>
 
 <p>
-Macronutrients are major nutrients that contribute energy and support normal biological functions. For practical pet-food analysis, protein, fat and carbohydrates are commonly discussed together with fiber, moisture and calories.
+Protein, fat and carbohydrates are commonly discussed when people compare pet foods. These nutrients provide energy or contribute to normal biological functions, while other nutrients such as vitamins, minerals, amino acids and fatty acids are also important.
 </p>
 
 <p>
-Macro counting can help owners understand how different foods compare. For example, two foods may both list 25% protein on an as-fed basis but have very different moisture levels. Their dry-matter protein percentages may therefore be quite different.
+For pet owners comparing products, the most useful starting point is often the food label. The challenge is that the numbers printed on different products may not be directly comparable when their moisture contents differ.
 </p>
 
 <p>
-This is particularly important when comparing dry kibble with wet or canned food. Looking only at the percentage printed on the label can sometimes produce misleading comparisons.
+For example, a dry food and a canned food could both list a particular protein percentage while containing very different amounts of water. Converting the values to a dry-matter basis can make that comparison more meaningful.
 </p>
 
 
 <h2 id="label-analysis">
-How to Read a Pet Food Macro Label
+How to Read a Pet Food Label
 </h2>
 
 <p>
-Pet food labels commonly provide a guaranteed analysis that includes minimum crude protein and crude fat and maximum crude fiber and moisture values. These values are useful starting points, but they should be interpreted carefully.
+A pet food guaranteed analysis commonly reports minimum crude protein and crude fat and maximum crude fiber and moisture. Depending on the product and jurisdiction, additional information may be provided.
+</p>
+
+<p>
+These figures are useful, but they should not be interpreted as a complete nutritional profile.
 </p>
 
 <h3>
-As-Fed vs Dry-Matter Basis
+What “Crude Protein” Means
 </h3>
 
 <p>
-"As-fed" values include the food's moisture. Dry-matter analysis removes moisture mathematically so foods with different water contents can be compared more consistently.
+Crude protein is a laboratory-based estimate related to the nitrogen content of the food. It does not tell you exactly how much of every individual amino acid is present, nor does it by itself establish whether the food meets the nutritional needs of a particular dog or cat.
 </p>
+
+<h3>
+What “Crude Fat” Means
+</h3>
 
 <p>
-The basic dry-matter formula is:
+Crude fat is an analytical measurement of the food's fat content. Because fat is energy dense, differences in fat concentration can influence the overall calorie density of a food.
 </p>
 
-<div class="info-box">
+<h3>
+What “Crude Fiber” Means
+</h3>
 
-<strong>
-Dry-matter percentage = As-fed percentage ÷ (100 − moisture percentage) × 100
-</strong>
+<p>
+Crude fiber is an analytical measure that does not represent all forms of dietary fiber present in a food. Consequently, it should not be treated as a complete measure of total dietary fiber.
+</p>
+
+
+<h2 id="dry-matter">
+As-Fed vs Dry-Matter Analysis
+</h2>
+
+<p>
+An as-fed percentage includes the moisture present in the food. Dry-matter analysis removes that moisture mathematically so that foods with different water contents can be compared on a common basis.
+</p>
+
+<div class="formula-box">
+
+<strong>Dry-matter percentage:</strong>
+
+<br><br>
+
+<code>
+As-fed percentage ÷ (100 − moisture %) × 100
+</code>
+
+</div>
+
+<h3>
+Example
+</h3>
+
+<p>
+Suppose a dry food contains 26% crude protein and 10% moisture.
+</p>
+
+<div class="formula-box">
+
+<code>
+26 ÷ (100 − 10) × 100 = approximately 28.9%
+</code>
 
 </div>
 
 <p>
-For example, if a food contains 26% protein and 10% moisture, its approximate dry-matter protein is 28.9%.
-</p>
-
-<p>
-The analyzer above performs this calculation automatically.
-</p>
-
-
-<h3>
-Understanding Estimated Carbohydrates
-</h3>
-
-<p>
-Pet food labels do not always list carbohydrates directly. An estimated nitrogen-free extract, often called NFE, can be calculated when protein, fat, fiber, moisture and ash values are available.
-</p>
-
-<p>
-If ash is available, the simplified calculation is:
-</p>
-
-<div class="info-box">
-
-<strong>
-NFE ≈ 100 − moisture − protein − fat − fiber − ash
-</strong>
-
-</div>
-
-<p>
-If ash is not available, an exact NFE value cannot be calculated from the guaranteed-analysis numbers alone. The analyzer therefore labels the result appropriately rather than presenting an incomplete estimate as an exact carbohydrate value.
+The estimated dry-matter protein is therefore approximately 28.9%. This does not mean the food contains more actual protein than before; it simply expresses the protein concentration after removing water from the comparison.
 </p>
 
 
 <h2 id="protein">
-Understanding Protein Requirements in Homemade Pet Meals
+Understanding Protein in Pet Food
 </h2>
 
 <p>
-Protein provides amino acids needed for normal tissue maintenance and many biological processes. However, a food containing more protein is not automatically a complete or appropriate diet for every pet.
+Protein supplies amino acids that animals use for normal physiological functions. However, protein percentage alone does not determine whether a food is appropriate for a specific animal.
 </p>
 
 <p>
-Dogs and cats have different nutritional requirements, and protein needs can vary with life stage, activity, body condition and health status.
+Dogs and cats have species-specific nutritional requirements. Requirements can also vary with life stage, body condition, activity level and health status.
 </p>
 
 <p>
-Common animal-based protein ingredients include chicken, turkey, beef, fish and eggs. Ingredient selection should also take into account the complete nutritional profile of the recipe rather than protein percentage alone.
+Cats have several nutritional characteristics that differ from dogs. A homemade dog recipe therefore should not simply be modified by increasing its protein content and then assumed to be appropriate for a cat.
 </p>
 
 <p>
-Cats have particularly important nutritional requirements that differ from dogs. A homemade feline diet therefore should not simply be created by taking a dog recipe and increasing its protein.
+When comparing foods, consider the complete nutritional context rather than selecting a product solely because it has a higher protein percentage.
 </p>
 
 
@@ -1126,71 +1467,78 @@ The Role of Dietary Fat
 </h2>
 
 <p>
-Dietary fat is energy dense and contributes essential fatty acids and other nutrients. Because fat provides substantially more energy per gram than protein or carbohydrate, changing fat levels can significantly change the calorie density of a food.
+Dietary fat is an important source of concentrated energy and supplies fatty acids. Because fat provides more energy per gram than protein or carbohydrate, two foods with similar protein percentages can have different calorie densities.
 </p>
 
 <p>
-This is why macro analysis should always be considered together with calorie information. A food can have a reasonable-looking macro profile but still provide substantially different calories per gram.
+This is one reason why macro percentages should be considered alongside calorie information when comparing foods.
+</p>
+
+<p>
+A higher-fat food is not automatically better or worse. The appropriate nutrient profile depends on the animal, the food's complete formulation and the feeding context.
 </p>
 
 
 <h2 id="carbs">
-Carbohydrates in Homemade Pet Food
+Estimated Carbohydrates and NFE
 </h2>
 
 <p>
-Carbohydrates can provide energy and, depending on the ingredient, dietary fiber and other nutrients. Dogs can digest and utilize carbohydrates, while cats have different nutritional biology and dietary requirements.
+Pet food labels do not always list carbohydrate percentage directly. When sufficient information is available, an estimated nitrogen-free extract, or NFE, can be calculated.
 </p>
 
 <p>
-Common carbohydrate-containing ingredients in homemade recipes include pumpkin, sweet potato, oats, rice and selected vegetables. Ingredient suitability depends on the individual animal and the overall formulation.
+When moisture, protein, fat, fiber and ash are available, a simplified calculation is:
+</p>
+
+<div class="formula-box">
+
+<code>
+NFE ≈ 100 − moisture − protein − fat − fiber − ash
+</code>
+
+</div>
+
+<p>
+The resulting figure is an <strong>estimate</strong>, not a direct laboratory measurement of total carbohydrate.
 </p>
 
 <p>
-Carbohydrates should not be considered in isolation. The goal of nutrition planning is an appropriate overall diet rather than simply maximizing or minimizing one macronutrient.
+If ash is unavailable, the calculator does not pretend that an exact NFE value can be obtained from incomplete information. Instead, it reports that the estimate requires ash.
 </p>
 
 
-<h2 id="calculating">
-How Macro Counting Works for Pet Recipes
+<h2 id="calorie-basis">
+Why Calories Matter
 </h2>
 
 <p>
-Macro counting begins by measuring ingredients and determining the nutritional contribution of each ingredient. Those values can then be combined to estimate the nutritional profile of the complete recipe.
+Percentages describe concentration, while calories describe energy. Both can be useful, but they answer different questions.
 </p>
 
-<h3>
-A Practical Process
-</h3>
+<p>
+For example, a food containing a particular percentage of protein does not necessarily provide the same amount of protein per unit of energy as another food with the same as-fed percentage.
+</p>
 
-<ol>
+<p>
+When calorie information is available, this page calculates an estimated amount of protein per 1,000 kcal.
+</p>
 
-<li>
-<strong>Determine the pet's energy needs.</strong>
-Use an appropriate calorie estimate as a starting point rather than assuming every pet needs the same amount of food.
-</li>
+<div class="formula-box">
 
-<li>
-<strong>Measure ingredients.</strong>
-A kitchen scale is generally more precise than estimating quantities by eye.
-</li>
+<strong>Protein per 1,000 kcal:</strong>
 
-<li>
-<strong>Record nutritional information.</strong>
-Use reliable food composition data or product-label information.
-</li>
+<br><br>
 
-<li>
-<strong>Add the nutritional contributions.</strong>
-Calculate the total protein, fat, calories and other relevant nutrients.
-</li>
+<code>
+Protein grams per 100 g ÷ kcal per 100 g × 1,000
+</code>
 
-<li>
-<strong>Evaluate the complete recipe.</strong>
-Macronutrients are only one part of a nutritionally complete diet.
-</li>
+</div>
 
-</ol>
+<p>
+This is another comparison metric. It should not be interpreted as an individualized protein prescription.
+</p>
 
 
 <h2 id="homemade">
@@ -1198,644 +1546,764 @@ Macro Counting Homemade Pet Meals
 </h2>
 
 <p>
-A homemade meal might contain a primary protein source, a carbohydrate or fiber source and a source of dietary fat. However, simply combining those ingredients does not automatically create a complete diet.
+Homemade pet food requires more than calculating protein, fat and carbohydrate percentages.
 </p>
 
-<table class="data-table">
+<p>
+A recipe can contain an apparently reasonable macro profile while still being inadequate or excessive in specific vitamins, minerals, amino acids or fatty acids.
+</p>
 
-<tr>
-
-<th>
-Ingredient category
-</th>
-
-<th>
-Potential nutritional contribution
-</th>
-
-<th>
-Important consideration
-</th>
-
-</tr>
-
-<tr>
-
-<td>
-Lean meat
-</td>
-
-<td>
-Protein and other nutrients
-</td>
-
-<td>
-Does not by itself provide every required nutrient
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Egg
-</td>
-
-<td>
-Protein and fat
-</td>
-
-<td>
-Amount should be considered within the complete recipe
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Pumpkin / vegetables
-</td>
-
-<td>
-Fiber and other nutrients
-</td>
-
-<td>
-Not every vegetable is appropriate for every pet
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Dietary oil
-</td>
-
-<td>
-Fat and energy
-</td>
-
-<td>
-Can substantially increase calorie density
-</td>
-
-</tr>
-
-</table>
-
+<p>
+For long-term homemade feeding, nutritional formulation should therefore be considered separately from macro counting.
+</p>
 
 <div class="info-box">
 
-<strong>
-Remember:
-</strong>
-A macro calculator or label analyzer cannot establish that a homemade diet is complete and balanced. Vitamins, minerals, essential fatty acids, amino acids and mineral ratios also matter.
+<strong>Important distinction:</strong>
+A macro calculator can describe the approximate composition of ingredients or a recipe. It cannot by itself establish that the finished diet is complete and balanced for a dog or cat.
+
+</div>
+
+<h3>
+Why Ingredient Lists Alone Are Not Enough
+</h3>
+
+<p>
+Ingredients can provide useful information about what is included in a food, but the ingredient list does not provide a complete quantitative nutrient analysis.
+</p>
+
+<p>
+For this reason, selecting ingredients based solely on perceived quality or protein content is not a substitute for evaluating the complete nutrient profile.
+</p>
+
+
+<h2 id="mistakes">
+Common Pet Food Macro-Counting Mistakes
+</h2>
+
+<h3>
+1. Comparing Wet and Dry Food Without Adjusting for Moisture
+</h3>
+
+<p>
+This can make the protein or fat percentages appear more different than they actually are on a dry-matter basis.
+</p>
+
+<h3>
+2. Treating Guaranteed Analysis as an Exact Composition
+</h3>
+
+<p>
+Guaranteed-analysis values have defined reporting conventions and may be expressed as minimums or maximums. They should not automatically be treated as exact laboratory measurements of every nutrient.
+</p>
+
+<h3>
+3. Calling NFE “Exact Carbohydrates”
+</h3>
+
+<p>
+NFE is an estimate derived from other values. It should be described as an estimate rather than an exact carbohydrate measurement.
+</p>
+
+<h3>
+4. Choosing a Diet From One Macro Number
+</h3>
+
+<p>
+Protein, fat or carbohydrate percentage alone cannot establish whether a food is suitable for a particular pet.
+</p>
+
+<h3>
+5. Assuming a Homemade Recipe Is Balanced Because the Macros Look Good
+</h3>
+
+<p>
+Macro balance and nutritional adequacy are different questions. A complete formulation requires consideration of nutrients beyond protein, fat and carbohydrates.
+</p>
+
+
+<h2 id="methodology">
+How the Pet Food Macro Calculator Works
+</h2>
+
+<p>
+The calculator uses standard arithmetic conversions to transform user-provided label values into comparison metrics.
+</p>
+
+<ol>
+
+<li>
+<strong>Moisture is removed mathematically</strong> to convert as-fed percentages to dry-matter percentages.
+</li>
+
+<li>
+<strong>Protein, fat and fiber</strong> are converted independently rather than assuming a fixed macro ratio.
+</li>
+
+<li>
+<strong>NFE is estimated</strong> only when the required values, including ash, are supplied.
+</li>
+
+<li>
+<strong>Calories per 100 g</strong> are used to calculate protein per 1,000 kcal when sufficient calorie information is available.
+</li>
+
+<li>
+<strong>Missing values are not automatically treated as zero.</strong>
+</li>
+
+</ol>
+
+<div class="info-box">
+
+<strong>Methodology limitation:</strong>
+The calculator depends on the accuracy and completeness of the information entered by the user. It is intended for educational comparison and should not be used as a substitute for professional nutritional formulation.
+
 </div>
 
 
+<!-- =========================
+     INTERNAL LINKS
+========================= -->
+
 <h2>
-Common Macro Counting Mistakes
+Explore More Pet Nutrition Tools
 </h2>
 
+<div class="internal-links">
+
+<div class="internal-link-card">
+
 <h3>
-1. Comparing Label Percentages Without Considering Moisture
+🐾 Daily Calorie Calculator
 </h3>
 
 <p>
-A wet food and a dry kibble can have very different moisture levels. Comparing their protein percentages directly can therefore be misleading. Dry-matter calculations make the comparison more meaningful.
+Estimate daily energy needs using your pet's weight and activity profile.
 </p>
 
+<a href="index.html#calculator">
+Open Calorie Calculator →
+</a>
+
+</div>
+
+
+<div class="internal-link-card">
 
 <h3>
-2. Focusing Only on Protein
+🧪 Ingredient Safety Checker
 </h3>
 
 <p>
-High protein does not automatically mean nutritionally complete. Protein should be considered alongside calories, fat, essential nutrients and the individual pet's requirements.
+Check common ingredients using the Pet Diet Engine educational safety reference.
 </p>
 
+<a href="can-my-dog-eat-this.html">
+Open Safety Checker →
+</a>
+
+</div>
+
+
+<div class="internal-link-card">
 
 <h3>
-3. Ignoring Calorie Density
+📚 Pet Nutrition Guides
 </h3>
 
 <p>
-Two foods with similar protein percentages can contain different amounts of energy. Calories per 100 g or per serving provide important context.
+Explore additional nutrition and food-related educational resources.
 </p>
 
+<a href="articles.html">
+Explore Guides →
+</a>
+
+</div>
+
+
+<div class="internal-link-card">
 
 <h3>
-4. Treating a Homemade Recipe as Complete Without Formulation
+🐶 Pet Nutrition Quiz
 </h3>
 
 <p>
-Meat, vegetables and grains may provide many useful nutrients, but homemade diets can still have significant nutritional gaps. Long-term homemade feeding should be formulated appropriately for the individual pet.
+Test your understanding of practical pet nutrition concepts.
 </p>
 
+<a href="pet-nutrition-quiz.html">
+Take the Quiz →
+</a>
 
-<h2>
-Using the Pet Food Macro Analyzer
-</h2>
+</div>
 
-<p>
-The analyzer above is designed primarily for comparison and education. To use it, copy the guaranteed-analysis values from your pet food label into the corresponding fields.
-</p>
-
-<p>
-If the label provides calories per 100 g, enter that number directly. If it only provides calories per cup, enter the calories per cup and the grams per cup so the tool can convert the value to a 100-gram basis.
-</p>
-
-<p>
-For the most useful carbohydrate/NFE estimate, enter ash when it is available from the manufacturer's information. Without ash, an exact NFE calculation cannot be obtained from the basic guaranteed analysis alone.
-</p>
+</div>
 
 
-<h2>
-Why Dry-Matter Analysis Is Useful
-</h2>
-
-<p>
-Dry-matter analysis removes the effect of water from the comparison. This can be particularly useful when comparing dry kibble with canned, fresh or other high-moisture foods.
-</p>
-
-<p>
-For example, a high-moisture food may have a lower as-fed protein percentage even though its protein concentration on a dry-matter basis is substantially different.
-</p>
-
-<p>
-This does not mean that dry-matter protein alone determines food quality. It is simply a better comparison method for certain label-analysis questions.
-</p>
-
-
-<h2>
-Protein Per 1,000 Calories
-</h2>
-
-<p>
-Another useful way to compare pet foods is to consider protein in relation to energy. Protein per 1,000 kcal gives a calorie-normalized value that can provide additional context when comparing foods with different calorie densities.
-</p>
-
-<p>
-The analyzer estimates this value using the supplied protein percentage and calorie density.
-</p>
-
-<p>
-This number should still be interpreted alongside the complete nutritional profile, life-stage suitability and the individual pet's needs.
-</p>
-
-
-<h2>
-Individualized Pet Nutrition
-</h2>
-
-<p>
-There is no single macro ratio that is ideal for every dog or cat. Nutritional requirements can vary according to species, age, growth stage, activity, body condition and health status.
-</p>
-
-<p>
-For pets with medical conditions or complex nutritional needs, nutrition decisions should be made with appropriate veterinary guidance.
-</p>
-
-
-<h2>
-Foods to Avoid in Homemade Pet Meals
-</h2>
-
-<p>
-Ingredient safety is just as important as macro calculation. Foods that can be dangerous to pets include chocolate, grapes and raisins, onions, garlic, alcohol and products containing certain unsafe sweeteners.
-</p>
-
-<p>
-Cooked bones can also create serious hazards because they may splinter. Always verify an ingredient's safety before adding it to a homemade recipe.
-</p>
-
-
-<h2>
-Meal Preparation and Tracking
-</h2>
-
-<p>
-Owners preparing homemade meals can improve consistency by measuring ingredients, recording recipes, preparing appropriate portions and monitoring changes in body weight and condition.
-</p>
-
-<p>
-A feeding log can include ingredient quantities, serving size, calorie estimates and observations about digestion and body condition.
-</p>
-
+<!-- =========================
+     FAQ
+========================= -->
 
 <h2 id="faq">
-Frequently Asked Questions About Pet Food Macros
+Frequently Asked Questions
 </h2>
 
+
+<div class="faq-item">
+
 <h3>
-What are macros in pet food?
+Is dry-matter protein better than as-fed protein?
 </h3>
 
 <p>
-Macros, or macronutrients, generally refer to protein, fat and carbohydrates. Fiber, moisture and calorie density are also useful when analyzing pet food labels.
+Neither number is inherently “better.” Dry-matter protein is simply useful for comparing foods with different moisture levels.
 </p>
 
+</div>
+
+
+<div class="faq-item">
 
 <h3>
-How do I calculate macros for homemade dog food?
+Can this calculator tell me which pet food is best?
 </h3>
 
 <p>
-Measure each ingredient, obtain reliable nutritional information, calculate the contribution of each ingredient and add the values together. The resulting recipe should then be evaluated for complete nutritional adequacy rather than macros alone.
+No. It provides comparison metrics from label information. Choosing an appropriate food requires consideration of the individual pet and the complete nutritional characteristics of the product.
 </p>
 
+</div>
+
+
+<div class="faq-item">
 
 <h3>
-What are kibble macros?
+Can I use this calculator for homemade dog food?
 </h3>
 
 <p>
-Kibble macros are the nutritional proportions of protein, fat and estimated carbohydrates in dry pet food. Because kibble contains relatively little moisture, dry-matter calculations can be useful when comparing it with other foods.
+You can use the underlying calculations to understand ingredient or recipe composition, but the calculator does not determine whether a homemade diet is complete and balanced.
 </p>
 
+</div>
+
+
+<div class="faq-item">
 
 <h3>
-How do I calculate dry-matter protein?
+Can I use the calculator for cat food?
 </h3>
 
 <p>
-Divide the as-fed protein percentage by 100 minus the moisture percentage, then multiply by 100. The Pet Food Macro Analyzer above performs this calculation automatically.
+Yes. The mathematical label conversions can be used for cat food as well. However, the results should not be interpreted as individualized nutritional requirements.
 </p>
 
+</div>
+
+
+<div class="faq-item">
 
 <h3>
-Can I calculate carbohydrates from a pet food label?
+What if my food label does not list ash?
 </h3>
 
 <p>
-An estimated NFE value can be calculated when moisture, protein, fat, fiber and ash are known. If ash is unavailable, the available label information is insufficient for an exact NFE calculation.
+Leave the ash field blank. The calculator will still calculate the dry-matter protein, fat and fiber values, but it will not calculate NFE because the simplified NFE calculation requires ash.
 </p>
 
+</div>
+
+
+<div class="faq-item">
 
 <h3>
-Are homemade pet meals automatically healthier?
+Does a higher protein percentage mean a food is healthier?
 </h3>
 
 <p>
-No. Homemade feeding can provide ingredient control, but a homemade diet must still provide appropriate and complete nutrition for the animal. Ingredient freshness alone does not make a diet nutritionally complete.
+Not necessarily. Protein concentration is only one part of a food's nutritional profile. The source and amino-acid profile of the protein, energy density, other nutrients and the individual animal's needs also matter.
 </p>
 
+</div>
+
+
+<div class="faq-item">
 
 <h3>
-Do cats and dogs have the same nutritional requirements?
+Should I formulate a homemade diet using this calculator?
 </h3>
 
 <p>
-No. Dogs and cats have different nutritional physiology and requirements. A recipe designed for one species should not automatically be assumed appropriate for the other.
+No. Macro calculations alone are insufficient for long-term diet formulation. For a homemade diet intended as a primary food, professional nutritional formulation is the safer approach.
 </p>
 
-
-<h3>
-Can this calculator create a complete homemade diet?
-</h3>
-
-<p>
-No. This tool is designed for educational macro and label analysis. It does not formulate a complete therapeutic or maintenance diet and does not replace professional veterinary nutrition advice.
-</p>
+</div>
 
 
-<h2>
-Final Thoughts
-</h2>
+<!-- =========================
+     DISCLAIMER
+========================= -->
 
-<p>
-Macro counting can give pet owners a more structured way to understand calories and macronutrients. The key is to avoid treating one number, such as protein percentage, as a complete measure of food quality.
-</p>
+<div class="disclaimer-banner">
 
-<p>
-When comparing pet foods, consider moisture, dry-matter nutrient levels, calorie density and the complete nutritional profile. When preparing homemade meals, remember that macronutrients are only one part of nutritional adequacy.
-</p>
+<strong>Veterinary &amp; Nutritional Disclaimer:</strong>
 
-<p>
-The Pet Food Macro Analyzer provides a convenient starting point for comparing label information, while responsible meal planning should always consider the individual animal's requirements.
-</p>
+The information and calculator on Pet Diet Engine are provided for educational and informational purposes only. They are not veterinary medical advice, diagnosis, treatment or individualized nutritional counseling. Calculator results depend on the information entered and should not be used to determine a therapeutic diet or to diagnose a health condition. Consult a veterinarian or qualified veterinary nutrition professional when your pet has a medical condition, special nutritional needs, or when you are planning a long-term homemade diet.
 
-
-<h2>
-Related Pet Nutrition Resources
-</h2>
-
-<ul>
-
-<li>
-<a href="index.html">
-Pet Diet Engine Home
-</a>
-</li>
-
-<li>
-<a href="articles.html#meal-calculator">
-Pet Meal & Calorie Calculator
-</a>
-</li>
-
-<li>
-<a href="recipes-high-protein-dog-food.html">
-High Protein Dog Food Recipe Guide
-</a>
-</li>
-
-<li>
-<a href="articles.html#safety-checker">
-Pet Ingredient Safety Checker
-</a>
-</li>
-
-<li>
-<a href="articles.html">
-Complete Pet Nutrition Guides
-</a>
-</li>
-
-</ul>
+</div>
 
 
 </article>
 
-</div>
 
+<!-- =========================
+     SHARE
+========================= -->
 
-<!-- Disclaimer -->
-
-<div class="container">
-
-<div class="disclaimer-banner">
-
-<strong>
-⚠️ Important Disclaimer:
-</strong>
-
-The information provided by Pet Diet Engine is for educational purposes only and is not a substitute for professional veterinary advice. Nutritional requirements vary between individual animals. Consult a veterinarian or qualified veterinary nutrition professional before making major dietary changes or using homemade diets long-term.
-
-</div>
-
-</div>
-
-
-<!-- Footer -->
-
-<footer>
-
-<p>
-© 2026 <strong>Pet Diet Engine</strong>. All Rights Reserved.
-</p>
-
-<p>
-Built with ❤️ for responsible pet nutrition.
-</p>
-
-
-<!-- SOCIAL SHARE -->
-
-<div class="pde-box share-box">
+<section class="pde-box">
 
 <h3>
-Share this Pet Nutrition Guide
+Share This Pet Nutrition Guide
 </h3>
+
+<p>
+Found this calculator useful? Share the page with another pet owner.
+</p>
 
 <div class="pde-buttons">
 
-<button onclick="shareFB()" class="pde-btn btn-facebook">
+<button
+type="button"
+onclick="shareFB()"
+class="pde-btn btn-facebook">
 Facebook
 </button>
 
-<button onclick="shareWhatsApp()" class="pde-btn btn-whatsapp">
+<button
+type="button"
+onclick="shareWhatsApp()"
+class="pde-btn btn-whatsapp">
 WhatsApp
 </button>
 
-<button onclick="sharePinterest()" class="pde-btn btn-pinterest">
+<button
+type="button"
+onclick="sharePinterest()"
+class="pde-btn btn-pinterest">
 Pinterest
 </button>
 
-<button onclick="shareX()" class="pde-btn btn-x">
+<button
+type="button"
+onclick="shareX()"
+class="pde-btn btn-x">
 X
 </button>
 
-<button onclick="copyPageLink()" class="pde-btn btn-copy">
+<button
+type="button"
+onclick="copyPageLink()"
+class="pde-btn btn-copy">
 Copy Link
 </button>
 
 </div>
 
-</div>
-
-
-<!-- FOLLOW -->
-
-<div class="pde-box follow-box">
-
-<h3>
-Join the Pet Diet Engine Community
-</h3>
-
-<p>
-Get practical pet nutrition information and educational tools.
-</p>
-
-<div class="pde-buttons">
-
-<a
-href="https://facebook.com/YOUR_PAGE"
-target="_blank"
-rel="noopener"
-class="pde-btn btn-facebook"
->
-Facebook Page
-</a>
-
-<a
-href="https://instagram.com/YOUR_ACCOUNT"
-target="_blank"
-rel="noopener"
-class="pde-btn btn-instagram"
->
-Instagram
-</a>
-
-<a
-href="https://youtube.com/@YOUR_CHANNEL"
-target="_blank"
-rel="noopener"
-class="pde-btn btn-youtube"
->
-YouTube
-</a>
-
-<a
-href="https://pinterest.com/YOUR_ACCOUNT"
-target="_blank"
-rel="noopener"
-class="pde-btn btn-pinterest"
->
-Pinterest
-</a>
-
-</div>
-
-</div>
-
-
-<!-- DISQUS -->
-
-<section class="comments-section" style="margin-top:40px;">
-
-<h2>
-Pet Community Discussion
-</h2>
-
-<div id="disqus_thread"></div>
-
 </section>
 
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="site-footer">
+
+<div class="footer-container">
+
+
+<div class="footer-grid">
+
+
+<div>
+
+<span class="footer-brand">
+🐾 Pet Diet Engine
+</span>
+
+<p class="footer-text">
+Educational pet nutrition calculators, food-label analysis tools and practical resources for responsible pet owners.
+</p>
+
+</div>
+
+
+<div>
+
+<h3 class="footer-heading">
+Explore
+</h3>
+
+<ul class="footer-links">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="articles.html">
+Nutrition Guides
+</a>
+</li>
+
+<li>
+<a href="index.html#calculator">
+Calorie Calculator
+</a>
+</li>
+
+<li>
+<a href="can-my-dog-eat-this.html">
+Safety Checker
+</a>
+</li>
+
+<li>
+<a href="pet-nutrition-quiz.html">
+Pet Nutrition Quiz
+</a>
+</li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h3 class="footer-heading">
+Resources
+</h3>
+
+<ul class="footer-links">
+
+<li>
+<a href="farmina-nd-dog-food-review.html">
+Farmina N&amp;D Review
+</a>
+</li>
+
+<li>
+<a href="high-protein-homemade-dog-food-recipe.html">
+Homemade Dog Food
+</a>
+</li>
+
+<li>
+<a href="macro-counting-recipes-for-pet-owners.html">
+Macro Calculator
+</a>
+</li>
+
+<li>
+<a href="pet-food-allergy-elimination-diet-guide.html">
+Allergy Guide
+</a>
+</li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h3 class="footer-heading">
+Legal &amp; Contact
+</h3>
+
+<ul class="footer-links">
+
+<li>
+<a href="privacy.html">
+Privacy Policy
+</a>
+</li>
+
+<li>
+<a href="terms.html">
+Terms of Use
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<div>
+© 2026 <strong>Pet Diet Engine</strong>. All Rights Reserved.
+</div>
+
+<div>
+Educational information — not veterinary medical advice.
+</div>
+
+</div>
+
+
+</div>
 
 </footer>
 
 
 <!-- =========================
-     MACRO ANALYZER JAVASCRIPT
+     JAVASCRIPT
 ========================= -->
 
 <script>
+"use strict";
+
+
+/* =========================================
+   PET FOOD MACRO ANALYZER
+========================================= */
+
+const analyzeButton =
+  document.getElementById("analyzeButton");
+
+const resetButton =
+  document.getElementById("resetButton");
+
+const macroError =
+  document.getElementById("macroError");
+
+const macroResults =
+  document.getElementById("macroResults");
+
 
 function getNumber(id){
 
-  const element = document.getElementById(id);
+  const element =
+    document.getElementById(id);
 
-  if(!element){
-    return NaN;
-  }
+  const value =
+    parseFloat(element.value);
 
-  const value = parseFloat(element.value);
+  return Number.isFinite(value)
+    ? value
+    : null;
 
-  return Number.isFinite(value) ? value : NaN;
+}
+
+
+function formatNumber(value, decimals = 1){
+
+  return Number(value).toLocaleString(
+    undefined,
+    {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    }
+  );
+
+}
+
+
+function showError(message){
+
+  macroError.textContent = message;
+
+  macroError.classList.add("show");
+
+  macroResults.classList.remove("show");
+
+}
+
+
+function clearError(){
+
+  macroError.textContent = "";
+
+  macroError.classList.remove("show");
+
 }
 
 
 function analyzePetFood(){
 
-  const errorBox = document.getElementById("macroError");
-  const results = document.getElementById("macroResults");
-
-  errorBox.classList.remove("show");
-  errorBox.textContent = "";
-
-  const moisture = getNumber("moisture");
-  const protein = getNumber("protein");
-  const fat = getNumber("fat");
-  const fiber = getNumber("fiber");
-  const ash = getNumber("ash");
-
-  let calories100g = getNumber("calories100g");
-
-  const caloriesCup = getNumber("caloriesCup");
-  const gramsCup = getNumber("gramsCup");
-
-  /* -------------------------
-     BASIC VALIDATION
-  ------------------------- */
-
-  if(!Number.isFinite(moisture) ||
-     !Number.isFinite(protein) ||
-     !Number.isFinite(fat) ||
-     !Number.isFinite(fiber)){
-
-    errorBox.textContent =
-      "Please enter moisture, crude protein, crude fat and crude fiber values.";
-
-    errorBox.classList.add("show");
-
-    results.classList.remove("show");
-
-    return;
-  }
+  clearError();
 
 
-  if(moisture < 0 || moisture >= 100){
+  const foodName =
+    document.getElementById("foodName").value.trim();
 
-    errorBox.textContent =
-      "Moisture must be between 0% and less than 100%.";
+  const moisture =
+    getNumber("moisture");
 
-    errorBox.classList.add("show");
+  const protein =
+    getNumber("protein");
 
-    return;
-  }
+  const fat =
+    getNumber("fat");
+
+  const fiber =
+    getNumber("fiber");
+
+  const ash =
+    getNumber("ash");
+
+  const calories100g =
+    getNumber("calories100g");
+
+  const caloriesCup =
+    getNumber("caloriesCup");
+
+  const gramsCup =
+    getNumber("gramsCup");
 
 
-  if(protein < 0 || fat < 0 || fiber < 0){
+  /* Required fields */
 
-    errorBox.textContent =
-      "Protein, fat and fiber values cannot be negative.";
+  if (
+    moisture === null ||
+    protein === null ||
+    fat === null ||
+    fiber === null
+  ){
 
-    errorBox.classList.add("show");
+    showError(
+      "Please enter moisture, crude protein, crude fat and crude fiber."
+    );
 
     return;
+
   }
 
 
-  if(Number.isFinite(ash) && ash < 0){
+  /* Basic validation */
 
-    errorBox.textContent =
-      "Ash cannot be negative.";
+  if (
+    moisture < 0 ||
+    moisture >= 100
+  ){
 
-    errorBox.classList.add("show");
+    showError(
+      "Moisture must be between 0% and less than 100%."
+    );
 
     return;
+
   }
 
 
-  const dryMatter = 100 - moisture;
+  if (
+    protein < 0 ||
+    fat < 0 ||
+    fiber < 0
+  ){
 
-
-  if(dryMatter <= 0){
-
-    errorBox.textContent =
-      "The moisture value leaves no dry matter for analysis.";
-
-    errorBox.classList.add("show");
+    showError(
+      "Protein, fat and fiber cannot be negative."
+    );
 
     return;
-  }
-
-
-  /* -------------------------
-     CALORIES
-  ------------------------- */
-
-  if(!Number.isFinite(calories100g)){
-
-    if(Number.isFinite(caloriesCup) &&
-       Number.isFinite(gramsCup) &&
-       gramsCup > 0){
-
-      calories100g =
-        (caloriesCup / gramsCup) * 100;
-
-    }
 
   }
 
 
-  if(!Number.isFinite(calories100g) || calories100g <= 0){
+  if (
+    protein > 100 ||
+    fat > 100 ||
+    fiber > 100
+  ){
 
-    errorBox.textContent =
-      "Enter calories per 100 g, or enter calories per cup together with grams per cup.";
-
-    errorBox.classList.add("show");
+    showError(
+      "Protein, fat and fiber percentages must be 100% or less."
+    );
 
     return;
+
   }
 
 
-  /* -------------------------
-     DRY MATTER CALCULATIONS
-  ------------------------- */
+  if (
+    ash !== null &&
+    (ash < 0 || ash > 100)
+  ){
+
+    showError(
+      "Ash must be between 0% and 100%."
+    );
+
+    return;
+
+  }
+
+
+  /*
+     Check that the supplied guaranteed-analysis
+     values are physically plausible.
+  */
+
+  const knownTotal =
+    moisture +
+    protein +
+    fat +
+    fiber +
+    (ash !== null ? ash : 0);
+
+
+  if (knownTotal > 100){
+
+    showError(
+      "The entered values exceed 100%. Please check the food label."
+    );
+
+    return;
+
+  }
+
+
+  /*
+     Dry matter fraction
+  */
+
+  const dryMatter =
+    100 - moisture;
+
+
+  if (dryMatter <= 0){
+
+    showError(
+      "The dry-matter portion must be greater than zero."
+    );
+
+    return;
+
+  }
+
+
+  /*
+     Dry-matter conversions
+  */
 
   const dmProtein =
     (protein / dryMatter) * 100;
@@ -1847,13 +2315,17 @@ function analyzePetFood(){
     (fiber / dryMatter) * 100;
 
 
-  /* -------------------------
-     NFE / CARBOHYDRATE
-  ------------------------- */
+  /*
+     NFE estimate
+
+     NFE is calculated only when ash
+     is supplied.
+  */
 
   let nfe = null;
 
-  if(Number.isFinite(ash)){
+
+  if (ash !== null){
 
     nfe =
       100 -
@@ -1863,118 +2335,237 @@ function analyzePetFood(){
       fiber -
       ash;
 
-  }
 
+    /*
+       Tiny negative values can occur
+       from rounding, but a genuinely
+       negative NFE indicates invalid
+       or incompatible inputs.
+    */
 
-  /* -------------------------
-     PROTEIN PER 1000 KCAL
-  ------------------------- */
+    if (nfe < -0.1){
 
-  const proteinGramsPer100g =
-    protein;
+      showError(
+        "The entered values leave a negative estimated NFE. Please check the label values."
+      );
 
-  const proteinPer1000Kcal =
-    (proteinGramsPer100g / calories100g) * 1000;
-
-
-  /* -------------------------
-     DISPLAY
-  ------------------------- */
-
-  document.getElementById("dmProtein").textContent =
-    dmProtein.toFixed(1) + "%";
-
-  document.getElementById("dmFat").textContent =
-    dmFat.toFixed(1) + "%";
-
-  document.getElementById("dmFiber").textContent =
-    dmFiber.toFixed(1) + "%";
-
-
-  if(nfe !== null){
-
-    if(nfe >= 0 && nfe <= 100){
-
-      const dmNfe =
-        (nfe / dryMatter) * 100;
-
-      document.getElementById("nfeResult").textContent =
-        dmNfe.toFixed(1) + "% DM";
-
-    }else{
-
-      document.getElementById("nfeResult").textContent =
-        "Check label";
+      return;
 
     }
 
-  }else{
-
-    document.getElementById("nfeResult").textContent =
-      "Ash needed";
+    if (nfe < 0){
+      nfe = 0;
+    }
 
   }
 
 
-  document.getElementById("calResult").textContent =
-    calories100g.toFixed(0) + " kcal";
+  /*
+     Determine calories per 100 g.
+
+     Priority:
+     1. Direct kcal/100 g
+     2. kcal/cup + grams/cup
+  */
+
+  let kcal100g = null;
 
 
-  document.getElementById("proteinKcal").textContent =
-    proteinPer1000Kcal.toFixed(1) + " g";
+  if (
+    calories100g !== null &&
+    calories100g > 0
+  ){
+
+    kcal100g =
+      calories100g;
+
+  } else if (
+    caloriesCup !== null &&
+    caloriesCup > 0 &&
+    gramsCup !== null &&
+    gramsCup > 0
+  ){
+
+    kcal100g =
+      (caloriesCup / gramsCup) * 100;
+
+  }
 
 
-  /* -------------------------
-     FOOD NAME
-  ------------------------- */
+  /*
+     Validate calorie value
+  */
 
-  const foodName =
-    document.getElementById("foodName").value.trim();
+  if (
+    kcal100g !== null &&
+    (
+      kcal100g <= 0 ||
+      kcal100g > 2000
+    )
+  ){
 
-  document.getElementById("foodResultName").textContent =
+    showError(
+      "The calculated calorie density appears outside the expected input range. Please check the calorie and gram values."
+    );
+
+    return;
+
+  }
+
+
+  /*
+     Protein per 1,000 kcal
+
+     Protein percentage on an as-fed basis
+     means grams of protein per 100 g
+     of food approximately equal the
+     percentage value.
+  */
+
+  let proteinPer1000 = null;
+
+
+  if (
+    kcal100g !== null &&
+    kcal100g > 0
+  ){
+
+    proteinPer1000 =
+      (protein / kcal100g) * 1000;
+
+  }
+
+
+  /* Display food name */
+
+  const foodResultName =
+    document.getElementById("foodResultName");
+
+
+  foodResultName.textContent =
     foodName
-      ? "Analysis for: " + foodName
-      : "Analysis based on the values you entered.";
+      ? "Food analyzed: " + foodName
+      : "Food analyzed: user-provided label values";
 
 
-  /* -------------------------
-     ANALYSIS NOTES
-  ------------------------- */
+  /* Display dry-matter results */
 
-  let notes =
-    "Dry-matter calculations remove moisture from the comparison. " +
-    "Protein per 1,000 kcal is calculated from the supplied protein percentage and calorie density.";
+  document.getElementById("dmProtein")
+    .textContent =
+      formatNumber(dmProtein) + "%";
 
-  if(nfe === null){
 
-    notes +=
-      " For a more complete estimated NFE/carbohydrate calculation, enter the food's ash percentage if it is available.";
+  document.getElementById("dmFat")
+    .textContent =
+      formatNumber(dmFat) + "%";
 
-  }else{
 
-    notes +=
-      " Estimated NFE was calculated using moisture, protein, fat, fiber and ash.";
+  document.getElementById("dmFiber")
+    .textContent =
+      formatNumber(dmFiber) + "%";
+
+
+  /* Display NFE */
+
+  document.getElementById("nfeResult")
+    .textContent =
+      nfe === null
+        ? "Requires ash"
+        : formatNumber(nfe) + "%";
+
+
+  /* Display calories */
+
+  document.getElementById("calResult")
+    .textContent =
+      kcal100g === null
+        ? "Not available"
+        : formatNumber(kcal100g) + " kcal";
+
+
+  /* Display protein per 1,000 kcal */
+
+  document.getElementById("proteinKcal")
+    .textContent =
+      proteinPer1000 === null
+        ? "Not available"
+        : formatNumber(proteinPer1000, 0) + " g";
+
+
+  /* Analysis notes */
+
+  const notes = [];
+
+
+  notes.push(
+    "Dry matter is approximately " +
+    formatNumber(dryMatter) +
+    "% of the food."
+  );
+
+
+  if (nfe === null){
+
+    notes.push(
+      "Estimated NFE was not calculated because ash was not supplied."
+    );
+
+  } else {
+
+    notes.push(
+      "Estimated NFE is calculated by difference and should not be treated as a direct laboratory measurement of total carbohydrate."
+    );
 
   }
 
 
-  document.getElementById("analysisNotes").textContent =
-    notes;
+  if (kcal100g === null){
+
+    notes.push(
+      "Protein per 1,000 kcal was not calculated because sufficient calorie information was not supplied."
+    );
+
+  } else if (
+    calories100g === null &&
+    caloriesCup !== null &&
+    gramsCup !== null
+  ){
+
+    notes.push(
+      "Calories per 100 g were derived from kcal per cup and grams per cup."
+    );
+
+  }
 
 
-  results.classList.add("show");
+  notes.push(
+    "Guaranteed-analysis values describe selected label parameters and do not represent a complete nutrient profile."
+  );
 
-  results.scrollIntoView({
+
+  document.getElementById("analysisNotes")
+    .textContent =
+      notes.join(" ");
+
+
+  macroResults.classList.add("show");
+
+
+  macroResults.scrollIntoView({
     behavior:"smooth",
-    block:"start"
+    block:"nearest"
   });
 
 }
 
 
+/* =========================================
+   RESET
+========================================= */
+
 function resetAnalyzer(){
 
-  const ids = [
+  const fields = [
     "foodName",
     "moisture",
     "protein",
@@ -1986,36 +2577,72 @@ function resetAnalyzer(){
     "gramsCup"
   ];
 
-  ids.forEach(function(id){
 
-    const element =
-      document.getElementById(id);
+  fields.forEach(function(id){
 
-    if(element){
-      element.value = "";
-    }
+    document.getElementById(id).value = "";
 
   });
 
 
-  document.getElementById("macroResults")
-    .classList.remove("show");
+  clearError();
 
-  document.getElementById("macroError")
-    .classList.remove("show");
+  macroResults.classList.remove("show");
 
 }
 
 
-/* =========================
+analyzeButton.addEventListener(
+  "click",
+  analyzePetFood
+);
+
+
+resetButton.addEventListener(
+  "click",
+  resetAnalyzer
+);
+
+
+/* =========================================
+   ENTER KEY SUPPORT
+========================================= */
+
+document.querySelectorAll(
+  "#pet-food-macro-analyzer input"
+).forEach(function(input){
+
+  input.addEventListener(
+    "keydown",
+    function(event){
+
+      if(event.key === "Enter"){
+
+        event.preventDefault();
+
+        analyzePetFood();
+
+      }
+
+    }
+  );
+
+});
+
+
+/* =========================================
    SOCIAL SHARING
-========================= */
+========================================= */
 
 const pageUrl =
-  encodeURIComponent(window.location.href);
+  encodeURIComponent(
+    window.location.href
+  );
 
 const pageTitle =
-  encodeURIComponent(document.title);
+  encodeURIComponent(
+    document.title
+  );
 
 
 function shareFB(){
@@ -2023,7 +2650,8 @@ function shareFB(){
   window.open(
     "https://www.facebook.com/sharer/sharer.php?u=" +
     pageUrl,
-    "_blank"
+    "_blank",
+    "noopener,noreferrer"
   );
 
 }
@@ -2036,7 +2664,8 @@ function shareWhatsApp(){
     pageTitle +
     "%20" +
     pageUrl,
-    "_blank"
+    "_blank",
+    "noopener,noreferrer"
   );
 
 }
@@ -2049,7 +2678,8 @@ function sharePinterest(){
     pageUrl +
     "&description=" +
     pageTitle,
-    "_blank"
+    "_blank",
+    "noopener,noreferrer"
   );
 
 }
@@ -2062,128 +2692,65 @@ function shareX(){
     pageTitle +
     "&url=" +
     pageUrl,
-    "_blank"
+    "_blank",
+    "noopener,noreferrer"
   );
 
 }
 
 
-function copyPageLink(){
+async function copyPageLink(){
 
-  if(navigator.clipboard){
+  try{
 
-    navigator.clipboard.writeText(
+    await navigator.clipboard.writeText(
       window.location.href
-    ).then(function(){
-
-      alert(
-        "Link copied! Share it with fellow pet parents."
-      );
-
-    });
-
-  }else{
+    );
 
     alert(
-      "Copy the page URL from your browser."
+      "Page link copied!"
     );
+
+  }catch(error){
+
+    const textarea =
+      document.createElement("textarea");
+
+    textarea.value =
+      window.location.href;
+
+    textarea.style.position =
+      "fixed";
+
+    textarea.style.left =
+      "-9999px";
+
+    document.body.appendChild(
+      textarea
+    );
+
+    textarea.select();
+
+    try{
+
+      document.execCommand("copy");
+
+      alert(
+        "Page link copied!"
+      );
+
+    }catch(copyError){
+
+      alert(
+        "Please copy the page URL manually."
+      );
+
+    }
+
+    textarea.remove();
 
   }
 
-}
-
-
-/* =========================
-   DISQUS
-========================= */
-
-var disqus_config = function(){
-
-  this.page.url =
-    window.location.href;
-
-  this.page.identifier =
-    window.location.pathname;
-
-};
-
-
-(function(){
-
-  var d = document,
-      s = d.createElement("script");
-
-  s.src =
-    "https://petdietengine.disqus.com/embed.js";
-
-  s.setAttribute(
-    "data-timestamp",
-    +new Date()
-  );
-
-  (d.head || d.body)
-    .appendChild(s);
-
-})();
-
-</script>
-
-
-<!-- FAQ SCHEMA -->
-
-<script type="application/ld+json">
-
-{
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-
-    {
-      "@type":"Question",
-      "name":"What are macros in pet food?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Macros generally refer to protein, fat and carbohydrates. Fiber, moisture and calorie density are also useful when analyzing pet food labels."
-      }
-    },
-
-    {
-      "@type":"Question",
-      "name":"How do I calculate dry-matter protein in pet food?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Divide the as-fed protein percentage by 100 minus the moisture percentage, then multiply by 100."
-      }
-    },
-
-    {
-      "@type":"Question",
-      "name":"What are kibble macros?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Kibble macros describe the protein, fat and estimated carbohydrate profile of dry pet food. Dry-matter analysis can help compare kibble with foods containing different amounts of moisture."
-      }
-    },
-
-    {
-      "@type":"Question",
-      "name":"Can carbohydrates be calculated from a pet food label?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"An estimated nitrogen-free extract can be calculated when moisture, protein, fat, fiber and ash are available. Without ash, an exact NFE calculation cannot be obtained from basic guaranteed-analysis values alone."
-      }
-    },
-
-    {
-      "@type":"Question",
-      "name":"Are homemade pet food recipes automatically complete and balanced?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"No. Homemade diets require consideration of vitamins, minerals, essential fatty acids, amino acids and other nutrients in addition to macronutrients."
-      }
-    }
-
-  ]
 }
 
 </script>
