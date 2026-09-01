@@ -50,90 +50,546 @@
 </script>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f8fafc;color:#172033;line-height:1.65}
-img{max-width:100%;height:auto}
-button,input,select{font:inherit}
-a{color:inherit}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-.site-nav{position:sticky;top:0;z-index:9999;background:rgba(15,23,42,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav-inner{max-width:1180px;margin:auto;min-height:70px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;font-weight:800;font-size:1.1rem;white-space:nowrap}
-.brand-mark{width:32px;height:32px;display:grid;place-items:center;background:#10b981;border-radius:10px;font-size:18px}
-.nav-menu{display:flex;align-items:center;gap:6px;list-style:none}
-.nav-menu a{text-decoration:none;color:#cbd5e1;font-size:.9rem;font-weight:650;padding:9px 13px;border-radius:9px;transition:.2s ease}
-.nav-menu a:hover{background:rgba(255,255,255,.08);color:#fff}
-.nav-menu .nav-primary{background:#2563eb;color:#fff}
-.nav-menu .nav-primary:hover{background:#1d4ed8}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:80px;
+}
 
-.container{width:min(1180px,calc(100% - 32px));margin:auto}
+body{
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:#f8fafc;
+  color:#172033;
+  line-height:1.65;
+}
 
-.hero{margin-top:28px;padding:60px 50px;border-radius:24px;background:radial-gradient(circle at 90% 10%,rgba(37,99,235,.35),transparent 35%),linear-gradient(135deg,#0f172a,#172554);color:#fff;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);border-radius:50px;color:#6ee7b7;font-size:.82rem;font-weight:750;margin-bottom:18px}
-.hero h1{font-size:clamp(2.2rem,5vw,3.7rem);line-height:1.08;letter-spacing:-.045em;margin-bottom:20px}
-.hero h1 span{color:#60a5fa}
-.hero-text{color:#cbd5e1;font-size:1.08rem;max-width:620px;margin-bottom:27px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:12px 19px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;font-weight:750;transition:.2s ease}
-.btn-primary{background:#10b981;color:#fff;box-shadow:0 8px 20px rgba(16,185,129,.2)}
-.btn-primary:hover{background:#059669;transform:translateY(-2px)}
-.btn-secondary{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.12)}
-.btn-secondary:hover{background:rgba(255,255,255,.14)}
-.hero-image{border-radius:20px;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,.35)}
-.hero-image img{width:100%;height:340px;object-fit:cover;display:block}
+img{
+  max-width:100%;
+  height:auto;
+}
 
-.trust-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 35px}
-.trust-item{background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:15px;text-align:center;font-size:.9rem;color:#475569}
-.trust-item strong{display:block;color:#0f172a;margin-bottom:3px}
+button,
+input,
+select{
+  font:inherit;
+}
 
-.section{margin:55px 0}
-.section-heading{max-width:720px;margin-bottom:25px}
-.section-heading h2{color:#0f172a;font-size:clamp(1.7rem,3vw,2.25rem);line-height:1.2;letter-spacing:-.025em;margin-bottom:8px}
-.section-heading p{color:#64748b}
+a{
+  color:inherit;
+}
 
-.calculator-card{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid #dbe4ef;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(15,23,42,.07)}
-.calculator-form{padding:30px}
-.calculator-result{padding:30px;background:linear-gradient(145deg,#eff6ff,#f0fdf4);border-left:1px solid #e2e8f0}
-.calculator-title{display:flex;align-items:center;gap:10px;margin-bottom:7px}
-.calculator-title h3{font-size:1.35rem}
-.form-group{margin-top:17px}
-.form-group label{display:block;font-size:.87rem;font-weight:750;color:#334155;margin-bottom:6px}
-.form-group input,.form-group select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;color:#0f172a;outline:none}
-.form-group input:focus,.form-group select:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12)}
-.form-help{font-size:.78rem;color:#64748b;margin-top:4px}
-.calculate-btn{width:100%;margin-top:22px;padding:13px;border:none;border-radius:10px;background:#2563eb;color:#fff;font-weight:800;cursor:pointer;transition:.2s ease}
-.calculate-btn:hover{background:#1d4ed8}
-.result-placeholder{color:#64748b;text-align:center;padding:30px 10px}
-.result-box{display:none}
-.result-box.show{display:block}
-.result-main{background:#fff;border-radius:15px;padding:20px;margin-bottom:15px;border:1px solid #dbeafe}
-.result-label{color:#64748b;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-.result-number{font-size:2.4rem;font-weight:850;color:#1d4ed8;line-height:1.15;margin:4px 0}
-.result-unit{color:#475569;font-size:.9rem}
-.result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.result-stat{background:#fff;border:1px solid #e2e8f0;padding:14px;border-radius:11px}
-.result-stat strong{display:block;color:#0f172a}
-.result-note{font-size:.78rem;color:#64748b;margin-top:15px;line-height:1.55}
 
-.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.tool-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:22px;text-decoration:none;transition:.25s ease;position:relative;overflow:hidden}
-.tool-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:#2563eb}
-.tool-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(15,23,42,.09);border-color:#bfdbfe}
-.tool-icon{font-size:2.1rem;margin-bottom:10px}
-.tool-card h3{color:#0f172a;font-size:1.05rem;margin-bottom:5px}
-.tool-card p{color:#64748b;font-size:.84rem}
+/* =========================
+   NAVIGATION
+========================= */
 
-.safety-card{background:#0f172a;color:#fff;border-radius:20px;padding:30px}
-.safety-header{max-width:700px;margin-bottom:20px}
-.safety-header h2{color:#fff;margin-bottom:7px}
-.safety-header p{color:#94a3b8}
-.safety-form{display:grid;grid-template-columns:1fr auto;gap:10px}
-.safety-form input{width:100%;padding:13px;border-radius:10px;border:1px solid #334155;background:#1e293b;color:#fff;outline:none}
-.safety-form button{padding:13px 20px;border:none;border-radius:10px;background:#10b981;color:#fff;font-weight:800;cursor:pointer}
+.site-nav{
+  position:sticky;
+  top:0;
+  z-index:9999;
+  background:rgba(15,23,42,.97);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
 
-/* Dedicated Can My Dog Eat This? internal link */
+.nav-inner{
+  max-width:1180px;
+  margin:auto;
+  min-height:70px;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:800;
+  font-size:1.1rem;
+  white-space:nowrap;
+}
+
+.brand-mark{
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  background:#10b981;
+  border-radius:10px;
+  font-size:18px;
+}
+
+.nav-menu{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  list-style:none;
+}
+
+.nav-menu a{
+  text-decoration:none;
+  color:#cbd5e1;
+  font-size:.9rem;
+  font-weight:650;
+  padding:9px 13px;
+  border-radius:9px;
+  transition:.2s ease;
+}
+
+.nav-menu a:hover{
+  background:rgba(255,255,255,.08);
+  color:#fff;
+}
+
+.nav-menu .nav-primary{
+  background:#2563eb;
+  color:#fff;
+}
+
+.nav-menu .nav-primary:hover{
+  background:#1d4ed8;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+.container{
+  width:min(1180px,calc(100% - 32px));
+  margin:auto;
+}
+
+.section{
+  margin:55px 0;
+}
+
+.section-heading{
+  max-width:720px;
+  margin-bottom:25px;
+}
+
+.section-heading h2{
+  color:#0f172a;
+  font-size:clamp(1.7rem,3vw,2.25rem);
+  line-height:1.2;
+  letter-spacing:-.025em;
+  margin-bottom:8px;
+}
+
+.section-heading p{
+  color:#64748b;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  margin-top:28px;
+  padding:60px 50px;
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(37,99,235,.35),transparent 35%),
+    linear-gradient(135deg,#0f172a,#172554);
+  color:#fff;
+  overflow:hidden;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:45px;
+  align-items:center;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 12px;
+  background:rgba(16,185,129,.12);
+  border:1px solid rgba(16,185,129,.3);
+  border-radius:50px;
+  color:#6ee7b7;
+  font-size:.82rem;
+  font-weight:750;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:clamp(2.2rem,5vw,3.7rem);
+  line-height:1.08;
+  letter-spacing:-.045em;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:#60a5fa;
+}
+
+.hero-text{
+  color:#cbd5e1;
+  font-size:1.08rem;
+  max-width:620px;
+  margin-bottom:27px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  padding:12px 19px;
+  border-radius:10px;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  font-weight:750;
+  transition:.2s ease;
+}
+
+.btn-primary{
+  background:#10b981;
+  color:#fff;
+  box-shadow:0 8px 20px rgba(16,185,129,.2);
+}
+
+.btn-primary:hover{
+  background:#059669;
+  transform:translateY(-2px);
+}
+
+.btn-secondary{
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.btn-secondary:hover{
+  background:rgba(255,255,255,.14);
+}
+
+.hero-image{
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 25px 50px rgba(0,0,0,.35);
+}
+
+.hero-image img{
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  display:block;
+}
+
+
+/* =========================
+   TRUST STRIP
+========================= */
+
+.trust-strip{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:18px 0 35px;
+}
+
+.trust-item{
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:13px;
+  padding:15px;
+  text-align:center;
+  font-size:.9rem;
+  color:#475569;
+}
+
+.trust-item strong{
+  display:block;
+  color:#0f172a;
+  margin-bottom:3px;
+}
+
+
+/* =========================
+   CALCULATOR
+========================= */
+
+.calculator-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:#fff;
+  border:1px solid #dbe4ef;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 18px 45px rgba(15,23,42,.07);
+}
+
+.calculator-form{
+  padding:30px;
+}
+
+.calculator-result{
+  padding:30px;
+  background:linear-gradient(145deg,#eff6ff,#f0fdf4);
+  border-left:1px solid #e2e8f0;
+}
+
+.calculator-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:7px;
+}
+
+.calculator-title h3{
+  font-size:1.35rem;
+}
+
+.form-group{
+  margin-top:17px;
+}
+
+.form-group label{
+  display:block;
+  font-size:.87rem;
+  font-weight:750;
+  color:#334155;
+  margin-bottom:6px;
+}
+
+.form-group input,
+.form-group select{
+  width:100%;
+  padding:12px 13px;
+  border:1px solid #cbd5e1;
+  border-radius:9px;
+  background:#fff;
+  color:#0f172a;
+  outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+  border-color:#2563eb;
+  box-shadow:0 0 0 3px rgba(37,99,235,.12);
+}
+
+.form-help{
+  font-size:.78rem;
+  color:#64748b;
+  margin-top:4px;
+}
+
+.calculate-btn{
+  width:100%;
+  margin-top:22px;
+  padding:13px;
+  border:none;
+  border-radius:10px;
+  background:#2563eb;
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.calculate-btn:hover{
+  background:#1d4ed8;
+}
+
+.result-placeholder{
+  color:#64748b;
+  text-align:center;
+  padding:30px 10px;
+}
+
+.result-box{
+  display:none;
+}
+
+.result-box.show{
+  display:block;
+}
+
+.result-main{
+  background:#fff;
+  border-radius:15px;
+  padding:20px;
+  margin-bottom:15px;
+  border:1px solid #dbeafe;
+}
+
+.result-label{
+  color:#64748b;
+  font-size:.8rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.result-number{
+  font-size:2.4rem;
+  font-weight:850;
+  color:#1d4ed8;
+  line-height:1.15;
+  margin:4px 0;
+}
+
+.result-unit{
+  color:#475569;
+  font-size:.9rem;
+}
+
+.result-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.result-stat{
+  background:#fff;
+  border:1px solid #e2e8f0;
+  padding:14px;
+  border-radius:11px;
+}
+
+.result-stat strong{
+  display:block;
+  color:#0f172a;
+}
+
+.result-note{
+  font-size:.78rem;
+  color:#64748b;
+  margin-top:15px;
+  line-height:1.55;
+}
+
+
+/* =========================
+   TOOLS
+========================= */
+
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.tool-card{
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:16px;
+  padding:22px;
+  text-decoration:none;
+  transition:.25s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.tool-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:4px;
+  background:#2563eb;
+}
+
+.tool-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 30px rgba(15,23,42,.09);
+  border-color:#bfdbfe;
+}
+
+.tool-icon{
+  font-size:2.1rem;
+  margin-bottom:10px;
+}
+
+.tool-card h3{
+  color:#0f172a;
+  font-size:1.05rem;
+  margin-bottom:5px;
+}
+
+.tool-card p{
+  color:#64748b;
+  font-size:.84rem;
+}
+
+
+/* =========================
+   SAFETY CHECKER
+========================= */
+
+.safety-card{
+  background:#0f172a;
+  color:#fff;
+  border-radius:20px;
+  padding:30px;
+}
+
+.safety-header{
+  max-width:700px;
+  margin-bottom:20px;
+}
+
+.safety-header h2{
+  color:#fff;
+  margin-bottom:7px;
+}
+
+.safety-header p{
+  color:#94a3b8;
+}
+
+.safety-form{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
+}
+
+.safety-form input{
+  width:100%;
+  padding:13px;
+  border-radius:10px;
+  border:1px solid #334155;
+  background:#1e293b;
+  color:#fff;
+  outline:none;
+}
+
+.safety-form button{
+  padding:13px 20px;
+  border:none;
+  border-radius:10px;
+  background:#10b981;
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+}
+
 .safety-tool-link{
   display:inline-block;
   margin-top:14px;
@@ -150,147 +606,540 @@ a{color:inherit}
   transform:translateX(2px);
 }
 
-.safety-result{margin-top:18px;padding:15px;border-radius:10px;display:none}
-.safety-result.show{display:block}
-.safety-safe{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);color:#a7f3d0}
-.safety-caution{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);color:#fde68a}
-.safety-danger{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);color:#fecaca}
-
-.guides-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.guide-card{background:#fff;border:1px solid #e2e8f0;border-radius:15px;padding:23px}
-.guide-card .tag{display:inline-block;font-size:.72rem;font-weight:800;color:#2563eb;background:#eff6ff;padding:5px 9px;border-radius:50px;margin-bottom:10px}
-.guide-card h3{font-size:1.15rem;line-height:1.35;margin-bottom:8px;color:#0f172a}
-.guide-card p{color:#64748b;font-size:.88rem;margin-bottom:15px}
-.guide-link{color:#2563eb;font-size:.88rem;font-weight:800;text-decoration:none}
-.guide-link:hover{text-decoration:underline}
-
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.why-card{padding:22px;background:#fff;border:1px solid #e2e8f0;border-radius:15px}
-.why-card span{font-size:1.8rem}
-.why-card h3{margin:8px 0 5px;color:#0f172a;font-size:1.05rem}
-.why-card p{color:#64748b;font-size:.87rem}
-
-.share-box{margin:45px 0;padding:24px;background:#fff;border:1px solid #e2e8f0;border-radius:15px}
-.share-box h3{margin-bottom:12px;color:#0f172a}
-.share-buttons{display:flex;flex-wrap:wrap;gap:8px}
-.share-btn{border:none;border-radius:8px;padding:9px 14px;color:#fff;font-weight:700;cursor:pointer;font-size:.82rem}
-.facebook{background:#1877f2}
-.whatsapp{background:#25d366}
-.pinterest{background:#e60023}
-.x{background:#000}
-.copy{background:#475569}
-
-.disclaimer{margin:35px 0;padding:20px;border-left:4px solid #f59e0b;border-radius:0 12px 12px 0;background:#fff7ed;color:#7c2d12;font-size:.84rem}
-.disclaimer strong{color:#9a3412}
-
-footer{margin-top:70px;background:#0f172a;color:#94a3b8;border-top:4px solid #2563eb}
-.footer-inner{width:min(1180px,calc(100% - 32px));margin:auto;padding:45px 0 25px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px;margin-bottom:30px}
-.footer-section h3{color:#fff;font-size:.9rem;margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
-.footer-section p,.footer-section a{font-size:.84rem;color:#94a3b8;text-decoration:none;line-height:1.8}
-.footer-section a:hover{color:#fff}
-.footer-bottom{border-top:1px solid #1e293b;padding-top:20px;text-align:center;font-size:.78rem}
-
-@media(max-width:950px){
-.hero-grid{grid-template-columns:1fr}
-.hero-image img{height:300px}
-.tools-grid{grid-template-columns:repeat(2,1fr)}
-.guides-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
-.calculator-card{grid-template-columns:1fr}
-.calculator-result{border-left:none;border-top:1px solid #e2e8f0}
+.safety-result{
+  margin-top:18px;
+  padding:15px;
+  border-radius:10px;
+  display:none;
 }
 
+.safety-result.show{
+  display:block;
+}
+
+.safety-safe{
+  background:rgba(16,185,129,.12);
+  border:1px solid rgba(16,185,129,.3);
+  color:#a7f3d0;
+}
+
+.safety-caution{
+  background:rgba(245,158,11,.12);
+  border:1px solid rgba(245,158,11,.3);
+  color:#fde68a;
+}
+
+.safety-danger{
+  background:rgba(239,68,68,.12);
+  border:1px solid rgba(239,68,68,.3);
+  color:#fecaca;
+}
+
+
+/* =========================
+   WHY PET DIET ENGINE
+========================= */
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.why-card{
+  padding:22px;
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:15px;
+}
+
+.why-card span{
+  font-size:1.8rem;
+}
+
+.why-card h3{
+  margin:8px 0 5px;
+  color:#0f172a;
+  font-size:1.05rem;
+}
+
+.why-card p{
+  color:#64748b;
+  font-size:.87rem;
+}
+
+
+/* ==================================================
+   FEATURED PET NUTRITION GUIDES
+   ================================================== */
+
+.guides-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  align-items:stretch;
+}
+
+.guide-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-height:290px;
+  padding:25px;
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:16px;
+  box-shadow:0 2px 8px rgba(15,23,42,.025);
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+  overflow:hidden;
+}
+
+/* subtle blue accent */
+.guide-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:3px;
+  background:#2563eb;
+  opacity:.85;
+}
+
+/* professional hover state */
+.guide-card:hover{
+  transform:translateY(-4px);
+  border-color:#bfdbfe;
+  box-shadow:0 14px 32px rgba(15,23,42,.08);
+}
+
+/* category label */
+.guide-card .tag{
+  display:inline-flex;
+  align-self:flex-start;
+  align-items:center;
+  font-size:.7rem;
+  line-height:1;
+  font-weight:800;
+  letter-spacing:.02em;
+  color:#2563eb;
+  background:#eff6ff;
+  border:1px solid #dbeafe;
+  padding:7px 10px;
+  border-radius:50px;
+  margin-bottom:14px;
+}
+
+/* guide title */
+.guide-card h3{
+  font-size:1.13rem;
+  line-height:1.35;
+  letter-spacing:-.015em;
+  margin-bottom:9px;
+  color:#0f172a;
+}
+
+/* guide description */
+.guide-card p{
+  color:#64748b;
+  font-size:.88rem;
+  line-height:1.65;
+  margin-bottom:20px;
+}
+
+/* CTA always stays near bottom */
+.guide-link{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  margin-top:auto;
+  color:#2563eb;
+  font-size:.87rem;
+  font-weight:800;
+  text-decoration:none;
+  transition:.2s ease;
+}
+
+.guide-link:hover{
+  color:#1d4ed8;
+  text-decoration:underline;
+  transform:translateX(2px);
+}
+
+/* Center the final card on desktop */
+.guides-grid .guide-card:last-child{
+  grid-column:2;
+}
+
+
+/* =========================
+   SHARE
+========================= */
+
+.share-box{
+  margin:45px 0;
+  padding:24px;
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:15px;
+}
+
+.share-box h3{
+  margin-bottom:12px;
+  color:#0f172a;
+}
+
+.share-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.share-btn{
+  border:none;
+  border-radius:8px;
+  padding:9px 14px;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  font-size:.82rem;
+}
+
+.facebook{
+  background:#1877f2;
+}
+
+.whatsapp{
+  background:#25d366;
+}
+
+.pinterest{
+  background:#e60023;
+}
+
+.x{
+  background:#000;
+}
+
+.copy{
+  background:#475569;
+}
+
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.disclaimer{
+  margin:35px 0;
+  padding:20px;
+  border-left:4px solid #f59e0b;
+  border-radius:0 12px 12px 0;
+  background:#fff7ed;
+  color:#7c2d12;
+  font-size:.84rem;
+}
+
+.disclaimer strong{
+  color:#9a3412;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  margin-top:70px;
+  background:#0f172a;
+  color:#94a3b8;
+  border-top:4px solid #2563eb;
+}
+
+.footer-inner{
+  width:min(1180px,calc(100% - 32px));
+  margin:auto;
+  padding:45px 0 25px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:35px;
+  margin-bottom:30px;
+}
+
+.footer-section h3{
+  color:#fff;
+  font-size:.9rem;
+  margin-bottom:12px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+.footer-section p,
+.footer-section a{
+  font-size:.84rem;
+  color:#94a3b8;
+  text-decoration:none;
+  line-height:1.8;
+}
+
+.footer-section a:hover{
+  color:#fff;
+}
+
+.footer-bottom{
+  border-top:1px solid #1e293b;
+  padding-top:20px;
+  text-align:center;
+  font-size:.78rem;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:950px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-image img{
+    height:300px;
+  }
+
+  .tools-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .guides-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  /* Reset desktop centering */
+  .guides-grid .guide-card:last-child{
+    grid-column:auto;
+  }
+
+  .why-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .calculator-card{
+    grid-template-columns:1fr;
+  }
+
+  .calculator-result{
+    border-left:none;
+    border-top:1px solid #e2e8f0;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:700px){
-.nav-inner{min-height:62px}
-.nav-menu{gap:2px}
-.nav-menu a{font-size:.78rem;padding:8px 7px}
-.nav-menu li:nth-child(2){display:none}
-.hero{padding:38px 23px;margin-top:18px;border-radius:18px}
-.hero h1{font-size:2.2rem}
-.hero-image img{height:230px}
-.trust-strip{grid-template-columns:1fr}
-.tools-grid,.guides-grid,.why-grid{grid-template-columns:1fr}
-.calculator-form,.calculator-result{padding:22px}
-.safety-card{padding:22px}
-.safety-form{grid-template-columns:1fr}
-.footer-grid{grid-template-columns:1fr}
-.hero-actions{flex-direction:column}
-.hero-actions .btn{width:100%}
+
+  .nav-inner{
+    min-height:62px;
+  }
+
+  .nav-menu{
+    gap:2px;
+  }
+
+  .nav-menu a{
+    font-size:.78rem;
+    padding:8px 7px;
+  }
+
+  .nav-menu li:nth-child(2){
+    display:none;
+  }
+
+  .hero{
+    padding:38px 23px;
+    margin-top:18px;
+    border-radius:18px;
+  }
+
+  .hero h1{
+    font-size:2.2rem;
+  }
+
+  .hero-image img{
+    height:230px;
+  }
+
+  .trust-strip{
+    grid-template-columns:1fr;
+  }
+
+  .tools-grid,
+  .guides-grid,
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .guides-grid .guide-card:last-child{
+    grid-column:auto;
+  }
+
+  .guide-card{
+    min-height:0;
+    padding:23px;
+  }
+
+  .calculator-form,
+  .calculator-result{
+    padding:22px;
+  }
+
+  .safety-card{
+    padding:22px;
+  }
+
+  .safety-form{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-actions{
+    flex-direction:column;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+  }
 }
 </style>
 </head>
 
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBB62JBG80"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
 
-  gtag('js', new Date());
-  gtag('config', 'G-JBB62JBG80');
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){
+  dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+gtag('config', 'G-JBB62JBG80');
 </script>
+
 
 <body>
 
 <nav class="site-nav">
+
 <div class="nav-inner">
+
 <a href="index.html" class="brand">
-<span class="brand-mark">🐾</span>Pet Diet Engine
+<span class="brand-mark">🐾</span>
+Pet Diet Engine
 </a>
 
 <ul class="nav-menu">
-  <li>
-    <a href="index.html">Home</a>
-  </li>
 
-  <li>
-    <a href="articles.html">Guides</a>
-  </li>
+<li>
+<a href="index.html">Home</a>
+</li>
 
-  <li>
-    <a href="#calculator" class="nav-primary">Calculator</a>
-  </li>
+<li>
+<a href="articles.html">Guides</a>
+</li>
 
-  <li>
-    <a href="pet-nutrition-quiz.html">🐾 Quiz</a>
-  </li>
+<li>
+<a href="#calculator" class="nav-primary">Calculator</a>
+</li>
+
+<li>
+<a href="pet-nutrition-quiz.html">🐾 Quiz</a>
+</li>
+
 </ul>
+
 </div>
 </nav>
 
+
 <main class="container">
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
+
 <div class="hero-grid">
 
 <div>
-<div class="hero-badge">🧪 Free Pet Nutrition Tools</div>
 
-<h1>Smarter Nutrition <span>for Happier Pets.</span></h1>
+<div class="hero-badge">
+🧪 Free Pet Nutrition Tools
+</div>
+
+<h1>
+Smarter Nutrition
+<span>for Happier Pets.</span>
+</h1>
 
 <p class="hero-text">
 Estimate daily calorie needs, calculate food portions, check common ingredient safety, and explore practical nutrition guides for dogs and cats.
 </p>
 
 <div class="hero-actions">
-<a href="#calculator" class="btn btn-primary">⚡ Calculate Daily Needs</a>
-<a href="articles.html" class="btn btn-secondary">📚 Explore Guides</a>
-</div>
+
+<a href="#calculator" class="btn btn-primary">
+⚡ Calculate Daily Needs
+</a>
+
+<a href="articles.html" class="btn btn-secondary">
+📚 Explore Guides
+</a>
+
 </div>
 
+</div>
+
+
 <div class="hero-image">
-<img src="1785328454295.png"
+
+<img
+src="1785328454295.png"
 alt="Dog and cat enjoying pet food"
 width="600"
 height="400"
 loading="eager"
 fetchpriority="high">
+
 </div>
 
 </div>
 </section>
 
+
+<!-- =========================
+     TRUST
+========================= -->
+
 <div class="trust-strip">
+
 <div class="trust-item">
 <strong>🐶 Dogs & Cats</strong>
 Separate pet-type calculations
@@ -305,25 +1154,45 @@ No account required
 <strong>📚 Educational</strong>
 Designed for informed pet parents
 </div>
+
 </div>
+
+
+<!-- =========================
+     CALCULATOR
+========================= -->
 
 <section class="section" id="calculator">
 
 <div class="section-heading">
-<h2>Pet Daily Calorie & Portion Calculator</h2>
+
+<h2>
+Pet Daily Calorie & Portion Calculator
+</h2>
+
 <p>
 Estimate daily energy requirements and calculate an approximate daily food amount using the calorie density of your pet's food.
 </p>
+
 </div>
 
+
 <div class="calculator-card">
+
 
 <div class="calculator-form">
 
 <div class="calculator-title">
+
 <span>🐾</span>
-<h3>Enter Your Pet's Details</h3>
+
+<h3>
+Enter Your Pet's Details
+</h3>
+
 </div>
+
+
 <div class="hero-actions">
 
 <a href="#calculator" class="btn btn-primary">
@@ -339,44 +1208,91 @@ Estimate daily energy requirements and calculate an approximate daily food amoun
 </a>
 
 </div>
+
+
 <p class="form-help">
 These are educational estimates for healthy pets. Individual needs can vary significantly.
 </p>
 
-<div class="form-group">
-<label for="petType">Pet type</label>
-<select id="petType">
-<option value="dog">Dog</option>
-<option value="cat">Cat</option>
-</select>
-</div>
 
 <div class="form-group">
-<label for="petWeight">Weight</label>
-<input id="petWeight"
+
+<label for="petType">
+Pet type
+</label>
+
+<select id="petType">
+
+<option value="dog">
+Dog
+</option>
+
+<option value="cat">
+Cat
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="petWeight">
+Weight
+</label>
+
+<input
+id="petWeight"
 type="number"
 min="0.1"
 max="150"
 step="0.1"
 placeholder="Example: 20">
+
 </div>
 
+
 <div class="form-group">
-<label for="weightUnit">Weight unit</label>
+
+<label for="weightUnit">
+Weight unit
+</label>
+
 <select id="weightUnit">
-<option value="kg">Kilograms (kg)</option>
-<option value="lb">Pounds (lb)</option>
+
+<option value="kg">
+Kilograms (kg)
+</option>
+
+<option value="lb">
+Pounds (lb)
+</option>
+
 </select>
+
 </div>
 
+
 <div class="form-group">
-<label for="lifeStage">Life stage / activity</label>
+
+<label for="lifeStage">
+Life stage / activity
+</label>
+
 <select id="lifeStage"></select>
+
 </div>
 
+
 <div class="form-group">
-<label for="foodCalories">Food energy density (optional)</label>
-<input id="foodCalories"
+
+<label for="foodCalories">
+Food energy density (optional)
+</label>
+
+<input
+id="foodCalories"
 type="number"
 min="1"
 max="10000"
@@ -386,25 +1302,35 @@ placeholder="Example: 350 kcal / 100g">
 <div class="form-help">
 Find kcal/100g on your food label. Leave blank if unknown.
 </div>
+
 </div>
 
-<button type="button"
+
+<button
+type="button"
 class="calculate-btn"
 id="calculateButton">
+
 Calculate My Pet's Needs
+
 </button>
 
 </div>
 
+
 <div class="calculator-result">
 
-<div id="calculatorPlaceholder" class="result-placeholder">
+<div
+id="calculatorPlaceholder"
+class="result-placeholder">
 
 <div style="font-size:3rem;margin-bottom:10px;">
 📊
 </div>
 
-<strong>Your results will appear here.</strong>
+<strong>
+Your results will appear here.
+</strong>
 
 <p style="margin-top:6px;">
 Enter your pet's weight and activity profile.
@@ -412,7 +1338,9 @@ Enter your pet's weight and activity profile.
 
 </div>
 
-<div id="calculatorResult"
+
+<div
+id="calculatorResult"
 class="result-box"
 aria-live="polite">
 
@@ -422,7 +1350,9 @@ aria-live="polite">
 Estimated daily energy
 </div>
 
-<div class="result-number" id="calorieResult">
+<div
+class="result-number"
+id="calorieResult">
 —
 </div>
 
@@ -432,21 +1362,44 @@ kcal per day
 
 </div>
 
+
 <div class="result-grid">
 
 <div class="result-stat">
-<span class="result-label">RER</span>
-<strong id="rerResult">—</strong>
-<small>kcal/day</small>
+
+<span class="result-label">
+RER
+</span>
+
+<strong id="rerResult">
+—
+</strong>
+
+<small>
+kcal/day
+</small>
+
 </div>
+
 
 <div class="result-stat">
-<span class="result-label">Food amount</span>
-<strong id="foodResult">—</strong>
-<small id="foodUnit">g/day</small>
+
+<span class="result-label">
+Food amount
+</span>
+
+<strong id="foodResult">
+—
+</strong>
+
+<small id="foodUnit">
+g/day
+</small>
+
 </div>
 
 </div>
+
 
 <p class="result-note">
 This calculator provides an educational estimate. It does not diagnose disease, prescribe a therapeutic diet, or replace advice from a veterinarian or qualified veterinary nutrition professional.
@@ -458,71 +1411,149 @@ This calculator provides an educational estimate. It does not diagnose disease, 
 </div>
 </section>
 
+
+<!-- =========================
+     TOOLS
+========================= -->
+
 <section class="section">
 
 <div class="section-heading">
-<h2>Pet Nutrition Tools</h2>
-<p>Start with the tool that matches what you need.</p>
+
+<h2>
+Pet Nutrition Tools
+</h2>
+
+<p>
+Start with the tool that matches what you need.
+</p>
+
 </div>
+
 
 <div class="tools-grid">
 
 <a href="#calculator" class="tool-card">
-<div class="tool-icon">⚡</div>
-<h3>Daily Calorie Calculator</h3>
-<p>Estimate daily energy requirements and food portions.</p>
+
+<div class="tool-icon">
+⚡
+</div>
+
+<h3>
+Daily Calorie Calculator
+</h3>
+
+<p>
+Estimate daily energy requirements and food portions.
+</p>
+
 </a>
+
 
 <a href="#safety-checker" class="tool-card">
-<div class="tool-icon">🧪</div>
-<h3>Ingredient Safety Checker</h3>
-<p>Check common ingredients before offering them to your pet.</p>
+
+<div class="tool-icon">
+🧪
+</div>
+
+<h3>
+Ingredient Safety Checker
+</h3>
+
+<p>
+Check common ingredients before offering them to your pet.
+</p>
+
 </a>
+
 
 <a href="articles.html#meal-calculator" class="tool-card">
-<div class="tool-icon">🍽️</div>
-<h3>Meal & Macro Calculator</h3>
-<p>Explore the detailed meal calculator in our nutrition guide.</p>
+
+<div class="tool-icon">
+🍽️
+</div>
+
+<h3>
+Meal & Macro Calculator
+</h3>
+
+<p>
+Explore the detailed meal calculator in our nutrition guide.
+</p>
+
 </a>
 
+
 <a href="pet-food-allergy-elimination-diet-guide.html" class="tool-card">
-<div class="tool-icon">🛡️</div>
-<h3>Food Allergy Guide</h3>
-<p>Learn about elimination diets and food sensitivities.</p>
+
+<div class="tool-icon">
+🛡️
+</div>
+
+<h3>
+Food Allergy Guide
+</h3>
+
+<p>
+Learn about elimination diets and food sensitivities.
+</p>
+
 </a>
 
 </div>
 </section>
+
+
+<!-- =========================
+     SAFETY CHECKER
+========================= -->
 
 <section class="section" id="safety-checker">
 
 <div class="safety-card">
 
 <div class="safety-header">
-<h2>🧪 Ingredient Safety Checker</h2>
+
+<h2>
+🧪 Ingredient Safety Checker
+</h2>
+
 <p>
 Search common foods and ingredients for a quick educational safety reference.
 </p>
+
 </div>
+
 
 <div class="safety-form">
 
-<input id="ingredientInput"
+<input
+id="ingredientInput"
 type="text"
 placeholder="Try: grapes, chicken, garlic, carrot...">
 
-<button type="button" id="safetyButton">
+<button
+type="button"
+id="safetyButton">
+
 Check Safety
+
 </button>
 
 </div>
 
-<!-- Dedicated Can My Dog Eat This? tool link -->
-<a href="can-my-dog-eat-this.html" class="safety-tool-link">
+
+<a
+href="can-my-dog-eat-this.html"
+class="safety-tool-link">
+
 🐶 Open Full Food Safety Checker →
+
 </a>
 
-<div id="safetyResult"
+
+<div
+id="safetyResult"
 class="safety-result"
 aria-live="polite">
 </div>
@@ -530,203 +1561,452 @@ aria-live="polite">
 </div>
 </section>
 
+
+<!-- =========================
+     WHY
+========================= -->
+
 <section class="section">
 
 <div class="section-heading">
-<h2>Built for Better Pet-Food Decisions</h2>
+
+<h2>
+Built for Better Pet-Food Decisions
+</h2>
+
 <p>
 Pet Diet Engine combines practical tools with educational nutrition content so pet parents can make more informed choices.
 </p>
+
 </div>
+
 
 <div class="why-grid">
 
 <div class="why-card">
+
 <span>📐</span>
-<h3>Portion Awareness</h3>
+
+<h3>
+Portion Awareness
+</h3>
+
 <p>
 Use calorie estimates and food energy density to understand how much food may fit into your pet's daily energy budget.
 </p>
+
 </div>
 
+
 <div class="why-card">
+
 <span>🔎</span>
-<h3>Ingredient Awareness</h3>
+
+<h3>
+Ingredient Awareness
+</h3>
+
 <p>
 Quickly identify common ingredients that may require caution or should not be fed to dogs and cats.
 </p>
+
 </div>
 
+
 <div class="why-card">
+
 <span>📚</span>
-<h3>Practical Education</h3>
+
+<h3>
+Practical Education
+</h3>
+
 <p>
 Explore guides covering pet food, homemade diets, allergies, recipes and nutrition concepts.
 </p>
+
 </div>
 
 </div>
 </section>
 
+
+<!-- ==================================================
+     FEATURED PET NUTRITION GUIDES
+     CORRECTED HTML STRUCTURE
+================================================== -->
+
 <section class="section">
 
 <div class="section-heading">
-<h2>Featured Pet Nutrition Guides</h2>
-<p>Explore practical guides and food analysis.</p>
+
+<h2>
+Featured Pet Nutrition Guides
+</h2>
+
+<p>
+Explore practical guides and food analysis.
+</p>
+
 </div>
 
+
 <div class="guides-grid">
+
+
+<!-- GUIDE 1 -->
+
 <article class="guide-card">
-  <span class="tag">PET FOOD SAFETY</span>
-  <h3>Fromm Dog Food Recall 2026</h3>
-  <p>
-    Check the affected Fromm dog food products, lot codes, Best By date and recommended next steps.
-  </p>
-  <a href="fromm-dog-food-metal-recall-2026.html" class="guide-link">
-    Check Recall Details →
-  </a>
+
+<span class="tag">
+PET FOOD SAFETY
+</span>
+
+<h3>
+Fromm Dog Food Recall 2026
+</h3>
+
+<p>
+Check the affected Fromm dog food products, lot codes, Best By date and recommended next steps.
+</p>
+
+<a
+href="fromm-dog-food-metal-recall-2026.html"
+class="guide-link">
+
+Check Recall Details →
+
+</a>
+
 </article>
+
+
+<!-- GUIDE 2 -->
+
 <article class="guide-card">
-<span class="tag">DOG FOOD</span>
-<h3>Farmina N&amp;D Dog Food Review</h3>
+
+<span class="tag">
+DOG FOOD
+</span>
+
+<h3>
+Farmina N&amp;D Dog Food Review
+</h3>
+
 <p>
 Explore ingredients, product lines, nutrition considerations and safety topics.
 </p>
-<a href="farmina-nd-dog-food-review.html" class="guide-link">
+
+<a
+href="farmina-nd-dog-food-review.html"
+class="guide-link">
+
 Read Review →
+
 </a>
+
 </article>
 
+
+<!-- GUIDE 3 -->
+
 <article class="guide-card">
-<span class="tag">HOMEMADE FOOD</span>
-<h3>High-Protein Homemade Dog Food</h3>
+
+<span class="tag">
+HOMEMADE FOOD
+</span>
+
+<h3>
+High-Protein Homemade Dog Food
+</h3>
+
 <p>
 Learn how to think about calories, portions and nutritional balance when preparing homemade meals.
 </p>
-<a href="high-protein-homemade-dog-food-recipe.html" class="guide-link">
+
+<a
+href="high-protein-homemade-dog-food-recipe.html"
+class="guide-link">
+
 Read Recipe Guide →
+
 </a>
+
 </article>
 
+
+<!-- GUIDE 4 -->
+
 <article class="guide-card">
-<span class="tag">ALLERGIES</span>
-<h3>Pet Food Allergy &amp; Elimination Diet Guide</h3>
+
+<span class="tag">
+ALLERGIES
+</span>
+
+<h3>
+Pet Food Allergy &amp; Elimination Diet Guide
+</h3>
+
 <p>
 Understand elimination-diet concepts and why veterinary guidance matters for suspected food allergies.
 </p>
-<a href="pet-food-allergy-elimination-diet-guide.html" class="guide-link">
+
+<a
+href="pet-food-allergy-elimination-diet-guide.html"
+class="guide-link">
+
 Read Allergy Guide →
+
 </a>
+
 </article>
 
+
+<!-- GUIDE 5 -->
+
 <article class="guide-card">
-<span class="tag">NUTRITION</span>
-<h3>Macro Counting Recipes for Pet Owners</h3>
+
+<span class="tag">
+NUTRITION
+</span>
+
+<h3>
+Macro Counting Recipes for Pet Owners
+</h3>
+
 <p>
 Explore calories, protein, fat, ingredients and portion planning for homemade pet meals.
 </p>
-<a href="macro-counting-recipes-for-pet-owners.html" class="guide-link">
-  Read Macro Guide →
+
+<a
+href="macro-counting-recipes-for-pet-owners.html"
+class="guide-link">
+
+Read Macro Guide →
+
 </a>
 
+</article>
+
+
+<!-- GUIDE 6 -->
+
 <article class="guide-card">
-<span class="tag">COMPLETE GUIDE</span>
-<h3>Homemade &amp; Fresh Pet Diet Guide</h3>
+
+<span class="tag">
+COMPLETE GUIDE
+</span>
+
+<h3>
+Homemade &amp; Fresh Pet Diet Guide
+</h3>
+
 <p>
 Learn about daily portions, food safety, diet transitions and practical nutrition considerations.
 </p>
-<a href="articles.html" class="guide-link">
+
+<a
+href="articles.html"
+class="guide-link">
+
 Explore Full Guide →
+
 </a>
+
 </article>
 
+
+<!-- GUIDE 7 -->
+
 <article class="guide-card">
-<span class="tag">ALL TOOLS</span>
-<h3>Pet Diet Engine Toolkit</h3>
+
+<span class="tag">
+ALL TOOLS
+</span>
+
+<h3>
+Pet Diet Engine Toolkit
+</h3>
+
 <p>
 Access calculators, guides and nutrition resources in one place.
 </p>
-<a href="articles.html" class="guide-link">
+
+<a
+href="articles.html"
+class="guide-link">
+
 Explore Tools →
+
 </a>
+
 </article>
+
 
 </div>
 </section>
+
+
+<!-- =========================
+     POPULAR RESOURCES
+========================= -->
 
 <section class="section">
 
 <div class="section-heading">
-<h2>Popular Pet Diet Resources</h2>
+
+<h2>
+Popular Pet Diet Resources
+</h2>
+
 </div>
+
 
 <div class="tools-grid">
 
-<a href="farmina-nd-dog-food-review.html" class="tool-card">
-<div class="tool-icon">🍲</div>
-<h3>Farmina N&amp;D Review</h3>
-<p>Ingredient and product-line analysis.</p>
+<a
+href="farmina-nd-dog-food-review.html"
+class="tool-card">
+
+<div class="tool-icon">
+🍲
+</div>
+
+<h3>
+Farmina N&amp;D Review
+</h3>
+
+<p>
+Ingredient and product-line analysis.
+</p>
+
 </a>
 
-<a href="high-protein-homemade-dog-food-recipe.html" class="tool-card">
-<div class="tool-icon">🥩</div>
-<h3>Homemade Dog Food</h3>
-<p>Protein-focused recipe education.</p>
+
+<a
+href="high-protein-homemade-dog-food-recipe.html"
+class="tool-card">
+
+<div class="tool-icon">
+🥩
+</div>
+
+<h3>
+Homemade Dog Food
+</h3>
+
+<p>
+Protein-focused recipe education.
+</p>
+
 </a>
 
-<a href="macro-counting-recipes-pet-owners.html" class="tool-card">
-<div class="tool-icon">📊</div>
-<h3>Macro Counting Guide</h3>
-<p>Learn about calories and macronutrients.</p>
+
+<a
+href="macro-counting-recipes-pet-owners.html"
+class="tool-card">
+
+<div class="tool-icon">
+📊
+</div>
+
+<h3>
+Macro Counting Guide
+</h3>
+
+<p>
+Learn about calories and macronutrients.
+</p>
+
 </a>
 
-<a href="pet-food-allergy-elimination-diet-guide.html" class="tool-card">
-<div class="tool-icon">🩺</div>
-<h3>Allergy &amp; Elimination Guide</h3>
-<p>Practical educational resource.</p>
+
+<a
+href="pet-food-allergy-elimination-diet-guide.html"
+class="tool-card">
+
+<div class="tool-icon">
+🩺
+</div>
+
+<h3>
+Allergy &amp; Elimination Guide
+</h3>
+
+<p>
+Practical educational resource.
+</p>
+
 </a>
 
 </div>
 </section>
+
+
+<!-- =========================
+     SHARE
+========================= -->
 
 <section class="share-box">
 
-<h3>Share Pet Diet Engine</h3>
+<h3>
+Share Pet Diet Engine
+</h3>
 
 <div class="share-buttons">
 
-<button class="share-btn facebook"
+<button
+class="share-btn facebook"
 type="button"
 id="shareFacebook">
+
 Facebook
+
 </button>
 
-<button class="share-btn whatsapp"
+<button
+class="share-btn whatsapp"
 type="button"
 id="shareWhatsApp">
+
 WhatsApp
+
 </button>
 
-<button class="share-btn pinterest"
+<button
+class="share-btn pinterest"
 type="button"
 id="sharePinterest">
+
 Pinterest
+
 </button>
 
-<button class="share-btn x"
+<button
+class="share-btn x"
 type="button"
 id="shareX">
+
 X
+
 </button>
 
-<button class="share-btn copy"
+<button
+class="share-btn copy"
 type="button"
 id="copyLink">
+
 Copy Link
+
 </button>
 
 </div>
 </section>
+
+
+<!-- =========================
+     DISCLAIMER
+========================= -->
 
 <div class="disclaimer">
 
@@ -736,567 +2016,801 @@ Pet Diet Engine provides educational information and estimation tools. Results a
 
 </div>
 
+
 </main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-  <div style="margin-top:25px;">
-  <a href="pet-nutrition-quiz.html"
-     style="display:inline-block;
-            background:#2563eb;
-            color:#ffffff;
-            padding:12px 24px;
-            border-radius:30px;
-            text-decoration:none;
-            font-weight:700;
-            font-size:15px;
-            transition:0.2s;">
-    🐾 Take the Pet Nutrition Quiz
-  </a>
-  </div>
+<div style="text-align:center;margin-top:25px;">
+
+<a
+href="pet-nutrition-quiz.html"
+style="
+display:inline-block;
+background:#2563eb;
+color:#ffffff;
+padding:12px 24px;
+border-radius:30px;
+text-decoration:none;
+font-weight:700;
+font-size:15px;
+transition:0.2s;
+">
+
+🐾 Take the Pet Nutrition Quiz
+
+</a>
+
+</div>
+
 
 <div class="footer-inner">
 
 <div class="footer-grid">
 
+
 <div class="footer-section">
-<h3>Pet Diet Engine</h3>
+
+<h3>
+Pet Diet Engine
+</h3>
+
 <p>
 Practical pet nutrition calculators, ingredient safety tools and educational resources for responsible pet owners.
 </p>
+
 </div>
+
 
 <div class="footer-section">
-<h3>Explore</h3>
-<p><a href="index.html">Home</a></p>
-<p><a href="articles.html">Nutrition Guides</a></p>
-<p><a href="#calculator">Calorie Calculator</a></p>
-<p><a href="#safety-checker">Safety Checker</a></p>
+
+<h3>
+Explore
+</h3>
+
+<p>
+<a href="index.html">
+Home
+</a>
+</p>
+
+<p>
+<a href="articles.html">
+Nutrition Guides
+</a>
+</p>
+
+<p>
+<a href="#calculator">
+Calorie Calculator
+</a>
+</p>
+
+<p>
+<a href="#safety-checker">
+Safety Checker
+</a>
+</p>
+
 </div>
+
 
 <div class="footer-section">
-<h3>Resources</h3>
-<p><a href="farmina-nd-dog-food-review.html">Farmina N&amp;D Review</a></p>
-<p><a href="high-protein-homemade-dog-food-recipe.html">Homemade Dog Food</a></p>
-<p><a href="macro-counting-recipes-pet-owners.html">Macro Guide</a></p>
-<p><a href="pet-food-allergy-elimination-diet-guide.html">Allergy Guide</a></p>
+
+<h3>
+Resources
+</h3>
+
+<p>
+<a href="farmina-nd-dog-food-review.html">
+Farmina N&amp;D Review
+</a>
+</p>
+
+<p>
+<a href="high-protein-homemade-dog-food-recipe.html">
+Homemade Dog Food
+</a>
+</p>
+
+<p>
+<a href="macro-counting-recipes-pet-owners.html">
+Macro Guide
+</a>
+</p>
+
+<p>
+<a href="pet-food-allergy-elimination-diet-guide.html">
+Allergy Guide
+</a>
+</p>
+
 </div>
+
 
 <div class="footer-section">
-<h3>Legal</h3>
-<p><a href="privacy.html">Privacy Policy</a></p>
-<p><a href="terms.html">Terms of Service</a></p>
-<p><a href="contact.html">Contact</a></p>
+
+<h3>
+Legal
+</h3>
+
+<p>
+<a href="privacy.html">
+Privacy Policy
+</a>
+</p>
+
+<p>
+<a href="terms.html">
+Terms of Service
+</a>
+</p>
+
+<p>
+<a href="contact.html">
+Contact
+</a>
+</p>
+
 </div>
 
 </div>
+
 
 <div class="footer-bottom">
+
 © 2026 <strong>Pet Diet Engine</strong>. All Rights Reserved.
+
 </div>
 
 </div>
+
 </footer>
+
 
 <script>
 "use strict";
 
-/* ---------- Calculator ---------- */
 
-const petType = document.getElementById("petType");
-const petWeight = document.getElementById("petWeight");
-const weightUnit = document.getElementById("weightUnit");
-const lifeStage = document.getElementById("lifeStage");
-const foodCalories = document.getElementById("foodCalories");
+/* ==========================================
+   CALCULATOR
+========================================== */
 
-const calculatorPlaceholder = document.getElementById("calculatorPlaceholder");
-const calculatorResult = document.getElementById("calculatorResult");
-const calorieResult = document.getElementById("calorieResult");
-const rerResult = document.getElementById("rerResult");
-const foodResult = document.getElementById("foodResult");
-const foodUnit = document.getElementById("foodUnit");
+const petType =
+document.getElementById("petType");
 
-function updateLifeStages() {
+const petWeight =
+document.getElementById("petWeight");
 
-    lifeStage.innerHTML = "";
+const weightUnit =
+document.getElementById("weightUnit");
 
-    if (petType.value === "dog") {
+const lifeStage =
+document.getElementById("lifeStage");
 
-        lifeStage.innerHTML =
-            '<option value="adult">Adult — typical activity</option>' +
-            '<option value="inactive">Adult — inactive / weight management</option>' +
-            '<option value="active">Adult — active</option>' +
-            '<option value="puppy">Puppy / growing</option>';
+const foodCalories =
+document.getElementById("foodCalories");
 
-    } else {
 
-        lifeStage.innerHTML =
-            '<option value="adult">Adult — typical activity</option>' +
-            '<option value="inactive">Adult — lower activity</option>' +
-            '<option value="active">Adult — active</option>' +
-            '<option value="kitten">Kitten / growing</option>';
+const calculatorPlaceholder =
+document.getElementById("calculatorPlaceholder");
 
-    }
+const calculatorResult =
+document.getElementById("calculatorResult");
+
+const calorieResult =
+document.getElementById("calorieResult");
+
+const rerResult =
+document.getElementById("rerResult");
+
+const foodResult =
+document.getElementById("foodResult");
+
+const foodUnit =
+document.getElementById("foodUnit");
+
+
+function updateLifeStages(){
+
+  lifeStage.innerHTML = "";
+
+  if(petType.value === "dog"){
+
+    lifeStage.innerHTML =
+      '<option value="adult">Adult — typical activity</option>' +
+      '<option value="inactive">Adult — inactive / weight management</option>' +
+      '<option value="active">Adult — active</option>' +
+      '<option value="puppy">Puppy / growing</option>';
+
+  }else{
+
+    lifeStage.innerHTML =
+      '<option value="adult">Adult — typical activity</option>' +
+      '<option value="inactive">Adult — lower activity</option>' +
+      '<option value="active">Adult — active</option>' +
+      '<option value="kitten">Kitten / growing</option>';
+
+  }
 }
 
-function calculatePetNeeds() {
 
-    const type = petType.value;
-    const weightValue = parseFloat(petWeight.value);
-    const unit = weightUnit.value;
-    const stage = lifeStage.value;
-    const foodEnergy = parseFloat(foodCalories.value);
+function calculatePetNeeds(){
 
-    if (!Number.isFinite(weightValue) || weightValue <= 0) {
+  const type =
+    petType.value;
 
-        alert("Please enter a valid pet weight.");
-        petWeight.focus();
-        return;
+  const weightValue =
+    parseFloat(petWeight.value);
 
-    }
+  const unit =
+    weightUnit.value;
 
-    let kg = unit === "lb"
-        ? weightValue * 0.45359237
-        : weightValue;
+  const stage =
+    lifeStage.value;
 
-    if (!Number.isFinite(kg) || kg <= 0 || kg > 150) {
+  const foodEnergy =
+    parseFloat(foodCalories.value);
 
-        alert("Please enter a realistic pet weight between 0.1 kg and 150 kg.");
-        petWeight.focus();
-        return;
 
-    }
+  if(!Number.isFinite(weightValue) || weightValue <= 0){
 
-    if (
-        Number.isFinite(foodEnergy) &&
-        (foodEnergy <= 0 || foodEnergy > 10000)
-    ) {
+    alert("Please enter a valid pet weight.");
 
-        alert("Please enter a food energy value between 1 and 10,000 kcal per 100g, or leave it blank.");
-        foodCalories.focus();
-        return;
+    petWeight.focus();
 
-    }
+    return;
+  }
 
-    const rer = 70 * Math.pow(kg, 0.75);
 
-    let factor;
+  let kg =
+    unit === "lb"
+      ? weightValue * 0.45359237
+      : weightValue;
 
-    if (type === "dog") {
 
-        if (stage === "inactive")
-            factor = 1.0;
+  if(!Number.isFinite(kg) || kg <= 0 || kg > 150){
 
-        else if (stage === "active")
-            factor = 1.6;
+    alert(
+      "Please enter a realistic pet weight between 0.1 kg and 150 kg."
+    );
 
-        else if (stage === "puppy")
-            factor = 2.0;
+    petWeight.focus();
 
-        else
-            factor = 1.4;
+    return;
+  }
 
-    } else {
 
-        if (stage === "inactive")
-            factor = 1.0;
+  if(
+    Number.isFinite(foodEnergy) &&
+    (foodEnergy <= 0 || foodEnergy > 10000)
+  ){
 
-        else if (stage === "active")
-            factor = 1.4;
+    alert(
+      "Please enter a food energy value between 1 and 10,000 kcal per 100g, or leave it blank."
+    );
 
-        else if (stage === "kitten")
-            factor = 2.5;
+    foodCalories.focus();
 
-        else
-            factor = 1.2;
+    return;
+  }
 
-    }
 
-    const dailyCalories = rer * factor;
+  const rer =
+    70 * Math.pow(kg,0.75);
 
-    calorieResult.textContent =
-        Math.round(dailyCalories).toLocaleString();
 
-    rerResult.textContent =
-        Math.round(rer).toLocaleString();
+  let factor;
 
-    if (Number.isFinite(foodEnergy) && foodEnergy > 0) {
 
-        const grams =
-            (dailyCalories / foodEnergy) * 100;
+  if(type === "dog"){
 
-        foodResult.textContent =
-            Math.round(grams).toLocaleString();
+    if(stage === "inactive")
+      factor = 1.0;
 
-        foodUnit.textContent = "g/day";
+    else if(stage === "active")
+      factor = 1.6;
 
-    } else {
+    else if(stage === "puppy")
+      factor = 2.0;
 
-        foodResult.textContent = "—";
-        foodUnit.textContent = "Add kcal/100g";
+    else
+      factor = 1.4;
 
-    }
+  }else{
 
-    calculatorPlaceholder.style.display = "none";
+    if(stage === "inactive")
+      factor = 1.0;
 
-    calculatorResult.classList.add("show");
+    else if(stage === "active")
+      factor = 1.4;
 
-    calculatorResult.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-    });
+    else if(stage === "kitten")
+      factor = 2.5;
+
+    else
+      factor = 1.2;
+
+  }
+
+
+  const dailyCalories =
+    rer * factor;
+
+
+  calorieResult.textContent =
+    Math.round(dailyCalories).toLocaleString();
+
+
+  rerResult.textContent =
+    Math.round(rer).toLocaleString();
+
+
+  if(Number.isFinite(foodEnergy) && foodEnergy > 0){
+
+    const grams =
+      (dailyCalories / foodEnergy) * 100;
+
+    foodResult.textContent =
+      Math.round(grams).toLocaleString();
+
+    foodUnit.textContent =
+      "g/day";
+
+  }else{
+
+    foodResult.textContent =
+      "—";
+
+    foodUnit.textContent =
+      "Add kcal/100g";
+
+  }
+
+
+  calculatorPlaceholder.style.display =
+    "none";
+
+  calculatorResult.classList.add("show");
+
+
+  calculatorResult.scrollIntoView({
+    behavior:"smooth",
+    block:"nearest"
+  });
+
 }
+
 
 document
-    .getElementById("calculateButton")
-    .addEventListener("click", calculatePetNeeds);
+.getElementById("calculateButton")
+.addEventListener(
+  "click",
+  calculatePetNeeds
+);
 
-petType.addEventListener("change", updateLifeStages);
 
-petWeight.addEventListener("keydown", e => {
-    if (e.key === "Enter")
-        calculatePetNeeds();
-});
+petType.addEventListener(
+  "change",
+  updateLifeStages
+);
 
-foodCalories.addEventListener("keydown", e => {
-    if (e.key === "Enter")
-        calculatePetNeeds();
-});
+
+petWeight.addEventListener(
+  "keydown",
+  e => {
+
+    if(e.key === "Enter")
+      calculatePetNeeds();
+
+  }
+);
+
+
+foodCalories.addEventListener(
+  "keydown",
+  e => {
+
+    if(e.key === "Enter")
+      calculatePetNeeds();
+
+  }
+);
+
 
 updateLifeStages();
 
 
-/* ---------- Ingredient Safety Checker ---------- */
+/* ==========================================
+   INGREDIENT SAFETY CHECKER
+========================================== */
 
 const ingredientDatabase = {
 
-    grapes: [
-        "danger",
-        "Avoid — Grapes",
-        "Grapes and raisins have been associated with acute kidney injury in dogs. Do not intentionally feed them."
-    ],
+  grapes:[
+    "danger",
+    "Avoid — Grapes",
+    "Grapes and raisins have been associated with acute kidney injury in dogs. Do not intentionally feed them."
+  ],
 
-    raisins: [
-        "danger",
-        "Avoid — Raisins",
-        "Raisins can cause serious toxicity in dogs and have been associated with acute kidney injury."
-    ],
+  raisins:[
+    "danger",
+    "Avoid — Raisins",
+    "Raisins can cause serious toxicity in dogs and have been associated with acute kidney injury."
+  ],
 
-    garlic: [
-        "danger",
-        "Avoid — Garlic",
-        "Garlic belongs to the Allium family and can damage red blood cells. Concentrated forms can be particularly concerning."
-    ],
+  garlic:[
+    "danger",
+    "Avoid — Garlic",
+    "Garlic belongs to the Allium family and can damage red blood cells. Concentrated forms can be particularly concerning."
+  ],
 
-    onion: [
-        "danger",
-        "Avoid — Onion",
-        "Onions can damage red blood cells and may cause anemia in dogs and cats."
-    ],
+  onion:[
+    "danger",
+    "Avoid — Onion",
+    "Onions can damage red blood cells and may cause anemia in dogs and cats."
+  ],
 
-    chocolate: [
-        "danger",
-        "Avoid — Chocolate",
-        "Chocolate contains theobromine and caffeine, which can be toxic to dogs and cats."
-    ],
+  chocolate:[
+    "danger",
+    "Avoid — Chocolate",
+    "Chocolate contains theobromine and caffeine, which can be toxic to dogs and cats."
+  ],
 
-    xylitol: [
-        "danger",
-        "Avoid — Xylitol",
-        "Xylitol can cause dangerous hypoglycemia and potentially serious liver injury in dogs."
-    ],
+  xylitol:[
+    "danger",
+    "Avoid — Xylitol",
+    "Xylitol can cause dangerous hypoglycemia and potentially serious liver injury in dogs."
+  ],
 
-    caffeine: [
-        "danger",
-        "Avoid — Caffeine",
-        "Caffeine can be toxic to dogs and cats and should not be intentionally fed."
-    ],
+  caffeine:[
+    "danger",
+    "Avoid — Caffeine",
+    "Caffeine can be toxic to dogs and cats and should not be intentionally fed."
+  ],
 
-    alcohol: [
-        "danger",
-        "Avoid — Alcohol",
-        "Alcohol can be toxic to pets and should never be intentionally given."
-    ],
+  alcohol:[
+    "danger",
+    "Avoid — Alcohol",
+    "Alcohol can be toxic to pets and should never be intentionally given."
+  ],
 
-    macadamia: [
-        "danger",
-        "Avoid — Macadamia Nuts",
-        "Macadamia nuts can cause toxic effects in dogs and should be avoided."
-    ],
+  macadamia:[
+    "danger",
+    "Avoid — Macadamia Nuts",
+    "Macadamia nuts can cause toxic effects in dogs and should be avoided."
+  ],
 
-    chicken: [
-        "safe",
-        "Generally Safe — Plain Cooked Chicken",
-        "Plain, fully cooked, unseasoned chicken can be appropriate for many dogs and cats. Remove bones and avoid onion, garlic and heavy seasoning."
-    ],
+  chicken:[
+    "safe",
+    "Generally Safe — Plain Cooked Chicken",
+    "Plain, fully cooked, unseasoned chicken can be appropriate for many dogs and cats. Remove bones and avoid onion, garlic and heavy seasoning."
+  ],
 
-    carrot: [
-        "safe",
-        "Generally Safe — Carrot",
-        "Plain carrot can be an appropriate occasional treat for many pets. Use suitable pieces and account for treat calories."
-    ],
+  carrot:[
+    "safe",
+    "Generally Safe — Carrot",
+    "Plain carrot can be an appropriate occasional treat for many pets. Use suitable pieces and account for treat calories."
+  ],
 
-    pumpkin: [
-        "safe",
-        "Generally Safe — Plain Pumpkin",
-        "Plain cooked pumpkin without added sugar, spices or sweeteners can be appropriate for many pets."
-    ],
+  pumpkin:[
+    "safe",
+    "Generally Safe — Plain Pumpkin",
+    "Plain cooked pumpkin without added sugar, spices or sweeteners can be appropriate for many pets."
+  ],
 
-    rice: [
-        "safe",
-        "Generally Safe — Plain Cooked Rice",
-        "Plain cooked rice is generally tolerated by many dogs and cats in appropriate amounts, but it should not replace a complete and balanced diet."
-    ],
+  rice:[
+    "safe",
+    "Generally Safe — Plain Cooked Rice",
+    "Plain cooked rice is generally tolerated by many dogs and cats in appropriate amounts, but it should not replace a complete and balanced diet."
+  ],
 
-    egg: [
-        "safe",
-        "Generally Safe — Fully Cooked Egg",
-        "Fully cooked plain egg can be fed in appropriate portions to many dogs and cats."
-    ],
+  egg:[
+    "safe",
+    "Generally Safe — Fully Cooked Egg",
+    "Fully cooked plain egg can be fed in appropriate portions to many dogs and cats."
+  ],
 
-    milk: [
-        "caution",
-        "Use Caution — Milk",
-        "Many adult pets have limited ability to digest lactose. Milk can cause gastrointestinal upset."
-    ],
+  milk:[
+    "caution",
+    "Use Caution — Milk",
+    "Many adult pets have limited ability to digest lactose. Milk can cause gastrointestinal upset."
+  ],
 
-    tuna: [
-        "caution",
-        "Use Caution — Tuna",
-        "Tuna should not become a major part of a pet's diet. Product type, mercury exposure and nutritional balance matter."
-    ],
+  tuna:[
+    "caution",
+    "Use Caution — Tuna",
+    "Tuna should not become a major part of a pet's diet. Product type, mercury exposure and nutritional balance matter."
+  ],
 
-    avocado: [
-        "caution",
-        "Use Caution — Avocado",
-        "Avocado presents several considerations, including the pit and relatively high fat content. Never give the pit."
-    ],
+  avocado:[
+    "caution",
+    "Use Caution — Avocado",
+    "Avocado presents several considerations, including the pit and relatively high fat content. Never give the pit."
+  ],
 
-    salt: [
-        "caution",
-        "Use Caution — Salt",
-        "Excess sodium can be harmful. Avoid deliberately adding salt to homemade pet meals unless directed by a veterinary professional."
-    ]
+  salt:[
+    "caution",
+    "Use Caution — Salt",
+    "Excess sodium can be harmful. Avoid deliberately adding salt to homemade pet meals unless directed by a veterinary professional."
+  ]
 
 };
 
-function escapeHTML(value) {
 
-    return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+function escapeHTML(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
-function checkIngredient() {
 
-    const input =
-        document
-            .getElementById("ingredientInput")
-            .value
-            .trim()
-            .toLowerCase();
+function checkIngredient(){
 
-    const result =
-        document.getElementById("safetyResult");
+  const input =
+    document
+      .getElementById("ingredientInput")
+      .value
+      .trim()
+      .toLowerCase();
 
-    if (!input) {
 
-        result.className =
-            "safety-result show safety-caution";
+  const result =
+    document.getElementById("safetyResult");
 
-        result.innerHTML =
-            "<strong>Enter an ingredient.</strong><br>" +
-            "Try grapes, chicken, garlic, carrot, chocolate or pumpkin.";
 
-        return;
-    }
-
-    let match = null;
-
-    if (
-        Object.prototype.hasOwnProperty.call(
-            ingredientDatabase,
-            input
-        )
-    ) {
-
-        match = ingredientDatabase[input];
-
-    } else {
-
-        for (
-            const key of Object.keys(ingredientDatabase)
-        ) {
-
-            if (input.includes(key)) {
-
-                match = ingredientDatabase[key];
-                break;
-
-            }
-
-        }
-
-    }
-
-    if (!match) {
-
-        result.className =
-            "safety-result show safety-caution";
-
-        result.innerHTML =
-            "<strong>Not found in our quick-reference database.</strong><br>" +
-            "This does NOT mean the ingredient is safe. Verify unfamiliar ingredients with a reliable veterinary source or your veterinarian.";
-
-        return;
-    }
-
-    const status = match[0];
-
-    const className =
-        status === "safe"
-            ? "safety-safe"
-            : status === "danger"
-                ? "safety-danger"
-                : "safety-caution";
+  if(!input){
 
     result.className =
-        "safety-result show " + className;
+      "safety-result show safety-caution";
 
     result.innerHTML =
-        "<strong>" +
-        escapeHTML(match[1]) +
-        "</strong><br>" +
-        escapeHTML(match[2]);
+      "<strong>Enter an ingredient.</strong><br>" +
+      "Try grapes, chicken, garlic, carrot, chocolate or pumpkin.";
+
+    return;
+  }
+
+
+  let match = null;
+
+
+  if(
+    Object.prototype.hasOwnProperty.call(
+      ingredientDatabase,
+      input
+    )
+  ){
+
+    match =
+      ingredientDatabase[input];
+
+  }else{
+
+    for(
+      const key of Object.keys(ingredientDatabase)
+    ){
+
+      if(input.includes(key)){
+
+        match =
+          ingredientDatabase[key];
+
+        break;
+
+      }
+
+    }
+
+  }
+
+
+  if(!match){
+
+    result.className =
+      "safety-result show safety-caution";
+
+    result.innerHTML =
+      "<strong>Not found in our quick-reference database.</strong><br>" +
+      "This does NOT mean the ingredient is safe. Verify unfamiliar ingredients with a reliable veterinary source or your veterinarian.";
+
+    return;
+  }
+
+
+  const status =
+    match[0];
+
+
+  const className =
+    status === "safe"
+      ? "safety-safe"
+      : status === "danger"
+        ? "safety-danger"
+        : "safety-caution";
+
+
+  result.className =
+    "safety-result show " + className;
+
+
+  result.innerHTML =
+    "<strong>" +
+    escapeHTML(match[1]) +
+    "</strong><br>" +
+    escapeHTML(match[2]);
 
 }
 
-document
-    .getElementById("safetyButton")
-    .addEventListener("click", checkIngredient);
 
 document
-    .getElementById("ingredientInput")
-    .addEventListener("keydown", e => {
-
-        if (e.key === "Enter")
-            checkIngredient();
-
-    });
+.getElementById("safetyButton")
+.addEventListener(
+  "click",
+  checkIngredient
+);
 
 
-/* ---------- Sharing ---------- */
+document
+.getElementById("ingredientInput")
+.addEventListener(
+  "keydown",
+  e => {
 
-function openShare(url) {
+    if(e.key === "Enter")
+      checkIngredient();
 
-    window.open(
-        url,
-        "_blank",
-        "noopener,noreferrer,width=700,height=600"
+  }
+);
+
+
+/* ==========================================
+   SHARING
+========================================== */
+
+function openShare(url){
+
+  window.open(
+    url,
+    "_blank",
+    "noopener,noreferrer,width=700,height=600"
+  );
+
+}
+
+
+document
+.getElementById("shareFacebook")
+.addEventListener(
+  "click",
+  () => {
+
+    openShare(
+      "https://www.facebook.com/sharer/sharer.php?u=" +
+      encodeURIComponent(window.location.href)
     );
 
-}
+  }
+);
+
 
 document
-    .getElementById("shareFacebook")
-    .addEventListener("click", () => {
+.getElementById("shareWhatsApp")
+.addEventListener(
+  "click",
+  () => {
 
-        openShare(
-            "https://www.facebook.com/sharer/sharer.php?u=" +
-            encodeURIComponent(window.location.href)
+    openShare(
+      "https://api.whatsapp.com/send?text=" +
+      encodeURIComponent(
+        document.title + " " + window.location.href
+      )
+    );
+
+  }
+);
+
+
+document
+.getElementById("sharePinterest")
+.addEventListener(
+  "click",
+  () => {
+
+    openShare(
+      "https://pinterest.com/pin/create/button/?url=" +
+      encodeURIComponent(window.location.href) +
+      "&description=" +
+      encodeURIComponent(document.title)
+    );
+
+  }
+);
+
+
+document
+.getElementById("shareX")
+.addEventListener(
+  "click",
+  () => {
+
+    openShare(
+      "https://twitter.com/intent/tweet?text=" +
+      encodeURIComponent(document.title) +
+      "&url=" +
+      encodeURIComponent(window.location.href)
+    );
+
+  }
+);
+
+
+document
+.getElementById("copyLink")
+.addEventListener(
+  "click",
+  async () => {
+
+    try{
+
+      await navigator.clipboard.writeText(
+        window.location.href
+      );
+
+      alert("Page link copied!");
+
+    }catch(error){
+
+      const textarea =
+        document.createElement("textarea");
+
+      textarea.value =
+        window.location.href;
+
+      textarea.style.position =
+        "fixed";
+
+      textarea.style.left =
+        "-9999px";
+
+      document.body.appendChild(
+        textarea
+      );
+
+      textarea.select();
+
+
+      try{
+
+        document.execCommand("copy");
+
+        alert("Page link copied!");
+
+      }catch(copyError){
+
+        alert(
+          "Please copy the URL manually from your browser."
         );
 
-    });
+      }
 
-document
-    .getElementById("shareWhatsApp")
-    .addEventListener("click", () => {
 
-        openShare(
-            "https://api.whatsapp.com/send?text=" +
-            encodeURIComponent(
-                document.title + " " + window.location.href
-            )
-        );
+      textarea.remove();
 
-    });
+    }
 
-document
-    .getElementById("sharePinterest")
-    .addEventListener("click", () => {
-
-        openShare(
-            "https://pinterest.com/pin/create/button/?url=" +
-            encodeURIComponent(window.location.href) +
-            "&description=" +
-            encodeURIComponent(document.title)
-        );
-
-    });
-
-document
-    .getElementById("shareX")
-    .addEventListener("click", () => {
-
-        openShare(
-            "https://twitter.com/intent/tweet?text=" +
-            encodeURIComponent(document.title) +
-            "&url=" +
-            encodeURIComponent(window.location.href)
-        );
-
-    });
-
-document
-    .getElementById("copyLink")
-    .addEventListener("click", async () => {
-
-        try {
-
-            await navigator.clipboard.writeText(
-                window.location.href
-            );
-
-            alert("Page link copied!");
-
-        } catch (error) {
-
-            const textarea =
-                document.createElement("textarea");
-
-            textarea.value =
-                window.location.href;
-
-            textarea.style.position = "fixed";
-            textarea.style.left = "-9999px";
-
-            document.body.appendChild(textarea);
-
-            textarea.select();
-
-            try {
-
-                document.execCommand("copy");
-
-                alert("Page link copied!");
-
-            } catch (copyError) {
-
-                alert(
-                    "Please copy the URL manually from your browser."
-                );
-
-            }
-
-            textarea.remove();
-
-        }
-
-    });
+  }
+);
 
 </script>
 
