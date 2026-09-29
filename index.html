@@ -83,16 +83,19 @@
     display: block;
     overflow: hidden;
 
+    width: 100%;
+
     border-radius: 14px;
     background: #fff;
 
     box-shadow:
-      0 8px 25px rgba(0,0,0,0.25),
-      0 0 0 1px rgba(255,255,255,0.35);
+      0 8px 25px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.35);
 
     text-decoration: none;
 
     animation: promoFloat 4s ease-in-out infinite;
+
     transition:
       transform 0.25s ease,
       box-shadow 0.25s ease;
@@ -104,22 +107,27 @@
 
   .gumroad-promo:hover {
     transform: scale(1.04);
+
     box-shadow:
-      0 12px 35px rgba(0,0,0,0.35),
-      0 0 20px rgba(255,190,60,0.25);
+      0 12px 35px rgba(0, 0, 0, 0.35),
+      0 0 20px rgba(255, 190, 60, 0.25);
   }
 
+  /* Advertisement image */
   .gumroad-promo img {
     display: block;
+
     width: 100%;
     height: auto;
+
     aspect-ratio: 1 / 1;
     object-fit: cover;
   }
 
-  /* Small glowing CTA strip */
+  /* CTA */
   .gumroad-promo-cta {
     position: absolute;
+
     left: 10px;
     right: 10px;
     bottom: 10px;
@@ -133,9 +141,10 @@
 
     font-size: 12px;
     font-weight: 700;
+
     text-align: center;
 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 
     animation: ctaPulse 2s ease-in-out infinite;
   }
@@ -143,33 +152,43 @@
   /* Close button */
   .gumroad-promo-close {
     position: absolute;
+
     top: 5px;
     right: 5px;
 
     width: 25px;
     height: 25px;
 
+    padding: 0;
+
     border: none;
     border-radius: 50%;
 
-    background: rgba(0,0,0,0.65);
+    background: rgba(0, 0, 0, 0.65);
     color: #fff;
 
     font-size: 16px;
     line-height: 25px;
 
+    text-align: center;
+
     cursor: pointer;
-    z-index: 3;
 
-    padding: 0;
+    z-index: 10;
+
+    transition: background 0.2s ease;
   }
 
-  .gumroad-promo-close:hover {
+  .gumroad-promo-close:hover,
+  .gumroad-promo-close:focus {
     background: #000;
+    outline: none;
   }
 
+  /* Floating animation */
   @keyframes promoFloat {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0);
     }
 
@@ -178,8 +197,10 @@
     }
   }
 
+  /* CTA animation */
   @keyframes ctaPulse {
-    0%, 100% {
+    0%,
+    100% {
       transform: scale(1);
     }
 
@@ -188,12 +209,18 @@
     }
   }
 
-  /* Mobile */
+  /* =========================
+     MOBILE
+     ========================= */
+
   @media (max-width: 600px) {
+
     .gumroad-promo-wrap {
       right: 10px;
       bottom: 10px;
+
       width: 145px;
+
       gap: 8px;
     }
 
@@ -212,15 +239,20 @@
     }
 
     .gumroad-promo-close {
+      top: 4px;
+      right: 4px;
+
       width: 21px;
       height: 21px;
-      line-height: 21px;
+
       font-size: 13px;
+      line-height: 21px;
     }
   }
 
-  /* Respect users who prefer reduced motion */
+  /* Respect reduced-motion preference */
   @media (prefers-reduced-motion: reduce) {
+
     .gumroad-promo,
     .gumroad-promo-cta {
       animation: none;
@@ -228,64 +260,87 @@
   }
 </style>
 
+
 <div class="gumroad-promo-wrap" id="gumroadPromo">
 
-  <!-- Magic Codes -->
-  <a
-    class="gumroad-promo"
-    href="https://evaani.gumroad.com/l/themagiccodes"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Get The Magic Codes"
-  >
+  <!-- =====================================
+       MAGIC CODES AD
+       ===================================== -->
+
+  <div class="gumroad-promo" id="magicCodesAd">
+
     <button
       class="gumroad-promo-close"
       type="button"
-      aria-label="Close advertisement"
-      onclick="event.preventDefault(); event.stopPropagation(); this.closest('.gumroad-promo').style.display='none';"
+      aria-label="Close Magic Codes advertisement"
+      onclick="this.closest('.gumroad-promo').style.display='none';"
     >
       ×
     </button>
 
-    <img
-      src="/assets/magic-codes-ad.png"
-      alt="The Magic Codes - A practical guide for creators"
-      loading="lazy"
+    <a
+      href="https://evaani.gumroad.com/l/themagiccodes"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Get The Magic Codes"
     >
 
-    <span class="gumroad-promo-cta">
-      GET THE MAGIC CODES →
-    </span>
-  </a>
+      <img
+        src="/magic-codes-ad-500x500.webp"
+        alt="The Magic Codes - A practical guide for creators"
+        width="500"
+        height="500"
+        loading="lazy"
+        decoding="async"
+      >
+
+      <span class="gumroad-promo-cta">
+        GET THE MAGIC CODES →
+      </span>
+
+    </a>
+
+  </div>
 
 
-  <!-- Playtime Bundle -->
-  <a
-    class="gumroad-promo"
-    href="https://evaani.gumroad.com/l/Bundle"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Get the Playtime to Learning Bundle"
-  >
+  <!-- =====================================
+       PLAYTIME LEARNING BUNDLE AD
+       ===================================== -->
+
+  <div class="gumroad-promo" id="playtimeBundleAd">
+
     <button
       class="gumroad-promo-close"
       type="button"
-      aria-label="Close advertisement"
-      onclick="event.preventDefault(); event.stopPropagation(); this.closest('.gumroad-promo').style.display='none';"
+      aria-label="Close Playtime to Learning Bundle advertisement"
+      onclick="this.closest('.gumroad-promo').style.display='none';"
     >
       ×
     </button>
 
-    <img
-      src="/assets/playtime-bundle-ad.png"
-      alt="Playtime to Learning Bundle - Two practical parenting guides"
-      loading="lazy"
+    <a
+      href="https://evaani.gumroad.com/l/Bundle"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Get the Playtime to Learning Bundle"
     >
 
-    <span class="gumroad-promo-cta">
-      GET THE BUNDLE →
-    </span>
-  </a>
+      <img
+        src="/playtime-learning-ad-500x500.webp"
+        alt="Playtime to Learning Bundle - Two practical guides"
+        width="500"
+        height="500"
+        loading="lazy"
+        decoding="async"
+      >
+
+      <span class="gumroad-promo-cta">
+        GET THE BUNDLE →
+      </span>
+
+    </a>
+
+  </div>
 
 </div>
 <!-- ===== End Gumroad Promotional Ads ===== -->
